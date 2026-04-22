@@ -191,28 +191,28 @@
     .story {
       position: relative; overflow: hidden;
       padding: 96px 40px;
-      background: linear-gradient(to right,
-        #0b2c4a 0%,
-        #0f3560 40%,
-        #e8d5c4 75%,
-        #f5ede6 100%);
     }
-    .story-photo-bg {
-      position: absolute; top: 0; right: 0;
-      width: 48%; height: 100%;
-      z-index: 0;
+    .story-bg {
+      position: absolute; inset: 0; z-index: 0;
+      display: grid; grid-template-columns: 1fr 1fr;
     }
-    .story-photo-bg img {
+    .story-bg-left {
+      background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 100%);
+    }
+    .story-bg-right {
+      position: relative; overflow: hidden;
+    }
+    .story-bg-right img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: center top;
       display: block;
     }
-    .story-photo-bg::after {
+    .story-bg-right::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right,
-        rgba(11,44,74,.9) 0%,
-        rgba(11,44,74,.3) 40%,
-        rgba(232,213,196,0) 100%);
+        rgba(11,44,74,.85) 0%,
+        rgba(11,44,74,.4) 40%,
+        rgba(11,44,74,.0) 100%);
     }
     .story-inner {
       max-width: 1100px; margin: 0 auto;
@@ -228,15 +228,17 @@
       max-width: 560px;
     }
     .story h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
-    .story-text { max-width: 560px; }
+    .story-text { max-width: 520px; }
     .story-body { display: flex; flex-direction: column; gap: 22px; }
     .story-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,.78); }
     .story-body p strong { color: rgba(255,255,255,.95); font-weight: 600; }
     .story-quote { border-left: 3px solid #6ee7f7; padding-left: 24px; margin: 4px 0; }
-    .story-quote p { color: rgba(255,255,255,.9); font-style: italic; }
+    .story-quote p { color: rgba(255,255,255,.92); font-style: italic; }
     @media (max-width: 900px) {
-      .story { padding: 64px 24px; background: linear-gradient(to bottom, #0b2c4a 0%, #1a4a7a 100%); }
-      .story-photo-bg { display: none; }
+      .story { padding: 64px 24px; }
+      .story-bg { grid-template-columns: 1fr; }
+      .story-bg-right { display: none; }
+      .story-bg-left { background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 100%); }
       .story h2 { max-width: 100%; }
       .story-text { max-width: 100%; }
     }
@@ -471,30 +473,28 @@
 
 <!-- STORY -->
 <section class="story">
-  <div class="story-inner">
-    <div class="story-header">
-      <div class="story-label reveal">Náš příběh</div>
-      <h2 class="reveal">Příběh, který začal<br><em>jednou bezesnou nocí</em></h2>
-    </div>
-    <div class="story-grid">
-      <div class="story-text">
-        <div class="story-body">
-      <p class="reveal">Všechno to začalo u nás doma. Jako čerství rodiče jsme prožívali ty nejkrásnější chvíle, které ale začaly střídat momenty bezmoci. Našeho novorozeného syna trápilo bříško. Pláč, který neustával, a později i potíže s vylučováním nás nenechaly spát. Zkoušeli jsme všechno — masáže, čaje, babské rady. Nic nepomáhalo.</p>
-      <p class="reveal">Když nám lékaři doporučili dětské mikroklystýry jako bezpečnou a účinnou pomoc, narazili jsme na nečekanou překážku. <strong>Český trh byl prázdný.</strong> Produkty, které dříve fungovaly, měly výpadek a nic nového nebylo k mání.</p>
-      <div class="story-quote reveal">
-        <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
-      </div>
-      <p class="reveal">Začal jsem pátrat na vlastní pěst. Cesta mě zavedla až do slunné Itálie k výrobci, který měl přesně to, co českým maminkám a tatínkům chybělo. Slovo dalo slovo, domluvili jsme spolupráci a pod značkou <strong>Laxík</strong> jsme tento malý zázrak přivezli do Čech.</p>
-      <p class="reveal">Laxík nebyl jen produkt. Byl to první krok na cestě, která vedla k <strong>založení celé společnosti BEAUFY</strong>. Dnes už nepomáháme jen našemu synovi, ale tisícům dalších dětí a jejich rodičům, aby se opět mohli v klidu usmát.</p>
-        </div>
-      </div><!-- /.story-text -->
-      <div class="story-photo reveal">
+  <div class="story-bg">
+    <div class="story-bg-left"></div>
+    <div class="story-bg-right">
       <img src="/story-founder.jpg" alt="Zakladatel BEAUFY se synem">
+    </div>
+  </div>
+  <div class="story-inner">
+    <div class="story-label reveal">Náš příběh</div>
+    <h2 class="reveal">Příběh, který začal<br><em>jednou bezesnou nocí</em></h2>
+    <div class="story-text">
+      <div class="story-body">
+        <p class="reveal">Všechno to začalo u nás doma. Jako čerství rodiče jsme prožívali ty nejkrásnější chvíle, které ale začaly střídat momenty bezmoci. Našeho novorozeného syna trápilo bříško. Pláč, který neustával, a později i potíže s vylučováním nás nenechaly spát. Zkoušeli jsme všechno — masáže, čaje, babské rady. Nic nepomáhalo.</p>
+        <p class="reveal">Když nám lékaři doporučili dětské mikroklystýry jako bezpečnou a účinnou pomoc, narazili jsme na nečekanou překážku. <strong>Český trh byl prázdný.</strong> Produkty, které dříve fungovaly, měly výpadek a nic nového nebylo k mání.</p>
+        <div class="story-quote reveal">
+          <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
+        </div>
+        <p class="reveal">Začal jsem pátrat na vlastní pěst. Cesta mě zavedla až do slunné Itálie k výrobci, který měl přesně to, co českým maminkám a tatínkům chybělo. Slovo dalo slovo, domluvili jsme spolupráci a pod značkou <strong>Laxík</strong> jsme tento malý zázrak přivezli do Čech.</p>
+        <p class="reveal">Laxík nebyl jen produkt. Byl to první krok na cestě, která vedla k <strong>založení celé společnosti BEAUFY</strong>. Dnes už nepomáháme jen našemu synovi, ale tisícům dalších dětí a jejich rodičům, aby se opět mohli v klidu usmát.</p>
       </div>
-    </div><!-- /.story-grid -->
+    </div>
   </div>
 </section>
-
 <!-- KDE KOUPIT -->
 <section class="buy" id="kde-koupit">
   <div class="buy-inner">

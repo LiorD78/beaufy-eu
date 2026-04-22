@@ -220,9 +220,13 @@
     .story-quote { border-left: 3px solid #6ee7f7; padding-left: 20px; margin: 4px 0; }
     .story-quote p { color: rgba(255,255,255,.92); font-style: italic; }
     @media (max-width: 900px) {
-      .story { height: auto; min-height: unset; padding: 0; }
-      .story-bg { background-position: 70% center; }
-      .story-inner { padding: 64px 24px; }
+      .story { height: auto; min-height: 100svh; padding: 0; }
+      .story-bg {
+        background-image: url('/story-bg-mobile.jpg') !important;
+        background-position: center bottom !important;
+        background-size: cover !important;
+      }
+      .story-inner { padding: 56px 24px 48px; align-items: flex-start; }
       .story-content { max-width: 100%; }
     }
 

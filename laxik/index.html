@@ -232,16 +232,14 @@
     .story-photo-wrap img {
       width: 100%; max-width: 340px;
       display: block;
-      -webkit-mask-image:
-        radial-gradient(ellipse 85% 80% at 50% 50%, black 40%, transparent 100%);
-      mask-image:
-        radial-gradient(ellipse 85% 80% at 50% 50%, black 40%, transparent 100%);
+      filter: drop-shadow(0 8px 32px rgba(11,44,74,.15));
     }
     @media (max-width: 900px) {
       .story { padding: 64px 24px; background: linear-gradient(160deg, #0b2c4a 0%, #134a8e 100%); }
       .story-inner { grid-template-columns: 1fr; gap: 40px; }
       .story-content { padding-left: 24px; }
-      .story-photo-wrap { display: none; }
+      .story-photo-wrap { display: flex; justify-content: center; margin-top: 8px; }
+      .story-photo-wrap img { max-width: 220px; }
     }
 
         /* ── DISCLAIMER ── */
@@ -489,7 +487,7 @@
       </div>
     </div>
     <div class="story-photo-wrap reveal">
-      <img src="/story-founder.jpg" alt="Zakladatel BEAUFY se synem">
+      <img src="/story-founder.png" alt="Zakladatel BEAUFY se synem">
     </div>
   </div>
 </section>

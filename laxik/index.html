@@ -194,25 +194,24 @@
     }
     .story-bg {
       position: absolute; inset: 0; z-index: 0;
-      display: grid; grid-template-columns: 1fr 1fr;
-    }
-    .story-bg-left {
       background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 100%);
     }
     .story-bg-right {
-      position: relative; overflow: hidden;
+      position: absolute; right: 0; top: 0;
+      width: 42%; height: 100%;
+      overflow: hidden; opacity: .55;
     }
     .story-bg-right img {
       width: 100%; height: 100%;
       object-fit: cover; object-position: center top;
-      display: block;
+      display: block; filter: grayscale(20%);
     }
-    .story-bg-right::after {
-      content: ''; position: absolute; inset: 0;
+    .story-bg-right::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
       background: linear-gradient(to right,
-        rgba(11,44,74,.85) 0%,
-        rgba(11,44,74,.4) 40%,
-        rgba(11,44,74,.0) 100%);
+        rgba(11,44,74,1) 0%,
+        rgba(11,44,74,.6) 30%,
+        rgba(11,44,74,.0) 70%);
     }
     .story-inner {
       max-width: 1100px; margin: 0 auto;
@@ -473,11 +472,9 @@
 
 <!-- STORY -->
 <section class="story">
-  <div class="story-bg">
-    <div class="story-bg-left"></div>
-    <div class="story-bg-right">
+  <div class="story-bg"></div>
+  <div class="story-bg-right">
       <img src="/story-founder.jpg" alt="Zakladatel BEAUFY se synem">
-    </div>
   </div>
   <div class="story-inner">
     <div class="story-label reveal">Náš příběh</div>

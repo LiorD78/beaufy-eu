@@ -178,11 +178,13 @@
     .highlight-text { font-size: .85rem; color: var(--muted); line-height: 1.6; }
 
     /* ── KDE KOUPIT ── */
-    .buy { background: var(--bg); }
-    .buy-logos { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 36px; margin-top: 36px; }
-    .buy-logo a { display: flex; align-items: center; justify-content: center; background: var(--white); border-radius: 14px; padding: 14px 24px; box-shadow: var(--shadow-card); transition: var(--transition); text-decoration: none; }
-    .buy-logo a:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
-    .buy-logo img { height: 48px; width: auto; max-width: 150px; object-fit: contain; }
+    .buy { background: var(--white); padding: 64px 40px; }
+    .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
+    .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; }
+    .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
+    .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
 
     /* ── DISCLAIMER ── */
     .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }

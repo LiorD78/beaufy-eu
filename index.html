@@ -84,17 +84,17 @@
     .nav-logo-img {
       height: 22px; width: auto; display: block;
       transition: filter .35s ease, opacity .35s ease;
-      filter: invert(1);
+      filter: brightness(0) invert(1);
       opacity: .95;
     }
     nav.scrolled .nav-logo-img {
-      filter: none;
+      filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%);
       opacity: 1;
     }
     .footer-logo-img {
       height: 26px; width: auto; display: block;
       margin-bottom: 16px;
-      filter: invert(1);
+      filter: brightness(0) invert(1);
       opacity: .9;
     }
 
@@ -369,11 +369,11 @@
     .about { background: var(--white); }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: center;
+      gap: 80px; align-items: stretch;
     }
     .about-visual {
       border-radius: 24px; overflow: hidden;
-      height: 480px; display: flex; align-items: center; justify-content: center;
+      height: 100%; min-height: 420px; display: flex; align-items: center; justify-content: center;
     }
     .about-content { }
     .about-values {

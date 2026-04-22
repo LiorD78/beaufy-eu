@@ -419,25 +419,22 @@
     .team-contact a:hover { color: var(--blue); }
 
     /* ── PARTNERS ────────────────────────────────────────── */
-    .partners { background: var(--white); padding: 72px 40px; }
-    .partners-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .partners { background: var(--white); padding: 64px 40px; }
+    .partners-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
     .partners-title {
       font-size: .78rem; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; color: var(--muted); margin-bottom: 40px;
     }
     .partners-logos {
       display: flex; align-items: center; justify-content: center;
-      flex-wrap: wrap; gap: 12px;
+      flex-wrap: wrap; gap: 32px 48px;
     }
     .partner-logo {
-      background: var(--bg); border-radius: 12px; padding: 16px 28px;
-      transition: var(--transition);
       display: flex; align-items: center; justify-content: center;
-      min-width: 140px; min-height: 72px;
+      opacity: .7; transition: opacity .2s ease;
     }
-    .partner-logo:hover { background: var(--border); transform: translateY(-2px); }
-    .partner-logo img { height: 38px; width: auto; max-width: 120px; object-fit: contain; filter: grayscale(40%); opacity: .75; transition: var(--transition); }
-    .partner-logo:hover img { filter: grayscale(0); opacity: 1; }
+    .partner-logo:hover { opacity: 1; }
+    .partner-logo img { height: 40px; width: auto; max-width: 130px; object-fit: contain; display: block; }
 
     /* ── B2B CTA ─────────────────────────────────────────── */
     .b2b-cta {
@@ -558,7 +555,7 @@
       padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08);
       margin-bottom: 32px;
     }
-    .footer-brand .footer-logo-img { height: 26px; margin-bottom: 16px; opacity: .9; }
+    .footer-brand .footer-logo-img { height: 26px; margin-bottom: 16px; }
     .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
     .footer-col h5 {
       font-size: .78rem; font-weight: 700; letter-spacing: .1em;

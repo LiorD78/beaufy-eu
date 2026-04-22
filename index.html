@@ -83,11 +83,10 @@
 
     .nav-logo img {
       height: 22px; width: auto; display: block;
-      filter: brightness(0) invert(1);
       transition: filter .35s ease, opacity .35s ease;
       opacity: .95;
     }
-    nav.scrolled .nav-logo img { filter: none; opacity: 1; }
+    nav.scrolled .nav-logo img { filter: invert(1); opacity: 1; }
 
     .nav-links { display: flex; gap: 4px; align-items: center; }
     .nav-links a {
@@ -548,7 +547,7 @@
       padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08);
       margin-bottom: 32px;
     }
-    .footer-brand img { height: 26px; margin-bottom: 16px; filter: brightness(0) invert(1); opacity: .9; }
+    .footer-brand img { height: 26px; margin-bottom: 16px; opacity: .9; }
     .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
     .footer-col h5 {
       font-size: .78rem; font-weight: 700; letter-spacing: .1em;
@@ -684,7 +683,7 @@
 <!-- ── NAVIGATION ───────────────────────────────────────── -->
 <nav id="nav">
   <div class="nav-inner">
-    <a class="nav-logo" href="#"><img src="BEAUFY_logo.png" alt="BEAUFY"></a>
+    <a class="nav-logo" href="#"><img src="BEAUFY_logo.svg" alt="BEAUFY" id="navLogo"></a>
     <div class="nav-links" id="navLinks">
       <a href="#produkty">Produkty</a>
       <a href="#o-nas">O nás</a>
@@ -1138,7 +1137,7 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <img src="BEAUFY_logo.png" alt="BEAUFY">
+      <img src="BEAUFY_logo.svg" alt="BEAUFY">
       <p>Česko-slovenský distributor zdravotnických prostředků EU původu. Zásobujeme lékárny, nemocnice a soukromé lékaře s osobním přístupem.</p>
     </div>
     <div class="footer-col">

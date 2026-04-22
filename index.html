@@ -142,12 +142,6 @@
     }
     nav.scrolled .nav-mobile-btn span { background: var(--navy); }
 
-    h2.gradient, .gradient-text {
-      background: linear-gradient(90deg, #0F172A, #0070F3);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
-    }
-
     /* ── HERO ────────────────────────────────────────────── */
     .hero {
       min-height: 100vh;
@@ -191,7 +185,7 @@
       line-height: 1.15; font-weight: 400; margin-bottom: 20px;
       animation: fadeUp .8s .1s ease both;
     }
-    h1 em { font-style: italic; color: #a8d87a; }
+    h1 em { font-style: italic; color: #F59E0B; }
     .hero-sub {
       font-size: 1.05rem; line-height: 1.7;
       color: rgba(255,255,255,.82); max-width: 480px;
@@ -315,10 +309,13 @@
     h2 {
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2; font-weight: 400; color: var(--navy);
+      line-height: 1.2; font-weight: 400;
+      background: linear-gradient(100deg, #0F172A 0%, #0070F3 70%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
       margin-bottom: 20px;
     }
-    h2 em { font-style: italic; color: var(--blue); }
+    h2 em { font-style: italic; -webkit-text-fill-color: #F59E0B; color: #F59E0B; }
     .section-desc {
       font-size: 1.05rem; color: var(--muted); max-width: 560px;
       line-height: 1.75; margin-bottom: 48px;
@@ -474,8 +471,8 @@
       display: grid; grid-template-columns: 1fr auto; gap: 60px;
       align-items: center; position: relative; z-index: 1;
     }
-    .b2b-text h2 { color: var(--white); margin-bottom: 16px; }
-    .b2b-text h2 em { color: #a8d87a; }
+    .b2b-text h2 { color: var(--white); margin-bottom: 16px; background: none; -webkit-text-fill-color: var(--white); }
+    .b2b-text h2 em { color: #F59E0B; }
     .b2b-text p { color: rgba(255,255,255,.75); font-size: 1.05rem; line-height: 1.7; max-width: 520px; }
     .b2b-actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
     .btn-white {

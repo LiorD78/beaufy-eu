@@ -188,44 +188,35 @@
 
 
     /* ── STORY ── */
-    .story { background: var(--navy); padding: 96px 40px; position: relative; overflow: hidden; }
-    .story::before {
-      content: ''; position: absolute; top: -100px; right: -100px;
-      width: 500px; height: 500px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 70%);
+    .story {
+      position: relative; overflow: hidden;
+      padding: 96px 40px;
+      background: linear-gradient(to right,
+        #0b2c4a 0%,
+        #0f3560 40%,
+        #e8d5c4 75%,
+        #f5ede6 100%);
     }
-    .story-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-    .story-header { margin-bottom: 48px; }
-    .story-grid {
-      display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: start;
+    .story-photo-bg {
+      position: absolute; top: 0; right: 0;
+      width: 48%; height: 100%;
+      z-index: 0;
     }
-    .story-photo {
-      position: sticky; top: 100px;
-      -webkit-mask-image: linear-gradient(to bottom,
-        transparent 0%,
-        black 12%,
-        black 75%,
-        transparent 100%),
-        linear-gradient(to right,
-        transparent 0%,
-        black 15%,
-        black 100%);
-      -webkit-mask-composite: source-in;
-      mask-image: linear-gradient(to bottom,
-        transparent 0%,
-        black 12%,
-        black 75%,
-        transparent 100%),
-        linear-gradient(to right,
-        transparent 0%,
-        black 15%,
-        black 100%);
-      mask-composite: intersect;
+    .story-photo-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      display: block;
     }
-    .story-photo img { width: 100%; height: auto; object-fit: cover; object-position: center top; display: block; }
-    @media (max-width: 900px) {
-      .story-grid { grid-template-columns: 1fr; gap: 40px; }
-      .story-photo { max-width: 260px; margin: 0 auto; position: static; }
+    .story-photo-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right,
+        rgba(11,44,74,.9) 0%,
+        rgba(11,44,74,.3) 40%,
+        rgba(232,213,196,0) 100%);
+    }
+    .story-inner {
+      max-width: 1100px; margin: 0 auto;
+      position: relative; z-index: 1;
     }
     .story-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 16px; }
     .story h2 {
@@ -234,24 +225,23 @@
       line-height: 1.2; font-weight: 400;
       color: #fff; margin-bottom: 40px;
       background: none; -webkit-text-fill-color: #fff;
+      max-width: 560px;
     }
     .story h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
+    .story-text { max-width: 560px; }
     .story-body { display: flex; flex-direction: column; gap: 22px; }
-    .story-body p {
-      font-size: 1.05rem; line-height: 1.85;
-      color: rgba(255,255,255,.75);
-    }
+    .story-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,.78); }
     .story-body p strong { color: rgba(255,255,255,.95); font-weight: 600; }
-    .story-quote {
-      border-left: 3px solid #6ee7f7;
-      padding-left: 24px;
-      margin: 8px 0;
-    }
-    .story-quote p { color: rgba(255,255,255,.88); font-style: italic; }
+    .story-quote { border-left: 3px solid #6ee7f7; padding-left: 24px; margin: 4px 0; }
+    .story-quote p { color: rgba(255,255,255,.9); font-style: italic; }
     @media (max-width: 900px) {
-      .story { padding: 64px 24px; }
+      .story { padding: 64px 24px; background: linear-gradient(to bottom, #0b2c4a 0%, #1a4a7a 100%); }
+      .story-photo-bg { display: none; }
+      .story h2 { max-width: 100%; }
+      .story-text { max-width: 100%; }
     }
-    /* ── DISCLAIMER ── */
+
+        /* ── DISCLAIMER ── */
     .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
     .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
 

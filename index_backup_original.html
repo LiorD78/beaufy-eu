@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEAUFY — Ověřené zdravotnické produkty pro lékárny a kliniky</title>
+  <meta name="description" content="BEAUFY s.r.o. je česko-slovenský distributor zdravotnických prostředků nejvyšší kvality. Dodáváme do lékáren BENU, Dr.Max, Magistra a dalších.">
+  <link rel="icon" href="beaufy-ico-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:     #0b2c4a;
+      --blue:     #134a8e;
+      --blue-lt:  #1f5fa6;
+      --green:    #5C820F;
+      --green-br: #6E9B12;
+      --bg:       #eef4fa;
+      --bg2:      #f7fafd;
+      --white:    #ffffff;
+      --text:     #1a2533;
+      --muted:    #5a6a7e;
+      --border:   rgba(19,74,142,.12);
+      --radius-card: 20px;
+      --radius-btn:  99px;
+      --shadow-card: 0 4px 24px rgba(11,44,74,.08), 0 1px 4px rgba(11,44,74,.04);
+      --shadow-hover: 0 12px 40px rgba(11,44,74,.14), 0 2px 8px rgba(11,44,74,.06);
+      --transition: all .3s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV — Liquid Glass ──────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 14px 24px;
+      transition: padding .4s cubic-bezier(.4,0,.2,1);
+    }
+    nav.scrolled { padding: 8px 24px; }
+
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 20px 10px 24px;
+      border-radius: 99px;
+      /* Liquid Glass core */
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      /* Specular edge highlight */
+      border: 1px solid rgba(255,255,255,.45);
+      /* Multi-layer shadow for depth */
+      box-shadow:
+        0 0 0 0.5px rgba(255,255,255,.2) inset,
+        0 1px 0 rgba(255,255,255,.35) inset,
+        0 8px 32px rgba(11,44,74,.18),
+        0 2px 8px rgba(11,44,74,.1);
+      transition: all .4s cubic-bezier(.4,0,.2,1);
+    }
+    /* On scroll — slightly more opaque, tighter */
+    nav.scrolled .nav-inner {
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(32px) saturate(200%);
+      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      border-color: rgba(255,255,255,.6);
+      box-shadow:
+        0 0 0 0.5px rgba(255,255,255,.4) inset,
+        0 1px 0 rgba(255,255,255,.5) inset,
+        0 4px 20px rgba(11,44,74,.12),
+        0 1px 4px rgba(11,44,74,.06);
+    }
+
+    .nav-logo-img {
+      height: 22px; width: auto; display: block;
+      transition: filter .35s ease, opacity .35s ease;
+      filter: brightness(0) invert(1);
+      opacity: .95;
+    }
+    nav.scrolled .nav-logo-img {
+      filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%);
+      opacity: 1;
+    }
+    .footer-logo-img {
+      height: 26px; width: auto; display: block;
+      margin-bottom: 16px;
+      filter: brightness(0) invert(1);
+      opacity: .9;
+    }
+
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a {
+      padding: 7px 16px; border-radius: 99px;
+      font-size: .88rem; font-weight: 500;
+      color: rgba(255,255,255,.92);
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+      letter-spacing: .01em;
+    }
+    .nav-links a:hover {
+      background: rgba(255,255,255,.18);
+      color: #fff;
+    }
+    nav.scrolled .nav-links a { color: var(--navy); }
+    nav.scrolled .nav-links a:hover { background: var(--bg); }
+
+    .nav-cta {
+      background: rgba(255,255,255,.22) !important;
+      color: #fff !important;
+      padding: 8px 20px !important;
+      border: 1px solid rgba(255,255,255,.4) !important;
+      font-weight: 600 !important;
+      backdrop-filter: blur(8px);
+    }
+    .nav-cta:hover {
+      background: rgba(255,255,255,.32) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,0,0,.15) !important;
+    }
+    nav.scrolled .nav-cta {
+      background: var(--green) !important;
+      color: #fff !important;
+      border-color: transparent !important;
+    }
+    nav.scrolled .nav-cta:hover { background: var(--green-br) !important; }
+
+    .nav-mobile-btn { display: none; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-mobile-btn span {
+      display: block; width: 22px; height: 2px;
+      background: #fff; margin: 4px 0; border-radius: 2px;
+      transition: var(--transition);
+    }
+    nav.scrolled .nav-mobile-btn span { background: var(--navy); }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('woman-joga-1920x1280.jpg') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(105deg,
+        rgba(11,44,74,.82) 0%,
+        rgba(19,74,142,.6) 50%,
+        rgba(11,44,74,.2) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 120px 40px 80px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .hero-text { color: var(--white); }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.15); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 6px 16px; border-radius: 99px;
+      font-size: .8rem; font-weight: 500; letter-spacing: .03em;
+      color: rgba(255,255,255,.9); margin-bottom: 28px;
+      animation: fadeUp .8s ease both;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: #7dc14b; box-shadow: 0 0 8px #7dc14b;
+    }
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.15; font-weight: 400; margin-bottom: 20px;
+      animation: fadeUp .8s .1s ease both;
+    }
+    h1 em { font-style: italic; color: #a8d87a; }
+    .hero-sub {
+      font-size: 1.05rem; line-height: 1.7;
+      color: rgba(255,255,255,.82); max-width: 480px;
+      margin-bottom: 36px;
+      animation: fadeUp .8s .2s ease both;
+    }
+    .hero-actions {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      animation: fadeUp .8s .3s ease both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: var(--radius-btn);
+      background: var(--green); color: var(--white);
+      font-weight: 600; font-size: .95rem;
+      text-decoration: none; transition: var(--transition);
+      border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--green-br); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(92,130,15,.4); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: var(--radius-btn);
+      background: rgba(255,255,255,.1); color: var(--white);
+      font-weight: 500; font-size: .95rem;
+      text-decoration: none; transition: var(--transition);
+      border: 1px solid rgba(255,255,255,.3);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      animation: fadeUp .8s .4s ease both;
+    }
+    .stat-card {
+      background: rgba(255,255,255,.1); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.18); border-radius: 16px;
+      padding: 20px 24px;
+    }
+    .stat-card:last-child { grid-column: 1 / -1; }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem; color: #fff; line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label { font-size: .8rem; color: rgba(255,255,255,.7); }
+
+    /* ── USP BAR (Truckmall style) ───────────────────────────── */
+    #bfy-usp {
+      --usp-blue-l: #0b2c4a;
+      --usp-blue-m: #134a8e;
+      position: relative; z-index: 10; isolation: isolate;
+      width: 100%; background: #fff;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 0; margin: 0; padding: 0 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    @media (max-width: 1023px) { #bfy-usp { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 480px)  { #bfy-usp { grid-template-columns: repeat(2,1fr); } }
+
+    #bfy-usp .usp-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 24px; text-decoration: none; color: #1a2533;
+      border-right: 1px solid var(--border);
+      transition: transform .25s ease, background .25s ease;
+    }
+    #bfy-usp .usp-item:last-child { border-right: none; }
+    @media (max-width: 1023px) {
+      #bfy-usp .usp-item:nth-child(2) { border-right: none; }
+      #bfy-usp .usp-item:nth-child(3) { border-top: 1px solid var(--border); }
+      #bfy-usp .usp-item:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+    }
+
+    #bfy-usp .usp-icon {
+      flex: 0 0 60px; width: 60px; height: 60px;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform .25s ease, filter .25s ease;
+    }
+    #bfy-usp .usp-icon svg {
+      width: 48px; height: 48px;
+      transform-origin: center bottom;
+      transition: transform .25s ease, filter .25s ease;
+    }
+    #bfy-usp .usp-text {
+      flex: 1; min-width: 0; line-height: 1.3;
+      font-size: .85rem; color: var(--muted);
+      transition: transform .25s ease;
+    }
+    #bfy-usp .usp-text strong {
+      display: block; font-weight: 700; font-size: 1rem;
+      background: linear-gradient(90deg, var(--usp-blue-l) 0%, var(--usp-blue-m) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      margin-bottom: 3px;
+    }
+    @media (hover: hover) {
+      #bfy-usp .usp-item:hover { background: var(--bg); }
+      #bfy-usp .usp-item:hover .usp-icon svg {
+        transform: translateY(-2px) scale(1.12);
+        filter: drop-shadow(0 3px 5px rgba(11,44,74,.2));
+      }
+      #bfy-usp .usp-item:hover .usp-text { transform: translateX(4px); }
+    }
+    @media (max-width: 600px) {
+      #bfy-usp .usp-icon { flex: 0 0 46px; width: 46px; height: 46px; }
+      #bfy-usp .usp-icon svg { width: 36px; height: 36px; }
+      #bfy-usp .usp-text { font-size: .78rem; }
+      #bfy-usp .usp-text strong { font-size: .88rem; }
+      #bfy-usp .usp-item { padding: 12px 10px; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #bfy-usp .usp-icon svg, #bfy-usp .usp-text { transition: none; transform: none; }
+    }
+
+    /* ── SECTIONS SHARED ─────────────────────────────────── */
+    section { padding: 96px 40px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label {
+      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--green);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2; font-weight: 400; color: var(--navy);
+      margin-bottom: 20px;
+    }
+    h2 em { font-style: italic; color: var(--blue); }
+    .section-desc {
+      font-size: 1.05rem; color: var(--muted); max-width: 560px;
+      line-height: 1.75; margin-bottom: 48px;
+    }
+
+    /* ── PRODUCTS ────────────────────────────────────────── */
+    .products { background: var(--bg); }
+    .products-header { text-align: center; }
+    .products-header .section-desc { margin: 0 auto 48px; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--white); border-radius: var(--radius-card);
+      overflow: hidden; transition: var(--transition);
+      box-shadow: var(--shadow-card);
+      cursor: pointer; text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .product-img {
+      height: 220px; overflow: hidden; position: relative;
+      background: #f0f5f0;
+    }
+    .product-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .5s cubic-bezier(.4,0,.2,1);
+      display: block;
+    }
+    .product-card:hover .product-img img { transform: scale(1.06); }
+    .product-cat {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--white); color: var(--blue);
+      font-size: .72rem; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 99px;
+    }
+    .product-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .product-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem; color: var(--navy); margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .product-desc { font-size: .88rem; color: var(--muted); line-height: 1.65; flex: 1; }
+    .product-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 18px; font-size: .85rem; font-weight: 600;
+      color: var(--green); text-decoration: none;
+    }
+    .product-link svg { transition: transform .2s ease; }
+    .product-card:hover .product-link svg { transform: translateX(4px); }
+
+    /* ── ABOUT ───────────────────────────────────────────── */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: end;
+    }
+    .about-visual {
+      border-radius: 24px; overflow: hidden;
+      height: 480px; display: flex; align-items: center; justify-content: center;
+    }
+    .about-content { }
+    .about-values {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-top: 36px;
+    }
+    .value-item {
+      background: var(--bg); border-radius: 14px; padding: 20px;
+    }
+    .value-icon { width: 36px; height: 36px; margin-bottom: 10px; color: var(--blue); }
+    .value-title { font-weight: 600; font-size: .9rem; color: var(--navy); margin-bottom: 4px; }
+    .value-text { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── TEAM ────────────────────────────────────────────── */
+    .team { background: var(--bg); }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .team-card {
+      background: var(--white); border-radius: var(--radius-card);
+      padding: 32px 28px; text-align: center;
+      box-shadow: var(--shadow-card); transition: var(--transition);
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+    .team-photo {
+      width: 88px; height: 88px; border-radius: 50%; overflow: hidden;
+      margin: 0 auto 16px;
+      border: 3px solid var(--bg);
+      box-shadow: 0 4px 16px rgba(11,44,74,.12);
+    }
+    .team-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .team-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem; color: var(--navy); margin-bottom: 4px;
+    }
+    .team-role { font-size: .8rem; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 16px; }
+    .team-contact { display: flex; flex-direction: column; gap: 6px; }
+    .team-contact a {
+      font-size: .85rem; color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      transition: color .2s ease;
+    }
+    .team-contact a:hover { color: var(--blue); }
+
+    /* ── PARTNERS ────────────────────────────────────────── */
+    .partners { background: var(--white); padding: 64px 40px; }
+    .partners-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .partners-title {
+      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 40px;
+    }
+    .partners-logos {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 24px 40px;
+    }
+    .partner-logo {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .partner-logo img { height: 60px; width: auto; max-width: 180px; display: block; }
+
+
+    /* ── WHOLESALE ───────────────────────────────────────── */
+    .wholesale { background: var(--bg); padding: 48px 40px; border-top: 1px solid var(--border); }
+    .wholesale-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .wholesale-title {
+      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 36px;
+    }
+    .wholesale-logos {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 24px 60px;
+    }
+    .wholesale-logo {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .wholesale-logo img { height: 52px; width: auto; max-width: 180px; display: block; }
+
+    /* ── B2B CTA ─────────────────────────────────────────── */
+    .b2b-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      padding: 96px 40px; position: relative; overflow: hidden;
+    }
+    .b2b-cta::before {
+      content: '';
+      position: absolute; top: -50%; right: -10%; width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.05) 0%, transparent 70%);
+    }
+    .b2b-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto; gap: 60px;
+      align-items: center; position: relative; z-index: 1;
+    }
+    .b2b-text h2 { color: var(--white); margin-bottom: 16px; }
+    .b2b-text h2 em { color: #a8d87a; }
+    .b2b-text p { color: rgba(255,255,255,.75); font-size: 1.05rem; line-height: 1.7; max-width: 520px; }
+    .b2b-actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
+    .btn-white {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 32px; border-radius: var(--radius-btn);
+      background: var(--white); color: var(--navy);
+      font-weight: 600; font-size: .95rem;
+      text-decoration: none; transition: var(--transition);
+      white-space: nowrap;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 32px; border-radius: var(--radius-btn);
+      background: transparent; color: rgba(255,255,255,.85);
+      font-weight: 500; font-size: .95rem;
+      text-decoration: none; transition: var(--transition);
+      border: 1px solid rgba(255,255,255,.3);
+      white-space: nowrap;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
+
+    /* ── CONTACT ─────────────────────────────────────────── */
+    .contact { background: var(--bg2); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
+    }
+    .contact-info { }
+    .contact-persons { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .contact-person {
+      background: var(--white); border-radius: 16px; padding: 20px 24px;
+      display: flex; align-items: center; gap: 16px;
+      box-shadow: var(--shadow-card); transition: var(--transition);
+    }
+    .contact-person:hover { box-shadow: var(--shadow-hover); transform: translateX(4px); }
+    .contact-person-photo {
+      width: 52px; height: 52px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+    }
+    .contact-person-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .contact-person-info h4 { font-size: .95rem; font-weight: 600; color: var(--navy); }
+    .contact-person-info span { font-size: .78rem; color: var(--green); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+    .contact-person-links { margin-top: 6px; display: flex; flex-direction: column; gap: 2px; }
+    .contact-person-links a { font-size: .82rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .contact-person-links a:hover { color: var(--blue); }
+    .contact-form { background: var(--white); border-radius: 24px; padding: 40px; box-shadow: var(--shadow-card); }
+    .contact-form h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: .82rem; font-weight: 600; color: var(--navy); }
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 12px 16px; border-radius: 10px;
+      border: 1.5px solid var(--border);
+      font-family: inherit; font-size: .9rem; color: var(--text);
+      background: var(--bg2); transition: border-color .2s ease;
+      outline: none;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--blue);
+      background: var(--white);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; padding: 14px;
+      background: var(--green); color: var(--white);
+      border: none; border-radius: var(--radius-btn);
+      font-family: inherit; font-size: .95rem; font-weight: 600;
+      cursor: pointer; transition: var(--transition);
+    }
+    .form-submit:hover { background: var(--green-br); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(92,130,15,.35); }
+
+    /* ── PHARMDATA ───────────────────────────────────────── */
+    .pharmdata-strip {
+      background: var(--navy); padding: 28px 40px; text-align: center;
+    }
+    .pharmdata-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .pharmdata-strip p {
+      color: rgba(255,255,255,.8); font-size: .88rem;
+    }
+    .pharmdata-strip strong { color: var(--white); }
+    .pharmdata-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      padding: 6px 14px; border-radius: 99px;
+      color: #a8d87a; font-size: .8rem; font-weight: 600;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: #091d30;
+      padding: 60px 40px 32px; color: rgba(255,255,255,.65);
+    }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 32px;
+    }
+    .footer-brand .footer-logo-img { height: 26px; margin-bottom: 16px; }
+    .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 {
+      font-size: .78rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.9);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { font-size: .85rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,.9); }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: .8rem; }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,.8); }
+
+    /* ── PRODUCT DISCLAIMER ──────────────────────────────────── */
+    .product-disclaimer {
+      font-size: .72rem; color: var(--muted); margin-top: 12px;
+      padding-top: 10px; border-top: 1px solid var(--border);
+      line-height: 1.4;
+    }
+
+    /* ── GDPR CHECKBOX ───────────────────────────────────────── */
+    .form-gdpr {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-bottom: 20px;
+    }
+    .form-gdpr input[type="checkbox"] {
+      width: 16px; height: 16px; flex-shrink: 0;
+      margin-top: 2px; accent-color: var(--green); cursor: pointer;
+    }
+    .form-gdpr label {
+      font-size: .8rem; color: var(--muted); line-height: 1.5; cursor: pointer;
+    }
+    .form-gdpr label a { color: var(--blue); text-decoration: underline; }
+
+    /* ── COOKIE BANNER ───────────────────────────────────────── */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: var(--navy); padding: 18px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.18);
+      transform: translateY(100%);
+      transition: transform .4s cubic-bezier(.4,0,.2,1);
+    }
+    .cookie-banner.visible { transform: translateY(0); }
+    .cookie-banner p {
+      color: rgba(255,255,255,.82); font-size: .85rem; line-height: 1.55;
+      flex: 1; min-width: 220px; margin: 0;
+    }
+    .cookie-banner p a { color: #a8d87a; text-decoration: underline; }
+    .cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
+    .cookie-accept {
+      padding: 9px 22px; border-radius: 99px;
+      background: var(--green); color: #fff;
+      font-size: .85rem; font-weight: 600; border: none; cursor: pointer;
+      transition: background .2s;
+    }
+    .cookie-accept:hover { background: var(--green-br); }
+    .cookie-reject {
+      padding: 9px 22px; border-radius: 99px;
+      background: transparent; color: rgba(255,255,255,.65);
+      font-size: .85rem; font-weight: 500;
+      border: 1px solid rgba(255,255,255,.25); cursor: pointer;
+      transition: all .2s;
+    }
+    .cookie-reject:hover { color: #fff; border-color: rgba(255,255,255,.5); }
+
+    /* ── SCROLL TO TOP ───────────────────────────────────── */
+    .scroll-top {
+      position: fixed; bottom: 28px; right: 28px; z-index: 99;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--navy); color: var(--white);
+      border: none; cursor: pointer; font-size: 1.2rem;
+      box-shadow: 0 4px 16px rgba(11,44,74,.3);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(12px); pointer-events: none;
+      transition: var(--transition);
+    }
+    .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+    .scroll-top:hover { background: var(--blue); transform: translateY(-2px); }
+
+    /* ── ANIMATIONS ──────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── MOBILE ──────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      section { padding: 64px 24px; }
+      nav { padding: 10px 16px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(255,255,255,.97); backdrop-filter: blur(20px);
+        padding: 100px 40px 40px;
+        gap: 8px; z-index: 99;
+        align-items: flex-start;
+      }
+      .nav-links.open a { font-size: 1.2rem; padding: 12px 20px; width: 100%; }
+      .nav-mobile-btn { display: block; position: relative; z-index: 100; }
+      .hero-content { grid-template-columns: 1fr; gap: 40px; padding: 100px 24px 60px; }
+      .hero-stats { display: none; }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { height: 300px; }
+      .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+      .b2b-inner { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ───────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#"><img src="BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#produkty">Produkty</a>
+      <a href="#o-nas">O nás</a>
+      <a href="#kontakt">Kontakty</a>
+      <a href="#kontakt" class="nav-cta">Pro lékárny</a>
+    </div>
+    <button class="nav-mobile-btn" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">Registrováno v Pharmdata · CZ &amp; SK trh</div>
+      <h1>Ověřené produkty<br>pro <em>vaši lékárnu</em></h1>
+      <p class="hero-sub">Jsme česko-slovenský distributor zdravotnických prostředků EU původu. Zásobujeme lékárny, nemocnice a soukromé lékaře — s osobním přístupem a spolehlivostí.</p>
+      <div class="hero-actions">
+        <a href="#produkty" class="btn-primary">
+          Prohlédnout produkty
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+        </a>
+        <a href="#kontakt" class="btn-outline">Stát se partnerem</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Produktů v portfoliu</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Lékárenských řetězců</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">EU</div>
+        <div class="stat-label">Certifikované produkty</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Země distribuce</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Lékárenské velkoobchody</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── USP BAR ───────────────────────────────────────────── -->
+<div id="bfy-usp" aria-label="Proč BEAUFY">
+
+  <div class="usp-item">
+    <span class="usp-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18" fill="#eef4fa"/>
+        <path d="M20 8c6.627 0 12 5.373 12 12S26.627 32 20 32 8 26.627 8 20 13.373 8 20 8z" fill="#ddeaf8"/>
+        <path d="M20 11v9l5 3" stroke="#134a8e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 20a7 7 0 1 0 14 0 7 7 0 0 0-14 0z" stroke="#134a8e" stroke-width="1.5" fill="none"/>
+        <path d="M26 14l2-2M14 14l-2-2" stroke="#5C820F" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="1.5" fill="#134a8e"/>
+      </svg>
+    </span>
+    <span class="usp-text">
+      <strong>Registrováno v Pharmdata</strong>
+      Dostupné v celé lékárenské síti ČR a SR.
+    </span>
+  </div>
+
+  <div class="usp-item">
+    <span class="usp-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18" fill="#eef4fa"/>
+        <rect x="9" y="13" width="22" height="14" rx="3" fill="#ddeaf8"/>
+        <path d="M9 16h22" stroke="#134a8e" stroke-width="1.5"/>
+        <path d="M14 21h4M14 24h6" stroke="#134a8e" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="27" cy="22" r="4" fill="#fff" stroke="#5C820F" stroke-width="1.5"/>
+        <path d="M25 22l1.5 1.5L29 20" stroke="#5C820F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="usp-text">
+      <strong>Produkty s EU certifikací</strong>
+      Zdravotnické prostředky vyrobené v Evropě.
+    </span>
+  </div>
+
+  <div class="usp-item">
+    <span class="usp-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18" fill="#eef4fa"/>
+        <path d="M20 10l2.5 5 5.5.8-4 3.9.95 5.5L20 22.8l-4.95 2.4.95-5.5-4-3.9 5.5-.8L20 10z" fill="#ddeaf8" stroke="#134a8e" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M12 28h16" stroke="#5C820F" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M15 31h10" stroke="#5C820F" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+      </svg>
+    </span>
+    <span class="usp-text">
+      <strong>Distribuce do lékáren</strong>
+      Zásobujeme lékárny, nemocnice a ordinace.
+    </span>
+  </div>
+
+  <div class="usp-item">
+    <span class="usp-icon">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18" fill="#eef4fa"/>
+        <rect x="8" y="16" width="16" height="11" rx="2" fill="#ddeaf8" stroke="#134a8e" stroke-width="1.4"/>
+        <path d="M24 19h4l4 4v4h-8V19z" fill="#ddeaf8" stroke="#134a8e" stroke-width="1.4" stroke-linejoin="round"/>
+        <circle cx="13" cy="28.5" r="2" fill="#fff" stroke="#134a8e" stroke-width="1.3"/>
+        <circle cx="27" cy="28.5" r="2" fill="#fff" stroke="#134a8e" stroke-width="1.3"/>
+        <path d="M11 19h5" stroke="#5C820F" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M11 22h3" stroke="#5C820F" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="usp-text">
+      <strong>Rychlé dodávky</strong>
+      Po celé České a Slovenské republice.
+    </span>
+  </div>
+
+</div>
+
+<!-- ── PRODUKTY ──────────────────────────────────────────── -->
+<section class="products" id="produkty">
+  <div class="section-inner">
+    <div class="products-header reveal">
+      <div class="section-label">Portfolio</div>
+      <h2>Značky & <em>produkty</em></h2>
+      <p class="section-desc">Vybíráme produkty s důrazem na kvalitu, dostupnost a přijatelnou cenu. Každý produkt prochází přísnou certifikací.</p>
+    </div>
+    <div class="products-grid">
+
+      <a class="product-card reveal" href="https://www.formoline112.cz" target="_blank" rel="noopener">
+        <div class="product-img">
+          <img src="formoline-4-816x816.jpg" alt="formoline L112 EXTRA">
+          <span class="product-cat">Zdravotnický prostředek III. třídy</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">formoline L112 EXTRA</div>
+          <p class="product-desc">Váže tuky z jídla, snižuje příjem kalorií a přispívá ke snižování LDL cholesterolu. Zdravotnický prostředek pro redukci a kontrolu hmotnosti.</p>
+          <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnický prostředek třídy III. Výrobce: Certmedica International GmbH, DE. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
+        </div>
+      </a>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="laxik-backgr-1-816x681.jpg" alt="Laxík mikroklystýr pro děti">
+          <span class="product-cat">Zdravotnický prostředek</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Laxík — mikroklystýr pro děti</div>
+          <p class="product-desc">Zjemňuje sliznici, uvolňuje a lubrikuje stolici. Šetrné složení s glycerolem, heřmánkem a slézem. Bezpečný pro nejmenší pacienty.</p>
+          <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnický prostředek třídy I. Výrobce: New.Fa.Dem. S.r.l., IT. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="glycerol-backgr-816x681.jpg" alt="Glycerol New.Fa.Dem. pro dospělé">
+          <span class="product-cat">Zdravotnická pomůcka</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Glycerol New.Fa.Dem.</div>
+          <p class="product-desc">Jemný, šetrný a účinný mikroklystýr pro dospělé. Rychlý nástup účinku. Pomáhá přesně tam, kde je potřeba.</p>
+          <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnická pomůcka třídy I. Výrobce: New.Fa.Dem. S.r.l., IT. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="dispogel-flex-small-1200x799.jpg" alt="DISPO GEL horký studený sáček">
+          <span class="product-cat">Zdravotnický prostředek</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">DISPO GEL — horký / studený sáček</div>
+          <p class="product-desc">Pomáhá při bolestech měkkých tkání a svalů, pohmožděninách a drobných poraněních. Opakovaně použitelný gelový sáček.</p>
+          <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnický prostředek třídy I. Výrobce: Dispotech S.r.l., IT. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="dispo-ice-spray-816x588.jpg" alt="DISPO ICE spray chladivý sprej">
+          <span class="product-cat">Zdravotnický prostředek</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">DISPO ICE spray</div>
+          <p class="product-desc">Okamžitě tlumí bolest při poranění svalů, kloubů a šlach. Chladivý sprej pro sportovce i každodenní použití.</p>
+          <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnický prostředek třídy I. Výrobce: Dispotech S.r.l., IT. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="zensen-backgr-816x816.jpg" alt="Ženšen Ginseng Royal Jelly Oral Tonic">
+          <span class="product-cat">Přírodní produkt</span>
+        </div>
+        <div class="product-body">
+          <div class="product-name">ŽENŠEN Ginseng Royal Jelly</div>
+          <p class="product-desc">100% výtažok z kořene ženšenu. Čistě přírodní produkt tradiční čínské medicíny. Posílí obranyschopnost a imunitní systém.</p>
+          <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Doplněk stravy. Výrobce: Kontipro a.s., CZ. Distributor: BEAUFY s.r.o. Není náhradou pestré stravy. Uchovávejte mimo dosah dětí.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────────── -->
+<section class="about" id="o-nas">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#eef4fa"/>
+              <stop offset="100%" style="stop-color:#ddeaf8"/>
+            </linearGradient>
+            <linearGradient id="circle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#134a8e;stop-opacity:.12"/>
+              <stop offset="100%" style="stop-color:#0b2c4a;stop-opacity:.06"/>
+            </linearGradient>
+            <linearGradient id="green-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#5C820F;stop-opacity:.18"/>
+              <stop offset="100%" style="stop-color:#6E9B12;stop-opacity:.08"/>
+            </linearGradient>
+          </defs>
+          <!-- background -->
+          <rect width="480" height="480" rx="24" fill="url(#bg-grad)"/>
+          <!-- decorative circles -->
+          <circle cx="380" cy="100" r="140" fill="url(#circle-grad)"/>
+          <circle cx="80" cy="380" r="100" fill="url(#green-grad)"/>
+          <circle cx="240" cy="240" r="60" fill="none" stroke="#134a8e" stroke-width="1.5" stroke-dasharray="8 6" opacity=".2"/>
+          <!-- CZ+SK map dots suggestion -->
+          <circle cx="200" cy="215" r="5" fill="#134a8e" opacity=".5"/>
+          <circle cx="230" cy="220" r="4" fill="#134a8e" opacity=".4"/>
+          <circle cx="260" cy="218" r="4.5" fill="#134a8e" opacity=".45"/>
+          <circle cx="285" cy="222" r="3.5" fill="#134a8e" opacity=".35"/>
+          <!-- connecting lines -->
+          <line x1="200" y1="215" x2="230" y2="220" stroke="#134a8e" stroke-width="1" opacity=".2"/>
+          <line x1="230" y1="220" x2="260" y2="218" stroke="#134a8e" stroke-width="1" opacity=".2"/>
+          <line x1="260" y1="218" x2="285" y2="222" stroke="#134a8e" stroke-width="1" opacity=".2"/>
+          <!-- central icon: cross / health symbol -->
+          <rect x="224" y="200" width="32" height="10" rx="5" fill="#134a8e" opacity=".7"/>
+          <rect x="235" y="189" width="10" height="32" rx="5" fill="#134a8e" opacity=".7"/>
+          <!-- pharmdata badge -->
+          <rect x="120" y="300" width="240" height="60" rx="14" fill="white" opacity=".7"/>
+          <text x="240" y="325" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#0b2c4a" opacity=".8">Registrováno v Pharmdata s.r.o.</text>
+          <text x="240" y="346" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#5a6a7e" opacity=".7">Dostupné ve většině lékárenských sítí CZ &amp; SK</text>
+          <!-- top label -->
+          <rect x="148" y="110" width="184" height="40" rx="20" fill="#0b2c4a" opacity=".08"/>
+          <text x="240" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#0b2c4a" opacity=".7">BEAUFY s.r.o. · Praha</text>
+        </svg>
+      </div>
+      <div class="about-content reveal">
+        <div class="section-label">O nás</div>
+        <h2>Osobní přístup.<br><em>Ověřená kvalita.</em></h2>
+        <p class="section-desc" style="margin-bottom:0">BEAUFY s.r.o. je česko-slovenský dodavatel zdravotnických prostředků. Soustředíme se na místní výrobky a produkty EU původu s důrazem na kvalitu, dostupnost a přijatelnou cenu.</p>
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="value-title">EU certifikace</div>
+            <div class="value-text">Všechny produkty splňují přísné evropské normy a jsou registrovány jako zdravotnické prostředky.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="value-title">Osobní přístup</div>
+            <div class="value-text">Obchodní reprezentanti zajišťují přímý kontakt a dodávky přímo ze skladu.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div class="value-title">Pharmdata</div>
+            <div class="value-text">Registrace v Pharmdata zaručuje dostupnost ve většině lékárenských sítí v ČR a SR.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div class="value-title">Komplexní distribuce</div>
+            <div class="value-text">Lékárny, nemocnice i soukromí lékaři — dodáváme tam, kde naše produkty nejvíce pomáhají.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERS ──────────────────────────────────────────── -->
+<div class="partners">
+  <div class="partners-inner reveal">
+    <p class="partners-title">Naše produkty najdete v těchto lékárnách</p>
+    <div class="partners-logos">
+      <div class="partner-logo"><img src="logos/logo-drmax.png" alt="Dr.Max Lékárny"></div>
+      <div class="partner-logo"><img src="logos/logo-benu.png" alt="BENU Lékárny"></div>
+      <div class="partner-logo"><img src="logos/logo-alza.png" alt="Alza.cz"></div>
+      <div class="partner-logo"><img src="logos/logo-mojelekarna.png" alt="MojeLékárna.cz"></div>
+      <div class="partner-logo"><img src="logos/logo-giga.png" alt="GigaLékárna.cz"></div>
+      <div class="partner-logo"><img src="logos/logo-magistra.png" alt="Magistra Lékárny"></div>
+      <div class="partner-logo"><img src="logos/logo-ave.png" alt="Lékárna AVE"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── VELKOSKLADY ──────────────────────────────────────── -->
+<div class="wholesale">
+  <div class="wholesale-inner reveal">
+    <p class="wholesale-title">Dodáváme přes tyto lékárenské velkoobchody</p>
+    <div class="wholesale-logos">
+      <div class="wholesale-logo"><img src="logos/logo-phoenix.svg" alt="Phoenix Pharma"></div>
+      <div class="wholesale-logo"><img src="logos/logo-pharmos.svg" alt="Pharmos"></div>
+      <div class="wholesale-logo"><img src="logos/logo-alliance.png" alt="Alliance Healthcare"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── B2B CTA ────────────────────────────────────────────── -->
+<section class="b2b-cta">
+  <div class="b2b-inner">
+    <div class="b2b-text reveal">
+      <h2>Zásobujeme lékárny<br><em>napříč celou ČR a SR</em></h2>
+      <p>Nabízíme přímé dodávky ze skladu, osobní obchodní zastoupení a zboží registrované v PharmData — dostupné ve většině lékárenských sítí.</p>
+    </div>
+    <div class="b2b-actions reveal">
+      <a href="#kontakt" class="btn-white">Kontaktovat obchodníka</a>
+      <a href="mailto:info@beaufy.eu" class="btn-ghost">Poslat poptávku</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ───────────────────────────────────────────── -->
+<section class="contact" id="kontakt">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label reveal">Kontakty</div>
+        <h2 class="reveal">Pojďme<br><em>spolupracovat</em></h2>
+        <p class="section-desc reveal" style="margin-bottom:0">Rádi vám odpovíme na dotazy ohledně produktů, podmínek spolupráce nebo objednávek.</p>
+        <div class="contact-persons">
+
+          <div class="contact-person reveal">
+            <div class="contact-person-photo"><img src="jarka-small-160x160.png" alt="Jaroslava Dobrá"></div>
+            <div class="contact-person-info">
+              <h4>Mgr. Jaroslava Dobrá</h4>
+              <span>Key Account Manager</span>
+              <div class="contact-person-links">
+                <a href="tel:+420734672527">+420 734 672 527</a>
+                <a href="mailto:jaroslava.dobra@beaufy.eu">jaroslava.dobra@beaufy.eu</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-person reveal">
+            <div class="contact-person-photo"><img src="eva-160x160.png" alt="Eva Otavová"></div>
+            <div class="contact-person-info">
+              <h4>Eva Otavová</h4>
+              <span>Key Account Manager</span>
+              <div class="contact-person-links">
+                <a href="tel:+420733189921">+420 733 189 921</a>
+                <a href="mailto:eva.otavova@beaufy.eu">eva.otavova@beaufy.eu</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-person reveal">
+            <div class="contact-person-photo"><img src="marketa-160x160.png" alt="Markéta Tichá"></div>
+            <div class="contact-person-info">
+              <h4>Markéta Tichá</h4>
+              <span>Back Office</span>
+              <div class="contact-person-links">
+                <a href="tel:+420799022658">+420 799 022 658</a>
+                <a href="mailto:info@beaufy.eu">info@beaufy.eu</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-person reveal" style="background: var(--bg2);">
+            <div style="flex-shrink:0; width:52px; height:52px; border-radius:50%; background:var(--bg); display:flex; align-items:center; justify-content:center;">
+              <svg width="22" height="22" fill="none" stroke="var(--navy)" stroke-width="1.8" viewBox="0 0 24 24" opacity=".6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="contact-person-info">
+              <h4>BEAUFY s.r.o.</h4>
+              <span>Fakturační adresa</span>
+              <div class="contact-person-links">
+                <a href="#">U Trati 886/52, 100 00 Praha 10 – Strašnice</a>
+                <a href="#">IČ: 06867031 &nbsp;|&nbsp; DIČ: CZ06867031</a>
+                <a href="mailto:fakturace@beaufy.eu">fakturace@beaufy.eu</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:28px" class="reveal">
+          <p style="font-size:.85rem; color:var(--muted); margin-bottom:12px; font-weight:600">Dokumenty ke stažení</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px">
+            <a href="docs/POS-Dispo-gel.pdf" target="_blank" style="background:var(--bg);padding:8px 16px;border-radius:99px;font-size:.8rem;color:var(--navy);text-decoration:none;font-weight:500;">Prohlášení o shodě – DISPO GEL</a>
+            <a href="docs/POS_laxik.pdf" target="_blank" style="background:var(--bg);padding:8px 16px;border-radius:99px;font-size:.8rem;color:var(--navy);text-decoration:none;font-weight:500;">Prohlášení o shodě – Laxík</a>
+            <a href="docs/POS_glycerol.pdf" target="_blank" style="background:var(--bg);padding:8px 16px;border-radius:99px;font-size:.8rem;color:var(--navy);text-decoration:none;font-weight:500;">Prohlášení o shodě – Glycerol</a>
+            <a href="docs/CERT_CE_26556_220321_termica.pdf" target="_blank" style="background:var(--bg);padding:8px 16px;border-radius:99px;font-size:.8rem;color:var(--navy);text-decoration:none;font-weight:500;">Certifikát – garance kvality DISPOTECH</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <h3>Napište nám</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Jméno a příjmení</label>
+            <input type="text" placeholder="Vaše jméno">
+          </div>
+          <div class="form-group">
+            <label>Název lékárny / instituce</label>
+            <input type="text" placeholder="Název organizace">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="vas@email.cz">
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="tel" placeholder="+420 xxx xxx xxx">
+        </div>
+        <div class="form-group">
+          <label>Zájem o produkt</label>
+          <select>
+            <option value="">Vyberte produkt...</option>
+            <option>formoline L112 EXTRA</option>
+            <option>Laxík – mikroklystýr pro děti</option>
+            <option>Glycerol New.Fa.Dem.</option>
+            <option>DISPO GEL</option>
+            <option>DISPO ICE spray</option>
+            <option>ŽENŠEN Ginseng Royal Jelly</option>
+            <option>Celé portfolio</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Zpráva</label>
+          <textarea placeholder="Jak vám můžeme pomoci? Uveďte např. objednávkové množství nebo dotazy k produktům..."></textarea>
+        </div>
+        <div class="form-gdpr">
+          <input type="checkbox" id="gdpr-consent" required>
+          <label for="gdpr-consent">Souhlasím se <a href="zasady-ochrany-osobnich-udaju.html" target="_blank">zpracováním osobních údajů</a> za účelem odpovědi na mou poptávku. Správce údajů: BEAUFY s.r.o., U Trati 886/52, Praha 10. Údaje nebudou předávány třetím stranám.</label>
+        </div>
+        <button class="form-submit">Odeslat poptávku →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHARMDATA STRIP ────────────────────────────────────── -->
+<div class="pharmdata-strip">
+  <div class="pharmdata-inner">
+    <p><strong>Naše produkty jsou dostupné</strong> ve většině lékárenských sítí díky registraci v databázi Pharmdata s.r.o.</p>
+    <span class="pharmdata-badge"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" style="margin-right:4px"><path d="M20 6 9 17l-5-5"/></svg> Pharmdata registrace</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="BEAUFY_logo.png" alt="BEAUFY" class="footer-logo-img">
+      <p>Česko-slovenský distributor zdravotnických prostředků EU původu. Zásobujeme lékárny, nemocnice a soukromé lékaře s osobním přístupem.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkty</h5>
+      <ul>
+        <li><a href="#">formoline L112 EXTRA</a></li>
+        <li><a href="#">Laxík mikroklystýr</a></li>
+        <li><a href="#">Glycerol New.Fa.Dem.</a></li>
+        <li><a href="#">DISPO GEL</a></li>
+        <li><a href="#">DISPO ICE spray</a></li>
+        <li><a href="#">ŽENŠEN Ginseng Royal Jelly</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Společnost</h5>
+      <ul>
+        <li><a href="#o-nas">O nás</a></li>
+        <li><a href="#kontakt">Kontakty</a></li>
+        <li><a href="#kontakt">Pro lékárny</a></li>
+        <li><a href="#kontakt">Dokumenty</a></li>
+        <li><a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <ul>
+        <li><a href="tel:+420799022658">+420 799 022 658</a></li>
+        <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
+        <li><a href="#">U Trati 886/52</a></li>
+        <li><a href="#">Praha 10 – Strašnice</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 BEAUFY s.r.o. &nbsp;·&nbsp; IČ: 06867031 &nbsp;·&nbsp; DIČ: CZ06867031 &nbsp;·&nbsp; Zapsáno v OR vedeném Městským soudem v Praze, odd. C, vl. 289395</p>
+    <div class="footer-legal">
+      <a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="mailto:info@beaufy.eu">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── COOKIE BANNER ──────────────────────────────────────── -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Souhlas s cookies">
+  <p>Tento web používá soubory cookies Google Fonts pro načítání písem. Více v <a href="zasady-ochrany-osobnich-udaju.html">zásadách ochrany osobních údajů</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" id="cookieAccept">Přijmout</button>
+    <button class="cookie-reject" id="cookieReject">Odmítnout</button>
+  </div>
+</div>
+
+<!-- ── SCROLL TO TOP ─────────────────────────────────────── -->
+<button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => { links.classList.toggle('open'); });
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Cookie banner
+  const banner = document.getElementById('cookieBanner');
+  const cookieChoice = localStorage.getItem('cookieChoice');
+  if (!cookieChoice) {
+    setTimeout(() => banner.classList.add('visible'), 800);
+  }
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('cookieChoice', 'accepted');
+    banner.classList.remove('visible');
+  });
+  document.getElementById('cookieReject').addEventListener('click', () => {
+    localStorage.setItem('cookieChoice', 'rejected');
+    banner.classList.remove('visible');
+  });
+
+  // Form submit with GDPR validation
+  document.querySelector('.form-submit').addEventListener('click', function(e) {
+    e.preventDefault();
+    const gdpr = document.getElementById('gdpr-consent');
+    if (!gdpr.checked) {
+      gdpr.closest('.form-gdpr').style.outline = '2px solid #c0392b';
+      gdpr.closest('.form-gdpr').style.borderRadius = '6px';
+      gdpr.closest('.form-gdpr').style.padding = '4px';
+      setTimeout(() => {
+        gdpr.closest('.form-gdpr').style.outline = '';
+        gdpr.closest('.form-gdpr').style.padding = '';
+      }, 3000);
+      return;
+    }
+    this.textContent = 'Odesláno — brzy se ozveme!';
+    this.style.background = '#4a8c3f';
+    setTimeout(() => { this.textContent = 'Odeslat poptávku →'; this.style.background = ''; }, 4000);
+  });
+</script>
+</body>
+</html>
+

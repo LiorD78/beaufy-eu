@@ -189,15 +189,23 @@
 
     /* ── STORY ── */
     .story {
-      background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 100%);
-      padding: 96px 40px;
+      position: relative; overflow: hidden;
+      height: 55.8vw; min-height: 520px;
+      display: flex; align-items: center;
+      padding: 0;
+    }
+    .story-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: url('/story-bg.jpg') center center / cover no-repeat;
     }
     .story-inner {
-      max-width: 1100px; margin: 0 auto;
+      max-width: 1200px; margin: 0 auto;
+      width: 100%;
       position: relative; z-index: 1;
+      padding: 60px 24px;
     }
-    .story-content { padding-left: 24px; max-width: 680px; }
-    .story-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 16px; }
+    .story-content { max-width: 560px; }
+    .story-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 16px; }
     .story h2 {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
@@ -206,14 +214,16 @@
       background: none; -webkit-text-fill-color: #fff;
     }
     .story h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
-    .story-body { display: flex; flex-direction: column; gap: 22px; }
-    .story-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(255,255,255,.78); }
-    .story-body p strong { color: rgba(255,255,255,.95); font-weight: 600; }
-    .story-quote { border-left: 3px solid #6ee7f7; padding-left: 24px; margin: 4px 0; }
+    .story-body { display: flex; flex-direction: column; gap: 20px; }
+    .story-body p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.82); }
+    .story-body p strong { color: #fff; font-weight: 600; }
+    .story-quote { border-left: 3px solid #6ee7f7; padding-left: 20px; margin: 4px 0; }
     .story-quote p { color: rgba(255,255,255,.92); font-style: italic; }
     @media (max-width: 900px) {
-      .story { padding: 64px 24px; }
-      .story-content { padding-left: 0; max-width: 100%; }
+      .story { height: auto; min-height: unset; padding: 0; }
+      .story-bg { background-position: 70% center; }
+      .story-inner { padding: 64px 24px; }
+      .story-content { max-width: 100%; }
     }
 
         /* ── DISCLAIMER ── */
@@ -446,6 +456,7 @@
 
 <!-- STORY -->
 <section class="story">
+  <div class="story-bg"></div>
   <div class="story-inner">
     <div class="story-content">
       <div class="story-label reveal">Náš příběh</div>

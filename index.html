@@ -436,6 +436,25 @@
     .partner-logo:hover { opacity: 1; }
     .partner-logo img { width: 140px; height: auto; display: block; }
 
+
+    /* ── WHOLESALE ───────────────────────────────────────── */
+    .wholesale { background: var(--bg); padding: 48px 40px; border-top: 1px solid var(--border); }
+    .wholesale-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .wholesale-title {
+      font-size: .78rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 36px;
+    }
+    .wholesale-logos {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 24px 60px;
+    }
+    .wholesale-logo {
+      display: flex; align-items: center; justify-content: center;
+      opacity: .7; transition: opacity .2s ease;
+    }
+    .wholesale-logo:hover { opacity: 1; }
+    .wholesale-logo img { width: 160px; height: auto; display: block; }
+
     /* ── B2B CTA ─────────────────────────────────────────── */
     .b2b-cta {
       background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
@@ -995,6 +1014,18 @@
       <div class="partner-logo"><img src="logos/logo-giga.png" alt="GigaLékárna.cz"></div>
       <div class="partner-logo"><img src="logos/logo-magistra.png" alt="Magistra Lékárny"></div>
       <div class="partner-logo"><img src="logos/logo-ave.png" alt="Lékárna AVE"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── VELKOSKLADY ──────────────────────────────────────── -->
+<div class="wholesale">
+  <div class="wholesale-inner reveal">
+    <p class="wholesale-title">Dodáváme přes tyto velkosklady</p>
+    <div class="wholesale-logos">
+      <div class="wholesale-logo"><img src="logos/logo-phoenix.png" alt="Phoenix Pharma"></div>
+      <div class="wholesale-logo"><img src="logos/logo-pharmos.svg" alt="Pharmos"></div>
+      <div class="wholesale-logo"><img src="logos/logo-alliance.png" alt="Alliance Healthcare"></div>
     </div>
   </div>
 </div>

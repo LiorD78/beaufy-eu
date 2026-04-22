@@ -185,8 +185,8 @@
     @media (max-width: 480px)  { #bfy-usp { grid-template-columns: repeat(2,1fr); } }
 
     #bfy-usp .usp-item {
-      display: flex; align-items: center; gap: 10px;
-      padding: 14px 20px; text-decoration: none; color: #1a2533;
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 24px; text-decoration: none; color: #1a2533;
       border-right: 1px solid var(--border);
       transition: transform .25s ease, background .25s ease;
     }
@@ -198,26 +198,26 @@
     }
 
     #bfy-usp .usp-icon {
-      flex: 0 0 52px; width: 52px; height: 52px;
+      flex: 0 0 60px; width: 60px; height: 60px;
       display: flex; align-items: center; justify-content: center;
       transition: transform .25s ease, filter .25s ease;
     }
     #bfy-usp .usp-icon svg {
-      width: 40px; height: 40px;
+      width: 48px; height: 48px;
       transform-origin: center bottom;
       transition: transform .25s ease, filter .25s ease;
     }
     #bfy-usp .usp-text {
       flex: 1; min-width: 0; line-height: 1.3;
-      font-size: .82rem; color: var(--muted);
+      font-size: .85rem; color: var(--muted);
       transition: transform .25s ease;
     }
     #bfy-usp .usp-text strong {
-      display: block; font-weight: 700; font-size: .95rem;
+      display: block; font-weight: 700; font-size: 1rem;
       background: linear-gradient(90deg, var(--usp-blue-l) 0%, var(--usp-blue-m) 100%);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
     @media (hover: hover) {
       #bfy-usp .usp-item:hover { background: var(--bg); }
@@ -228,11 +228,11 @@
       #bfy-usp .usp-item:hover .usp-text { transform: translateX(4px); }
     }
     @media (max-width: 600px) {
-      #bfy-usp .usp-icon { flex: 0 0 40px; width: 40px; height: 40px; }
-      #bfy-usp .usp-icon svg { width: 32px; height: 32px; }
-      #bfy-usp .usp-text { font-size: .76rem; }
-      #bfy-usp .usp-text strong { font-size: .85rem; }
-      #bfy-usp .usp-item { padding: 12px 12px; gap: 8px; }
+      #bfy-usp .usp-icon { flex: 0 0 46px; width: 46px; height: 46px; }
+      #bfy-usp .usp-icon svg { width: 36px; height: 36px; }
+      #bfy-usp .usp-text { font-size: .78rem; }
+      #bfy-usp .usp-text strong { font-size: .88rem; }
+      #bfy-usp .usp-item { padding: 12px 10px; gap: 8px; }
     }
     @media (prefers-reduced-motion: reduce) {
       #bfy-usp .usp-icon svg, #bfy-usp .usp-text { transition: none; transform: none; }

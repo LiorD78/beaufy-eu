@@ -217,7 +217,9 @@
     /* ── MOBILE ── */
     @media (max-width: 900px) {
       section { padding: 56px 24px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 70px 24px 48px; }
+      .hero { height: auto !important; min-height: 100svh; }
+      .hero-bg { background-position: 65% top !important; background-size: cover !important; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 100px 24px 48px; }
       .hero-img { order: -1; }
       .hero-img img { max-height: 280px; }
       .info-grid { grid-template-columns: 1fr; }

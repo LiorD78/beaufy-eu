@@ -35,8 +35,24 @@
     /* NAV — identical to laxik */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
     nav.scrolled { padding: 8px 24px; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 10px 24px; border-radius: 99px; background: rgba(11,44,74,.85); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1); transition: all .4s cubic-bezier(.4,0,.2,1); }
-    nav.scrolled .nav-inner { background: rgba(255,255,255,.92); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border-color: rgba(255,255,255,.6); box-shadow: 0 4px 20px rgba(11,44,74,.12); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 20px 10px 24px; border-radius: 99px;
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid rgba(255,255,255,.45);
+      box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1);
+      transition: all .4s cubic-bezier(.4,0,.2,1);
+    }
+    nav.scrolled .nav-inner {
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(32px) saturate(200%);
+      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      border-color: rgba(255,255,255,.6);
+      box-shadow: 0 0 0 0.5px rgba(255,255,255,.4) inset, 0 1px 0 rgba(255,255,255,.5) inset, 0 4px 20px rgba(11,44,74,.12), 0 1px 4px rgba(11,44,74,.06);
+    }
     .nav-logo-img { height: 22px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; transition: filter .35s ease; }
     nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
     .nav-links { display: flex; gap: 4px; align-items: center; }
@@ -53,11 +69,20 @@
     /* HERO — pink/rose accent pro Glycerol */
     .hero {
       min-height: 60vh;
-      background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 60%, #2a5fa8 100%);
       display: flex; align-items: center; padding-top: 90px;
       position: relative; overflow: hidden;
     }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(236,72,153,.08) 0%, transparent 60%); }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('/glycerol-hero.jpg') center/cover no-repeat;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(105deg,
+        rgba(11,44,74,.88) 0%,
+        rgba(80,20,60,.75) 50%,
+        rgba(11,44,74,.3) 100%);
+    }
     .hero-inner { max-width: 1200px; margin: 0 auto; padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
     .hero-text { color: #fff; }
     .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
@@ -183,6 +208,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Glycerol</div>
@@ -200,7 +226,7 @@
       </div>
     </div>
     <div class="hero-img reveal">
-      <img src="/glycerol-newfadem.jpg" alt="Glycerol New.Fa.Dem.">
+      <img src="/glycerol-ampulka.png" alt="Glycerol New.Fa.Dem.">
     </div>
   </div>
 </section>
@@ -216,7 +242,7 @@
     <div class="variants-grid" style="max-width:360px">
       <div class="variant-card reveal">
         <div class="variant-img">
-          <img src="/glycerol-newfadem.jpg" alt="Glycerol 6x9g">
+          <img src="/glycerol-ampulka.png" alt="Glycerol New.Fa.Dem. 6 × 9 g">
         </div>
         <div class="variant-name">Glycerol 6 × 9 g</div>
         <div class="variant-apa">Zdravotnický prostředek třídy I</div>

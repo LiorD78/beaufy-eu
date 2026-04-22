@@ -470,6 +470,60 @@
     .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
     .footer-legal a:hover { color: rgba(255,255,255,.8); }
 
+    /* ── PRODUCT DISCLAIMER ──────────────────────────────────── */
+    .product-disclaimer {
+      font-size: .72rem; color: var(--muted); margin-top: 12px;
+      padding-top: 10px; border-top: 1px solid var(--border);
+      line-height: 1.4;
+    }
+
+    /* ── GDPR CHECKBOX ───────────────────────────────────────── */
+    .form-gdpr {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-bottom: 20px;
+    }
+    .form-gdpr input[type="checkbox"] {
+      width: 16px; height: 16px; flex-shrink: 0;
+      margin-top: 2px; accent-color: var(--green); cursor: pointer;
+    }
+    .form-gdpr label {
+      font-size: .8rem; color: var(--muted); line-height: 1.5; cursor: pointer;
+    }
+    .form-gdpr label a { color: var(--blue); text-decoration: underline; }
+
+    /* ── COOKIE BANNER ───────────────────────────────────────── */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+      background: var(--navy); padding: 18px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+      box-shadow: 0 -4px 24px rgba(0,0,0,.18);
+      transform: translateY(100%);
+      transition: transform .4s cubic-bezier(.4,0,.2,1);
+    }
+    .cookie-banner.visible { transform: translateY(0); }
+    .cookie-banner p {
+      color: rgba(255,255,255,.82); font-size: .85rem; line-height: 1.55;
+      flex: 1; min-width: 220px; margin: 0;
+    }
+    .cookie-banner p a { color: #a8d87a; text-decoration: underline; }
+    .cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
+    .cookie-accept {
+      padding: 9px 22px; border-radius: 99px;
+      background: var(--green); color: #fff;
+      font-size: .85rem; font-weight: 600; border: none; cursor: pointer;
+      transition: background .2s;
+    }
+    .cookie-accept:hover { background: var(--green-br); }
+    .cookie-reject {
+      padding: 9px 22px; border-radius: 99px;
+      background: transparent; color: rgba(255,255,255,.65);
+      font-size: .85rem; font-weight: 500;
+      border: 1px solid rgba(255,255,255,.25); cursor: pointer;
+      transition: all .2s;
+    }
+    .cookie-reject:hover { color: #fff; border-color: rgba(255,255,255,.5); }
+
     /* ── SCROLL TO TOP ───────────────────────────────────── */
     .scroll-top {
       position: fixed; bottom: 28px; right: 28px; z-index: 99;
@@ -613,6 +667,7 @@
           <div class="product-name">formoline L112 EXTRA</div>
           <p class="product-desc">Váže tuky z jídla, snižuje příjem kalorií a přispívá ke snižování LDL cholesterolu. Zdravotnický prostředek pro redukci a kontrolu hmotnosti.</p>
           <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnický prostředek třídy III. Výrobce: Certmedica International GmbH, DE. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
         </div>
       </a>
 
@@ -625,6 +680,7 @@
           <div class="product-name">Laxík — mikroklystýr pro děti</div>
           <p class="product-desc">Zjemňuje sliznici, uvolňuje a lubrikuje stolici. Šetrné složení s glycerolem, heřmánkem a slézem. Bezpečný pro nejmenší pacienty.</p>
           <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnický prostředek třídy I. Výrobce: New.Fa.Dem. S.r.l., IT. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
         </div>
       </div>
 
@@ -637,6 +693,7 @@
           <div class="product-name">Glycerol New.Fa.Dem.</div>
           <p class="product-desc">Jemný, šetrný a účinný mikroklystýr pro dospělé. Rychlý nástup účinku. Pomáhá přesně tam, kde je potřeba.</p>
           <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnická pomůcka třídy I. Výrobce: New.Fa.Dem. S.r.l., IT. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
         </div>
       </div>
 
@@ -649,6 +706,7 @@
           <div class="product-name">DISPO GEL — horký / studený sáček</div>
           <p class="product-desc">Pomáhá při bolestech měkkých tkání a svalů, pohmožděninách a drobných poraněních. Opakovaně použitelný gelový sáček.</p>
           <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnický prostředek třídy I. Výrobce: Dispotech S.r.l., IT. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
         </div>
       </div>
 
@@ -661,6 +719,7 @@
           <div class="product-name">DISPO ICE spray</div>
           <p class="product-desc">Okamžitě tlumí bolest při poranění svalů, kloubů a šlach. Chladivý sprej pro sportovce i každodenní použití.</p>
           <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Zdravotnický prostředek třídy I. Výrobce: Dispotech S.r.l., IT. Distributor: BEAUFY s.r.o. Před použitím si přečtěte návod k použití.</p>
         </div>
       </div>
 
@@ -673,6 +732,7 @@
           <div class="product-name">ŽENŠEN Ginseng Royal Jelly</div>
           <p class="product-desc">100% výtažok z kořene ženšenu. Čistě přírodní produkt tradiční čínské medicíny. Posílí obranyschopnost a imunitní systém.</p>
           <span class="product-link">Více informací <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></span>
+          <p class="product-disclaimer">Doplněk stravy. Výrobce: Kontipro a.s., CZ. Distributor: BEAUFY s.r.o. Není náhradou pestré stravy. Uchovávejte mimo dosah dětí.</p>
         </div>
       </div>
 
@@ -898,6 +958,10 @@
           <label>Zpráva</label>
           <textarea placeholder="Jak vám můžeme pomoci? Uveďte např. objednávkové množství nebo dotazy k produktům..."></textarea>
         </div>
+        <div class="form-gdpr">
+          <input type="checkbox" id="gdpr-consent" required>
+          <label for="gdpr-consent">Souhlasím se <a href="zasady-ochrany-osobnich-udaju.html" target="_blank">zpracováním osobních údajů</a> za účelem odpovědi na mou poptávku. Správce údajů: BEAUFY s.r.o., U Trati 886/52, Praha 10. Údaje nebudou předávány třetím stranám.</label>
+        </div>
         <button class="form-submit">Odeslat poptávku →</button>
       </div>
     </div>
@@ -937,6 +1001,7 @@
         <li><a href="#kontakt">Kontakty</a></li>
         <li><a href="#kontakt">Pro lékárny</a></li>
         <li><a href="#kontakt">Dokumenty</a></li>
+        <li><a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -950,13 +1015,22 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 BEAUFY s.r.o. &nbsp;·&nbsp; IČ: 06867031 &nbsp;·&nbsp; DIČ: CZ06867031</p>
+    <p>© 2026 BEAUFY s.r.o. &nbsp;·&nbsp; IČ: 06867031 &nbsp;·&nbsp; DIČ: CZ06867031 &nbsp;·&nbsp; Zapsáno v OR vedeném Městským soudem v Praze, odd. C, vl. 274747</p>
     <div class="footer-legal">
-      <a href="#">Ochrana osobních údajů</a>
-      <a href="#">Podmínky použití</a>
+      <a href="zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="mailto:info@beaufy.eu">Kontakt</a>
     </div>
   </div>
 </footer>
+
+<!-- ── COOKIE BANNER ──────────────────────────────────────── -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Souhlas s cookies">
+  <p>Tento web používá soubory cookies Google Fonts pro načítání písem. Více v <a href="zasady-ochrany-osobnich-udaju.html">zásadách ochrany osobních údajů</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" id="cookieAccept">Přijmout</button>
+    <button class="cookie-reject" id="cookieReject">Odmítnout</button>
+  </div>
+</div>
 
 <!-- ── SCROLL TO TOP ─────────────────────────────────────── -->
 <button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
@@ -972,9 +1046,7 @@
   // Mobile nav toggle
   const toggle = document.getElementById('navToggle');
   const links  = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
-  });
+  toggle.addEventListener('click', () => { links.classList.toggle('open'); });
   links.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => links.classList.remove('open'));
   });
@@ -990,9 +1062,35 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Form submit
+  // Cookie banner
+  const banner = document.getElementById('cookieBanner');
+  const cookieChoice = localStorage.getItem('cookieChoice');
+  if (!cookieChoice) {
+    setTimeout(() => banner.classList.add('visible'), 800);
+  }
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('cookieChoice', 'accepted');
+    banner.classList.remove('visible');
+  });
+  document.getElementById('cookieReject').addEventListener('click', () => {
+    localStorage.setItem('cookieChoice', 'rejected');
+    banner.classList.remove('visible');
+  });
+
+  // Form submit with GDPR validation
   document.querySelector('.form-submit').addEventListener('click', function(e) {
     e.preventDefault();
+    const gdpr = document.getElementById('gdpr-consent');
+    if (!gdpr.checked) {
+      gdpr.closest('.form-gdpr').style.outline = '2px solid #c0392b';
+      gdpr.closest('.form-gdpr').style.borderRadius = '6px';
+      gdpr.closest('.form-gdpr').style.padding = '4px';
+      setTimeout(() => {
+        gdpr.closest('.form-gdpr').style.outline = '';
+        gdpr.closest('.form-gdpr').style.padding = '';
+      }, 3000);
+      return;
+    }
     this.textContent = 'Odesláno — brzy se ozveme!';
     this.style.background = '#4a8c3f';
     setTimeout(() => { this.textContent = 'Odeslat poptávku →'; this.style.background = ''; }, 4000);

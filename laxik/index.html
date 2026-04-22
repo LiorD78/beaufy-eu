@@ -78,16 +78,20 @@
     }
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(105deg,
-        rgba(11,44,74,.88) 0%,
-        rgba(19,74,142,.72) 45%,
-        rgba(11,44,74,.35) 100%);
+      background:
+        linear-gradient(to right,
+          rgba(11,44,74,1) 0%,
+          rgba(11,44,74,.98) 30%,
+          rgba(11,44,74,.85) 50%,
+          rgba(11,44,74,.3) 70%,
+          rgba(11,44,74,0) 100%);
     }
     .hero-inner {
-      max-width: 1200px; margin: 0 auto; padding: 60px 40px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+      display: grid; grid-template-columns: minmax(auto, 620px);
       position: relative; z-index: 2;
     }
+    .hero-img { display: none; }
     .hero-text { color: #fff; }
     .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
     .hero-breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
@@ -262,9 +266,7 @@
         <a href="#informace" class="btn-outline-white">Informace o produktu</a>
       </div>
     </div>
-    <div class="hero-img reveal">
-      <img src="/laxik-6x3.png" alt="Laxík mikroklystýr pro děti">
-    </div>
+    
   </div>
 </section>
 

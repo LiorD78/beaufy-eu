@@ -218,10 +218,16 @@
     @media (max-width: 900px) {
       section { padding: 56px 24px; }
       .hero { height: auto !important; min-height: 100svh; }
-      .hero-bg { background-position: right 10% !important; background-size: cover !important; }
+      .hero-bg {
+        background-position: 60% top !important;
+        background-size: cover !important;
+      }
       .hero-bg::after {
-        background:
-          rgba(11,44,74,.96) !important;
+        background: linear-gradient(to bottom,
+          rgba(11,44,74,.92) 0%,
+          rgba(11,44,74,.85) 55%,
+          rgba(11,44,74,.5) 75%,
+          rgba(11,44,74,.2) 100%) !important;
       }
       .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 100px 24px 48px; }
       .hero-img { order: -1; }

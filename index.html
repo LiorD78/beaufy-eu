@@ -222,7 +222,11 @@
     .stat-card {
       background: rgba(255,255,255,.1); backdrop-filter: blur(8px);
       border: 1px solid rgba(255,255,255,.18); border-radius: 16px;
-      padding: 20px 24px;
+      padding: 20px 24px; text-decoration: none; display: block;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .stat-card:hover {
+      background: rgba(255,255,255,.18); transform: translateY(-2px);
     }
     .stat-card:last-child { grid-column: 1 / -1; }
     .stat-num {
@@ -231,6 +235,9 @@
       margin-bottom: 4px;
     }
     .stat-label { font-size: .8rem; color: rgba(255,255,255,.7); }
+    a.stat-card .stat-num, a.stat-card .stat-label { color: inherit; }
+    a.stat-card .stat-num { color: #fff; }
+    a.stat-card .stat-label { color: rgba(255,255,255,.7); }
 
     /* ── USP BAR (Truckmall style) ───────────────────────────── */
     #bfy-usp {
@@ -746,26 +753,26 @@
       </div>
     </div>
     <div class="hero-stats">
-      <div class="stat-card">
+      <a href="#produkty" class="stat-card">
         <div class="stat-num">6+</div>
         <div class="stat-label">Produktů v portfoliu</div>
-      </div>
-      <div class="stat-card">
+      </a>
+      <a href="#partneri" class="stat-card">
         <div class="stat-num">7+</div>
         <div class="stat-label">Lékárenských řetězců</div>
-      </div>
-      <div class="stat-card">
+      </a>
+      <a href="#o-nas" class="stat-card">
         <div class="stat-num">EU</div>
         <div class="stat-label">Certifikované produkty</div>
-      </div>
-      <div class="stat-card">
+      </a>
+      <a href="#kontakt" class="stat-card">
         <div class="stat-num">2</div>
         <div class="stat-label">Země distribuce</div>
-      </div>
-      <div class="stat-card">
+      </a>
+      <a href="#velkoobchody" class="stat-card">
         <div class="stat-num">3</div>
         <div class="stat-label">Lékárenské velkoobchody</div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1013,7 +1020,7 @@
 </section>
 
 <!-- ── PARTNERS ──────────────────────────────────────────── -->
-<div class="partners">
+<div class="partners" id="partneri">
   <div class="partners-inner reveal">
     <p class="partners-title">Naše produkty najdete v těchto lékárnách</p>
     <div class="partners-logos">
@@ -1029,7 +1036,7 @@
 </div>
 
 <!-- ── VELKOSKLADY ──────────────────────────────────────── -->
-<div class="wholesale">
+<div class="wholesale" id="velkoobchody">
   <div class="wholesale-inner reveal">
     <p class="wholesale-title">Dodáváme přes tyto lékárenské velkoobchody</p>
     <div class="wholesale-logos">

@@ -264,26 +264,10 @@
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 80px; align-items: center;
     }
-    .about-img-wrap {
-      position: relative; border-radius: 24px; overflow: hidden;
-      height: 480px;
+    .about-visual {
+      border-radius: 24px; overflow: hidden;
+      height: 480px; display: flex; align-items: center; justify-content: center;
     }
-    .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .about-img-wrap::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(19,74,142,.05) 0%, transparent 60%);
-    }
-    .about-badge-overlay {
-      position: absolute; bottom: 24px; left: 24px; right: 24px;
-      background: rgba(11,44,74,.85); backdrop-filter: blur(12px);
-      border-radius: 16px; padding: 20px 24px;
-      border: 1px solid rgba(255,255,255,.1);
-    }
-    .about-badge-overlay p {
-      color: rgba(255,255,255,.9); font-size: .9rem; line-height: 1.5;
-    }
-    .about-badge-overlay strong { color: #a8d87a; font-weight: 600; }
     .about-content { }
     .about-values {
       display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
@@ -530,7 +514,7 @@
       .hero-stats { display: none; }
       .products-grid { grid-template-columns: 1fr 1fr; }
       .about-grid { grid-template-columns: 1fr; }
-      .about-img-wrap { height: 300px; }
+      .about-visual { height: 300px; }
       .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
       .b2b-inner { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
@@ -700,11 +684,48 @@
 <section class="about" id="o-nas">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-img-wrap reveal">
-        <img src="building-1200x600.jpg" alt="BEAUFY sídlo">
-        <div class="about-badge-overlay">
-          <p>Naše produkty najdete díky registraci v databázi <strong>Pharmdata s.r.o.</strong> ve většině lékárenských sítí i regionálních prodejnách zdravotnických potřeb.</p>
-        </div>
+      <div class="about-visual reveal">
+        <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;">
+          <defs>
+            <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#eef4fa"/>
+              <stop offset="100%" style="stop-color:#ddeaf8"/>
+            </linearGradient>
+            <linearGradient id="circle-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#134a8e;stop-opacity:.12"/>
+              <stop offset="100%" style="stop-color:#0b2c4a;stop-opacity:.06"/>
+            </linearGradient>
+            <linearGradient id="green-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#5C820F;stop-opacity:.18"/>
+              <stop offset="100%" style="stop-color:#6E9B12;stop-opacity:.08"/>
+            </linearGradient>
+          </defs>
+          <!-- background -->
+          <rect width="480" height="480" rx="24" fill="url(#bg-grad)"/>
+          <!-- decorative circles -->
+          <circle cx="380" cy="100" r="140" fill="url(#circle-grad)"/>
+          <circle cx="80" cy="380" r="100" fill="url(#green-grad)"/>
+          <circle cx="240" cy="240" r="60" fill="none" stroke="#134a8e" stroke-width="1.5" stroke-dasharray="8 6" opacity=".2"/>
+          <!-- CZ+SK map dots suggestion -->
+          <circle cx="200" cy="215" r="5" fill="#134a8e" opacity=".5"/>
+          <circle cx="230" cy="220" r="4" fill="#134a8e" opacity=".4"/>
+          <circle cx="260" cy="218" r="4.5" fill="#134a8e" opacity=".45"/>
+          <circle cx="285" cy="222" r="3.5" fill="#134a8e" opacity=".35"/>
+          <!-- connecting lines -->
+          <line x1="200" y1="215" x2="230" y2="220" stroke="#134a8e" stroke-width="1" opacity=".2"/>
+          <line x1="230" y1="220" x2="260" y2="218" stroke="#134a8e" stroke-width="1" opacity=".2"/>
+          <line x1="260" y1="218" x2="285" y2="222" stroke="#134a8e" stroke-width="1" opacity=".2"/>
+          <!-- central icon: cross / health symbol -->
+          <rect x="224" y="200" width="32" height="10" rx="5" fill="#134a8e" opacity=".7"/>
+          <rect x="235" y="189" width="10" height="32" rx="5" fill="#134a8e" opacity=".7"/>
+          <!-- pharmdata badge -->
+          <rect x="120" y="300" width="240" height="60" rx="14" fill="white" opacity=".7"/>
+          <text x="240" y="325" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#0b2c4a" opacity=".8">Registrováno v Pharmdata s.r.o.</text>
+          <text x="240" y="346" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#5a6a7e" opacity=".7">Dostupné ve většině lékárenských sítí CZ &amp; SK</text>
+          <!-- top label -->
+          <rect x="148" y="110" width="184" height="40" rx="20" fill="#0b2c4a" opacity=".08"/>
+          <text x="240" y="135" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#0b2c4a" opacity=".7">BEAUFY s.r.o. · Praha</text>
+        </svg>
       </div>
       <div class="about-content reveal">
         <div class="section-label">O nás</div>
@@ -751,50 +772,6 @@
     </div>
   </div>
 </div>
-
-<!-- ── TEAM ──────────────────────────────────────────────── -->
-<section class="team">
-  <div class="section-inner">
-    <div class="reveal" style="text-align:center; margin-bottom:48px">
-      <div class="section-label">Tým</div>
-      <h2>Váš osobní <em>kontakt</em></h2>
-      <p class="section-desc" style="margin:0 auto">Naši obchodní reprezentanti jsou vám k dispozici pro veškeré objednávky a dotazy.</p>
-    </div>
-    <div class="team-grid">
-
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="jarka-small-160x160.png" alt="Mgr. Jaroslava Dobrá"></div>
-        <div class="team-name">Mgr. Jaroslava Dobrá</div>
-        <div class="team-role">Key Account Manager</div>
-        <div class="team-contact">
-          <a href="tel:+420734672527">📞 +420 734 672 527</a>
-          <a href="mailto:jaroslava.dobra@beaufy.eu">✉ jaroslava.dobra@beaufy.eu</a>
-        </div>
-      </div>
-
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="eva-160x160.png" alt="Eva Otavová"></div>
-        <div class="team-name">Eva Otavová</div>
-        <div class="team-role">Key Account Manager</div>
-        <div class="team-contact">
-          <a href="tel:+420733189921">📞 +420 733 189 921</a>
-          <a href="mailto:eva.otavova@beaufy.eu">✉ eva.otavova@beaufy.eu</a>
-        </div>
-      </div>
-
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="marketa-160x160.png" alt="Markéta Tichá"></div>
-        <div class="team-name">Markéta Tichá</div>
-        <div class="team-role">Back Office Manager</div>
-        <div class="team-contact">
-          <a href="tel:+420799022658">📞 +420 799 022 658</a>
-          <a href="mailto:info@beaufy.eu">✉ info@beaufy.eu</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ── B2B CTA ────────────────────────────────────────────── -->
 <section class="b2b-cta">

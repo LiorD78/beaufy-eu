@@ -186,6 +186,39 @@
     .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
     .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
 
+
+    /* ── STORY ── */
+    .story { background: var(--navy); padding: 96px 40px; position: relative; overflow: hidden; }
+    .story::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 70%);
+    }
+    .story-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+    .story-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 16px; }
+    .story h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2; font-weight: 400;
+      color: #fff; margin-bottom: 40px;
+      background: none; -webkit-text-fill-color: #fff;
+    }
+    .story h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
+    .story-body { display: flex; flex-direction: column; gap: 22px; }
+    .story-body p {
+      font-size: 1.05rem; line-height: 1.85;
+      color: rgba(255,255,255,.75);
+    }
+    .story-body p strong { color: rgba(255,255,255,.95); font-weight: 600; }
+    .story-quote {
+      border-left: 3px solid #6ee7f7;
+      padding-left: 24px;
+      margin: 8px 0;
+    }
+    .story-quote p { color: rgba(255,255,255,.88); font-style: italic; }
+    @media (max-width: 900px) {
+      .story { padding: 64px 24px; }
+    }
     /* ── DISCLAIMER ── */
     .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
     .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
@@ -409,6 +442,24 @@
           <div class="highlight-text">Certifikovaný zdravotnický prostředek splňující evropské normy. Registrován v Pharmdata — dostupný ve většině lékárenských sítí ČR a SR.</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-inner">
+    <div class="story-label reveal">Náš příběh</div>
+    <h2 class="reveal">Příběh, který začal<br><em>jednou bezesnou nocí</em></h2>
+    <div class="story-body">
+      <p class="reveal">Všechno to začalo u nás doma. Jako čerství rodiče jsme prožívali ty nejkrásnější chvíle, které ale začaly střídat momenty bezmoci. Našeho novorozeného syna trápilo bříško. Pláč, který neustával, a později i potíže s vylučováním nás nenechaly spát. Zkoušeli jsme všechno — masáže, čaje, babské rady. Nic nepomáhalo.</p>
+      <p class="reveal">Když nám lékaři doporučili dětské mikroklystýry jako bezpečnou a účinnou pomoc, narazili jsme na nečekanou překážku. <strong>Český trh byl prázdný.</strong> Produkty, které dříve fungovaly, měly výpadek a nic nového nebylo k mání.</p>
+      <div class="story-quote reveal">
+        <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
+      </div>
+      <p class="reveal">Začal jsem pátrat na vlastní pěst. Cesta mě zavedla až do slunné Itálie k výrobci, který měl přesně to, co českým maminkám a tatínkům chybělo. Slovo dalo slovo, domluvili jsme spolupráci a pod značkou <strong>Laxík</strong> jsme tento malý zázrak přivezli do Čech.</p>
+      <p class="reveal">Laxík nebyl jen produkt. Byl to první krok na cestě, která vedla k <strong>založení celé společnosti BEAUFY</strong>. Dnes už nepomáháme jen našemu synovi, ale tisícům dalších dětí a jejich rodičům, aby se opět mohli v klidu usmát.</p>
     </div>
   </div>
 </section>

@@ -230,10 +230,12 @@
       display: flex; align-items: center; justify-content: center;
     }
     .story-photo-wrap img {
-      width: 100%; max-width: 320px;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.2);
+      width: 100%; max-width: 340px;
       display: block;
+      -webkit-mask-image:
+        radial-gradient(ellipse 85% 80% at 50% 50%, black 40%, transparent 100%);
+      mask-image:
+        radial-gradient(ellipse 85% 80% at 50% 50%, black 40%, transparent 100%);
     }
     @media (max-width: 900px) {
       .story { padding: 64px 24px; background: linear-gradient(160deg, #0b2c4a 0%, #134a8e 100%); }

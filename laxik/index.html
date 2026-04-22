@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laxík — mikroklystýr pro děti | BEAUFY</title>
+  <meta name="description" content="Laxík je šetrný mikroklystýr pro děti od narození. Složení s glycerolem, heřmánkem a slézem. Zdravotnický prostředek třídy I.">
+  <link rel="icon" href="/beaufy-ico-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:     #0F172A;
+      --blue:     #0070F3;
+      --blue-lt:  #1f5fa6;
+      --green:    #F59E0B;
+      --green-br: #F59E0B;
+      --bg:       #F1F5F9;
+      --bg2:      #f7fafd;
+      --white:    #ffffff;
+      --text:     #1a2533;
+      --muted:    #5a6a7e;
+      --border:   rgba(19,74,142,.12);
+      --radius-card: 20px;
+      --radius-btn:  99px;
+      --shadow-card: 0 4px 24px rgba(11,44,74,.08), 0 1px 4px rgba(11,44,74,.04);
+      --shadow-hover: 0 12px 40px rgba(11,44,74,.14), 0 2px 8px rgba(11,44,74,.06);
+      --transition: all .3s cubic-bezier(.4,0,.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled { padding: 8px 24px; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 10px 24px; border-radius: 99px; background: rgba(11,44,74,.85); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1); transition: all .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled .nav-inner { background: rgba(255,255,255,.92); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border-color: rgba(255,255,255,.6); box-shadow: 0 4px 20px rgba(11,44,74,.12); }
+    .nav-logo-img { height: 22px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; transition: filter .35s ease; }
+    nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { padding: 7px 16px; border-radius: 99px; font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.92); text-decoration: none; transition: background .2s ease, color .2s ease; letter-spacing: .01em; }
+    .nav-links a:hover { background: rgba(255,255,255,.18); color: #fff; }
+    nav.scrolled .nav-links a { color: var(--navy); }
+    nav.scrolled .nav-links a:hover { background: var(--bg); }
+    .nav-cta { background: rgba(255,255,255,.22) !important; color: #fff !important; padding: 8px 20px !important; border: 1px solid rgba(255,255,255,.4) !important; font-weight: 600 !important; }
+    nav.scrolled .nav-cta { background: var(--green) !important; color: #fff !important; border-color: transparent !important; }
+    .nav-mobile-btn { display: none; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: var(--transition); }
+    nav.scrolled .nav-mobile-btn span { background: var(--navy); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 60vh;
+      background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 60%, #1f5fa6 100%);
+      display: flex; align-items: center; padding-top: 90px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,.06) 0%, transparent 60%);
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto; padding: 60px 40px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      position: relative; z-index: 2;
+    }
+    .hero-text { color: #fff; }
+    .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
+    .hero-breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: #fff; }
+    .hero-cat {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      padding: 5px 14px; border-radius: 99px;
+      font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(255,255,255,.85); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      line-height: 1.12; font-weight: 400; color: #fff; margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: #6ee7f7; }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.75; margin-bottom: 32px; max-width: 460px; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      padding: 6px 14px; border-radius: 99px;
+      font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500;
+    }
+    .chip-check::before { content: '✓'; color: #6ee7f7; font-weight: 700; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.4); }
+    .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: rgba(255,255,255,.1); color: #fff; font-weight: 500; font-size: .95rem; text-decoration: none; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+    .hero-img { display: flex; align-items: center; justify-content: center; }
+    .hero-img img { max-width: 100%; max-height: 420px; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,.3)); }
+
+    /* ── SHARED ── */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg, #0b2c4a 0%, #134a8e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 16px; }
+    .section-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
+
+    /* ── VARIANTY ── */
+    .variants { background: var(--bg); }
+    .variants-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 680px; }
+    .variant-card {
+      background: var(--white); border-radius: var(--radius-card);
+      padding: 32px 28px; box-shadow: var(--shadow-card);
+      transition: var(--transition); border: 2px solid transparent;
+    }
+    .variant-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .variant-img { height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .variant-img img { max-height: 130px; max-width: 100%; object-fit: contain; }
+    .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
+    .variant-apa { font-size: .78rem; color: var(--muted); margin-bottom: 16px; font-weight: 500; letter-spacing: .04em; }
+    .variant-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 99px; background: var(--navy); color: #fff; font-size: .85rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+    .variant-btn:hover { background: var(--blue); transform: translateY(-1px); }
+
+    /* ── INFO ACCORDION ── */
+    .info-section { background: var(--white); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .accordion { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .accordion-item { border-bottom: 1px solid var(--border); }
+    .accordion-item:last-child { border-bottom: none; }
+    .accordion-btn {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px; font-family: inherit; font-size: .95rem; font-weight: 600;
+      color: var(--navy); text-align: left; transition: background .2s;
+    }
+    .accordion-btn:hover { background: var(--bg); }
+    .accordion-btn[aria-expanded="true"] { background: var(--bg); color: var(--blue); }
+    .accordion-icon { width: 20px; height: 20px; flex-shrink: 0; transition: transform .3s ease; }
+    .accordion-btn[aria-expanded="true"] .accordion-icon { transform: rotate(45deg); }
+    .accordion-body { display: none; padding: 0 24px 20px; font-size: .9rem; color: var(--muted); line-height: 1.75; }
+    .accordion-body.open { display: block; }
+
+    .info-highlights { display: flex; flex-direction: column; gap: 16px; }
+    .highlight-card { background: var(--bg); border-radius: 16px; padding: 22px 24px; }
+    .highlight-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .highlight-title { font-weight: 700; font-size: .95rem; color: var(--navy); margin-bottom: 4px; }
+    .highlight-text { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── KDE KOUPIT ── */
+    .buy { background: var(--bg); }
+    .buy-logos { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 36px; margin-top: 36px; }
+    .buy-logo a { display: flex; align-items: center; justify-content: center; background: var(--white); border-radius: 14px; padding: 14px 24px; box-shadow: var(--shadow-card); transition: var(--transition); text-decoration: none; }
+    .buy-logo a:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .buy-logo img { height: 48px; width: auto; max-width: 150px; object-fit: contain; }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
+    .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer { background: #091d30; padding: 60px 40px 32px; color: rgba(255,255,255,.65); }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 32px; }
+    .footer-logo-img { height: 26px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1); opacity: .9; }
+    .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.9); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { font-size: .85rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,.9); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .8rem; }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,.8); }
+
+    /* ── SCROLL TOP ── */
+    .scroll-top { position: fixed; bottom: 28px; right: 28px; z-index: 99; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,44,74,.3); opacity: 0; transform: translateY(12px); pointer-events: none; transition: var(--transition); }
+    .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+    .scroll-top:hover { background: var(--blue); transform: translateY(-2px); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      section { padding: 56px 24px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 70px 24px 48px; }
+      .hero-img { order: -1; }
+      .hero-img img { max-height: 280px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .variants-grid { grid-template-columns: 1fr; max-width: 360px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.97); backdrop-filter: blur(20px); padding: 100px 40px 40px; gap: 8px; z-index: 99; align-items: flex-start; }
+      .nav-links.open a { font-size: 1.2rem; padding: 12px 20px; width: 100%; color: var(--navy) !important; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .buy-logos { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="/#produkty">Produkty</a>
+      <a href="/#o-nas">O nás</a>
+      <a href="/#kontakt">Kontakty</a>
+      <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
+    </div>
+    <button class="nav-mobile-btn" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Laxík</div>
+      <div class="hero-cat">ZP třídy I &nbsp;·&nbsp; Zdravotnický prostředek</div>
+      <h1>Laxík — mikroklystýr<br><em>pro děti</em></h1>
+      <p class="hero-sub">Šetrný mikroklystýr pro děti od narození. Složení s glycerolem, heřmánkem a slézem uvolňuje a lubrikuje stolici bez podráždění.</p>
+      <div class="hero-chips">
+        <span class="chip chip-check">Vhodný od narození</span>
+        <span class="chip chip-check">Glycerol + Heřmánek + Sléz</span>
+        <span class="chip chip-check">Rychlý nástup účinku</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#kde-koupit" class="btn-primary">Kde koupit</a>
+        <a href="#informace" class="btn-outline-white">Informace o produktu</a>
+      </div>
+    </div>
+    <div class="hero-img reveal">
+      <img src="/laxik-mikroklystyr-deti.png" alt="Laxík mikroklystýr pro děti">
+    </div>
+  </div>
+</section>
+
+<!-- VARIANTY -->
+<section class="variants" id="varianty">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Balení</div>
+      <h2>Varianty produktu</h2>
+      <p class="section-desc">Laxík je dostupný ve dvou velikostech balení — menší pro příležitostné použití, větší ekonomické balení pro rodiny.</p>
+    </div>
+    <div class="variants-grid">
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <img src="/laxik-mikroklystyr-deti.png" alt="Laxík 3x3g">
+        </div>
+        <div class="variant-name">Laxík 3 × 3 g</div>
+        <div class="variant-apa">APA 5534871</div>
+        <a href="/#kontakt" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <img src="/laxik-mikroklystyr-deti.png" alt="Laxík 6x3g">
+        </div>
+        <div class="variant-name">Laxík 6 × 3 g</div>
+        <div class="variant-apa">APA 5122214</div>
+        <a href="/#kontakt" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFORMACE -->
+<section class="info-section" id="informace">
+  <div class="section-inner">
+    <div class="info-grid">
+      <div>
+        <div class="section-label reveal">Produkt</div>
+        <h2 class="reveal">Informace<br>o produktu</h2>
+        <div class="accordion reveal">
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              Mechanismus účinku
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="accordion-body">
+              Glycerol působí mechanicky projímavě díky účinku vtažení vody do stolice, jejímu změkčení a vyvolání peristaltiky a střevní evakuace. Heřmánek a sléz mají zklidňující a protizánětlivé účinky na sliznici.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              Indikace
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="accordion-body">
+              Laxík je určen ke krátkodobé léčbě občasné zácpy. Je vhodný pro všechny děti již od narození.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              Složení
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="accordion-body">
+              Účinné látky: glycerol, heřmánek (Chamomilla recutita) a sléz (Malva sylvestris). Bez konzervantů, bez parfemace.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              Jak se používá?
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="accordion-body">
+              Odstraňte kryt aplikátoru tak, že odlomíte úzký díl uzávěru ve spodní části. Aplikátor namažte kapkou roztoku. Zaveďte do konečníku a stiskněte nádobu. Za současného držení aplikátor vytáhněte a vyhoďte. Každá ampulka je na jedno použití.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              Dávkování
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="accordion-body">
+              Děti: 1 mikroklyzma dle potřeby, jedenkrát až dvakrát denně. Je vhodný pro všechny děti již od narození.
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" aria-expanded="false">
+              Upozornění
+              <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="accordion-body">
+              Nepoužívejte při přecitlivělosti nebo alergii na jednu nebo více složek. V případě přetrvávající zácpy se poraďte s lékařem. Mikroklyzma je na jedno použití. Uchovávejte mimo dosah dětí. Projímadla by měla být používána co nejméně často a ne déle než 7 dní. Skladujte při 4–30 °C, mimo zdroje tepla a přímé světlo.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="info-highlights reveal">
+        <div class="highlight-card">
+          <div class="highlight-icon">🌿</div>
+          <div class="highlight-title">Šetrné přírodní složení</div>
+          <div class="highlight-text">Kombinace glycerolu, heřmánku a slézu je šetrná ke sliznici a vhodná i pro nejmenší novorozence.</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">⚡</div>
+          <div class="highlight-title">Rychlý účinek</div>
+          <div class="highlight-text">Díky jednoduchému aplikátoru a lokálnímu působení dochází k účinku velmi rychle — bez čekání a zbytečného diskomfortu.</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">👶</div>
+          <div class="highlight-title">Vhodný od narození</div>
+          <div class="highlight-text">Laxík je bezpečný pro kojence i starší děti. Složení bez konzervantů minimalizuje riziko podráždění.</div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🏅</div>
+          <div class="highlight-title">Zdravotnický prostředek třídy I</div>
+          <div class="highlight-text">Certifikovaný zdravotnický prostředek splňující evropské normy. Registrován v Pharmdata — dostupný ve většině lékárenských sítí ČR a SR.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KDE KOUPIT -->
+<section class="buy" id="kde-koupit">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Dostupnost</div>
+      <h2>Kde koupit Laxík?</h2>
+      <p class="section-desc">Laxík najdete ve většině lékárenských řetězců v České a Slovenské republice. Kliknutím přejdete přímo na stránku produktu.</p>
+    </div>
+    <div class="buy-logos">
+      <div class="buy-logo reveal"><a href="https://www.benu.cz/vyhledavani?q=laxik" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU Lékárny"></a></div>
+      <div class="buy-logo reveal"><a href="https://www.drmax.cz/vyhledavani?q=laxik" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a></div>
+      <div class="buy-logo reveal"><a href="https://www.magistra.cz/cs/Search?q=Laxik" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra"></a></div>
+      <div class="buy-logo reveal"><a href="https://www.mojelekarna.cz/vyhledavani?s=laxik" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna.cz"></a></div>
+      <div class="buy-logo reveal"><a href="https://www.lekarnaave.cz/vyhledavani?q=laxik" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a></div>
+      <div class="buy-logo reveal"><a href="https://www.lekarnalemon.cz/produkty/vyhledavani?s=laxik" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Lékárna Lemon"></a></div>
+    </div>
+    <div style="margin-top:40px" class="reveal">
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px;font-weight:600">Dokumenty ke stažení</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <a href="/docs/POS_laxik.pdf" target="_blank" style="background:var(--white);padding:9px 18px;border-radius:99px;font-size:.82rem;color:var(--navy);text-decoration:none;font-weight:500;box-shadow:var(--shadow-card);">📄 Prohlášení o shodě – Laxík</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-bar">
+  <p><strong>Zdravotnický prostředek třídy I.</strong> Před použitím si přečtěte návod k použití. Výrobce: New.Fa.Dem. Srl, Itálie. Distributor pro ČR a SR: BEAUFY s.r.o., U Trati 886/52, 100 00 Praha 10, IČ: 06867031.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/BEAUFY_logo.png" alt="BEAUFY" class="footer-logo-img">
+      <p>Česko-slovenský distributor zdravotnických prostředků EU původu. Zásobujeme lékárny, nemocnice a soukromé lékaře s osobním přístupem.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkty</h5>
+      <ul>
+        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
+        <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
+        <li><a href="/#produkty">formoline L112 EXTRA</a></li>
+        <li><a href="/#produkty">DISPO GEL</a></li>
+        <li><a href="/#produkty">DISPO ICE spray</a></li>
+        <li><a href="/#produkty">ŽENŠEN Ginseng Royal Jelly</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Společnost</h5>
+      <ul>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/#kontakt">Kontakty</a></li>
+        <li><a href="/#kontakt">Pro lékárny</a></li>
+        <li><a href="/zasady-ochrany-osobnich-udaju.html">Ochrana os. údajů</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <ul>
+        <li><a href="tel:+420799022658">+420 799 022 658</a></li>
+        <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
+        <li><a href="#">U Trati 886/52, Praha 10</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 BEAUFY s.r.o. · IČ: 06867031 · DIČ: CZ06867031</p>
+    <div class="footer-legal">
+      <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="mailto:info@beaufy.eu">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Accordion
+  document.querySelectorAll('.accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.accordion-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
+    });
+  });
+
+  // Reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

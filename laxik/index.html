@@ -194,24 +194,16 @@
     }
     .story-bg {
       position: absolute; inset: 0; z-index: 0;
-      background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 100%);
+      background: url('/story-founder.jpg') right center / auto 100% no-repeat;
     }
-    .story-bg-right {
-      position: absolute; right: 0; top: 0;
-      width: 42%; height: 100%;
-      overflow: hidden; opacity: .55;
-    }
-    .story-bg-right img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center top;
-      display: block; filter: grayscale(20%);
-    }
-    .story-bg-right::before {
-      content: ''; position: absolute; inset: 0; z-index: 1;
+    .story-bg::after {
+      content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right,
-        rgba(11,44,74,1) 0%,
-        rgba(11,44,74,.6) 30%,
-        rgba(11,44,74,.0) 70%);
+        rgba(11,44,74,1)   0%,
+        rgba(11,44,74,.98) 35%,
+        rgba(11,44,74,.82) 55%,
+        rgba(11,44,74,.3)  72%,
+        rgba(11,44,74,0)   88%);
     }
     .story-inner {
       max-width: 1100px; margin: 0 auto;
@@ -235,9 +227,8 @@
     .story-quote p { color: rgba(255,255,255,.92); font-style: italic; }
     @media (max-width: 900px) {
       .story { padding: 64px 24px; }
-      .story-bg { grid-template-columns: 1fr; }
-      .story-bg-right { display: none; }
-      .story-bg-left { background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 100%); }
+      .story-bg { background-position: 80% center; }
+      .story-bg::after { background: linear-gradient(to right, rgba(11,44,74,1) 0%, rgba(11,44,74,.97) 60%, rgba(11,44,74,.7) 100%); }
       .story h2 { max-width: 100%; }
       .story-text { max-width: 100%; }
     }
@@ -473,9 +464,6 @@
 <!-- STORY -->
 <section class="story">
   <div class="story-bg"></div>
-  <div class="story-bg-right">
-      <img src="/story-founder.jpg" alt="Zakladatel BEAUFY se synem">
-  </div>
   <div class="story-inner">
     <div class="story-label reveal">Náš příběh</div>
     <h2 class="reveal">Příběh, který začal<br><em>jednou bezesnou nocí</em></h2>

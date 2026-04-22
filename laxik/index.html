@@ -35,8 +35,24 @@
     /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
     nav.scrolled { padding: 8px 24px; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 10px 24px; border-radius: 99px; background: rgba(11,44,74,.85); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.18); box-shadow: 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1); transition: all .4s cubic-bezier(.4,0,.2,1); }
-    nav.scrolled .nav-inner { background: rgba(255,255,255,.92); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border-color: rgba(255,255,255,.6); box-shadow: 0 4px 20px rgba(11,44,74,.12); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 20px 10px 24px; border-radius: 99px;
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid rgba(255,255,255,.45);
+      box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1);
+      transition: all .4s cubic-bezier(.4,0,.2,1);
+    }
+    nav.scrolled .nav-inner {
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(32px) saturate(200%);
+      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      border-color: rgba(255,255,255,.6);
+      box-shadow: 0 0 0 0.5px rgba(255,255,255,.4) inset, 0 1px 0 rgba(255,255,255,.5) inset, 0 4px 20px rgba(11,44,74,.12), 0 1px 4px rgba(11,44,74,.06);
+    }
     .nav-logo-img { height: 22px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; transition: filter .35s ease; }
     nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
     .nav-links { display: flex; gap: 4px; align-items: center; }
@@ -53,13 +69,19 @@
     /* ── HERO ── */
     .hero {
       min-height: 60vh;
-      background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 60%, #1f5fa6 100%);
       display: flex; align-items: center; padding-top: 90px;
       position: relative; overflow: hidden;
     }
-    .hero::before {
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('/laxik-hero.jpg') center/cover no-repeat;
+    }
+    .hero-bg::after {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,.06) 0%, transparent 60%);
+      background: linear-gradient(105deg,
+        rgba(11,44,74,.88) 0%,
+        rgba(19,74,142,.72) 45%,
+        rgba(11,44,74,.35) 100%);
     }
     .hero-inner {
       max-width: 1200px; margin: 0 auto; padding: 60px 40px;
@@ -223,6 +245,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Laxík</div>

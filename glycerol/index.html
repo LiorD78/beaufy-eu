@@ -32,7 +32,7 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
 
-    /* NAV — identical to laxik */
+    /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
     nav.scrolled { padding: 8px 24px; }
     .nav-inner {
@@ -56,45 +56,71 @@
     .nav-logo-img { height: 22px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; transition: filter .35s ease; }
     nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
     .nav-links { display: flex; gap: 4px; align-items: center; }
-    .nav-links a { padding: 7px 16px; border-radius: 99px; font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.92); text-decoration: none; transition: background .2s ease, color .2s ease; }
+    .nav-links a { padding: 7px 16px; border-radius: 99px; font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.92); text-decoration: none; transition: background .2s ease, color .2s ease; letter-spacing: .01em; }
     .nav-links a:hover { background: rgba(255,255,255,.18); color: #fff; }
     nav.scrolled .nav-links a { color: var(--navy); }
     nav.scrolled .nav-links a:hover { background: var(--bg); }
     .nav-cta { background: rgba(255,255,255,.22) !important; color: #fff !important; padding: 8px 20px !important; border: 1px solid rgba(255,255,255,.4) !important; font-weight: 600 !important; }
     nav.scrolled .nav-cta { background: var(--green) !important; color: #fff !important; border-color: transparent !important; }
     .nav-mobile-btn { display: none; cursor: pointer; background: none; border: none; padding: 6px; }
-    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: var(--transition); }
     nav.scrolled .nav-mobile-btn span { background: var(--navy); }
 
-    /* HERO — pink/rose accent pro Glycerol */
+    /* ── HERO ── */
     .hero {
-      min-height: 60vh;
-      display: flex; align-items: center; padding-top: 90px;
+      height: 53.69vw;
+      min-height: 480px;
+      display: flex; align-items: center; padding: 0 !important;
       position: relative; overflow: hidden;
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('/glycerol-hero.jpg') center/cover no-repeat;
+      background: url('/glycerol-hero.jpg') left top / 100% auto no-repeat;
     }
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(105deg,
-        rgba(11,44,74,.88) 0%,
-        rgba(80,20,60,.75) 50%,
-        rgba(11,44,74,.3) 100%);
+      background:
+        linear-gradient(to right,
+          rgba(11,44,74,.97) 0%,
+          rgba(60,20,50,.90) 25%,
+          rgba(80,20,60,.65) 42%,
+          rgba(80,20,60,.2) 62%,
+          rgba(80,20,60,0) 80%);
     }
-    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 60px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 2; }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 120px 24px 80px 24px;
+      display: flex; flex-direction: column; align-items: flex-start;
+      position: relative; z-index: 2;
+      width: 100%;
+    }
+    .hero-img { display: none; }
     .hero-text { color: #fff; }
     .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
     .hero-breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .hero-breadcrumb a:hover { color: #fff; }
-    .hero-cat { display: inline-flex; align-items: center; gap: 8px; background: rgba(236,72,153,.15); border: 1px solid rgba(236,72,153,.3); padding: 5px 14px; border-radius: 99px; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #fbb6ce; margin-bottom: 20px; }
-    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.12; font-weight: 400; color: #fff; margin-bottom: 20px; }
-    .hero h1 em { font-style: italic; color: #fbb6ce; }
+    .hero-cat {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      padding: 5px 14px; border-radius: 99px;
+      font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(255,255,255,.85); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      line-height: 1.12; font-weight: 400; color: #fff; margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: #6ee7f7; }
     .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.75; margin-bottom: 32px; max-width: 460px; }
     .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-    .chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 6px 14px; border-radius: 99px; font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500; }
-    .chip-check::before { content: '✓'; color: #fbb6ce; font-weight: 700; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      padding: 6px 14px; border-radius: 99px;
+      font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500;
+    }
+    .chip-check::before { content: '✓'; color: #6ee7f7; font-weight: 700; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.4); }
@@ -103,56 +129,68 @@
     .hero-img { display: flex; align-items: center; justify-content: center; }
     .hero-img img { max-width: 100%; max-height: 420px; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,.3)); }
 
-    /* SHARED */
+    /* ── SHARED ── */
     section { padding: 80px 40px; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .section-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
     h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg, #0b2c4a 0%, #134a8e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 16px; }
     .section-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
 
-    /* VARIANTY */
+    /* ── VARIANTY ── */
     .variants { background: var(--bg); }
     .variants-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 680px; }
-    .variant-card { background: var(--white); border-radius: var(--radius-card); padding: 32px 28px; box-shadow: var(--shadow-card); transition: var(--transition); border: 2px solid transparent; }
+    .variant-card {
+      background: var(--white); border-radius: var(--radius-card);
+      padding: 32px 28px; box-shadow: var(--shadow-card);
+      transition: var(--transition); border: 2px solid transparent;
+    }
     .variant-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
-    .variant-img { height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-    .variant-img img { max-height: 130px; max-width: 100%; object-fit: contain; }
+    .variant-img { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; padding: 12px; }
+    .variant-img img { max-height: 176px; max-width: 100%; object-fit: contain; width: auto; height: 100%; }
     .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
-    .variant-apa { font-size: .78rem; color: var(--muted); margin-bottom: 16px; font-weight: 500; }
+    .variant-apa { font-size: .78rem; color: var(--muted); margin-bottom: 16px; font-weight: 500; letter-spacing: .04em; }
     .variant-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 99px; background: var(--navy); color: #fff; font-size: .85rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
     .variant-btn:hover { background: var(--blue); transform: translateY(-1px); }
 
-    /* ACCORDION */
+    /* ── INFO ACCORDION ── */
     .info-section { background: var(--white); }
     .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .accordion { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .accordion { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
     .accordion-item { border-bottom: 1px solid var(--border); }
     .accordion-item:last-child { border-bottom: none; }
-    .accordion-btn { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; font-family: inherit; font-size: .95rem; font-weight: 600; color: var(--navy); text-align: left; transition: background .2s; }
+    .accordion-btn {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 24px; font-family: inherit; font-size: .95rem; font-weight: 600;
+      color: var(--navy); text-align: left; transition: background .2s;
+    }
     .accordion-btn:hover { background: var(--bg); }
     .accordion-btn[aria-expanded="true"] { background: var(--bg); color: var(--blue); }
     .accordion-icon { width: 20px; height: 20px; flex-shrink: 0; transition: transform .3s ease; }
     .accordion-btn[aria-expanded="true"] .accordion-icon { transform: rotate(45deg); }
     .accordion-body { display: none; padding: 0 24px 20px; font-size: .9rem; color: var(--muted); line-height: 1.75; }
     .accordion-body.open { display: block; }
+
     .info-highlights { display: flex; flex-direction: column; gap: 16px; }
     .highlight-card { background: var(--bg); border-radius: 16px; padding: 22px 24px; }
     .highlight-icon { font-size: 1.5rem; margin-bottom: 8px; }
     .highlight-title { font-weight: 700; font-size: .95rem; color: var(--navy); margin-bottom: 4px; }
     .highlight-text { font-size: .85rem; color: var(--muted); line-height: 1.6; }
 
-    /* KDE KOUPIT */
-    .buy { background: var(--bg); }
-    .buy-logos { display: flex; align-items: center; flex-wrap: wrap; gap: 20px 36px; margin-top: 36px; }
-    .buy-logo a { display: flex; align-items: center; justify-content: center; background: var(--white); border-radius: 14px; padding: 14px 24px; box-shadow: var(--shadow-card); transition: var(--transition); text-decoration: none; }
-    .buy-logo a:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
-    .buy-logo img { height: 48px; width: auto; max-width: 150px; object-fit: contain; }
+    /* ── KDE KOUPIT ── */
+    .buy { background: var(--white); padding: 64px 40px; }
+    .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
+    .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; }
+    .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
+    .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
 
-    /* DISCLAIMER */
+    /* ── DISCLAIMER ── */
     .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
     .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer { background: #091d30; padding: 60px 40px 32px; color: rgba(255,255,255,.65); }
     .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 32px; }
     .footer-logo-img { height: 26px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1); opacity: .9; }
@@ -167,15 +205,31 @@
     .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
     .footer-legal a:hover { color: rgba(255,255,255,.8); }
 
+    /* ── SCROLL TOP ── */
     .scroll-top { position: fixed; bottom: 28px; right: 28px; z-index: 99; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,44,74,.3); opacity: 0; transform: translateY(12px); pointer-events: none; transition: var(--transition); }
     .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
     .scroll-top:hover { background: var(--blue); transform: translateY(-2px); }
+
+    /* ── REVEAL ── */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
+    /* ── MOBILE ── */
     @media (max-width: 900px) {
       section { padding: 56px 24px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 70px 24px 48px; }
+      .hero { height: auto !important; min-height: 100svh; }
+      .hero-bg {
+        background-position: 50% top !important;
+        background-size: cover !important;
+      }
+      .hero-bg::after {
+        background: linear-gradient(to right,
+          rgba(11,44,74,.95) 0%,
+          rgba(11,44,74,.88) 40%,
+          rgba(11,44,74,.4) 65%,
+          rgba(11,44,74,.0) 100%) !important;
+      }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 100px 24px 48px; }
       .hero-img { order: -1; }
       .hero-img img { max-height: 280px; }
       .info-grid { grid-template-columns: 1fr; }
@@ -186,11 +240,15 @@
       .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.97); backdrop-filter: blur(20px); padding: 100px 40px 40px; gap: 8px; z-index: 99; align-items: flex-start; }
       .nav-links.open a { font-size: 1.2rem; padding: 12px 20px; width: 100%; color: var(--navy) !important; }
     }
-    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .buy-logos { gap: 12px; }
+    }
   </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
@@ -212,22 +270,19 @@
   <div class="hero-inner">
     <div class="hero-text">
       <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Glycerol</div>
-      <div class="hero-cat">ZP třídy I &nbsp;·&nbsp; Zdravotnický prostředek</div>
       <h1>Glycerol New.Fa.Dem.<br><em>pro dospělé</em></h1>
       <p class="hero-sub">Jemný, šetrný a účinný mikroklystýr pro dospělé. Složení s glycerolem, heřmánkem a slézem. Rychlý nástup účinku — pomáhá přesně tam, kde je potřeba.</p>
       <div class="hero-chips">
         <span class="chip chip-check">Pro dospělé</span>
         <span class="chip chip-check">Glycerol + Heřmánek + Sléz</span>
-        <span class="chip chip-check">Rychlý účinek</span>
+        <span class="chip chip-check">Rychlý nástup účinku</span>
       </div>
       <div class="hero-actions">
         <a href="#kde-koupit" class="btn-primary">Kde koupit</a>
         <a href="#informace" class="btn-outline-white">Informace o produktu</a>
       </div>
     </div>
-    <div class="hero-img reveal">
-      <img src="/glycerol-ampulka.png" alt="Glycerol New.Fa.Dem.">
-    </div>
+    
   </div>
 </section>
 
@@ -242,7 +297,7 @@
     <div class="variants-grid" style="max-width:360px">
       <div class="variant-card reveal">
         <div class="variant-img">
-          <img src="/glycerol-ampulka.png" alt="Glycerol New.Fa.Dem. 6 × 9 g">
+          <img src="/glycerol-ampulka.png" alt="Glycerol 6 × 9 g">
         </div>
         <div class="variant-name">Glycerol 6 × 9 g</div>
         <div class="variant-apa">Zdravotnický prostředek třídy I</div>
@@ -267,7 +322,7 @@
               <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
             </button>
             <div class="accordion-body">
-              Glycerol působí mechanicky projímavě díky účinku vtažení vody do stolice, jejímu změkčení a vyvolání peristaltiky a střevní evakuace. Heřmánek a sléz přispívají ke zklidnění a ochraně sliznice.
+              Glycerol působí mechanicky projímavě díky vtažení vody do stolice, jejímu změkčení a vyvolání peristaltiky a střevní evakuace. Heřmánek a sléz zklidňují a chrání sliznici.
             </div>
           </div>
 
@@ -336,7 +391,7 @@
           <div class="highlight-text">Lokální aplikace zajišťuje rychlý nástup účinku bez nutnosti čekat na průchod trávicím traktem.</div>
         </div>
         <div class="highlight-card">
-          <div class="highlight-icon" style="margin-bottom:10px;color:var(--blue);"><svg width="22" height="22" fill="none" stroke="#0070F3" stroke-width="1.8" viewBox="0 0 24 24"><path d="M10.5 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M15 18h6m-3-3v6"/></svg></div>
+          <div class="highlight-icon" style="margin-bottom:10px;color:var(--blue);"><svg width="22" height="22" fill="none" stroke="#0070F3" stroke-width="1.8" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a6 6 0 0 1 6-6v0a6 6 0 0 1 6 6v2"/><path d="M9 14s1 1 3 1 3-1 3-1"/></svg></div>
           <div class="highlight-title">Mikroklystýr pro dospělé</div>
           <div class="highlight-text">Speciálně navržené balení 9 g pro dospělé — dostatečná dávka pro spolehlivý efekt.</div>
         </div>
@@ -352,23 +407,21 @@
 
 <!-- KDE KOUPIT -->
 <section class="buy" id="kde-koupit">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Dostupnost</div>
-      <h2>Kde koupit Glycerol?</h2>
-      <p class="section-desc">Glycerol New.Fa.Dem. najdete ve většině lékárenských řetězců v České a Slovenské republice.</p>
-    </div>
+  <div class="buy-inner">
+    <p class="buy-title reveal">Glycerol najdete v těchto lékárnách</p>
     <div class="buy-logos">
-      <div class="buy-logo reveal"><a href="https://www.benu.cz/vyhledavani?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU Lékárny"></a></div>
-      <div class="buy-logo reveal"><a href="https://www.drmax.cz/vyhledavani?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a></div>
-      <div class="buy-logo reveal"><a href="https://www.magistra.cz/cs/Search?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra"></a></div>
-      <div class="buy-logo reveal"><a href="https://www.mojelekarna.cz/vyhledavani?s=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna.cz"></a></div>
-      <div class="buy-logo reveal"><a href="https://www.lekarnaave.cz/vyhledavani?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a></div>
+      <a class="partner-logo-link reveal" href="https://www.drmax.cz/vyhledavani?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max Lékárny"></a>
+      <a class="partner-logo-link reveal" href="https://www.benu.cz/vyhledavani?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU Lékárny"></a>
+      <a class="partner-logo-link reveal" href="https://www.alza.cz/vyhledavani?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-alza.png" alt="Alza.cz"></a>
+      <a class="partner-logo-link reveal" href="https://www.mojelekarna.cz/vyhledavani?s=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna.cz"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarnalemon.cz/produkty/vyhledavani?s=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna.cz"></a>
+      <a class="partner-logo-link reveal" href="https://www.magistra.cz/cs/Search?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra Lékárny"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarnaave.cz/vyhledavani?q=glycerol+newfadem" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
     </div>
-    <div style="margin-top:40px" class="reveal">
+    <div style="margin-top:48px" class="reveal">
       <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px;font-weight:600">Dokumenty ke stažení</p>
-      <div style="display:flex;flex-wrap:wrap;gap:8px">
-        <a href="/docs/POS_glycerol.pdf" target="_blank" style="background:var(--white);padding:9px 18px;border-radius:99px;font-size:.82rem;color:var(--navy);text-decoration:none;font-weight:500;box-shadow:var(--shadow-card);">📄 Prohlášení o shodě – Glycerol</a>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+        <a href="/docs/POS_glycerol.pdf" target="_blank" style="background:var(--bg);padding:9px 18px;border-radius:99px;font-size:.82rem;color:var(--navy);text-decoration:none;font-weight:500;">Prohlášení o shodě – Glycerol</a>
       </div>
     </div>
   </div>
@@ -376,7 +429,7 @@
 
 <!-- DISCLAIMER -->
 <div class="disclaimer-bar">
-  <p><strong>Zdravotnický prostředek třídy I.</strong> Před použitím si přečtěte návod k použití. Výrobce: New.Fa.Dem. Srl, Itálie. Distributor pro ČR a SR: BEAUFY s.r.o., U Trati 886/52, 100 00 Praha 10, IČ: 06867031.</p>
+  <p><strong>Zdravotnický prostředek třídy I.</strong> Před použitím si přečtěte návod k použití. Výrobce: New.Fa.Dem. Srl, Itálie. Distributor pro ČR a SR: BEAUFY s.r.o., U Trati 886/52, 100 00 Praha 10, IČ:&nbsp;<span style="color:inherit;">06867031</span>.</p>
 </div>
 
 <!-- FOOTER -->
@@ -389,8 +442,8 @@
     <div class="footer-col">
       <h5>Produkty</h5>
       <ul>
-        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
         <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
+        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
         <li><a href="/#produkty">formoline L112 EXTRA</a></li>
         <li><a href="/#produkty">DISPO GEL</a></li>
         <li><a href="/#produkty">DISPO ICE spray</a></li>
@@ -416,7 +469,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 BEAUFY s.r.o. · IČ: 06867031 · DIČ: CZ06867031</p>
+    <p>© 2026 BEAUFY s.r.o. · IČ:&nbsp;<span style="-webkit-text-stroke:0;color:inherit;font-size:inherit;">06867031</span> · DIČ:&nbsp;<span style="-webkit-text-stroke:0;color:inherit;font-size:inherit;">CZ06867031</span></p>
     <div class="footer-legal">
       <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
       <a href="mailto:info@beaufy.eu">Kontakt</a>
@@ -436,15 +489,27 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Accordion
   document.querySelectorAll('.accordion-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
-      document.querySelectorAll('.accordion-btn').forEach(b => { b.setAttribute('aria-expanded', 'false'); b.nextElementSibling.classList.remove('open'); });
-      if (!expanded) { btn.setAttribute('aria-expanded', 'true'); btn.nextElementSibling.classList.add('open'); }
+      document.querySelectorAll('.accordion-btn').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        btn.nextElementSibling.classList.add('open');
+      }
     });
   });
+
+  // Reveal
   const observer = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); observer.unobserve(e.target); } });
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); observer.unobserve(e.target); }
+    });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>

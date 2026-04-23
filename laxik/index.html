@@ -856,6 +856,34 @@
   // Info tabs
   const tabBtns = document.querySelectorAll('.info-tab-btn');
   const tabPanels = document.querySelectorAll('.info-tab-panel');
+  const tabPanelsWrap = document.querySelector('.info-tab-panels');
+
+  function setTabPanelHeight() {
+    // Změř výšku každého panelu dočasným zviditelněním
+    let maxH = 0;
+    tabPanels.forEach(p => {
+      const wasActive = p.classList.contains('active');
+      p.style.visibility = 'hidden';
+      p.style.position = 'relative';
+      p.style.pointerEvents = 'none';
+      const h = p.offsetHeight;
+      if (h > maxH) maxH = h;
+      if (!wasActive) {
+        p.style.visibility = '';
+        p.style.position = 'absolute';
+        p.style.pointerEvents = '';
+      } else {
+        p.style.visibility = '';
+        p.style.position = 'relative';
+        p.style.pointerEvents = '';
+      }
+    });
+    if (tabPanelsWrap) tabPanelsWrap.style.minHeight = maxH + 'px';
+  }
+
+  setTabPanelHeight();
+  window.addEventListener('resize', setTabPanelHeight);
+
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });

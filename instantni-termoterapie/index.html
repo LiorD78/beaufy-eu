@@ -204,6 +204,19 @@
       .buy { padding: 56px 24px; }
     }
     @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    /* ── FAQ ── */
+    .faq-section { background: #eef4fa; padding: 80px 40px; }
+    .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--navy); margin-bottom: 40px; background: none; -webkit-text-fill-color: var(--navy); }
+    .faq-list { max-width: 800px; }
+    .faq-item { border-bottom: 1px solid rgba(11,44,74,.12); }
+    .faq-item:first-child { border-top: 1px solid rgba(11,44,74,.12); }
+    .faq-btn { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; background: none; border: none; cursor: pointer; text-align: left; font-size: 1rem; font-weight: 600; color: var(--navy); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .faq-btn:hover { color: var(--blue-lt); }
+    .faq-icon { width: 20px; height: 20px; flex-shrink: 0; margin-left: 16px; transition: transform .3s; color: var(--blue-lt); }
+    .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+    .faq-body { display: none; padding: 0 0 20px; }
+    .faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
   </style>
 </head>
 <body>
@@ -368,6 +381,48 @@
   </div>
 </section>
 
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-label reveal">Časté dotazy</div>
+    <h2 class="reveal">Nejčastější otázky</h2>
+    <div class="faq-list reveal" itemscope itemtype="https://schema.org/FAQPage">
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false"><span itemprop="name">Jaký je rozdíl mezi EASY ICE a DISPO HOT?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">EASY ICE je chladící sáček — po zmáčknutí dosáhne −4 °C a pomáhá při akutních úrazech, otocích a zánětech. DISPO HOT je hřejivý sáček — po zmáčknutí dosáhne +50 °C a pomáhá při chronických bolestech, ztuhlosti svalů a prochladnutí. Oba jsou jednorázové a fungují bez mrazáku nebo mikrovlnky.</p></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false"><span itemprop="name">Jak se aktivuje sáček?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Stačí pevně zmáčknout střed sáčku oběma palci, dokud nepraskne vnitřní ampule. Poté sáček protřepejte — během pár sekund dosáhne požadované teploty. Aktivaci nelze vrátit — sáček je určen k jednorázovému použití.</p></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false"><span itemprop="name">Jak dlouho účinek trvá?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Oba sáčky udržují teplotu přibližně 20–30 minut. Maximální doporučená doba aplikace je 15–20 minut — po uplynutí doby sáček odložte a počkejte minimálně 40 minut před případnou další aplikací.</p></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false"><span itemprop="name">Mohu sáček přiložit přímo na kůži?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Ne — vždy přiložte přes tenkou vrstvu látky (ručník, oblečení). Přímý kontakt chladného nebo horkého sáčku s kůží může způsobit omrzliny nebo popáleniny, zvláště u citlivé kůže, dětí nebo diabetiků.</p></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false"><span itemprop="name">Kdy zvolit chlad a kdy teplo?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Chlad (EASY ICE) volte při akutních zraněních do 72 hodin od poranění — výrony, modřiny, otoky, záněty. Teplo (DISPO HOT) volte při chronických bolestech, ztuhlosti svalů, bolestech zad a prochladnutí. Nikdy nezahřívejte čerstvé zranění s otokem.</p></div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false"><span itemprop="name">Jsou sáčky bezpečné?</span><svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Ano — oba produkty jsou certifikovány jako zdravotnický prostředek třídy IIa dle evropských norem. Složení je netoxické. Obsah sáčku není určen ke konzumaci. Nepoužívejte při poškozené kůži nebo otevřených ranách.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CROSSSELL -->
 <section class="crosssell">
   <div class="crosssell-inner">
@@ -457,6 +512,15 @@
     document.getElementById('tab-btn-ice').classList.toggle('active', tab === 'ice');
     document.getElementById('tab-btn-hot').classList.toggle('active', tab === 'hot');
   }
+
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const body = btn.nextElementSibling;
+      btn.setAttribute('aria-expanded', !expanded);
+      body.style.display = expanded ? 'none' : 'block';
+    });
+  });
   const observer = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); observer.unobserve(e.target); }

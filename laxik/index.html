@@ -386,7 +386,8 @@
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
       .nav-mobile-btn { display: block; }
-      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.97); backdrop-filter: blur(20px); padding: 100px 40px 40px; gap: 8px; z-index: 99; align-items: flex-start; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,.97); backdrop-filter: blur(20px); padding: 100px 40px 40px; gap: 8px; z-index: 101; align-items: flex-start; }
+      .nav-mobile-btn { display: block; position: relative; z-index: 102; }
       .nav-links.open a { font-size: 1.2rem; padding: 12px 20px; width: 100%; color: var(--navy) !important; }
     }
     @media (max-width: 600px) {

@@ -385,11 +385,44 @@
       .variants-grid { grid-template-columns: 1fr; max-width: 360px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
-      .nav-mobile-btn { display: block; }
-      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 0; left: 24px; right: 24px; background: rgba(255,255,255,.97); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1); border-radius: 28px; padding: 76px 16px 20px; gap: 4px; z-index: 1; align-items: stretch; }
-      .nav-mobile-btn { display: block; position: relative; z-index: 102; }
-      .nav-links.open a { font-size: 1.1rem; font-weight: 500; padding: 14px 24px; width: 100%; color: var(--navy) !important; border-radius: 12px; text-decoration: none; display: block; }
-      .nav-links.open .nav-cta { background: var(--green) !important; color: #fff !important; border-radius: 99px !important; text-align: center; margin-top: 4px; }
+      .nav-inner { border-radius: 28px !important; }
+      .nav-inner.menu-open {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 16px 16px;
+      }
+      .nav-inner.menu-open .nav-logo { display: block; align-self: flex-start; padding: 4px 8px 0; }
+      .nav-inner.menu-open .nav-mobile-btn { position: absolute; top: 14px; right: 16px; }
+      .nav-inner.menu-open { border-radius: 28px; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        width: 100%; margin-top: 12px;
+        gap: 4px; position: static;
+        background: none; border: none;
+        box-shadow: none; padding: 0;
+        border-radius: 0;
+      }
+      .nav-links.open a {
+        font-size: 1.1rem; font-weight: 500;
+        padding: 14px 4px;
+        color: var(--navy) !important;
+        border-radius: 12px;
+        text-decoration: none; display: block;
+        border-bottom: 1px solid rgba(11,44,74,.06);
+      }
+      .nav-links.open a:last-child { border-bottom: none; }
+      .nav-links.open .nav-cta {
+        background: var(--green) !important;
+        color: #fff !important;
+        border-radius: 99px !important;
+        text-align: left;
+        padding: 13px 20px !important;
+        margin-top: 4px;
+        border-bottom: none !important;
+        font-weight: 600;
+      }
+      .nav-mobile-btn { display: block; position: relative; z-index: 2; }
 
     }
     @media (max-width: 600px) {
@@ -852,7 +885,10 @@
   });
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    document.querySelector('.nav-inner').classList.toggle('menu-open');
+  });
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
   // Accordion

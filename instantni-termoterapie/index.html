@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instantní termoterapie — EASY ICE & DISPO HOT | BEAUFY</title>
+  <meta name="description" content="Jednorázové instantní sáčky EASY ICE (chlad −4 °C) a DISPO HOT (teplo +50 °C). Stačí zmáčknout — bez mrazáku, bez mikrovlnky. Medical device IIa. Dispotech, Itálie.">
+  <link rel="icon" href="/beaufy-ico-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0F172A; --blue: #0070F3; --blue-lt: #1f5fa6;
+      --green: #F59E0B; --bg: #F1F5F9; --white: #ffffff;
+      --text: #1a2533; --muted: #5a6a7e; --border: rgba(19,74,142,.12);
+      --radius-card: 20px;
+      --shadow-card: 0 4px 24px rgba(11,44,74,.08), 0 1px 4px rgba(11,44,74,.04);
+      --shadow-hover: 0 12px 40px rgba(11,44,74,.14), 0 2px 8px rgba(11,44,74,.06);
+      --transition: all .3s cubic-bezier(.4,0,.2,1);
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled { padding: 8px 24px; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 10px 24px; border-radius: 99px; background: rgba(255,255,255,.18); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 8px 32px rgba(11,44,74,.18); transition: all .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled .nav-inner { background: rgba(255,255,255,.72); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border-color: rgba(255,255,255,.6); box-shadow: 0 4px 20px rgba(11,44,74,.12); }
+    .nav-logo-img { height: 22px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; transition: filter .35s ease; }
+    nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { padding: 7px 16px; border-radius: 99px; font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.92); text-decoration: none; transition: background .2s ease, color .2s ease; }
+    .nav-links a:hover { background: rgba(255,255,255,.18); }
+    nav.scrolled .nav-links a { color: var(--navy); }
+    nav.scrolled .nav-links a:hover { background: var(--bg); }
+    .nav-cta { background: rgba(255,255,255,.22) !important; color: #fff !important; padding: 8px 20px !important; border: 1px solid rgba(255,255,255,.4) !important; font-weight: 600 !important; }
+    nav.scrolled .nav-cta { background: var(--green) !important; color: #fff !important; border-color: transparent !important; }
+    .nav-mobile-btn { display: none; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: var(--transition); }
+    nav.scrolled .nav-mobile-btn span { background: var(--navy); }
+
+    /* ── HERO ── */
+    .hero { background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 60%, #1a6a9a 100%); padding: 160px 40px 100px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(110,231,247,.08) 0%, transparent 60%); }
+    .hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.55); margin-bottom: 20px; }
+    .hero-breadcrumb a { color: rgba(255,255,255,.55); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: #fff; }
+    .hero-cat { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); padding: 5px 14px; border-radius: 99px; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-bottom: 24px; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; font-weight: 400; color: #fff; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: #6ee7f7; }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 36px; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 6px 14px; border-radius: 99px; font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500; }
+    .chip-check::before { content: '✓'; color: #6ee7f7; font-weight: 700; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.4); }
+    .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: rgba(255,255,255,.1); color: #fff; font-weight: 500; font-size: .95rem; text-decoration: none; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+
+    /* ── SHARED ── */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg, #0b2c4a 0%, #134a8e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px; }
+    .section-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
+
+    /* ── PRODUKTOVÉ KARTY ── */
+    .products { background: var(--bg); }
+    .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; }
+    .product-card {
+      background: var(--white); border-radius: var(--radius-card);
+      overflow: hidden; box-shadow: var(--shadow-card);
+      transition: var(--transition); border: 2px solid transparent;
+    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .product-img { height: 260px; display: flex; align-items: center; justify-content: center; background: var(--bg); padding: 32px; }
+    .product-img img { max-height: 200px; max-width: 100%; object-fit: contain; }
+    .product-body { padding: 28px; }
+    .product-tag { display: inline-flex; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 99px; padding: 3px 12px; margin-bottom: 12px; }
+    .product-tag.cold { background: #e0f2fe; color: #0369a1; }
+    .product-tag.hot { background: #fef3c7; color: #b45309; }
+    .product-name { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 8px; }
+    .product-temp { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
+    .product-temp.cold { color: #0369a1; }
+    .product-temp.hot { color: #d97706; }
+    .product-desc { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+    .product-specs { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .product-spec { display: flex; justify-content: space-between; font-size: .85rem; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .product-spec:last-child { border-bottom: none; }
+    .product-spec-label { color: var(--muted); }
+    .product-spec-val { color: var(--navy); font-weight: 600; }
+    .product-btn { display: inline-flex; align-items: center; gap: 6px; padding: 11px 24px; border-radius: 99px; background: var(--green); color: #fff; font-size: .9rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+    .product-btn:hover { background: #d97706; transform: translateY(-1px); }
+
+    /* ── SROVNÁNÍ ── */
+    .compare { background: var(--white); }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 760px; }
+    .compare-col { border-radius: 16px; padding: 24px; border: 1.5px solid rgba(11,44,74,.12); }
+    .compare-col.cold { border-color: #0369a1; background: #f0f9ff; }
+    .compare-col.hot { border-color: #d97706; background: #fffbeb; }
+    .compare-head { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; }
+    .compare-head.cold { color: #0369a1; }
+    .compare-head.hot { color: #d97706; }
+    .compare-item { font-size: .88rem; color: var(--muted); line-height: 1.6; padding: 7px 0; border-bottom: 1px solid rgba(11,44,74,.07); display: flex; gap: 8px; align-items: flex-start; }
+    .compare-item:last-child { border-bottom: none; }
+    .compare-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+    .compare-dot.cold { background: #0369a1; }
+    .compare-dot.hot { background: #d97706; }
+
+    /* ── KDE KOUPIT ── */
+    .buy { background: var(--bg); padding: 64px 40px; }
+    .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
+    .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; }
+    .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
+    .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
+    .buy-wholesale { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .buy-wholesale-title { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; text-align: center; }
+    .buy-wholesale-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 48px; }
+    .buy-wholesale-logos img { height: 44px; width: auto; max-width: 160px; display: block; }
+
+    /* ── CROSSSELL → DISPO GEL ── */
+    .crosssell { background: var(--white); padding: 64px 40px; }
+    .crosssell-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .crosssell-text { flex: 1; min-width: 260px; }
+    .crosssell-text h3 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem,2.5vw,1.9rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg,#0b2c4a,#134a8e); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+    .crosssell-text p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+    .crosssell-card { display: flex; align-items: center; gap: 20px; background: var(--bg); border-radius: 20px; padding: 20px 24px; box-shadow: var(--shadow-card); text-decoration: none; transition: var(--transition); border: 2px solid transparent; max-width: 360px; }
+    .crosssell-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .crosssell-card img { height: 80px; width: auto; object-fit: contain; flex-shrink: 0; }
+    .crosssell-card-label { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+    .crosssell-card-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 2px; }
+    .crosssell-card-desc { font-size: .82rem; color: var(--muted); }
+    .crosssell-card-arrow { font-size: 1.4rem; color: var(--navy); margin-left: auto; }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
+    .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer { background: #091d30; padding: 60px 40px 32px; color: rgba(255,255,255,.65); }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 32px; }
+    .footer-logo-img { height: 26px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1); opacity: .9; }
+    .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.9); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { font-size: .85rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,.9); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .8rem; }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,.8); }
+
+    /* ── UTILS ── */
+    .scroll-top { position: fixed; bottom: 28px; right: 28px; z-index: 99; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,44,74,.3); opacity: 0; transform: translateY(12px); pointer-events: none; transition: var(--transition); }
+    .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      section { padding: 56px 24px; }
+      .hero { padding: 120px 24px 72px; }
+      .products-grid { grid-template-columns: 1fr; max-width: 440px; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .crosssell-inner { flex-direction: column; gap: 24px; }
+      .crosssell-card { max-width: 100%; }
+      .nav-links { display: none; }
+      .nav-top-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+      .nav-mobile-btn { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; width: 100%; margin-top: 12px; gap: 4px; }
+      .nav-links.open a { font-size: 1.1rem; font-weight: 500; padding: 14px 4px; color: var(--navy) !important; text-decoration: none; display: block; border-bottom: 1px solid rgba(11,44,74,.06); }
+      .nav-links.open a:last-child { border-bottom: none; }
+      .nav-links.open .nav-cta { background: var(--green) !important; color: #fff !important; border-radius: 99px !important; padding: 13px 20px !important; margin-top: 4px; border-bottom: none !important; font-weight: 600; }
+      .nav-inner.menu-open { display: flex !important; flex-direction: column !important; align-items: stretch !important; padding: 12px 20px 16px !important; border-radius: 28px !important; }
+      .buy { padding: 56px 24px; }
+    }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner" id="navInner">
+    <div class="nav-top-row">
+      <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
+      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/#produkty">Produkty</a>
+      <a href="/#o-nas">O nás</a>
+      <a href="/#kontakt">Kontakty</a>
+      <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Instantní termoterapie</div>
+    <div class="hero-cat">🧊🔥 Kryoterapie & termoterapie</div>
+    <h1>Instantní<br><em>termoterapie</em></h1>
+    <p class="hero-sub">Jednorázové sáčky pro okamžitou úlevu — bez mrazáku, bez mikrovlnky. Stačí zmáčknout střed a během pár sekund máte chlad nebo teplo přesně tam, kde ho potřebujete.</p>
+    <div class="hero-chips">
+      <span class="chip chip-check">Aktivace za pár sekund</span>
+      <span class="chip chip-check">Jednorázové použití</span>
+      <span class="chip chip-check">Medical device IIa</span>
+      <span class="chip chip-check">Made in Italy</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#produkty" class="btn-primary">Zobrazit produkty</a>
+      <a href="#kde-koupit" class="btn-outline-white">Kde koupit</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUKTY -->
+<section class="products" id="produkty">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Produkty</div>
+      <h2>Dva produkty, jeden princip</h2>
+      <p class="section-desc">EASY ICE chladí, DISPO HOT hřeje. Oba fungují stejně jednoduše — zmáčknout a použít.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="/dispogel/img/easy-ice-sacek.webp" alt="EASY ICE chladící sáček">
+        </div>
+        <div class="product-body">
+          <div class="product-tag cold">Studená terapie</div>
+          <div class="product-name">EASY ICE</div>
+          <div class="product-temp cold">−4 °C</div>
+          <p class="product-desc">Jednorázový instantní chladící sáček. Zmáčkněte střed — za pár sekund dosáhne −4 °C. Ideální pro akutní úrazy, otoky a sportovní zranění.</p>
+          <div class="product-specs">
+            <div class="product-spec"><span class="product-spec-label">Teplota</span><span class="product-spec-val">−4 °C</span></div>
+            <div class="product-spec"><span class="product-spec-label">Účinnost</span><span class="product-spec-val">20–30 minut</span></div>
+            <div class="product-spec"><span class="product-spec-label">Rozměr</span><span class="product-spec-val">14×18 cm</span></div>
+            <div class="product-spec"><span class="product-spec-label">APA</span><span class="product-spec-val">5534863</span></div>
+            <div class="product-spec"><span class="product-spec-label">Třída</span><span class="product-spec-val">Medical device IIa</span></div>
+          </div>
+          <a href="#kde-koupit" class="product-btn">Kde koupit <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="/dispogel/img/dispo-hot.webp" alt="DISPO HOT hřejivý sáček">
+        </div>
+        <div class="product-body">
+          <div class="product-tag hot">Teplá terapie</div>
+          <div class="product-name">DISPO HOT</div>
+          <div class="product-temp hot">+50 °C</div>
+          <p class="product-desc">Jednorázový instantní hřejivý sáček. Zmáčkněte střed — za pár sekund dosáhne +50 °C. Ideální pro bolesti kloubů, svalů, zad a prochladnutí.</p>
+          <div class="product-specs">
+            <div class="product-spec"><span class="product-spec-label">Teplota</span><span class="product-spec-val">+50 °C</span></div>
+            <div class="product-spec"><span class="product-spec-label">Účinnost</span><span class="product-spec-val">20–30 minut</span></div>
+            <div class="product-spec"><span class="product-spec-label">Rozměr</span><span class="product-spec-val">14×18 cm</span></div>
+            <div class="product-spec"><span class="product-spec-label">APA</span><span class="product-spec-val">5481750</span></div>
+            <div class="product-spec"><span class="product-spec-label">Třída</span><span class="product-spec-val">Medical device IIa</span></div>
+          </div>
+          <a href="#kde-koupit" class="product-btn">Kde koupit <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SROVNÁNÍ -->
+<section class="compare">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Kdy co použít</div>
+      <h2>Chlad nebo teplo?</h2>
+      <p class="section-desc">Jednoduchá pravidla pro správné použití.</p>
+    </div>
+    <div class="compare-grid reveal">
+      <div class="compare-col cold">
+        <div class="compare-head cold">❄️ EASY ICE — kdy chladit</div>
+        <div class="compare-item"><div class="compare-dot cold"></div>Akutní úrazy — do 72 hodin od poranění</div>
+        <div class="compare-item"><div class="compare-dot cold"></div>Výrony, podvrknutí, modřiny</div>
+        <div class="compare-item"><div class="compare-dot cold"></div>Otoky a záněty</div>
+        <div class="compare-item"><div class="compare-dot cold"></div>Bolesti po zubním zákroku</div>
+        <div class="compare-item"><div class="compare-dot cold"></div>Úžeh, přehřátí</div>
+        <div class="compare-item"><div class="compare-dot cold"></div>Sportovní zranění na hřišti</div>
+      </div>
+      <div class="compare-col hot">
+        <div class="compare-head hot">🔥 DISPO HOT — kdy hřát</div>
+        <div class="compare-item"><div class="compare-dot hot"></div>Chronické bolesti kloubů a šlach</div>
+        <div class="compare-item"><div class="compare-dot hot"></div>Bolesti zad a krční páteře</div>
+        <div class="compare-item"><div class="compare-dot hot"></div>Artritida a revmatismus</div>
+        <div class="compare-item"><div class="compare-dot hot"></div>Svalové spasmy a ztuhlost</div>
+        <div class="compare-item"><div class="compare-dot hot"></div>Prochladnutí</div>
+        <div class="compare-item"><div class="compare-dot hot"></div>Bolesti po implantologii</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KDE KOUPIT -->
+<section class="buy" id="kde-koupit">
+  <div class="buy-inner">
+    <p class="buy-title reveal">Dostupné v těchto lékárnách</p>
+    <div class="buy-logos">
+      <a class="partner-logo-link reveal" href="https://www.drmax.cz" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a>
+      <a class="partner-logo-link reveal" href="https://www.benu.cz" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU"></a>
+      <a class="partner-logo-link reveal" href="https://www.mojelekarna.cz" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna"></a>
+      <a class="partner-logo-link reveal" href="https://www.gigalekarna.cz" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna"></a>
+      <a class="partner-logo-link reveal" href="https://www.magistra.cz" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarnaave.cz" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarnalemon.cz" target="_blank" rel="noopener"><img src="/logos/logo-lemon.png" alt="Lemon Lékárna"></a>
+    </div>
+    <div class="buy-wholesale reveal">
+      <p class="buy-wholesale-title">Dodáváme přes tyto velkoobchody</p>
+      <div class="buy-wholesale-logos">
+        <img src="/logos/logo-phoenix.svg" alt="Phoenix Pharma">
+        <img src="/logos/logo-pharmos.svg" alt="Pharmos">
+        <img src="/logos/logo-alliance.png" alt="Alliance Healthcare">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSSSELL -->
+<section class="crosssell">
+  <div class="crosssell-inner">
+    <div class="crosssell-text reveal">
+      <div class="section-label">Také od BEAUFY</div>
+      <h3>Hledáte opakovaně použitelný sáček?</h3>
+      <p>DISPO GEL je gelový sáček pro tepelnou i chladovou terapii — použijete ho stokrát. Mrazák pro chlad, mikrovlnka nebo horká voda pro teplo. Dostupný v 8 rozměrech.</p>
+    </div>
+    <a href="/dispogel/" class="crosssell-card reveal">
+      <img src="/dispo-gel.png" alt="DISPO GEL gelový sáček">
+      <div>
+        <div class="crosssell-card-label">Opakovaně použitelný</div>
+        <div class="crosssell-card-name">DISPO GEL</div>
+        <div class="crosssell-card-desc">Horký / studený sáček · 8 variant</div>
+      </div>
+      <span class="crosssell-card-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-bar">
+  <p><strong>Zdravotnický prostředek třídy IIa.</strong> Před použitím si přečtěte návod k použití. Výrobce: Dispotech S.r.l., Itálie. Distributor pro ČR a SR: BEAUFY s.r.o., U Trati 886/52, 100 00 Praha 10, IČ:&nbsp;<span style="color:inherit !important;pointer-events:none;">06867031</span>.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/BEAUFY_logo.png" alt="BEAUFY" class="footer-logo-img">
+      <p>Česko-slovenský distributor zdravotnických prostředků EU původu. Zásobujeme lékárny, nemocnice a soukromé lékaře s osobním přístupem.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkty</h5>
+      <ul>
+        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
+        <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
+        <li><a href="/dispogel/">DISPO GEL</a></li>
+        <li><a href="/instantni-termoterapie/">Instantní termoterapie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Společnost</h5>
+      <ul>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/#kontakt">Kontakty</a></li>
+        <li><a href="/#kontakt">Pro lékárny</a></li>
+        <li><a href="/zasady-ochrany-osobnich-udaju.html">Ochrana os. údajů</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <ul>
+        <li><a href="tel:+420799022658">+420 799 022 658</a></li>
+        <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
+        <li><a href="#">U Trati 886/52, Praha 10</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 BEAUFY s.r.o. · IČ:&nbsp;<span style="-webkit-text-stroke:0;color:inherit !important;pointer-events:none;">06867031</span></p>
+    <div class="footer-legal">
+      <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="mailto:info@beaufy.eu">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    document.querySelector('.nav-inner').classList.toggle('menu-open');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

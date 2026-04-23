@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laxík — mikroklystýr pro děti | BEAUFY</title>
+  <meta name="description" content="Laxík je šetrný mikroklystýr pro děti od narození. Složení s glycerolem, heřmánkem a slézem. Zdravotnický prostředek třídy I.">
+  <link rel="icon" href="/beaufy-ico-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:     #0F172A;
+      --blue:     #0070F3;
+      --blue-lt:  #1f5fa6;
+      --green:    #F59E0B;
+      --green-br: #F59E0B;
+      --bg:       #F1F5F9;
+      --bg2:      #f7fafd;
+      --white:    #ffffff;
+      --text:     #1a2533;
+      --muted:    #5a6a7e;
+      --border:   rgba(19,74,142,.12);
+      --radius-card: 20px;
+      --radius-btn:  99px;
+      --shadow-card: 0 4px 24px rgba(11,44,74,.08), 0 1px 4px rgba(11,44,74,.04);
+      --shadow-hover: 0 12px 40px rgba(11,44,74,.14), 0 2px 8px rgba(11,44,74,.06);
+      --transition: all .3s cubic-bezier(.4,0,.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled { padding: 8px 24px; }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 20px 10px 24px; border-radius: 99px; position: relative; z-index: 1; transition: all .4s cubic-bezier(.4,0,.2,1), border-radius .2s ease;
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid rgba(255,255,255,.45);
+      box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1);
+      transition: all .4s cubic-bezier(.4,0,.2,1);
+    }
+    nav.scrolled .nav-inner {
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(32px) saturate(200%);
+      -webkit-backdrop-filter: blur(32px) saturate(200%);
+      border-color: rgba(255,255,255,.6);
+      box-shadow: 0 0 0 0.5px rgba(255,255,255,.4) inset, 0 1px 0 rgba(255,255,255,.5) inset, 0 4px 20px rgba(11,44,74,.12), 0 1px 4px rgba(11,44,74,.06);
+    }
+    .nav-logo-img { height: 22px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; transition: filter .35s ease; }
+    nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { padding: 7px 16px; border-radius: 99px; font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.92); text-decoration: none; transition: background .2s ease, color .2s ease; letter-spacing: .01em; }
+    .nav-links a:hover { background: rgba(255,255,255,.18); color: #fff; }
+    nav.scrolled .nav-links a { color: var(--navy); }
+    nav.scrolled .nav-links a:hover { background: var(--bg); }
+    .nav-cta { background: rgba(255,255,255,.22) !important; color: #fff !important; padding: 8px 20px !important; border: 1px solid rgba(255,255,255,.4) !important; font-weight: 600 !important; }
+    nav.scrolled .nav-cta { background: var(--green) !important; color: #fff !important; border-color: transparent !important; }
+    .nav-mobile-btn { display: none; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: var(--transition); }
+    nav.scrolled .nav-mobile-btn span { background: var(--navy); }
+
+    /* ── DISPO GEL SIZE BADGE ── */
+    .dg-size-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #0b2c4a, #134a8e); color: #fff; font-size: 1.1rem; font-weight: 700; text-align: center; line-height: 1.3; }
+    .dg-size-badge small { font-size: .75rem; font-weight: 500; opacity: .85; margin-top: 2px; }
+    /* ── HERO ── */
+    .hero {
+      height: 53.69vw;
+      min-height: 480px;
+      display: flex; align-items: center; padding: 0 !important;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('/laxik-hero.jpg') left top / 100% auto no-repeat;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(to right,
+          rgba(11,44,74,.97) 0%,
+          rgba(11,44,74,.92) 25%,
+          rgba(11,44,74,.70) 42%,
+          rgba(11,44,74,.25) 62%,
+          rgba(11,44,74,0) 80%);
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 120px 24px 80px 24px;
+      display: flex; flex-direction: column; align-items: flex-start;
+      position: relative; z-index: 2;
+      width: 100%;
+    }
+    .hero-img { display: none; }
+    .hero-text { color: #fff; }
+    .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
+    .hero-breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: #fff; }
+    .hero-cat {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      padding: 5px 14px; border-radius: 99px;
+      font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(255,255,255,.85); margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      line-height: 1.12; font-weight: 400; color: #fff; margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: #6ee7f7; }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.75; margin-bottom: 32px; max-width: 460px; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      padding: 6px 14px; border-radius: 99px;
+      font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500;
+    }
+    .chip-check::before { content: '✓'; color: #6ee7f7; font-weight: 700; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.4); }
+    .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: rgba(255,255,255,.1); color: #fff; font-weight: 500; font-size: .95rem; text-decoration: none; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+    .hero-img { display: flex; align-items: center; justify-content: center; }
+    .hero-img img { max-width: 100%; max-height: 420px; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,.3)); }
+
+    /* ── SHARED ── */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg, #0b2c4a 0%, #134a8e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 16px; }
+    .section-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
+
+    /* ── VARIANTY ── */
+    .variants { background: var(--bg); }
+    .variants-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 680px; }
+    .variant-card {
+      background: var(--white); border-radius: var(--radius-card);
+      padding: 32px 28px; box-shadow: var(--shadow-card);
+      transition: var(--transition); border: 2px solid transparent;
+    }
+    .variant-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .variant-img { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; padding: 12px; }
+    .variant-img img { max-height: 176px; max-width: 100%; object-fit: contain; width: auto; height: 100%; }
+    .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
+    .variant-apa { font-size: .78rem; color: var(--muted); margin-bottom: 16px; font-weight: 500; letter-spacing: .04em; }
+    .variant-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 99px; background: var(--navy); color: #fff; font-size: .85rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+    .variant-btn:hover { background: var(--blue); transform: translateY(-1px); }
+
+    /* ── INFO TABS ── */
+    .info-section { background: var(--white); }
+    .info-tabs-wrap { max-width: 860px; }
+    .info-tabs-nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 32px; }
+    .info-tab-btn {
+      padding: 8px 18px; border-radius: 99px; font-size: .85rem; font-weight: 600;
+      cursor: pointer; border: 1.5px solid rgba(11,44,74,.18);
+      background: transparent; color: var(--muted); font-family: inherit;
+      transition: all .18s; white-space: nowrap;
+    }
+    .info-tab-btn:hover { border-color: var(--blue-mid,#134a8e); color: var(--blue-mid,#134a8e); }
+    .info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .info-tab-panels { position: relative; }
+    .info-tab-panel { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
+    .info-tab-panel.active { visibility: visible; position: relative; pointer-events: auto; }
+    /* karty */
+    .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+    .info-card {
+      background: var(--bg); border: 1px solid rgba(11,44,74,.1);
+      border-radius: 16px; padding: 20px 22px;
+    }
+    .info-card.featured { border-color: var(--blue-mid,#134a8e); border-width: 1.5px; }
+    .info-card-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      background: #eef4fa; color: var(--blue-mid,#134a8e);
+      border-radius: 99px; padding: 3px 10px; margin-bottom: 10px;
+    }
+    .info-card h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
+    .info-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; margin: 0; }
+    /* kroky */
+    .info-steps { display: flex; flex-direction: column; gap: 14px; max-width: 600px; }
+    .info-step { display: flex; gap: 14px; align-items: flex-start; }
+    .info-step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #eef4fa; color: var(--blue-mid,#134a8e);
+      font-size: .8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .info-step-text { font-size: .9rem; color: var(--muted); line-height: 1.65; padding-top: 4px; }
+    .info-step-note { font-size: .82rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--blue-mid,#134a8e); padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 6px; }
+    /* složení */
+    .info-slozeni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }
+    .info-slozeni-grid > div { display: flex; }
+    .info-slozeni-grid > div > .info-card { flex: 1; }
+    .info-slozeni-table { width: 100%; border-collapse: collapse; }
+    .info-slozeni-table th { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-mid,#134a8e); padding: 0 0 10px; text-align: left; border-bottom: 1.5px solid rgba(11,44,74,.12); }
+    .info-slozeni-table td { font-size: .88rem; color: var(--muted); padding: 9px 0; border-bottom: 1px solid rgba(11,44,74,.07); vertical-align: top; }
+    .info-slozeni-table td:last-child { text-align: right; color: var(--navy); font-weight: 600; white-space: nowrap; }
+    .info-slozeni-table tr:last-child td { border-bottom: none; }
+    .info-safety-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .info-safety-list li { font-size: .88rem; color: var(--muted); line-height: 1.65; padding-left: 16px; position: relative; }
+    .info-safety-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--blue-mid,#134a8e); }
+    /* srovnání */
+    .info-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 700px; }
+    .info-compare-col { background: var(--bg); border-radius: 14px; padding: 18px 20px; border: 1px solid rgba(11,44,74,.1); }
+    .info-compare-col.laxik { border-color: var(--blue-mid,#134a8e); border-width: 1.5px; }
+    .info-compare-head { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
+    .info-compare-head.laxik { color: var(--blue-mid,#134a8e); }
+    .info-compare-head.cipek { color: #888; }
+    .info-compare-item { display: flex; align-items: flex-start; gap: 8px; font-size: .88rem; color: var(--muted); line-height: 1.55; padding: 6px 0; border-bottom: 1px solid rgba(11,44,74,.07); }
+    .info-compare-item:last-child { border-bottom: none; }
+    .info-compare-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .info-compare-dot.green { background: #F59E0B; }
+    .info-compare-dot.gray { background: #ccc; }
+    /* zácpa edukace */
+    .info-edu-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    /* mobile */
+    @media (max-width: 700px) {
+      .info-cards { grid-template-columns: 1fr; }
+      .info-slozeni-grid { grid-template-columns: 1fr; }
+      .info-compare { grid-template-columns: 1fr; }
+      .info-edu-cards { grid-template-columns: 1fr; }
+      .info-tabs-nav { gap: 5px; }
+      .info-tab-btn { font-size: .78rem; padding: 6px 13px; }
+    }
+    .highlight-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .highlight-title { font-weight: 700; font-size: .95rem; color: var(--navy); margin-bottom: 4px; }
+    .highlight-text { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── KDE KOUPIT ── */
+    .buy { background: var(--white); padding: 64px 40px; }
+    .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
+    .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; }
+    .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0.1); }
+    .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
+    .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; pointer-events: none; }
+    .buy-wholesale { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .buy-wholesale-title { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; text-align: center; }
+    .buy-wholesale-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 48px; }
+    .buy-wholesale-logos img { height: 44px; width: auto; max-width: 160px; display: block; }
+
+
+    /* ── STORY ── */
+    .story {
+      position: relative; overflow: hidden;
+      height: 55.8vw; min-height: 520px;
+      display: flex; align-items: center;
+      padding: 0;
+    }
+    .story-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: url('/dispogel-hero.jpg') center center / cover no-repeat;
+    }
+    .story-inner {
+      max-width: 1200px; margin: 0 auto;
+      width: 100%;
+      position: relative; z-index: 1;
+      padding: 60px 24px;
+    }
+    .story-content { max-width: 560px; }
+    .story-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 16px; }
+    .story h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2; font-weight: 400;
+      color: #fff; margin-bottom: 40px;
+      background: none; -webkit-text-fill-color: #fff;
+    }
+    .story h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
+    .story-body { display: flex; flex-direction: column; gap: 20px; }
+    .story-body p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.82); }
+    .story-body p strong { color: #fff; font-weight: 600; }
+    .story-quote { border-left: 3px solid #6ee7f7; padding-left: 20px; margin: 4px 0; }
+    .story-quote p { color: rgba(255,255,255,.92); font-style: italic; }
+    .story-mobile-photo { display: none; }
+    .story-inline-photo { display: none; }
+    .story-photo-quote-wrap { display: none; position: relative; }
+    .story-photo-quote-wrap img { width: 100%; display: block; }
+    .story-quote-on-photo {
+      position: absolute; bottom: 0; left: 0;
+      width: 58%; padding: 20px 16px 20px 24px;
+    }
+    .story-quote-on-photo p {
+      font-size: .88rem; line-height: 1.6;
+      color: rgba(255,255,255,.95); font-style: italic;
+      border-left: 3px solid #6ee7f7;
+      padding-left: 14px;
+      text-shadow: 0 1px 8px rgba(0,0,0,.6);
+    }
+    @media (max-width: 900px) {
+      .story { height: auto; min-height: unset; padding: 0; }
+      .story-bg { background-image: none !important; background: #152f58 !important; }
+      .story-inner { padding: 56px 24px 40px; flex-direction: column; }
+      .story-content { max-width: 100%; }
+      .story-mobile-photo { display: none; }
+      .hide-mobile { display: none; }
+      .story-photo-quote-wrap {
+        display: block;
+        width: calc(100% + 48px);
+        margin: 8px -24px;
+      }
+    }
+
+    
+    /* ── FAQ SEKCE ── */
+    .faq-section { background: var(--bg-light, #eef4fa); padding: 80px 40px; }
+    .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--navy, #0b2c4a); margin-bottom: 40px; background: none; -webkit-text-fill-color: var(--navy, #0b2c4a); }
+    .faq-list { max-width: 800px; }
+    .faq-item { border-bottom: 1px solid rgba(11,44,74,.12); }
+    .faq-item:first-child { border-top: 1px solid rgba(11,44,74,.12); }
+    .faq-btn {
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; background: none; border: none; cursor: pointer; text-align: left;
+      font-size: 1rem; font-weight: 600; color: var(--navy, #0b2c4a);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .faq-btn:hover { color: var(--blue-mid, #134a8e); }
+    .faq-icon { width: 20px; height: 20px; flex-shrink: 0; margin-left: 16px; transition: transform .3s; color: var(--blue-mid, #134a8e); }
+    .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+    .faq-body { display: none; padding: 0 0 20px 0; }
+    .faq-body[aria-hidden="false"] { display: block; }
+    .faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
+
+    /* info-blocks removed */
+
+    @media (max-width: 900px) {
+      .faq-section { padding: 56px 24px; }
+      .faq-btn { font-size: .95rem; }
+    }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
+    .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    footer { background: #091d30; padding: 60px 40px 32px; color: rgba(255,255,255,.65); }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 32px; }
+    .footer-logo-img { height: 26px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1); opacity: .9; }
+    .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.9); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { font-size: .85rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,.9); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .8rem; }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,.8); }
+
+    /* ── SCROLL TOP ── */
+    .scroll-top { position: fixed; bottom: 28px; right: 28px; z-index: 99; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,44,74,.3); opacity: 0; transform: translateY(12px); pointer-events: none; transition: var(--transition); }
+    .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+    .scroll-top:hover { background: var(--blue); transform: translateY(-2px); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      section { padding: 56px 24px; }
+      .hero { height: auto !important; min-height: 100svh; }
+      .hero-bg {
+        background-position: 75% top !important;
+        background-size: cover !important;
+      }
+      .hero-bg::after {
+        background: linear-gradient(to right,
+          rgba(11,44,74,.95) 0%,
+          rgba(11,44,74,.88) 40%,
+          rgba(11,44,74,.4) 65%,
+          rgba(11,44,74,.0) 100%) !important;
+      }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 100px 24px 48px; }
+      .hero-img { order: -1; }
+      .hero-img img { max-height: 280px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .variants-grid { grid-template-columns: 1fr; max-width: 360px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-top-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+      .nav-mobile-btn { display: block; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        width: 100%; margin-top: 8px; gap: 0;
+      }
+      .nav-links.open a {
+        font-size: 1.05rem; font-weight: 500;
+        padding: 13px 4px;
+        color: var(--navy) !important;
+        text-decoration: none; display: block;
+        border-bottom: 1px solid rgba(11,44,74,.07);
+      }
+      .nav-links.open a:last-child { border-bottom: none; }
+      .nav-links.open .nav-cta {
+        background: var(--green) !important;
+        color: #fff !important;
+        border-radius: 99px !important;
+        text-align: center;
+        padding: 13px 20px !important;
+        margin-top: 8px;
+        border-bottom: none !important;
+        font-weight: 600;
+      }
+      .nav-inner.menu-open {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 12px 20px 16px !important;
+        border-radius: 28px !important;
+      }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        width: 100%; margin-top: 12px;
+        gap: 4px; position: static;
+        background: none; border: none;
+        box-shadow: none; padding: 0;
+        border-radius: 0;
+      }
+      .nav-links.open a {
+        font-size: 1.1rem; font-weight: 500;
+        padding: 14px 4px;
+        color: var(--navy) !important;
+        border-radius: 12px;
+        text-decoration: none; display: block;
+        border-bottom: 1px solid rgba(11,44,74,.06);
+      }
+      .nav-links.open a:last-child { border-bottom: none; }
+      .nav-links.open .nav-cta {
+        background: var(--green) !important;
+        color: #fff !important;
+        border-radius: 99px !important;
+        text-align: left;
+        padding: 13px 20px !important;
+        margin-top: 4px;
+        border-bottom: none !important;
+        font-weight: 600;
+      }
+      .nav-mobile-btn { display: block; position: relative; z-index: 2; }
+
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .buy-logos { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner" id="navInner">
+    <div class="nav-top-row">
+      <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
+      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/#produkty">Produkty</a>
+      <a href="/#o-nas">O nás</a>
+      <a href="/#kontakt">Kontakty</a>
+      <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Laxík</div>
+      <h1>Laxík — mikroklystýr<br><em>pro děti</em></h1>
+      <p class="hero-sub">Šetrný mikroklystýr pro děti od narození. Složení s glycerolem, heřmánkem a slézem uvolňuje a lubrikuje stolici bez podráždění.</p>
+      <div class="hero-chips">
+        <span class="chip chip-check">Vhodný od narození</span>
+        <span class="chip chip-check">Glycerol + Heřmánek + Sléz</span>
+        <span class="chip chip-check">Rychlý nástup účinku</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#kde-koupit" class="btn-primary">Kde koupit</a>
+        <a href="#informace" class="btn-outline-white">Informace o produktu</a>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- VARIANTY -->
+<section class="variants" id="varianty">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Balení</div>
+      <h2>Varianty produktu</h2>
+      <p class="section-desc">Laxík je dostupný ve dvou velikostech balení — menší pro příležitostné použití, větší ekonomické balení pro rodiny.</p>
+    </div>
+    <div class="variants-grid">
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <div class="dg-size-badge">14×18 cm</div>
+        </div>
+        <div class="variant-name">DISPO GEL 14×18 cm</div>
+        <div class="variant-apa">APA 5080057</div>
+        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <div class="dg-size-badge">11×26 cm</div>
+        </div>
+        <div class="variant-name">DISPO GEL 11×26 cm</div>
+        <div class="variant-apa">APA 5080115</div>
+        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <div class="dg-size-badge">11×26 cm + obal</div>
+        </div>
+        <div class="variant-name">DISPO GEL 11×26 cm + obal</div>
+        <div class="variant-apa">APA 5080032</div>
+        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <div class="dg-size-badge">5,5×12 cm</div>
+        </div>
+        <div class="variant-name">DISPO GEL 5,5×12 cm</div>
+        <div class="variant-apa">APA 5080131</div>
+        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <div class="dg-size-badge">11×11 cm</div>
+        </div>
+        <div class="variant-name">DISPO GEL 11×11 cm</div>
+        <div class="variant-apa">APA 5080073</div>
+        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <div class="dg-size-badge">17×26 cm</div>
+        </div>
+        <div class="variant-name">DISPO GEL 17×26 cm</div>
+        <div class="variant-apa">APA 5138608</div>
+        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <div class="dg-size-badge">14×24 cm</div>
+        </div>
+        <div class="variant-name">DISPO GEL 14×24 cm</div>
+        <div class="variant-apa">APA 5080107</div>
+        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <div class="dg-size-badge">FLEX 14×24 cm</div>
+        </div>
+        <div class="variant-name">DISPO GEL FLEX 14×24 cm</div>
+        <div class="variant-apa">APA 5122248</div>
+        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFORMACE -->
+<section class="info-section" id="informace">
+  <div class="section-inner">
+    <div class="section-label reveal">Produkt</div>
+    <h2 class="reveal">Informace<br>o produktu</h2>
+
+    <div class="info-tabs-wrap reveal">
+
+      <!-- Navigace záložek -->
+      <div class="info-tabs-nav" role="tablist" aria-label="Informace o produktu">
+        <button class="info-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-produkt"  id="tbtn-produkt">O produktu</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-pouziti"  id="tbtn-pouziti">Jak použít</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-slozeni"  id="tbtn-slozeni">Složení a dávkování</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-srovnani" id="tbtn-srovnani">Laxík vs. čípky</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-zacpa"    id="tbtn-zacpa">Zácpa u dětí</button>
+      </div>
+
+      <div class="info-tab-panels">
+
+      <!-- Panel 1: O produktu -->
+      <div class="info-tab-panel active" id="tab-produkt" role="tabpanel">
+        <div class="info-two-col">
+          <div>
+            <div class="info-card">
+              <h4>Co je DISPO GEL?</h4>
+              <p>DISPO GEL je opakovaně použitelný gelový sáček pro terapii teplem a chladem. Lze ho zahřát v mikrovlnné troubě nebo ve vroucí vodě, případně zchladit v mrazáku. Po zmrazení zůstává měkký a poddajný — nepřetvoří se do pevného ledu.</p>
+              <p>Gel je zcela <strong>netoxický a atoxický</strong> — bezpečný pro domácí i zdravotnické použití.</p>
+            </div>
+            <div class="info-card">
+              <h4>Výrobce</h4>
+              <p>Dispotech S.r.l., Via Al Piano 29, 23020 Gordona (SO), Itálie. Zdravotnický prostředek třídy I.</p>
+            </div>
+          </div>
+          <div>
+            <div class="info-card">
+              <h4>K čemu slouží?</h4>
+              <ul class="info-safety-list">
+                <li>Pohmoždění, výrony, otoky</li>
+                <li>Bolesti svalů a kloubů</li>
+                <li>Bolesti zad a šíje</li>
+                <li>Bolesti zubů a hlavy</li>
+                <li>Bolestivá menstruace</li>
+                <li>Pooperační rány a záněty</li>
+                <li>Mdloby a nevolnost</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>Klíčové výhody</h4>
+              <ul class="info-safety-list">
+                <li>Opakovaně použitelný — ekonomický a ekologický</li>
+                <li>Teplo i chlad — 2 v 1</li>
+                <li>Po zmrazení zůstává měkký a poddajný</li>
+                <li>8 velikostí pro různé části těla</li>
+                <li>Varianta FLEX se přizpůsobí tvaru končetiny</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Jak použít -->
+      <div class="info-tab-panel" id="tab-pouziti" role="tabpanel">
+        <div class="info-steps">
+          <div class="info-step">
+            <div class="info-step-num">❄️</div>
+            <div class="info-step-body">
+              <h4>Chlad — akutní poranění</h4>
+              <p>Vložte sáček do mrazáku na <strong>minimálně 2 hodiny</strong>. Před přiložením zabalte do tenké textilie — nepřikládejte přímo na kůži. Aplikujte 15–20 minut, poté přestávka. Chlad je ideální při otocích, pohmoždění a čerstvém poranění.</p>
+            </div>
+          </div>
+          <div class="info-step">
+            <div class="info-step-num">🌡️</div>
+            <div class="info-step-body">
+              <h4>Teplo — ztuhlost a napětí</h4>
+              <p>Ohřejte v mikrovlnné troubě na 600 W po dobu <strong>cca 30 sekund</strong> (u větších sáčků 45–60 s). Nebo vložte do vroucí vody na <strong>2 minuty</strong>. Před přiložením vždy zkontrolujte teplotu. Teplo se hodí na ztuhlé svaly, bolesti zad a chronické napětí.</p>
+            </div>
+          </div>
+          <div class="info-step">
+            <div class="info-step-num">⚠️</div>
+            <div class="info-step-body">
+              <h4>Bezpečnost při aplikaci</h4>
+              <p>Vždy použijte textilní vrstvu mezi sáček a kůži. Nikdy neohřívejte déle než doporučeno — hrozí poškození sáčku. Při pocitu nepohodlí aplikaci ukončete. Nepřikládejte na poraněnou nebo velmi citlivou kůži.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Složení -->
+      <div class="info-tab-panel" id="tab-slozeni" role="tabpanel">
+        <div class="info-two-col">
+          <div>
+            <div class="info-card">
+              <h4>Složení gelu</h4>
+              <p>Sáček obsahuje speciální gelovou náplň na bázi vody a polymerů, která je zcela netoxická. Obal je vyroben z pevné, potravinářsky bezpečné plastové fólie odolné vůči opakovanému tepelnému namáhání.</p>
+              <p>Gel není rozpustný ve vodě ani kůží nevstřebatelný — neobsahuje žádné léčivé látky ani chemická aditiva.</p>
+            </div>
+          </div>
+          <div>
+            <div class="info-card">
+              <h4>Skladování a péče</h4>
+              <ul class="info-safety-list">
+                <li>Skladujte na suchém místě mimo přímé sluneční záření.</li>
+                <li>Před použitím zkontrolujte neporušenost sáčku.</li>
+                <li>Při poškození sáčku přestaňte používat.</li>
+                <li>Po použití otřete a uložte.</li>
+                <li>Vydržuje mnoho cyklů ohřevu i chlazení.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 4: Kdy použít -->
+      <div class="info-tab-panel" id="tab-srovnani" role="tabpanel">
+        <div class="info-compare">
+          <div class="info-compare-col laxik">
+            <div class="info-compare-head laxik">❄️ Chlad — kdy použít</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Akutní poranění — výrony, pohmoždění, úrazy</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Čerstvý otok — do 48 hodin od vzniku</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Zánětlivá bolest s přehřátím kloubu</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Bolesti hlavy, zubů, mdloby</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Pooperační chlazení rány</div>
+          </div>
+          <div class="info-compare-col">
+            <div class="info-compare-head cipek">🌡️ Teplo — kdy použít</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Chronická ztuhlost a svalové napětí</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Bolesti zad, šíje a ramen</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Menstruační křeče</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Uvolnění svalů před fyzickou aktivitou</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Starší poranění ve fázi regenerace</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 5: Kontraindikace -->
+      <div class="info-tab-panel" id="tab-zacpa" role="tabpanel">
+        <div class="info-edu-cards">
+          <div class="info-card">
+            <h4>Kdy DISPO GEL nepoužívat</h4>
+            <p>Nepřikládejte na otevřené rány, poraněnou nebo silně podrážděnou kůži. Nepoužívejte na místa s poruchou citlivosti nebo špatným oběhem krve. Nepřikládejte přímo na kůži — vždy použijte textilní mezivrstvu.</p>
+          </div>
+          <div class="info-card">
+            <h4>Upozornění pro chlad</h4>
+            <p>Nikdy nepřikládejte zmrazený sáček přímo na kůži — hrozí chladové poškození. Maximální doba aplikace je 20 minut, poté přestávka minimálně 20 minut. Nepoužívejte u osob s Raynaudovou chorobou.</p>
+          </div>
+          <div class="info-card">
+            <h4>Upozornění pro teplo</h4>
+            <p>Před přiložením vždy otestujte teplotu sáčku na předloktí. Nikdy neohřívejte déle než doporučeno — hrozí prasknutí sáčku. Nepoužívejte u osob s poruchou citlivosti na teplo.</p>
+          </div>
+          <div class="info-card">
+            <h4>Kdy konzultovat lékaře</h4>
+            <p>Pokud bolest přetrvává déle než 3 dny, nebo je provázena horečkou, výrazným otokem či zhoršením stavu, navštivte lékaře. DISPO GEL je podpůrná pomůcka — nenahrazuje lékařské ošetření.</p>
+          </div>
+        </div>
+      </div>
+
+      </div><!-- end info-tab-panels -->
+    </div><!-- end info-tabs-wrap -->
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" style="display:none">
+  <div class="story-bg"></div>
+  <div class="story-inner">
+    <div class="story-content">
+      <div class="story-label reveal">Náš příběh</div>
+      <h2 class="reveal">Příběh, který začal<br><em>jednou bezesnou nocí</em></h2>
+      <div class="story-body">
+        <p class="reveal">Všechno to začalo u nás doma. Jako čerství rodiče jsme prožívali ty nejkrásnější chvíle, které ale začaly střídat momenty bezmoci. Našeho novorozeného syna trápilo bříško. Pláč, který neustával, a později i potíže s vylučováním nás nenechaly spát. Zkoušeli jsme všechno — masáže, čaje, babské rady. Nic nepomáhalo.</p>
+        <p class="reveal">Když nám lékaři doporučili dětské mikroklystýry jako bezpečnou a účinnou pomoc, narazili jsme na nečekanou překážku. <strong>Český trh byl prázdný.</strong> Produkty, které dříve fungovaly, měly výpadek a nic nového nebylo k mání.</p>
+        <div class="story-quote reveal hide-mobile">
+          <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
+        </div>
+        <div class="story-photo-quote-wrap reveal">
+          <img src="/story-mobile-inline.jpg" alt="Zakladatel BEAUFY se synem">
+          <div class="story-quote-on-photo">
+            <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
+          </div>
+        </div>
+        <p class="reveal">Začal jsem pátrat na vlastní pěst. Cesta mě zavedla až do slunné Itálie k výrobci, který měl přesně to, co českým maminkám a tatínkům chybělo. Slovo dalo slovo, domluvili jsme spolupráci a pod značkou <strong>Laxík</strong> jsme tento malý zázrak přivezli do Čech.</p>
+        <p class="reveal">Laxík nebyl jen produkt. Byl to první krok na cestě, která vedla k <strong>založení celé společnosti BEAUFY</strong>. Dnes už nepomáháme jen našemu synovi, ale tisícům dalších dětí a jejich rodičům, aby se opět mohli v klidu usmát.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="section-label reveal">Časté dotazy</div>
+    <h2 class="reveal">Nejčastější otázky<br>o DISPO GEL</h2>
+
+    <div class="faq-list reveal" itemscope itemtype="https://schema.org/FAQPage">
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Kolikrát lze DISPO GEL použít?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">DISPO GEL je navržen pro opakované použití — vydrží mnoho cyklů ohřevu i zmrazení. Před každým použitím zkontrolujte neporušenost sáčku.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Jak dlouho trvá zmrazení sáčku?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Pro dosažení dostatečně chladné teploty vložte sáček do mrazáku na minimálně 2 hodiny. Po vyjmutí zabalte do tenké textilie a přiložte na postižené místo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Jak ohřát DISPO GEL v mikrovlnce?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ohřívejte na výkonu 600 W po dobu cca 30 sekund (u větších sáčků 45–60 s). Nikdy neohřívejte déle najednou — hrozí poškození sáčku a popálení. Alternativně vložte do vroucí vody na 2 minuty.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Musím sáček zabalit do látky?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ano — vždy použijte textilní mezivrstvu mezi sáček a kůži. Přímý kontakt zmrazeného nebo horkého sáčku s kůží může způsobit poškození.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Jakou velikost vybrat?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Malé formáty (5,5×12 cm, 11×11 cm) jsou vhodné pro klouby, kotníky a lokty. Střední (14×18 cm, 11×26 cm) pro stehno, lýtko a rameno. Velké (17×26 cm, 14×24 cm) pro záda a větší plochy. FLEX varianta se přizpůsobí tvaru končetiny.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Co je DISPO GEL FLEX?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">DISPO GEL FLEX (14×24 cm, APA 5122248) je speciální tříkomorový sáček — flexibilnější a lépe přilehne na zakřivené partie jako kotník, koleno nebo loket.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Kdy použít chlad a kdy teplo?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Chlad je vhodný při akutním poranění, čerstvém otoku a zánětu — aplikujte do 48 hodin od úrazu. Teplo pomáhá při chronické ztuhlosti, svalové bolesti a napětí. Pochybujete-li, poraďte se s lékařem.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Je DISPO GEL bezpečný pro děti?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ano, gel je netoxický a atoxický. Při použití u dětí dbejte zvýšené opatrnosti — vždy kontrolujte teplotu a zajistěte textilní vrstvu. Aplikaci u malých dětí provádějte pod dohledem dospělé osoby.</p>
+        </div>
+      </div>
+
+    </div>

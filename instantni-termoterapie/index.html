@@ -128,7 +128,8 @@
     .buy { background: var(--bg); padding: 64px 40px; }
     .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
     .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
-    .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; }
+    .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; margin-bottom: 48px; }
+    .buy-logos + .buy-logos { margin-top: 0; }
     .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
     .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
     .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
@@ -137,7 +138,8 @@
     .buy-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
     .buy-tab:hover:not(.active) { border-color: var(--blue-lt); color: var(--blue-lt); }
     .buy-wholesale-title { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; text-align: center; }
-    .buy-wholesale-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 48px; }
+    .buy-wholesale-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 48px; }
+    .buy-wholesale-logos img { height: 44px; width: auto; max-width: 160px; display: block; }
     .buy-wholesale-logos img { height: 44px; width: auto; max-width: 160px; display: block; }
 
     /* ── CROSSSELL → DISPO GEL ── */

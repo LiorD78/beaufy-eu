@@ -247,7 +247,39 @@
       }
     }
 
-        /* ── DISCLAIMER ── */
+    
+    /* ── FAQ SEKCE ── */
+    .faq-section { background: var(--bg-light, #eef4fa); padding: 80px 40px; }
+    .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--navy, #0b2c4a); margin-bottom: 40px; background: none; -webkit-text-fill-color: var(--navy, #0b2c4a); }
+    .faq-list { max-width: 800px; }
+    .faq-item { border-bottom: 1px solid rgba(11,44,74,.12); }
+    .faq-item:first-child { border-top: 1px solid rgba(11,44,74,.12); }
+    .faq-btn {
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; background: none; border: none; cursor: pointer; text-align: left;
+      font-size: 1rem; font-weight: 600; color: var(--navy, #0b2c4a);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .faq-btn:hover { color: var(--blue-mid, #134a8e); }
+    .faq-icon { width: 20px; height: 20px; flex-shrink: 0; margin-left: 16px; transition: transform .3s; color: var(--blue-mid, #134a8e); }
+    .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+    .faq-body { display: none; padding: 0 0 20px 0; }
+    .faq-body[aria-hidden="false"] { display: block; }
+    .faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
+
+    /* ── INFO BLOCKS (přepracované) ── */
+    .info-blocks { display: flex; flex-direction: column; gap: 0; }
+    .info-block { padding: 18px 0; border-bottom: 1px solid rgba(11,44,74,.1); }
+    .info-block:last-child { border-bottom: none; }
+    .info-block h4 { font-size: .95rem; font-weight: 700; color: var(--navy, #0b2c4a); margin-bottom: 8px; }
+    .info-block p { font-size: .9rem; color: #4a5568; line-height: 1.75; margin: 0; }
+
+    @media (max-width: 900px) {
+      .faq-section { padding: 56px 24px; }
+      .faq-btn { font-size: .95rem; }
+    }
+
+    /* ── DISCLAIMER ── */
     .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
     .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
 
@@ -731,5 +763,19 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
+<script>
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    const body = btn.nextElementSibling;
+    btn.setAttribute('aria-expanded', !expanded);
+    body.setAttribute('aria-hidden', expanded);
+    if (!expanded) body.style.display = 'block';
+    else body.style.display = 'none';
+  });
+});
+</script>
+
 </body>
 </html>

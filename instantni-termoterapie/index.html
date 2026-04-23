@@ -43,9 +43,21 @@
     nav.scrolled .nav-mobile-btn span { background: var(--navy); }
 
     /* ── HERO ── */
-    .hero { background: linear-gradient(135deg, #0b2c4a 0%, #134a8e 60%, #1a6a9a 100%); padding: 160px 40px 100px; text-align: center; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(110,231,247,.08) 0%, transparent 60%); }
-    .hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero { height: 53.69vw; min-height: 480px; display: flex; align-items: center; padding: 0 !important; position: relative; overflow: hidden; }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('/instantni-termoterapie/img/hero.webp') center top / cover no-repeat;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right,
+        rgba(11,44,74,.97) 0%,
+        rgba(11,44,74,.92) 25%,
+        rgba(11,44,74,.70) 42%,
+        rgba(11,44,74,.20) 65%,
+        rgba(11,44,74,0) 85%);
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px; display: flex; flex-direction: column; align-items: flex-start; position: relative; z-index: 2; width: 100%; text-align: left; }
     .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.55); margin-bottom: 20px; }
     .hero-breadcrumb a { color: rgba(255,255,255,.55); text-decoration: none; }
     .hero-breadcrumb a:hover { color: #fff; }
@@ -167,7 +179,10 @@
     /* ── MOBILE ── */
     @media (max-width: 900px) {
       section { padding: 56px 24px; }
-      .hero { padding: 120px 24px 72px; }
+      .hero { height: auto !important; min-height: 100svh; }
+      .hero-bg { background-position: 70% top !important; background-size: cover !important; }
+      .hero-bg::after { background: linear-gradient(to right, rgba(11,44,74,.95) 0%, rgba(11,44,74,.88) 40%, rgba(11,44,74,.4) 65%, rgba(11,44,74,.0) 100%) !important; }
+      .hero-inner { padding: 100px 24px 48px; }
       .products-grid { grid-template-columns: 1fr; max-width: 440px; }
       .compare-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -205,6 +220,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Instantní termoterapie</div>
     <div class="hero-cat">🧊🔥 Kryoterapie & termoterapie</div>

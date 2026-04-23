@@ -449,10 +449,30 @@
       .nav-mobile-btn { display: block; position: relative; z-index: 2; }
 
     }
+    @media (max-width: 900px) {
+      .crosssell { padding: 48px 24px; }
+      .crosssell-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .crosssell-card { max-width: 100%; }
+    }
     @media (max-width: 600px) {
       .footer-grid { grid-template-columns: 1fr; }
       .buy-logos { gap: 12px; }
     }
+
+    /* ── CROSSSELL ── */
+    .crosssell { background: var(--bg); padding: 64px 40px; }
+    .crosssell-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .crosssell-text { flex: 1; min-width: 260px; }
+    .crosssell-text h3 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem,2.5vw,1.9rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg,#0b2c4a,#134a8e); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+    .crosssell-text p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+    .crosssell-card { display: flex; align-items: center; gap: 20px; background: var(--white); border-radius: 20px; padding: 20px 24px; box-shadow: var(--shadow-card); text-decoration: none; transition: var(--transition); border: 2px solid transparent; max-width: 360px; width: 100%; }
+    .crosssell-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .crosssell-card img { height: 80px; width: auto; object-fit: contain; flex-shrink: 0; }
+    .crosssell-card-info { flex: 1; min-width: 0; }
+    .crosssell-card-label { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+    .crosssell-card-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 2px; }
+    .crosssell-card-desc { font-size: .82rem; color: var(--muted); }
+    .crosssell-card-arrow { font-size: 1.4rem; color: var(--navy); margin-left: auto; flex-shrink: 0; }
   </style>
 </head>
 <body>

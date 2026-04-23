@@ -152,27 +152,79 @@
     .variant-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 99px; background: var(--navy); color: #fff; font-size: .85rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
     .variant-btn:hover { background: var(--blue); transform: translateY(-1px); }
 
-    /* ── INFO ACCORDION ── */
+    /* ── INFO TABS ── */
     .info-section { background: var(--white); }
-    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .accordion { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-    .accordion-item { border-bottom: 1px solid var(--border); }
-    .accordion-item:last-child { border-bottom: none; }
-    .accordion-btn {
-      width: 100%; background: none; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 24px; font-family: inherit; font-size: .95rem; font-weight: 600;
-      color: var(--navy); text-align: left; transition: background .2s;
+    .info-tabs-wrap { max-width: 860px; }
+    .info-tabs-nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 32px; }
+    .info-tab-btn {
+      padding: 8px 18px; border-radius: 99px; font-size: .85rem; font-weight: 600;
+      cursor: pointer; border: 1.5px solid rgba(11,44,74,.18);
+      background: transparent; color: var(--muted); font-family: inherit;
+      transition: all .18s; white-space: nowrap;
     }
-    .accordion-btn:hover { background: var(--bg); }
-    .accordion-btn[aria-expanded="true"] { background: var(--bg); color: var(--blue); }
-    .accordion-icon { width: 20px; height: 20px; flex-shrink: 0; transition: transform .3s ease; }
-    .accordion-btn[aria-expanded="true"] .accordion-icon { transform: rotate(45deg); }
-    .accordion-body { display: none; padding: 0 24px 20px; font-size: .9rem; color: var(--muted); line-height: 1.75; }
-    .accordion-body.open { display: block; }
-
-    .info-highlights { display: flex; flex-direction: column; gap: 16px; }
-    .highlight-card { background: var(--bg); border-radius: 16px; padding: 22px 24px; }
+    .info-tab-btn:hover { border-color: var(--blue-mid,#134a8e); color: var(--blue-mid,#134a8e); }
+    .info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .info-tab-panel { display: none; }
+    .info-tab-panel.active { display: block; }
+    /* karty */
+    .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+    .info-card {
+      background: var(--bg); border: 1px solid rgba(11,44,74,.1);
+      border-radius: 16px; padding: 20px 22px;
+    }
+    .info-card.featured { border-color: var(--blue-mid,#134a8e); border-width: 1.5px; }
+    .info-card-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      background: #eef4fa; color: var(--blue-mid,#134a8e);
+      border-radius: 99px; padding: 3px 10px; margin-bottom: 10px;
+    }
+    .info-card h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
+    .info-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; margin: 0; }
+    /* kroky */
+    .info-steps { display: flex; flex-direction: column; gap: 14px; max-width: 600px; }
+    .info-step { display: flex; gap: 14px; align-items: flex-start; }
+    .info-step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #eef4fa; color: var(--blue-mid,#134a8e);
+      font-size: .8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+    }
+    .info-step-text { font-size: .9rem; color: var(--muted); line-height: 1.65; padding-top: 4px; }
+    .info-step-note { font-size: .82rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--blue-mid,#134a8e); padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 6px; }
+    /* složení */
+    .info-slozeni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .info-slozeni-table { width: 100%; border-collapse: collapse; }
+    .info-slozeni-table th { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-mid,#134a8e); padding: 0 0 10px; text-align: left; border-bottom: 1.5px solid rgba(11,44,74,.12); }
+    .info-slozeni-table td { font-size: .88rem; color: var(--muted); padding: 9px 0; border-bottom: 1px solid rgba(11,44,74,.07); vertical-align: top; }
+    .info-slozeni-table td:last-child { text-align: right; color: var(--navy); font-weight: 600; white-space: nowrap; }
+    .info-slozeni-table tr:last-child td { border-bottom: none; }
+    .info-safety-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .info-safety-list li { font-size: .88rem; color: var(--muted); line-height: 1.65; padding-left: 16px; position: relative; }
+    .info-safety-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--blue-mid,#134a8e); }
+    /* srovnání */
+    .info-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 700px; }
+    .info-compare-col { background: var(--bg); border-radius: 14px; padding: 18px 20px; border: 1px solid rgba(11,44,74,.1); }
+    .info-compare-col.laxik { border-color: var(--blue-mid,#134a8e); border-width: 1.5px; }
+    .info-compare-head { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
+    .info-compare-head.laxik { color: var(--blue-mid,#134a8e); }
+    .info-compare-head.cipek { color: #888; }
+    .info-compare-item { display: flex; align-items: flex-start; gap: 8px; font-size: .88rem; color: var(--muted); line-height: 1.55; padding: 6px 0; border-bottom: 1px solid rgba(11,44,74,.07); }
+    .info-compare-item:last-child { border-bottom: none; }
+    .info-compare-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .info-compare-dot.green { background: #5C820F; }
+    .info-compare-dot.gray { background: #ccc; }
+    /* zácpa edukace */
+    .info-edu-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    /* mobile */
+    @media (max-width: 700px) {
+      .info-cards { grid-template-columns: 1fr; }
+      .info-slozeni-grid { grid-template-columns: 1fr; }
+      .info-compare { grid-template-columns: 1fr; }
+      .info-edu-cards { grid-template-columns: 1fr; }
+      .info-tabs-nav { gap: 5px; }
+      .info-tab-btn { font-size: .78rem; padding: 6px 13px; }
+    }
     .highlight-icon { font-size: 1.5rem; margin-bottom: 8px; }
     .highlight-title { font-weight: 700; font-size: .95rem; color: var(--navy); margin-bottom: 4px; }
     .highlight-text { font-size: .85rem; color: var(--muted); line-height: 1.6; }
@@ -268,12 +320,7 @@
     .faq-body[aria-hidden="false"] { display: block; }
     .faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
 
-    /* ── INFO BLOCKS (přepracované) ── */
-    .info-blocks { display: flex; flex-direction: column; gap: 0; }
-    .info-block { padding: 18px 0; border-bottom: 1px solid rgba(11,44,74,.1); }
-    .info-block:last-child { border-bottom: none; }
-    .info-block h4 { font-size: .95rem; font-weight: 700; color: var(--navy, #0b2c4a); margin-bottom: 8px; }
-    .info-block p { font-size: .9rem; color: #4a5568; line-height: 1.75; margin: 0; }
+    /* info-blocks removed */
 
     @media (max-width: 900px) {
       .faq-section { padding: 56px 24px; }
@@ -412,109 +459,154 @@
 <!-- INFORMACE -->
 <section class="info-section" id="informace">
   <div class="section-inner">
+    <div class="section-label reveal">Produkt</div>
+    <h2 class="reveal">Informace<br>o produktu</h2>
 
-    <!-- Levý sloupec: info bloky -->
-    <div class="info-grid">
-      <div>
-        <div class="section-label reveal">Produkt</div>
-        <h2 class="reveal">Informace<br>o produktu</h2>
+    <div class="info-tabs-wrap reveal">
 
-        <div class="info-blocks reveal">
+      <!-- Navigace záložek -->
+      <nav class="info-tabs-nav" role="tablist" aria-label="Informace o produktu">
+        <button class="info-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-produkt"  id="tbtn-produkt">O produktu</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-pouziti"  id="tbtn-pouziti">Jak použít</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-slozeni"  id="tbtn-slozeni">Složení &amp; dávkování</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-srovnani" id="tbtn-srovnani">Laxík vs. čípky</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-zacpa"    id="tbtn-zacpa">Zácpa u dětí</button>
+      </nav>
 
-          <div class="info-block">
+      <!-- Panel 1: O produktu -->
+      <div class="info-tab-panel active" id="tab-produkt" role="tabpanel" aria-labelledby="tbtn-produkt">
+        <div class="info-cards">
+          <div class="info-card featured">
+            <div class="info-card-tag">Zdravotnický prostředek třídy I</div>
             <h4>Co je Laxík?</h4>
-            <p>Laxík je jednorázový zdravotnický prostředek třídy I — mikroklyzma na bázi glycerolu, heřmánku a slézu pro rektální použití. Je certifikován dle evropských norem a vyrábí se v Itálii (New.Fa.Dem. Srl). V České republice ho distribuuje výhradně BEAUFY s.r.o.</p>
+            <p>Jednorázové mikroklyzma na bázi glycerolu, heřmánku a slézu pro rektální použití. Certifikován dle evropských norem, vyrábí se v Itálii (New.Fa.Dem. Srl). V ČR distribuuje výhradně BEAUFY s.r.o.</p>
           </div>
-
-          <div class="info-block">
+          <div class="info-card">
             <h4>Jak Laxík funguje?</h4>
-            <p>Glycerol působí mechanicky projímavě: vtahuje vodu do stolice, změkčuje ji a vyvolává peristaltiku vedoucí ke střevní evakuaci. Heřmánek (<em>Chamomilla recutita</em>) a sléz (<em>Malva sylvestris</em>) působí protizánětlivě a zklidňují sliznici konečníku — výsledkem je výrazně šetrnější a pohodlnější vyprázdnění. Nástup účinku nastává obvykle do 15–30 minut.</p>
+            <p>Glycerol vtahuje vodu do stolice a změkčuje ji. Heřmánek (<em>Chamomilla recutita</em>) a sléz (<em>Malva sylvestris</em>) zklidňují sliznici konečníku. Účinek nastupuje obvykle do 15–30 minut.</p>
           </div>
-
-          <div class="info-block">
-            <h4>Přesné složení</h4>
-            <p>Jedna dávka (3 g) obsahuje: glycerol 2,25 g, extrakt z heřmánku 0,10 g, extrakt ze slézu 0,10 g, pšeničný škrob 0,02 g a čištěná voda. Přípravek neobsahuje konzervační látky, parfémy ani soli sodíku — je proto vhodný i pro kojence s nejcitlivější sliznicí.</p>
+          <div class="info-card">
+            <h4>Pro koho je určen?</h4>
+            <p>Vhodný pro děti od narození — novorozence i kojence. Pomáhá při občasné zácpě, přechodu na pevnou stravu, změně prostředí, cestování nebo horečnatých onemocněních.</p>
           </div>
-
-          <div class="info-block">
-            <h4>Pro koho je Laxík určen?</h4>
-            <p>Laxík je vhodný pro všechny děti od narození — včetně novorozenců a kojenců. Je určen ke krátkodobé léčbě občasné zácpy, potíží s vyprázdněním při přechodu na pevnou stravu, cestování, změně prostředí nebo při horečnatých onemocněních.</p>
-          </div>
-
-          <div class="info-block">
-            <h4>Jak Laxík použít — krok za krokem</h4>
-            <p>1. Uchopte ampulku za hrdlo a otočením odlomte víčko.<br>
-            2. Konec aplikátoru (kanylu) lehce namažte kapkou roztoku.<br>
-            3. Dítě položte na bok s pokrčenými koleny nebo do polohy na bříše.<br>
-            4. Jemně zaveďte kanylu do konečníku.<br>
-            5. Stiskněte pružnou část ampulky a vstříkněte obsah.<br>
-            6. Přidržte ampulku stisknutou, vytáhněte ji a vyhoďte.<br><br>
-            Každá ampulka je na jedno použití — i v případě, že nebyla podána celá dávka, nelze ji znovu použít.</p>
-          </div>
-
-          <div class="info-block">
+          <div class="info-card">
             <h4>Dávkování</h4>
-            <p>Děti od narození: 1 mikroklyzma dle potřeby, 1–2× denně. Projímadla by měla být používána co nejméně často a ne déle než 7 dní bez konzultace s lékařem. Při chronické zácpě vždy konzultujte s pediatrem.</p>
+            <p>1 mikroklyzma dle potřeby, 1–2× denně. Maximálně 7 dní bez konzultace s lékařem. Při chronické zácpě vždy poraďte se s pediatrem.</p>
           </div>
-
-          <div class="info-block">
-            <h4>Kontraindikace a bezpečnost</h4>
-            <p>Nepoužívejte při přecitlivělosti nebo alergii na složky přípravku. Nepoužívejte při akutních bolestech břicha neznámého původu. V případě přetrvávající zácpy je nutné konzultovat s pediatrem, aby se vyloučily jiné příčiny. Uchovávejte mimo dosah dětí. Skladujte při teplotě 4–30 °C, mimo přímé světlo a teplo.</p>
-          </div>
-
-          <div class="info-block">
-            <h4>Výhody oproti čípkům</h4>
-            <p>Na rozdíl od klasických glycerinových čípků je Laxík v tekuté formě v uzavřené ampulce s přesně dávkovaným obsahem. Aplikace je hygienická, jednoduchá a prakticky bezbolestná — žádné rozpouštění, žádné odlomení části čípku. Výsledný efekt nastupuje rychleji a je spolehlivější.</p>
-          </div>
-
-          <div class="info-block">
-            <h4>Proč je mikroklystýr šetrnější než čípek nebo sirup?</h4>
-            <p>Glycerinové čípky fungují podobně, ale mají nevýhody: musí se rozpustit (trvá déle), hůře se dávkují a při aplikaci může dojít k nechtěnému vytlačení. Laxík je v tekuté formě — účinná látka se dostane přesně tam, kde je potřeba, okamžitě. Oproti sirupům a laxativním čajům má mikroklystýr lokální účinek a nezatěžuje trávicí soustavu — glycerol neprostupuje do krevního oběhu a nevyvolává průjem.</p>
-          </div>
-
-          <div class="info-block">
-            <h4>Zácpa u kojenců a batolat — co je normální?</h4>
-            <p>Každé dítě je jiné a frekvence stolice se výrazně liší. Kojené dítě může mít stolici po každém krmení, ale také jen jednou za několik dní — obojí může být zcela normální. Za zácpu se obvykle považuje situace, kdy dítě má stolici méně než 3× týdně, přičemž stolice je tuhá, suchá a obtížně odchází. Zácpa se u kojenců nejčastěji objevuje při přechodu z kojení na umělou výživu, při zavádění příkrmů nebo při cestování.</p>
-          </div>
-
-          <div class="info-block">
-            <h4>Jak předcházet zácpě u dětí</h4>
-            <p>Nejúčinnější prevencí je dostatečný příjem tekutin. Při přechodu na příkrmy zařazujte zeleninu a ovoce bohaté na vlákninu (hrušky, švestky, mrkev, hrášek). Pohyb a masáže bříška ve směru hodinových ručiček pomáhají stimulovat peristaltiku. Vyhněte se nadměrnému podávání rýže a bílého pečiva. Při cestování věnujte hydrataci zvýšenou pozornost.</p>
-          </div>
-
-          <div class="info-block">
-            <h4>Skladování a trvanlivost</h4>
-            <p>Skladujte při teplotě 4–30 °C mimo přímé sluneční záření a zdroje tepla. Datum použitelnosti je uvedeno na obalu. Po otevření ampulky obsah okamžitě spotřebujte — nelze skladovat rozdělenou dávku.</p>
-          </div>
-
         </div>
       </div>
 
-      <!-- Pravý sloupec: highlights -->
-      <div class="info-highlights">
-        <div class="highlight-card reveal">
-          <div class="highlight-icon">&#9312;</div>
-          <div class="highlight-title">Šetrné přírodní složení</div>
-          <div class="highlight-text">Kombinace glycerolu, heřmánku a slézu je šetrná ke sliznici a vhodná i pro nejmenší novorozence.</div>
+      <!-- Panel 2: Jak použít -->
+      <div class="info-tab-panel" id="tab-pouziti" role="tabpanel" aria-labelledby="tbtn-pouziti">
+        <div class="info-steps">
+          <div class="info-step">
+            <div class="info-step-num">1</div>
+            <div class="info-step-text">Uchopte ampulku za hrdlo a otočením odlomte víčko.</div>
+          </div>
+          <div class="info-step">
+            <div class="info-step-num">2</div>
+            <div class="info-step-text">Konec aplikátoru (kanylu) lehce namažte kapkou roztoku.</div>
+          </div>
+          <div class="info-step">
+            <div class="info-step-num">3</div>
+            <div class="info-step-text">Dítě položte na bok s pokrčenými koleny nebo do polohy na bříše.</div>
+          </div>
+          <div class="info-step">
+            <div class="info-step-num">4</div>
+            <div class="info-step-text">Jemně zaveďte kanylu do konečníku.</div>
+          </div>
+          <div class="info-step">
+            <div class="info-step-num">5</div>
+            <div class="info-step-text">Stiskněte pružnou část ampulky a vstříkněte obsah.</div>
+          </div>
+          <div class="info-step">
+            <div class="info-step-num">6</div>
+            <div class="info-step-text">Přidržte ampulku stisknutou, vytáhněte ji a vyhoďte.</div>
+          </div>
         </div>
-        <div class="highlight-card reveal">
-          <div class="highlight-icon">&#9889;</div>
-          <div class="highlight-title">Rychlý účinek</div>
-          <div class="highlight-text">Díky jednoduchému aplikátoru a lokálnímu působení dochází k účinku velmi rychle — bez čekání a zbytečného diskomfortu.</div>
-        </div>
-        <div class="highlight-card reveal">
-          <div class="highlight-icon">&#9898;</div>
-          <div class="highlight-title">Vhodný od narození</div>
-          <div class="highlight-text">Laxík je bezpečný pro kojence i starší děti. Složení bez konzervantů minimalizuje riziko podráždění.</div>
-        </div>
-        <div class="highlight-card reveal">
-          <div class="highlight-icon">&#10022;</div>
-          <div class="highlight-title">Zdravotnický prostředek třídy I</div>
-          <div class="highlight-text">Certifikovaný zdravotnický prostředek splňující evropské normy. Registrován v Pharmdata — dostupný ve většině lékárenských sítí ČR a SR.</div>
+        <div class="info-step-note">Každá ampulka je na jedno použití — i v případě, že nebyla podána celá dávka, nelze ji znovu použít.</div>
+      </div>
+
+      <!-- Panel 3: Složení & dávkování -->
+      <div class="info-tab-panel" id="tab-slozeni" role="tabpanel" aria-labelledby="tbtn-slozeni">
+        <div class="info-slozeni-grid">
+          <div>
+            <div class="info-card" style="padding:20px 22px 16px;">
+              <h4 style="margin-bottom:14px;">Složení jedné dávky (3 g)</h4>
+              <table class="info-slozeni-table">
+                <thead><tr><th>Složka</th><th>Množství</th></tr></thead>
+                <tbody>
+                  <tr><td>Glycerol</td><td>2,25 g</td></tr>
+                  <tr><td>Extrakt z heřmánku</td><td>0,10 g</td></tr>
+                  <tr><td>Extrakt ze slézu</td><td>0,10 g</td></tr>
+                  <tr><td>Pšeničný škrob</td><td>0,02 g</td></tr>
+                  <tr><td>Čištěná voda</td><td>do 3 g</td></tr>
+                </tbody>
+              </table>
+              <p style="font-size:.8rem;color:var(--muted);margin-top:12px;line-height:1.55;">Bez konzervantů, parfémů ani solí sodíku — vhodný i pro novorozence.</p>
+            </div>
+          </div>
+          <div>
+            <div class="info-card" style="padding:20px 22px;">
+              <h4 style="margin-bottom:12px;">Bezpečnost a skladování</h4>
+              <ul class="info-safety-list">
+                <li>Nepoužívejte při alergii na složky přípravku.</li>
+                <li>Nepoužívejte při akutních bolestech břicha neznámého původu.</li>
+                <li>Při přetrvávající zácpě konzultujte s pediatrem.</li>
+                <li>Uchovávejte mimo dosah dětí.</li>
+                <li>Skladujte při 4–30 °C, mimo přímé světlo a teplo.</li>
+                <li>Po otevření obsah okamžitě spotřebujte.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
+      <!-- Panel 4: Laxík vs. čípky -->
+      <div class="info-tab-panel" id="tab-srovnani" role="tabpanel" aria-labelledby="tbtn-srovnani">
+        <div class="info-compare">
+          <div class="info-compare-col laxik">
+            <div class="info-compare-head laxik">Laxík mikroklyzma</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Tekutá forma — účinná látka se dostane přesně na místo okamžitě</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Přesně dávkovaný obsah uzavřené ampulky</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Hygienická, jednoduchá a prakticky bezbolestná aplikace</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Glycerol neprostupuje do krevního oběhu, nevyvolává průjem</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Rychlejší a spolehlivější nástup účinku</div>
+          </div>
+          <div class="info-compare-col">
+            <div class="info-compare-head cipek">Glycerinový čípek / sirup</div>
+            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Čípek se musí nejprve rozpustit — nástup trvá déle</div>
+            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Hůře se dávkuje, riziko nechtěného vytlačení</div>
+            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Odlomení části čípku při aplikaci</div>
+            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Sirupy a čaje zatěžují trávicí soustavu systémově</div>
+            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Pomalejší a méně předvídatelný efekt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 5: Zácpa u dětí -->
+      <div class="info-tab-panel" id="tab-zacpa" role="tabpanel" aria-labelledby="tbtn-zacpa">
+        <div class="info-edu-cards">
+          <div class="info-card">
+            <h4>Co je normální?</h4>
+            <p>Každé dítě je jiné. Kojené dítě může mít stolici po každém krmení, ale i jen jednou za několik dní — obojí může být zcela normální. Za zácpu se považuje méně než 3× stolice týdně, přičemž je tuhá, suchá a obtížně odchází.</p>
+          </div>
+          <div class="info-card">
+            <h4>Kdy zácpa nejčastěji nastává?</h4>
+            <p>Nejčastěji při přechodu z kojení na umělou výživu, zavádění příkrmů, cestování nebo změně prostředí. Horečnaté onemocnění s dehydratací také zvyšuje riziko zácpy.</p>
+          </div>
+          <div class="info-card">
+            <h4>Jak předcházet zácpě</h4>
+            <p>Dostatečný příjem tekutin je základ. Zařazujte zeleninu a ovoce bohaté na vlákninu — hrušky, švestky, mrkev, hrášek. Masáže bříška ve směru hodinových ručiček stimulují peristaltiku.</p>
+          </div>
+          <div class="info-card">
+            <h4>Kdy navštívit lékaře?</h4>
+            <p>Pokud zácpa přetrvává déle než 7 dní, je provázena bolestmi nebo krvácením, nebo pokud přípravek nezabírá. Vždy konzultujte s pediatrem při chronické nebo opakující se zácpě.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end info-tabs-wrap -->
   </div>
 </section>
 
@@ -742,6 +834,19 @@
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
 
   // Accordion
+  // Info tabs
+  const tabBtns = document.querySelectorAll('.info-tab-btn');
+  const tabPanels = document.querySelectorAll('.info-tab-panel');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+    });
+  });
+
   document.querySelectorAll('.accordion-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';

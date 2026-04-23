@@ -385,14 +385,34 @@
       .variants-grid { grid-template-columns: 1fr; max-width: 360px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
-      .nav-inner { border-radius: 28px !important; }
+      .nav-top-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+      .nav-mobile-btn { display: block; }
+      .nav-links { display: none; flex-direction: column; width: 100%; margin-top: 8px; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links.open a {
+        font-size: 1.05rem; font-weight: 500;
+        padding: 13px 4px;
+        color: var(--navy) !important;
+        text-decoration: none; display: block;
+        border-bottom: 1px solid rgba(11,44,74,.07);
+      }
+      .nav-links.open a:last-child { border-bottom: none; }
+      .nav-links.open .nav-cta {
+        background: var(--green) !important;
+        color: #fff !important;
+        border-radius: 99px !important;
+        text-align: center;
+        padding: 13px 20px !important;
+        margin-top: 8px;
+        border-bottom: none !important;
+        font-weight: 600;
+      }
       .nav-inner.menu-open {
+        border-radius: 28px !important;
         flex-direction: column;
         align-items: stretch;
-        padding: 10px 16px 16px;
+        padding: 12px 20px 16px;
       }
-      .nav-inner.menu-open .nav-logo { display: block; align-self: flex-start; padding: 4px 8px 0; }
-      .nav-inner.menu-open .nav-mobile-btn { position: absolute; top: 14px; right: 16px; }
       .nav-inner.menu-open { border-radius: 28px; }
       .nav-links { display: none; }
       .nav-links.open {
@@ -435,17 +455,19 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-links" id="navLinks">
-    <a href="/#produkty">Produkty</a>
-    <a href="/#o-nas">O nás</a>
-    <a href="/#kontakt">Kontakty</a>
-    <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
-  </div>
-  <div class="nav-inner">
-    <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
-    <button class="nav-mobile-btn" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+  <div class="nav-inner" id="navInner">
+    <div class="nav-top-row">
+      <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
+      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/#produkty">Produkty</a>
+      <a href="/#o-nas">O nás</a>
+      <a href="/#kontakt">Kontakty</a>
+      <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
+    </div>
   </div>
 </nav>
 

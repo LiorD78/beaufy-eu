@@ -85,7 +85,8 @@
     .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
     .chip { font-size: .78rem; font-weight: 600; padding: 5px 14px; border-radius: 99px; backdrop-filter: blur(8px); }
     .chip-check { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.3); }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .chip-check::before { content: "✓"; color: #6ee7f7; font-weight: 700; margin-right: 4px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
     .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
     .btn-primary:hover { background: var(--green-br); transform: translateY(-2px); }
     .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 99px; background: transparent; color: #fff; font-weight: 500; font-size: .95rem; text-decoration: none; border: 1.5px solid rgba(255,255,255,.45); transition: var(--transition); }

@@ -201,6 +201,22 @@
     .buy-wholesale-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 48px; }
     .buy-wholesale-logos img { height: 44px; width: auto; max-width: 160px; display: block; }
 
+
+    /* ── CROSS SELL ── */
+    .crosssell { background: var(--bg); padding: 56px 40px; border-top: 1px solid var(--border); }
+    .crosssell-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+    .crosssell-text .section-label { margin-bottom: 6px; }
+    .crosssell-text h3 { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .crosssell-text p { font-size: .9rem; color: var(--muted); line-height: 1.65; max-width: 420px; }
+    .crosssell-card { display: flex; align-items: center; gap: 20px; background: var(--white); border-radius: 16px; padding: 20px 28px; border: 1px solid var(--border); text-decoration: none; color: inherit; transition: var(--transition); box-shadow: var(--shadow-card); flex-shrink: 0; }
+    .crosssell-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); border-color: var(--blue-mid, #134a8e); }
+    .crosssell-card img { height: 80px; width: auto; object-fit: contain; }
+    .crosssell-card-info { }
+    .crosssell-card-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--blue-mid, #134a8e); margin-bottom: 4px; }
+    .crosssell-card-name { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .crosssell-card-desc { font-size: .82rem; color: var(--muted); }
+    .crosssell-card-arrow { margin-left: 12px; color: var(--blue-mid, #134a8e); font-size: 1.2rem; flex-shrink: 0; }
+    @media (max-width: 700px) { .crosssell-inner { flex-direction: column; } .crosssell-card { width: 100%; } }
     /* ── DISCLAIMER & FOOTER ── */
     .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
     .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
@@ -746,6 +762,26 @@
         <a href="/docs/POS_glycerol.pdf" target="_blank" style="background:var(--bg);padding:9px 18px;border-radius:99px;font-size:.82rem;color:var(--navy);text-decoration:none;font-weight:500;">Prohlášení o shodě – Glycerol</a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CROSS SELL -->
+<section class="crosssell">
+  <div class="crosssell-inner">
+    <div class="crosssell-text reveal">
+      <div class="section-label">Také od BEAUFY</div>
+      <h3>Hledáte řešení pro děti?</h3>
+      <p>Laxík je mikroklystýr pro děti od narození od stejného italského výrobce. Šetrné složení s glycerolem, heřmánkem a slézem. Bezpečný i pro novorozence.</p>
+    </div>
+    <a href="/laxik/" class="crosssell-card reveal">
+      <img src="/laxik-mikroklystyr-deti.png" alt="Laxík mikroklystýr pro děti">
+      <div class="crosssell-card-info">
+        <div class="crosssell-card-label">Pro děti od narození</div>
+        <div class="crosssell-card-name">Laxík mikroklystýr</div>
+        <div class="crosssell-card-desc">Mikroklystýr 3×3g nebo 6×3g</div>
+      </div>
+      <span class="crosssell-card-arrow">→</span>
+    </a>
   </div>
 </section>
 

@@ -37,7 +37,7 @@
     h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
 
     /* ── NAV ── */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 101; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
     nav.scrolled { background: rgba(255,255,255,.92); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(11,44,74,.08); padding: 10px 24px; }
     .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { text-decoration: none; }
@@ -240,12 +240,9 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .nav-links { display: none; }
       .nav-mobile-btn { display: block; }
-      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,.97); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1); border-radius: 28px; padding: 20px 16px 20px; gap: 4px; z-index: 99; align-items: stretch; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 8px; right: 8px; background: rgba(255,255,255,.97); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1); border-radius: 28px; padding: 76px 16px 20px; gap: 4px; z-index: 99; align-items: stretch; }
       .nav-mobile-btn { display: block; position: relative; z-index: 102; }
       .nav-links.open a { font-size: 1.1rem; font-weight: 500; padding: 14px 24px; width: 100%; color: var(--navy) !important; border-radius: 12px; text-decoration: none; display: block; }
-      .nav-menu-logo { display: none; padding: 18px 24px 10px; }
-      .nav-menu-logo img { height: 20px; width: auto; filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
-      .nav-links.open .nav-menu-logo { display: block; }
 
       .nav-links.open a:hover { background: var(--bg); }
     }
@@ -262,7 +259,6 @@
   <div class="nav-inner">
     <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
     <div class="nav-links" id="navLinks">
-      <div class="nav-menu-logo"><img src="/BEAUFY_logo.png" alt="BEAUFY"></div>
       <a href="/#produkty">Produkty</a>
       <a href="/#o-nas">O nás</a>
       <a href="/#kontakt">Kontakty</a>

@@ -193,7 +193,9 @@
     .info-step-text { font-size: .9rem; color: var(--muted); line-height: 1.65; padding-top: 4px; }
     .info-step-note { font-size: .82rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--blue-mid,#134a8e); padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 6px; }
     /* složení */
-    .info-slozeni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .info-slozeni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }
+    .info-slozeni-grid > div { display: flex; }
+    .info-slozeni-grid > div > .info-card { flex: 1; }
     .info-slozeni-table { width: 100%; border-collapse: collapse; }
     .info-slozeni-table th { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-mid,#134a8e); padding: 0 0 10px; text-align: left; border-bottom: 1.5px solid rgba(11,44,74,.12); }
     .info-slozeni-table td { font-size: .88rem; color: var(--muted); padding: 9px 0; border-bottom: 1px solid rgba(11,44,74,.07); vertical-align: top; }

@@ -112,6 +112,15 @@
     .product-visual { display: flex; align-items: center; justify-content: center; padding: 40px; background: var(--bg); border-radius: var(--radius-card); }
     .product-visual img { max-height: 320px; width: auto; object-fit: contain; }
 
+
+    /* KDE KOUPIT */
+    .buy { background: var(--bg); padding: 64px 40px; }
+    .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
+    .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; margin-bottom: 48px; }
+    .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
+    .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
     /* FAQ */
     .faq-section { background: #eef4fa; padding: 80px 40px; }
     .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--navy); margin-bottom: 40px; background: none; -webkit-text-fill-color: var(--navy); }
@@ -315,6 +324,23 @@
       <div class="product-visual reveal">
         <img src="/zensen/img/ampulka-clear.webp" alt="Ženšen ampulka detail">
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- KDE KOUPIT -->
+<section class="buy" id="kde-koupit">
+  <div class="buy-inner">
+    <p class="buy-title reveal">Dostupné v těchto lékárnách</p>
+    <div class="buy-logos">
+      <a class="partner-logo-link reveal" href="https://www.drmax.cz/zen-sen-ginseng-royal-ampule-10x10-ml" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a>
+      <a class="partner-logo-link reveal" href="https://www.benu.cz/zen-sen-ginseng-royal-10x10ml-ampule" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU"></a>
+      <a class="partner-logo-link reveal" href="https://www.mojelekarna.cz/zen-sen-ginseng-royal-10x10ml-ampule-8588003213013" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna"></a>
+      <a class="partner-logo-link reveal" href="https://www.gigalekarna.cz/produkt/zen-sen-ginseng-royal-10x10ml-ampule/" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarnaave.cz/zen-sen-ginseng-royal-10x10ml-ampule" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarnalemon.cz/doplnky-stravy-a-vyziva/energie-unava/zen-sen-ginseng-royal-10x10ml-ampule-8588003213013" target="_blank" rel="noopener"><img src="/logos/logo-lemon.png" alt="Lemon Lékárna"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarna.cz/ginseng-royal-jelly-oral-tonic-10x10ml/" target="_blank" rel="noopener"><img src="/logos/logo-lekarna.svg" alt="Lékárna.cz" style="height:60px;"></a>
     </div>
   </div>
 </section>

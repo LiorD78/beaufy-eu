@@ -39,7 +39,7 @@
     /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; isolation: isolate; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
     nav.scrolled { background: rgba(255,255,255,.92); backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(11,44,74,.08); padding: 10px 24px; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 201; }
     .nav-logo { text-decoration: none; }
     .nav-logo-img { height: 22px; width: auto; display: block; transition: filter .35s ease, opacity .35s ease; filter: brightness(0) invert(1); opacity: .95; }
     nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); opacity: 1; }
@@ -240,7 +240,7 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .nav-links { display: none; }
       .nav-mobile-btn { display: block; }
-      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,.97); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1); border-radius: 28px; padding: 76px 16px 20px; gap: 4px; z-index: 100; align-items: stretch; }
+      .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 0; left: 23px; right: 23px; background: rgba(255,255,255,.97); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 1px 0 rgba(255,255,255,.35) inset, 0 8px 32px rgba(11,44,74,.18), 0 2px 8px rgba(11,44,74,.1); border-radius: 28px; padding: 76px 16px 20px; gap: 4px; z-index: 100; align-items: stretch; }
       .nav-mobile-btn { display: block; position: relative; z-index: 102; }
       .nav-links.open a { font-size: 1.1rem; font-weight: 500; padding: 14px 24px; width: 100%; color: var(--navy) !important; border-radius: 12px; text-decoration: none; display: block; }
 

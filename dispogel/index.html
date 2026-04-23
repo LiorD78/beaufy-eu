@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laxík — mikroklystýr pro děti | BEAUFY</title>
-  <meta name="description" content="Laxík je šetrný mikroklystýr pro děti od narození. Složení s glycerolem, heřmánkem a slézem. Zdravotnický prostředek třídy I.">
+  <title>DISPO GEL — opakovaně použitelný gelový sáček | BEAUFY</title>
+  <meta name="description" content="DISPO GEL je opakovaně použitelný gelový sáček pro terapii teplem a chladem. Medical device class IIa. Vhodný pro sport, rehabilitaci i domácí péči.">
   <link rel="icon" href="/beaufy-ico-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
     .nav-inner {
       max-width: 1200px; margin: 0 auto;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 10px 20px 10px 24px; border-radius: 99px; position: relative; z-index: 1; transition: all .4s cubic-bezier(.4,0,.2,1), border-radius .2s ease;
+      padding: 10px 20px 10px 24px; border-radius: 99px; position: relative; z-index: 1;
       background: rgba(255,255,255,.18);
       backdrop-filter: blur(28px) saturate(180%);
       -webkit-backdrop-filter: blur(28px) saturate(180%);
@@ -67,9 +67,6 @@
     .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: var(--transition); }
     nav.scrolled .nav-mobile-btn span { background: var(--navy); }
 
-    /* ── DISPO GEL SIZE BADGE ── */
-    .dg-size-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #0b2c4a, #134a8e); color: #fff; font-size: 1.1rem; font-weight: 700; text-align: center; line-height: 1.3; }
-    .dg-size-badge small { font-size: .75rem; font-weight: 500; opacity: .85; margin-top: 2px; }
     /* ── HERO ── */
     .hero {
       height: 53.69vw;
@@ -79,7 +76,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('/laxik-hero.jpg') left top / 100% auto no-repeat;
+      background: url('/dispogel/img/dispogel-hero-wrist.webp') center top / cover no-repeat;
     }
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
@@ -88,8 +85,8 @@
           rgba(11,44,74,.97) 0%,
           rgba(11,44,74,.92) 25%,
           rgba(11,44,74,.70) 42%,
-          rgba(11,44,74,.25) 62%,
-          rgba(11,44,74,0) 80%);
+          rgba(11,44,74,.20) 65%,
+          rgba(11,44,74,0) 85%);
     }
     .hero-inner {
       max-width: 1200px; margin: 0 auto;
@@ -98,7 +95,6 @@
       position: relative; z-index: 2;
       width: 100%;
     }
-    .hero-img { display: none; }
     .hero-text { color: #fff; }
     .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
     .hero-breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
@@ -130,8 +126,6 @@
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.4); }
     .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: rgba(255,255,255,.1); color: #fff; font-weight: 500; font-size: .95rem; text-decoration: none; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); }
     .btn-outline-white:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
-    .hero-img { display: flex; align-items: center; justify-content: center; }
-    .hero-img img { max-width: 100%; max-height: 420px; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,.3)); }
 
     /* ── SHARED ── */
     section { padding: 80px 40px; }
@@ -142,19 +136,55 @@
 
     /* ── VARIANTY ── */
     .variants { background: var(--bg); }
-    .variants-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 680px; }
+    .variants-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     .variant-card {
       background: var(--white); border-radius: var(--radius-card);
-      padding: 32px 28px; box-shadow: var(--shadow-card);
+      padding: 28px 24px; box-shadow: var(--shadow-card);
       transition: var(--transition); border: 2px solid transparent;
     }
     .variant-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
-    .variant-img { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; padding: 12px; }
-    .variant-img img { max-height: 176px; max-width: 100%; object-fit: contain; width: auto; height: 100%; }
-    .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
-    .variant-apa { font-size: .78rem; color: var(--muted); margin-bottom: 16px; font-weight: 500; letter-spacing: .04em; }
+    .variant-img { height: 180px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .variant-img img { max-height: 160px; max-width: 100%; object-fit: contain; }
+    .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 6px; }
+    .variant-sub { font-size: .82rem; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
     .variant-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 99px; background: var(--navy); color: #fff; font-size: .85rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
     .variant-btn:hover { background: var(--blue); transform: translateY(-1px); }
+
+    /* ── LIFESTYLE STRIP ── */
+    .lifestyle-strip {
+      padding: 0;
+      background: var(--navy);
+      position: relative; overflow: hidden;
+      min-height: 400px; display: flex; align-items: center;
+    }
+    .lifestyle-img {
+      position: absolute; inset: 0;
+      background: url('/dispogel/img/dispogel-flex-ankle.jpg') center center / cover no-repeat;
+      opacity: .45;
+    }
+    .lifestyle-content {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 40px;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 16px;
+    }
+    .lifestyle-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6ee7f7; }
+    .lifestyle-content h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2; font-weight: 400;
+      color: #fff; background: none; -webkit-text-fill-color: #fff;
+      max-width: 520px;
+    }
+    .lifestyle-content h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
+    .lifestyle-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .lifestyle-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      padding: 7px 16px; border-radius: 99px;
+      font-size: .82rem; color: rgba(255,255,255,.88); font-weight: 500;
+    }
+    .lifestyle-chip::before { content: '✓'; color: #6ee7f7; font-weight: 700; }
 
     /* ── INFO TABS ── */
     .info-section { background: var(--white); }
@@ -166,177 +196,89 @@
       background: transparent; color: var(--muted); font-family: inherit;
       transition: all .18s; white-space: nowrap;
     }
-    .info-tab-btn:hover { border-color: var(--blue-mid,#134a8e); color: var(--blue-mid,#134a8e); }
+    .info-tab-btn:hover { border-color: var(--blue-lt); color: var(--blue-lt); }
     .info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
     .info-tab-panels { position: relative; }
     .info-tab-panel { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
     .info-tab-panel.active { visibility: visible; position: relative; pointer-events: auto; }
-    /* karty */
     .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
     .info-card {
       background: var(--bg); border: 1px solid rgba(11,44,74,.1);
       border-radius: 16px; padding: 20px 22px;
     }
-    .info-card.featured { border-color: var(--blue-mid,#134a8e); border-width: 1.5px; }
+    .info-card.featured { border-color: var(--blue-lt); border-width: 1.5px; }
     .info-card-tag {
       display: inline-flex; align-items: center; gap: 5px;
       font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-      background: #eef4fa; color: var(--blue-mid,#134a8e);
+      background: #eef4fa; color: var(--blue-lt);
       border-radius: 99px; padding: 3px 10px; margin-bottom: 10px;
     }
     .info-card h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
     .info-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; margin: 0; }
-    /* kroky */
     .info-steps { display: flex; flex-direction: column; gap: 14px; max-width: 600px; }
     .info-step { display: flex; gap: 14px; align-items: flex-start; }
     .info-step-num {
       width: 28px; height: 28px; border-radius: 50%;
-      background: #eef4fa; color: var(--blue-mid,#134a8e);
+      background: #eef4fa; color: var(--blue-lt);
       font-size: .8rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
     }
     .info-step-text { font-size: .9rem; color: var(--muted); line-height: 1.65; padding-top: 4px; }
-    .info-step-note { font-size: .82rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--blue-mid,#134a8e); padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 6px; }
-    /* složení */
-    .info-slozeni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }
-    .info-slozeni-grid > div { display: flex; }
-    .info-slozeni-grid > div > .info-card { flex: 1; }
-    .info-slozeni-table { width: 100%; border-collapse: collapse; }
-    .info-slozeni-table th { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-mid,#134a8e); padding: 0 0 10px; text-align: left; border-bottom: 1.5px solid rgba(11,44,74,.12); }
-    .info-slozeni-table td { font-size: .88rem; color: var(--muted); padding: 9px 0; border-bottom: 1px solid rgba(11,44,74,.07); vertical-align: top; }
-    .info-slozeni-table td:last-child { text-align: right; color: var(--navy); font-weight: 600; white-space: nowrap; }
-    .info-slozeni-table tr:last-child td { border-bottom: none; }
+    .info-step-note { font-size: .82rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--blue-lt); padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 16px; }
+    .info-slozeni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .info-safety-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
     .info-safety-list li { font-size: .88rem; color: var(--muted); line-height: 1.65; padding-left: 16px; position: relative; }
-    .info-safety-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--blue-mid,#134a8e); }
-    /* srovnání */
+    .info-safety-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--blue-lt); }
     .info-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 700px; }
     .info-compare-col { background: var(--bg); border-radius: 14px; padding: 18px 20px; border: 1px solid rgba(11,44,74,.1); }
-    .info-compare-col.laxik { border-color: var(--blue-mid,#134a8e); border-width: 1.5px; }
+    .info-compare-col.gel { border-color: var(--blue-lt); border-width: 1.5px; }
     .info-compare-head { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
-    .info-compare-head.laxik { color: var(--blue-mid,#134a8e); }
-    .info-compare-head.cipek { color: #888; }
+    .info-compare-head.gel { color: var(--blue-lt); }
+    .info-compare-head.other { color: #888; }
     .info-compare-item { display: flex; align-items: flex-start; gap: 8px; font-size: .88rem; color: var(--muted); line-height: 1.55; padding: 6px 0; border-bottom: 1px solid rgba(11,44,74,.07); }
     .info-compare-item:last-child { border-bottom: none; }
     .info-compare-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
     .info-compare-dot.green { background: #F59E0B; }
     .info-compare-dot.gray { background: #ccc; }
-    /* zácpa edukace */
-    .info-edu-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    /* mobile */
     @media (max-width: 700px) {
       .info-cards { grid-template-columns: 1fr; }
       .info-slozeni-grid { grid-template-columns: 1fr; }
       .info-compare { grid-template-columns: 1fr; }
-      .info-edu-cards { grid-template-columns: 1fr; }
       .info-tabs-nav { gap: 5px; }
       .info-tab-btn { font-size: .78rem; padding: 6px 13px; }
     }
-    .highlight-icon { font-size: 1.5rem; margin-bottom: 8px; }
-    .highlight-title { font-weight: 700; font-size: .95rem; color: var(--navy); margin-bottom: 4px; }
-    .highlight-text { font-size: .85rem; color: var(--muted); line-height: 1.6; }
 
     /* ── KDE KOUPIT ── */
     .buy { background: var(--white); padding: 64px 40px; }
     .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
     .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
     .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; }
-    .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0.1); }
+    .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
     .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
-    .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; pointer-events: none; }
+    .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
     .buy-wholesale { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
     .buy-wholesale-title { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; text-align: center; }
     .buy-wholesale-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 48px; }
     .buy-wholesale-logos img { height: 44px; width: auto; max-width: 160px; display: block; }
 
-
-    /* ── STORY ── */
-    .story {
-      position: relative; overflow: hidden;
-      height: 55.8vw; min-height: 520px;
-      display: flex; align-items: center;
-      padding: 0;
-    }
-    .story-bg {
-      position: absolute; inset: 0; z-index: 0;
-      background: url('/dispogel-hero.jpg') center center / cover no-repeat;
-    }
-    .story-inner {
-      max-width: 1200px; margin: 0 auto;
-      width: 100%;
-      position: relative; z-index: 1;
-      padding: 60px 24px;
-    }
-    .story-content { max-width: 560px; }
-    .story-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 16px; }
-    .story h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      line-height: 1.2; font-weight: 400;
-      color: #fff; margin-bottom: 40px;
-      background: none; -webkit-text-fill-color: #fff;
-    }
-    .story h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
-    .story-body { display: flex; flex-direction: column; gap: 20px; }
-    .story-body p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.82); }
-    .story-body p strong { color: #fff; font-weight: 600; }
-    .story-quote { border-left: 3px solid #6ee7f7; padding-left: 20px; margin: 4px 0; }
-    .story-quote p { color: rgba(255,255,255,.92); font-style: italic; }
-    .story-mobile-photo { display: none; }
-    .story-inline-photo { display: none; }
-    .story-photo-quote-wrap { display: none; position: relative; }
-    .story-photo-quote-wrap img { width: 100%; display: block; }
-    .story-quote-on-photo {
-      position: absolute; bottom: 0; left: 0;
-      width: 58%; padding: 20px 16px 20px 24px;
-    }
-    .story-quote-on-photo p {
-      font-size: .88rem; line-height: 1.6;
-      color: rgba(255,255,255,.95); font-style: italic;
-      border-left: 3px solid #6ee7f7;
-      padding-left: 14px;
-      text-shadow: 0 1px 8px rgba(0,0,0,.6);
-    }
-    @media (max-width: 900px) {
-      .story { height: auto; min-height: unset; padding: 0; }
-      .story-bg { background-image: none !important; background: #152f58 !important; }
-      .story-inner { padding: 56px 24px 40px; flex-direction: column; }
-      .story-content { max-width: 100%; }
-      .story-mobile-photo { display: none; }
-      .hide-mobile { display: none; }
-      .story-photo-quote-wrap {
-        display: block;
-        width: calc(100% + 48px);
-        margin: 8px -24px;
-      }
-    }
-
-    
-    /* ── FAQ SEKCE ── */
-    .faq-section { background: var(--bg-light, #eef4fa); padding: 80px 40px; }
-    .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--navy, #0b2c4a); margin-bottom: 40px; background: none; -webkit-text-fill-color: var(--navy, #0b2c4a); }
+    /* ── FAQ ── */
+    .faq-section { background: #eef4fa; padding: 80px 40px; }
+    .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); color: var(--navy); margin-bottom: 40px; background: none; -webkit-text-fill-color: var(--navy); }
     .faq-list { max-width: 800px; }
     .faq-item { border-bottom: 1px solid rgba(11,44,74,.12); }
     .faq-item:first-child { border-top: 1px solid rgba(11,44,74,.12); }
     .faq-btn {
       width: 100%; display: flex; justify-content: space-between; align-items: center;
       padding: 20px 0; background: none; border: none; cursor: pointer; text-align: left;
-      font-size: 1rem; font-weight: 600; color: var(--navy, #0b2c4a);
+      font-size: 1rem; font-weight: 600; color: var(--navy);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
-    .faq-btn:hover { color: var(--blue-mid, #134a8e); }
-    .faq-icon { width: 20px; height: 20px; flex-shrink: 0; margin-left: 16px; transition: transform .3s; color: var(--blue-mid, #134a8e); }
+    .faq-btn:hover { color: var(--blue-lt); }
+    .faq-icon { width: 20px; height: 20px; flex-shrink: 0; margin-left: 16px; transition: transform .3s; color: var(--blue-lt); }
     .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
     .faq-body { display: none; padding: 0 0 20px 0; }
     .faq-body[aria-hidden="false"] { display: block; }
     .faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
-
-    /* info-blocks removed */
-
-    @media (max-width: 900px) {
-      .faq-section { padding: 56px 24px; }
-      .faq-btn { font-size: .95rem; }
-    }
 
     /* ── DISCLAIMER ── */
     .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
@@ -366,14 +308,30 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
+    /* ── CROSSSELL ── */
+    .crosssell { background: var(--bg); padding: 64px 40px; }
+    .crosssell-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .crosssell-text { flex: 1; min-width: 260px; }
+    .crosssell-text h3 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem,2.5vw,1.9rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg,#0b2c4a,#134a8e); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+    .crosssell-text p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+    .crosssell-card {
+      display: flex; align-items: center; gap: 20px;
+      background: var(--white); border-radius: 20px; padding: 20px 24px;
+      box-shadow: var(--shadow-card); text-decoration: none;
+      transition: var(--transition); border: 2px solid transparent;
+    }
+    .crosssell-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .crosssell-card img { height: 80px; width: auto; object-fit: contain; }
+    .crosssell-card-label { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+    .crosssell-card-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 2px; }
+    .crosssell-card-desc { font-size: .82rem; color: var(--muted); }
+    .crosssell-card-arrow { font-size: 1.4rem; color: var(--navy); margin-left: auto; }
+
     /* ── MOBILE ── */
     @media (max-width: 900px) {
       section { padding: 56px 24px; }
       .hero { height: auto !important; min-height: 100svh; }
-      .hero-bg {
-        background-position: 75% top !important;
-        background-size: cover !important;
-      }
+      .hero-bg { background-position: 70% top !important; background-size: cover !important; }
       .hero-bg::after {
         background: linear-gradient(to right,
           rgba(11,44,74,.95) 0%,
@@ -381,79 +339,41 @@
           rgba(11,44,74,.4) 65%,
           rgba(11,44,74,.0) 100%) !important;
       }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 100px 24px 48px; }
-      .hero-img { order: -1; }
-      .hero-img img { max-height: 280px; }
-      .info-grid { grid-template-columns: 1fr; }
-      .variants-grid { grid-template-columns: 1fr; max-width: 360px; }
+      .hero-inner { padding: 100px 24px 48px; }
+      .variants-grid { grid-template-columns: 1fr 1fr; }
+      .lifestyle-content { padding: 56px 24px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .nav-links { display: none; }
       .nav-top-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
       .nav-mobile-btn { display: block; }
-      .nav-links { display: none; }
       .nav-links.open {
         display: flex; flex-direction: column;
-        width: 100%; margin-top: 8px; gap: 0;
+        width: 100%; margin-top: 12px; gap: 4px;
       }
       .nav-links.open a {
-        font-size: 1.05rem; font-weight: 500;
-        padding: 13px 4px;
-        color: var(--navy) !important;
-        text-decoration: none; display: block;
-        border-bottom: 1px solid rgba(11,44,74,.07);
+        font-size: 1.1rem; font-weight: 500; padding: 14px 4px;
+        color: var(--navy) !important; border-radius: 12px; text-decoration: none;
+        display: block; border-bottom: 1px solid rgba(11,44,74,.06);
       }
       .nav-links.open a:last-child { border-bottom: none; }
       .nav-links.open .nav-cta {
-        background: var(--green) !important;
-        color: #fff !important;
-        border-radius: 99px !important;
-        text-align: center;
-        padding: 13px 20px !important;
-        margin-top: 8px;
-        border-bottom: none !important;
-        font-weight: 600;
+        background: var(--green) !important; color: #fff !important;
+        border-radius: 99px !important; text-align: left;
+        padding: 13px 20px !important; margin-top: 4px;
+        border-bottom: none !important; font-weight: 600;
       }
       .nav-inner.menu-open {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        padding: 12px 20px 16px !important;
+        display: flex !important; flex-direction: column !important;
+        align-items: stretch !important; padding: 12px 20px 16px !important;
         border-radius: 28px !important;
       }
-      .nav-links { display: none; }
-      .nav-links.open {
-        display: flex; flex-direction: column;
-        width: 100%; margin-top: 12px;
-        gap: 4px; position: static;
-        background: none; border: none;
-        box-shadow: none; padding: 0;
-        border-radius: 0;
-      }
-      .nav-links.open a {
-        font-size: 1.1rem; font-weight: 500;
-        padding: 14px 4px;
-        color: var(--navy) !important;
-        border-radius: 12px;
-        text-decoration: none; display: block;
-        border-bottom: 1px solid rgba(11,44,74,.06);
-      }
-      .nav-links.open a:last-child { border-bottom: none; }
-      .nav-links.open .nav-cta {
-        background: var(--green) !important;
-        color: #fff !important;
-        border-radius: 99px !important;
-        text-align: left;
-        padding: 13px 20px !important;
-        margin-top: 4px;
-        border-bottom: none !important;
-        font-weight: 600;
-      }
-      .nav-mobile-btn { display: block; position: relative; z-index: 2; }
-
+      .crosssell-inner { flex-direction: column; gap: 24px; }
+      .faq-section { padding: 56px 24px; }
+      .buy { padding: 56px 24px; }
     }
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
+      .variants-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
-      .buy-logos { gap: 12px; }
     }
   </style>
 </head>
@@ -482,20 +402,21 @@
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Laxík</div>
-      <h1>Laxík — mikroklystýr<br><em>pro děti</em></h1>
-      <p class="hero-sub">Šetrný mikroklystýr pro děti od narození. Složení s glycerolem, heřmánkem a slézem uvolňuje a lubrikuje stolici bez podráždění.</p>
+      <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / DISPO GEL</div>
+      <div class="hero-cat">🧊 Tepelná terapie</div>
+      <h1>DISPO GEL —<br><em>horký &amp; studený</em> sáček</h1>
+      <p class="hero-sub">Opakovaně použitelný gelový sáček pro terapii teplem i chladem. Pomáhá při bolestech svalů, kloubů a pohmožděninách — pro sport, rehabilitaci i každodenní péči.</p>
       <div class="hero-chips">
-        <span class="chip chip-check">Vhodný od narození</span>
-        <span class="chip chip-check">Glycerol + Heřmánek + Sléz</span>
-        <span class="chip chip-check">Rychlý nástup účinku</span>
+        <span class="chip chip-check">Opakovaně použitelný</span>
+        <span class="chip chip-check">Teplo i chlad</span>
+        <span class="chip chip-check">Medical device class IIa</span>
+        <span class="chip chip-check">Netoxický gel</span>
       </div>
       <div class="hero-actions">
         <a href="#kde-koupit" class="btn-primary">Kde koupit</a>
         <a href="#informace" class="btn-outline-white">Informace o produktu</a>
       </div>
     </div>
-    
   </div>
 </section>
 
@@ -505,76 +426,69 @@
     <div class="reveal">
       <div class="section-label">Balení</div>
       <h2>Varianty produktu</h2>
-      <p class="section-desc">Laxík je dostupný ve dvou velikostech balení — menší pro příležitostné použití, větší ekonomické balení pro rodiny.</p>
+      <p class="section-desc">DISPO GEL je dostupný v několika velikostech — od malého sáčku pro zápěstí a dlaň až po velký formát pro záda a stehno. Vyberte variantu podle oblasti použití.</p>
     </div>
     <div class="variants-grid">
       <div class="variant-card reveal">
         <div class="variant-img">
-          <div class="dg-size-badge">14×18 cm</div>
+          <img src="/dispogel/img/dispogel-sacek.webp" alt="DISPO GEL — standardní sáček">
         </div>
-        <div class="variant-name">DISPO GEL 14×18 cm</div>
-        <div class="variant-apa">APA 5080057</div>
+        <div class="variant-name">DISPO GEL Standard</div>
+        <div class="variant-sub">Universální gelový sáček pro zápěstí, lokty a kolena</div>
         <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
       </div>
       <div class="variant-card reveal">
         <div class="variant-img">
-          <div class="dg-size-badge">11×26 cm</div>
+          <img src="/dispogel/img/dispogel-velky.webp" alt="DISPO GEL Large — velký sáček">
         </div>
-        <div class="variant-name">DISPO GEL 11×26 cm</div>
-        <div class="variant-apa">APA 5080115</div>
+        <div class="variant-name">DISPO GEL Large</div>
+        <div class="variant-sub">Velký formát pro záda, ramena a stehna</div>
         <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
       </div>
       <div class="variant-card reveal">
         <div class="variant-img">
-          <div class="dg-size-badge">11×26 cm + obal</div>
+          <img src="/dispogel/img/dispogel-tre-celle.webp" alt="DISPO GEL Tre Celle — tři komory">
         </div>
-        <div class="variant-name">DISPO GEL 11×26 cm + obal</div>
-        <div class="variant-apa">APA 5080032</div>
+        <div class="variant-name">DISPO GEL Tre Celle</div>
+        <div class="variant-sub">Tří-komorový sáček — flexibilní, kopíruje tvar těla</div>
         <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
       </div>
       <div class="variant-card reveal">
         <div class="variant-img">
-          <div class="dg-size-badge">5,5×12 cm</div>
+          <img src="/dispogel/img/dispogel-baleni.webp" alt="DISPO GEL v krabičce">
         </div>
-        <div class="variant-name">DISPO GEL 5,5×12 cm</div>
-        <div class="variant-apa">APA 5080131</div>
+        <div class="variant-name">DISPO GEL v krabičce</div>
+        <div class="variant-sub">Standardní sáček s prodejním balením — vhodné pro lékárny</div>
         <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
       </div>
       <div class="variant-card reveal">
         <div class="variant-img">
-          <div class="dg-size-badge">11×11 cm</div>
+          <img src="/dispogel/img/dispogel-kit.webp" alt="DISPO GEL Kit — souprava">
         </div>
-        <div class="variant-name">DISPO GEL 11×11 cm</div>
-        <div class="variant-apa">APA 5080073</div>
-        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
-      </div>
-      <div class="variant-card reveal">
-        <div class="variant-img">
-          <div class="dg-size-badge">17×26 cm</div>
-        </div>
-        <div class="variant-name">DISPO GEL 17×26 cm</div>
-        <div class="variant-apa">APA 5138608</div>
-        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
-      </div>
-      <div class="variant-card reveal">
-        <div class="variant-img">
-          <div class="dg-size-badge">14×24 cm</div>
-        </div>
-        <div class="variant-name">DISPO GEL 14×24 cm</div>
-        <div class="variant-apa">APA 5080107</div>
-        <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
-      </div>
-      <div class="variant-card reveal">
-        <div class="variant-img">
-          <div class="dg-size-badge">FLEX 14×24 cm</div>
-        </div>
-        <div class="variant-name">DISPO GEL FLEX 14×24 cm</div>
-        <div class="variant-apa">APA 5122248</div>
+        <div class="variant-name">DISPO GEL Kit</div>
+        <div class="variant-sub">Souprava 4 sáčků různých velikostí + stabilizační bandáž</div>
         <a href="#kde-koupit" class="variant-btn">Objednat <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- LIFESTYLE STRIP -->
+<div class="lifestyle-strip">
+  <div class="lifestyle-img"></div>
+  <div class="lifestyle-content">
+    <div class="lifestyle-label reveal">Všestranné využití</div>
+    <h2 class="reveal">Pro sport, rehabilitaci<br><em>i každodenní péči</em></h2>
+    <div class="lifestyle-chips reveal">
+      <span class="lifestyle-chip">Fotbal &amp; týmové sporty</span>
+      <span class="lifestyle-chip">Rehabilitace po úrazech</span>
+      <span class="lifestyle-chip">Chronické bolesti kloubů</span>
+      <span class="lifestyle-chip">Pohmožděniny &amp; výrony</span>
+      <span class="lifestyle-chip">Záněty šlach</span>
+      <span class="lifestyle-chip">Bolesti zad</span>
+    </div>
+  </div>
+</div>
 
 <!-- INFORMACE -->
 <section class="info-section" id="informace">
@@ -583,185 +497,163 @@
     <h2 class="reveal">Informace<br>o produktu</h2>
 
     <div class="info-tabs-wrap reveal">
-
-      <!-- Navigace záložek -->
       <div class="info-tabs-nav" role="tablist" aria-label="Informace o produktu">
         <button class="info-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-produkt"  id="tbtn-produkt">O produktu</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-chlad"    id="tbtn-chlad">Studená terapie</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-teplo"    id="tbtn-teplo">Teplá terapie</button>
         <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-pouziti"  id="tbtn-pouziti">Jak použít</button>
-        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-slozeni"  id="tbtn-slozeni">Složení a dávkování</button>
-        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-srovnani" id="tbtn-srovnani">Laxík vs. čípky</button>
-        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-zacpa"    id="tbtn-zacpa">Zácpa u dětí</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-bezp"     id="tbtn-bezp">Bezpečnost</button>
       </div>
 
       <div class="info-tab-panels">
 
-      <!-- Panel 1: O produktu -->
-      <div class="info-tab-panel active" id="tab-produkt" role="tabpanel">
-        <div class="info-two-col">
-          <div>
-            <div class="info-card">
+        <!-- Panel 1: O produktu -->
+        <div class="info-tab-panel active" id="tab-produkt" role="tabpanel" aria-labelledby="tbtn-produkt">
+          <div class="info-cards">
+            <div class="info-card featured">
+              <div class="info-card-tag">Medical device class IIa</div>
               <h4>Co je DISPO GEL?</h4>
-              <p>DISPO GEL je opakovaně použitelný gelový sáček pro terapii teplem a chladem. Lze ho zahřát v mikrovlnné troubě nebo ve vroucí vodě, případně zchladit v mrazáku. Po zmrazení zůstává měkký a poddajný — nepřetvoří se do pevného ledu.</p>
-              <p>Gel je zcela <strong>netoxický a atoxický</strong> — bezpečný pro domácí i zdravotnické použití.</p>
+              <p>Opakovaně použitelný gelový sáček pro terapii chladem i teplem. Vyroben z netoxického gelu uzavřeného v odolném průhledném obalu. Certifikován jako zdravotnický prostředek třídy IIa dle evropských norem. Výrobce: Dispotech S.r.l., Itálie.</p>
             </div>
             <div class="info-card">
-              <h4>Výrobce</h4>
-              <p>Dispotech S.r.l., Via Al Piano 29, 23020 Gordona (SO), Itálie. Zdravotnický prostředek třídy I.</p>
+              <h4>Jak DISPO GEL funguje?</h4>
+              <p>Gel v sáčku drží teplotu déle než led nebo teplá voda. Při studené terapii zpomaluje vedení nervových vzruchů a snižuje zánět. Při teplé terapii zlepšuje prokrvení a uvolňuje svalové napětí.</p>
+            </div>
+            <div class="info-card">
+              <h4>Pro koho je určen?</h4>
+              <p>Pro sportovce, pacienty v rehabilitaci i každodenní domácí použití. Vhodný pro akutní úrazy (studená terapie) i chronické bolesti kloubů a svalů (teplá terapie).</p>
+            </div>
+            <div class="info-card">
+              <h4>Opakované použití</h4>
+              <p>Jeden sáček vydrží stovky použití. Chladit v mrazáku nebo ohřát v horké vodě. Gel zůstává pružný i zmrzlý — snadno se přizpůsobí tvaru těla.</p>
             </div>
           </div>
-          <div>
+        </div>
+
+        <!-- Panel 2: Studená terapie -->
+        <div class="info-tab-panel" id="tab-chlad" role="tabpanel" aria-labelledby="tbtn-chlad">
+          <div class="info-cards">
+            <div class="info-card featured">
+              <div class="info-card-tag">Studená terapie — akutní úrazy</div>
+              <h4>Kdy chladit?</h4>
+              <p>Studená terapie je vhodná pro akutní úrazy do 72 hodin po poranění — výrony, modřiny, pohmožděniny, záněty šlach. Chlad snižuje otoky, zmírňuje bolest a zpomaluje zánětlivou reakci.</p>
+            </div>
             <div class="info-card">
-              <h4>K čemu slouží?</h4>
+              <h4>Jak chladit DISPO GEL?</h4>
+              <p>Vložte sáček do mrazáku na 30–60 minut. Gel zmrzne, ale zůstane tvarovatelný. Nikdy nepřikládejte zmrzlý sáček přímo na kůži — vždy zabalte do tenkého ručníku nebo látkového obalu.</p>
+            </div>
+            <div class="info-card">
+              <h4>Jak dlouho chladit?</h4>
+              <p>15–20 minut, pak pauza minimálně 40 minut. Opakujte podle potřeby. Nepřekračujte 20 minut v kuse — hrozí riziko omrznutí pokožky.</p>
+            </div>
+            <div class="info-card">
+              <h4>Princip RICE</h4>
+              <p><strong>R</strong>est — klid. <strong>I</strong>ce — chlad (DISPO GEL). <strong>C</strong>ompression — komprese. <strong>E</strong>levation — elevace postižené končetiny. Kombinace těchto čtyř kroků urychluje hojení akutních sportovních zranění.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Teplá terapie -->
+        <div class="info-tab-panel" id="tab-teplo" role="tabpanel" aria-labelledby="tbtn-teplo">
+          <div class="info-cards">
+            <div class="info-card featured">
+              <div class="info-card-tag">Teplá terapie — chronické bolesti</div>
+              <h4>Kdy hřát?</h4>
+              <p>Teplá terapie je vhodná pro chronické bolesti kloubů, ztuhlost svalů, bolesti zad a krční páteře. Teplo zlepšuje prokrvení, uvolňuje svalové spasmy a snižuje bolestivost. Nikdy nezahřívejte akutní zranění s otokem!</p>
+            </div>
+            <div class="info-card">
+              <h4>Jak zahřát DISPO GEL?</h4>
+              <p>Vložte uzavřený sáček do horké vody (max. 60 °C) na 5–10 minut. Nebo ohřejte v mikrovlnné troubě — vždy kontrolujte teplotu před přiložením. Nikdy nevkládejte do vroucí vody.</p>
+            </div>
+            <div class="info-card">
+              <h4>Jak dlouho hřát?</h4>
+              <p>15–20 minut, pak pauza. Teplota sáčku by neměla způsobovat nepohodlí. Pokud je příliš horký, zabalte do ručníku a nechejte mírně vychladnout.</p>
+            </div>
+            <div class="info-card">
+              <h4>Vhodné indikace</h4>
+              <p>Artróza, revmatické potíže, svalové kontraktury, bolesti bederní páteře, menstruační křeče, ztuhlé šíje. Teplá terapie je také skvělá jako zahřátí před rehabilitačním cvičením.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: Jak použít -->
+        <div class="info-tab-panel" id="tab-pouziti" role="tabpanel" aria-labelledby="tbtn-pouziti">
+          <div class="info-steps">
+            <div class="info-step">
+              <div class="info-step-num">1</div>
+              <div class="info-step-text"><strong>Připravte sáček:</strong> Pro studenou terapii vložte do mrazáku (30–60 min). Pro teplou terapii do horké vody (5–10 min, max. 60 °C) nebo do mikrovlnné trouby.</div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">2</div>
+              <div class="info-step-text"><strong>Zkontrolujte teplotu:</strong> Před přiložením ověřte, zda sáček není příliš horký nebo příliš studený. Teplota by měla být příjemná, ne bolestivá.</div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">3</div>
+              <div class="info-step-text"><strong>Zabalte do tkaniny:</strong> Nikdy nepřikládejte přímo na kůži — vždy obalte tenkým ručníkem nebo použijte dodávaný textilní obal.</div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">4</div>
+              <div class="info-step-text"><strong>Přiložte na postižené místo:</strong> 15–20 minut. Pak pauza minimálně 40 minut. Opakujte podle potřeby.</div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">5</div>
+              <div class="info-step-text"><strong>Po použití:</strong> Sáček omyjte vlažnou vodou, osušte a uložte. Pro opětovnou studenou terapii vraťte do mrazáku.</div>
+            </div>
+          </div>
+          <div class="info-step-note">⚠️ Nepoužívejte při porušeném obalu. Při úniku gelu sáček zlikvidujte. Gel je netoxický, ale není určen ke konzumaci.</div>
+        </div>
+
+        <!-- Panel 5: Bezpečnost -->
+        <div class="info-tab-panel" id="tab-bezp" role="tabpanel" aria-labelledby="tbtn-bezp">
+          <div class="info-slozeni-grid">
+            <div class="info-card" style="padding:20px 22px;">
+              <h4 style="margin-bottom:14px;">Kontraindikace studené terapie</h4>
               <ul class="info-safety-list">
-                <li>Pohmoždění, výrony, otoky</li>
-                <li>Bolesti svalů a kloubů</li>
-                <li>Bolesti zad a šíje</li>
-                <li>Bolesti zubů a hlavy</li>
-                <li>Bolestivá menstruace</li>
-                <li>Pooperační rány a záněty</li>
-                <li>Mdloby a nevolnost</li>
+                <li>Otevřené rány a kožní léze</li>
+                <li>Poruchy prokrvení (Raynaudův fenomén, ICHDK)</li>
+                <li>Přecitlivělost na chlad</li>
+                <li>Neuropatie — snížené vnímání teploty</li>
+                <li>Diabetici a pacienti s oběhovými potížemi (konzultujte lékaře)</li>
               </ul>
             </div>
-            <div class="info-card">
-              <h4>Klíčové výhody</h4>
+            <div class="info-card" style="padding:20px 22px;">
+              <h4 style="margin-bottom:14px;">Kontraindikace teplé terapie</h4>
               <ul class="info-safety-list">
-                <li>Opakovaně použitelný — ekonomický a ekologický</li>
-                <li>Teplo i chlad — 2 v 1</li>
-                <li>Po zmrazení zůstává měkký a poddajný</li>
-                <li>8 velikostí pro různé části těla</li>
-                <li>Varianta FLEX se přizpůsobí tvaru končetiny</li>
+                <li>Akutní záněty a čerstvé úrazy s otokem (první 48–72 hod)</li>
+                <li>Horečka a infekční onemocnění</li>
+                <li>Trombóza</li>
+                <li>Malignity v oblasti aplikace</li>
+                <li>Snížené vnímání tepla</li>
+              </ul>
+            </div>
+            <div class="info-card" style="padding:20px 22px;">
+              <h4 style="margin-bottom:14px;">Bezpečnost a skladování</h4>
+              <ul class="info-safety-list">
+                <li>Nepoužívejte při poškození obalu</li>
+                <li>Gel je netoxický, ale není určen ke konzumaci</li>
+                <li>Uchovávejte mimo dosah dětí</li>
+                <li>Neskladujte v přímém slunečním záření</li>
+                <li>Nepropichujte ani neroztrhávejte obal</li>
+              </ul>
+            </div>
+            <div class="info-card" style="padding:20px 22px;">
+              <h4 style="margin-bottom:14px;">Certifikace</h4>
+              <ul class="info-safety-list">
+                <li>Medical device class IIa (EU)</li>
+                <li>Certifikát CE č. 26556</li>
+                <li>Výrobce: Dispotech S.r.l., Itálie</li>
+                <li>Netoxický a hypoalergenní gel</li>
+                <li>Testováno pro Sport &amp; Medical použití</li>
               </ul>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Panel 2: Jak použít -->
-      <div class="info-tab-panel" id="tab-pouziti" role="tabpanel">
-        <div class="info-steps">
-          <div class="info-step">
-            <div class="info-step-num">❄️</div>
-            <div class="info-step-body">
-              <h4>Chlad — akutní poranění</h4>
-              <p>Vložte sáček do mrazáku na <strong>minimálně 2 hodiny</strong>. Před přiložením zabalte do tenké textilie — nepřikládejte přímo na kůži. Aplikujte 15–20 minut, poté přestávka. Chlad je ideální při otocích, pohmoždění a čerstvém poranění.</p>
-            </div>
-          </div>
-          <div class="info-step">
-            <div class="info-step-num">🌡️</div>
-            <div class="info-step-body">
-              <h4>Teplo — ztuhlost a napětí</h4>
-              <p>Ohřejte v mikrovlnné troubě na 600 W po dobu <strong>cca 30 sekund</strong> (u větších sáčků 45–60 s). Nebo vložte do vroucí vody na <strong>2 minuty</strong>. Před přiložením vždy zkontrolujte teplotu. Teplo se hodí na ztuhlé svaly, bolesti zad a chronické napětí.</p>
-            </div>
-          </div>
-          <div class="info-step">
-            <div class="info-step-num">⚠️</div>
-            <div class="info-step-body">
-              <h4>Bezpečnost při aplikaci</h4>
-              <p>Vždy použijte textilní vrstvu mezi sáček a kůži. Nikdy neohřívejte déle než doporučeno — hrozí poškození sáčku. Při pocitu nepohodlí aplikaci ukončete. Nepřikládejte na poraněnou nebo velmi citlivou kůži.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Panel 3: Složení -->
-      <div class="info-tab-panel" id="tab-slozeni" role="tabpanel">
-        <div class="info-two-col">
-          <div>
-            <div class="info-card">
-              <h4>Složení gelu</h4>
-              <p>Sáček obsahuje speciální gelovou náplň na bázi vody a polymerů, která je zcela netoxická. Obal je vyroben z pevné, potravinářsky bezpečné plastové fólie odolné vůči opakovanému tepelnému namáhání.</p>
-              <p>Gel není rozpustný ve vodě ani kůží nevstřebatelný — neobsahuje žádné léčivé látky ani chemická aditiva.</p>
-            </div>
-          </div>
-          <div>
-            <div class="info-card">
-              <h4>Skladování a péče</h4>
-              <ul class="info-safety-list">
-                <li>Skladujte na suchém místě mimo přímé sluneční záření.</li>
-                <li>Před použitím zkontrolujte neporušenost sáčku.</li>
-                <li>Při poškození sáčku přestaňte používat.</li>
-                <li>Po použití otřete a uložte.</li>
-                <li>Vydržuje mnoho cyklů ohřevu i chlazení.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Panel 4: Kdy použít -->
-      <div class="info-tab-panel" id="tab-srovnani" role="tabpanel">
-        <div class="info-compare">
-          <div class="info-compare-col laxik">
-            <div class="info-compare-head laxik">❄️ Chlad — kdy použít</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Akutní poranění — výrony, pohmoždění, úrazy</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Čerstvý otok — do 48 hodin od vzniku</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Zánětlivá bolest s přehřátím kloubu</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Bolesti hlavy, zubů, mdloby</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Pooperační chlazení rány</div>
-          </div>
-          <div class="info-compare-col">
-            <div class="info-compare-head cipek">🌡️ Teplo — kdy použít</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Chronická ztuhlost a svalové napětí</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Bolesti zad, šíje a ramen</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Menstruační křeče</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Uvolnění svalů před fyzickou aktivitou</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Starší poranění ve fázi regenerace</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Panel 5: Kontraindikace -->
-      <div class="info-tab-panel" id="tab-zacpa" role="tabpanel">
-        <div class="info-edu-cards">
-          <div class="info-card">
-            <h4>Kdy DISPO GEL nepoužívat</h4>
-            <p>Nepřikládejte na otevřené rány, poraněnou nebo silně podrážděnou kůži. Nepoužívejte na místa s poruchou citlivosti nebo špatným oběhem krve. Nepřikládejte přímo na kůži — vždy použijte textilní mezivrstvu.</p>
-          </div>
-          <div class="info-card">
-            <h4>Upozornění pro chlad</h4>
-            <p>Nikdy nepřikládejte zmrazený sáček přímo na kůži — hrozí chladové poškození. Maximální doba aplikace je 20 minut, poté přestávka minimálně 20 minut. Nepoužívejte u osob s Raynaudovou chorobou.</p>
-          </div>
-          <div class="info-card">
-            <h4>Upozornění pro teplo</h4>
-            <p>Před přiložením vždy otestujte teplotu sáčku na předloktí. Nikdy neohřívejte déle než doporučeno — hrozí prasknutí sáčku. Nepoužívejte u osob s poruchou citlivosti na teplo.</p>
-          </div>
-          <div class="info-card">
-            <h4>Kdy konzultovat lékaře</h4>
-            <p>Pokud bolest přetrvává déle než 3 dny, nebo je provázena horečkou, výrazným otokem či zhoršením stavu, navštivte lékaře. DISPO GEL je podpůrná pomůcka — nenahrazuje lékařské ošetření.</p>
-          </div>
-        </div>
-      </div>
 
       </div><!-- end info-tab-panels -->
     </div><!-- end info-tabs-wrap -->
   </div>
 </section>
 
-<!-- STORY -->
-<section class="story" style="display:none">
-  <div class="story-bg"></div>
-  <div class="story-inner">
-    <div class="story-content">
-      <div class="story-label reveal">Náš příběh</div>
-      <h2 class="reveal">Příběh, který začal<br><em>jednou bezesnou nocí</em></h2>
-      <div class="story-body">
-        <p class="reveal">Všechno to začalo u nás doma. Jako čerství rodiče jsme prožívali ty nejkrásnější chvíle, které ale začaly střídat momenty bezmoci. Našeho novorozeného syna trápilo bříško. Pláč, který neustával, a později i potíže s vylučováním nás nenechaly spát. Zkoušeli jsme všechno — masáže, čaje, babské rady. Nic nepomáhalo.</p>
-        <p class="reveal">Když nám lékaři doporučili dětské mikroklystýry jako bezpečnou a účinnou pomoc, narazili jsme na nečekanou překážku. <strong>Český trh byl prázdný.</strong> Produkty, které dříve fungovaly, měly výpadek a nic nového nebylo k mání.</p>
-        <div class="story-quote reveal hide-mobile">
-          <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
-        </div>
-        <div class="story-photo-quote-wrap reveal">
-          <img src="/story-mobile-inline.jpg" alt="Zakladatel BEAUFY se synem">
-          <div class="story-quote-on-photo">
-            <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
-          </div>
-        </div>
-        <p class="reveal">Začal jsem pátrat na vlastní pěst. Cesta mě zavedla až do slunné Itálie k výrobci, který měl přesně to, co českým maminkám a tatínkům chybělo. Slovo dalo slovo, domluvili jsme spolupráci a pod značkou <strong>Laxík</strong> jsme tento malý zázrak přivezli do Čech.</p>
-        <p class="reveal">Laxík nebyl jen produkt. Byl to první krok na cestě, která vedla k <strong>založení celé společnosti BEAUFY</strong>. Dnes už nepomáháme jen našemu synovi, ale tisícům dalších dětí a jejich rodičům, aby se opět mohli v klidu usmát.</p>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="section-inner">
@@ -772,82 +664,252 @@
 
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-btn" aria-expanded="false">
+          <span itemprop="name">Jak dlouho vydrží gel studený / teplý?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" aria-hidden="true" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Zmrzlý sáček drží chladicí účinek přibližně 20–30 minut v závislosti na velikosti a okolní teplotě. Zahřátý sáček drží teplo podobně dlouho. Doporučuje se aplikace 15–20 minut, pak pauza.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <button class="faq-btn" aria-expanded="false">
           <span itemprop="name">Kolikrát lze DISPO GEL použít?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">DISPO GEL je navržen pro opakované použití — vydrží mnoho cyklů ohřevu i zmrazení. Před každým použitím zkontrolujte neporušenost sáčku.</p>
+        <div class="faq-body" aria-hidden="true" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">DISPO GEL je navržen pro stovky opakovaných použití. Gel ani obal se při správném používání neznehodnocují. Sáček zlikvidujte pouze při mechanickém poškození obalu (trhlina, díra).</p>
         </div>
       </div>
 
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-btn" aria-expanded="false">
-          <span itemprop="name">Jak dlouho trvá zmrazení sáčku?</span>
+          <span itemprop="name">Je gel v sáčku bezpečný?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Pro dosažení dostatečně chladné teploty vložte sáček do mrazáku na minimálně 2 hodiny. Po vyjmutí zabalte do tenké textilie a přiložte na postižené místo.</p>
+        <div class="faq-body" aria-hidden="true" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ano. Gel v DISPO GEL je netoxický a hypoalergenní. Při náhodném kontaktu s kůží nebo sliznicí není nebezpečný. Není určen ke konzumaci. Výrobek je certifikován jako medical device class IIa.</p>
         </div>
       </div>
 
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-btn" aria-expanded="false">
-          <span itemprop="name">Jak ohřát DISPO GEL v mikrovlnce?</span>
+          <span itemprop="name">Lze DISPO GEL zahřát v mikrovlnné troubě?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Ohřívejte na výkonu 600 W po dobu cca 30 sekund (u větších sáčků 45–60 s). Nikdy neohřívejte déle najednou — hrozí poškození sáčku a popálení. Alternativně vložte do vroucí vody na 2 minuty.</p>
+        <div class="faq-body" aria-hidden="true" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ano, ale opatrně. Ohřívejte v krátkých intervalech (10–15 sekund), pak protřepejte a zkontrolujte teplotu. Gel se zahřívá nerovnoměrně. Doporučujeme ohřev v horké vodě — je rovnoměrnější a bezpečnější.</p>
         </div>
       </div>
 
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-btn" aria-expanded="false">
-          <span itemprop="name">Musím sáček zabalit do látky?</span>
+          <span itemprop="name">Kdy použít studený a kdy teplý sáček?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Ano — vždy použijte textilní mezivrstvu mezi sáček a kůži. Přímý kontakt zmrazeného nebo horkého sáčku s kůží může způsobit poškození.</p>
+        <div class="faq-body" aria-hidden="true" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Studený sáček volte při akutních zraněních (výrony, modřiny, záněty) — do 72 hodin od poranění. Teplý sáček volte při chronických bolestech, ztuhlosti svalů, bolestech zad a kloubů. U pochybností vždy konzultujte s lékařem.</p>
         </div>
       </div>
 
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-btn" aria-expanded="false">
-          <span itemprop="name">Jakou velikost vybrat?</span>
+          <span itemprop="name">Přikládám DISPO GEL přímo na kůži?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Malé formáty (5,5×12 cm, 11×11 cm) jsou vhodné pro klouby, kotníky a lokty. Střední (14×18 cm, 11×26 cm) pro stehno, lýtko a rameno. Velké (17×26 cm, 14×24 cm) pro záda a větší plochy. FLEX varianta se přizpůsobí tvaru končetiny.</p>
+        <div class="faq-body" aria-hidden="true" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ne — nikdy nepřikládejte zmrzlý ani příliš horký sáček přímo na kůži bez ochranné vrstvy. Vždy zabalte do tenkého ručníku nebo látkového sáčku. Zabráníte tím omrzlinám nebo popáleninám pokožky.</p>
         </div>
       </div>
 
       <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <button class="faq-btn" aria-expanded="false">
-          <span itemprop="name">Co je DISPO GEL FLEX?</span>
+          <span itemprop="name">Kde DISPO GEL koupím?</span>
           <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">DISPO GEL FLEX (14×24 cm, APA 5122248) je speciální tříkomorový sáček — flexibilnější a lépe přilehne na zakřivené partie jako kotník, koleno nebo loket.</p>
-        </div>
-      </div>
-
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <button class="faq-btn" aria-expanded="false">
-          <span itemprop="name">Kdy použít chlad a kdy teplo?</span>
-          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Chlad je vhodný při akutním poranění, čerstvém otoku a zánětu — aplikujte do 48 hodin od úrazu. Teplo pomáhá při chronické ztuhlosti, svalové bolesti a napětí. Pochybujete-li, poraďte se s lékařem.</p>
-        </div>
-      </div>
-
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <button class="faq-btn" aria-expanded="false">
-          <span itemprop="name">Je DISPO GEL bezpečný pro děti?</span>
-          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Ano, gel je netoxický a atoxický. Při použití u dětí dbejte zvýšené opatrnosti — vždy kontrolujte teplotu a zajistěte textilní vrstvu. Aplikaci u malých dětí provádějte pod dohledem dospělé osoby.</p>
+        <div class="faq-body" aria-hidden="true" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">DISPO GEL je dostupný v lékárnách Dr.Max, BENU, MojeLékárna, Magistra a dalších. Pro velkoobchodní objednávky kontaktujte BEAUFY s.r.o. — dodáváme přes sítě Phoenix Pharma, Pharmos a Alliance Healthcare.</p>
         </div>
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- KDE KOUPIT -->
+<section class="buy" id="kde-koupit">
+  <div class="buy-inner">
+    <p class="buy-title reveal">DISPO GEL najdete v těchto lékárnách</p>
+    <div class="buy-logos">
+      <a class="partner-logo-link reveal" href="https://www.drmax.cz/vyhledavani?q=dispo+gel" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max Lékárny"></a>
+      <a class="partner-logo-link reveal" href="https://www.benu.cz/vyhledavani?q=dispo+gel" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU Lékárny"></a>
+      <a class="partner-logo-link reveal" href="https://www.mojelekarna.cz/vyhledavani?s=dispo+gel" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna.cz"></a>
+      <a class="partner-logo-link reveal" href="https://www.magistra.cz/cs/Search?q=dispo+gel" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra Lékárny"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarnaave.cz/vyhledavani?q=dispo+gel" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
+      <a class="partner-logo-link reveal" href="https://www.lekarnalemon.cz/produkty/vyhledavani?s=dispo+gel" target="_blank" rel="noopener"><img src="/logos/logo-lemon.png" alt="Lemon Lékárna"></a>
+    </div>
+    <div class="buy-wholesale reveal">
+      <p class="buy-wholesale-title">Dodáváme přes tyto lékárenské velkoobchody</p>
+      <div class="buy-wholesale-logos">
+        <img src="/logos/logo-phoenix.svg" alt="Phoenix Pharma">
+        <img src="/logos/logo-pharmos.svg" alt="Pharmos">
+        <img src="/logos/logo-alliance.png" alt="Alliance Healthcare">
+      </div>
+    </div>
+    <div style="margin-top:48px" class="reveal">
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:12px;font-weight:600">Dokumenty ke stažení</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+        <a href="/docs/POS-Dispo-gel.pdf" target="_blank" style="background:var(--bg);padding:9px 18px;border-radius:99px;font-size:.82rem;color:var(--navy);text-decoration:none;font-weight:500;">Prohlášení o shodě – DISPO GEL</a>
+        <a href="/docs/CERT_CE_26556_220321_termica.pdf" target="_blank" style="background:var(--bg);padding:9px 18px;border-radius:99px;font-size:.82rem;color:var(--navy);text-decoration:none;font-weight:500;">Certifikát CE – Dispotech</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSSSELL -->
+<section class="crosssell">
+  <div class="crosssell-inner">
+    <div class="crosssell-text reveal">
+      <div class="section-label">Také od BEAUFY</div>
+      <h3>Potřebujete okamžitou pomoc v terénu?</h3>
+      <p>EASY ICE je jednorázový instant cold pack — stačí zmáčknout a do 30 sekund máte studený sáček. Žádný mrazák, žádná příprava. Ideální pro sportovní vybavení, záchytné stanice i lékárničky.</p>
+    </div>
+    <a href="/#produkty" class="crosssell-card reveal">
+      <img src="/dispo-gel.png" alt="EASY ICE instant cold pack">
+      <div class="crosssell-card-info">
+        <div class="crosssell-card-label">Instant cold pack</div>
+        <div class="crosssell-card-name">EASY ICE</div>
+        <div class="crosssell-card-desc">Jednorázový, bez mrazáku</div>
+      </div>
+      <span class="crosssell-card-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-bar">
+  <p><strong>Zdravotnický prostředek třídy IIa.</strong> Před použitím si přečtěte návod k použití. Výrobce: Dispotech S.r.l., Itálie. Distributor pro ČR a SR: BEAUFY s.r.o., U Trati 886/52, 100 00 Praha 10, IČ:&nbsp;<span style="color:inherit !important;text-decoration:none !important;pointer-events:none;">06867031</span>.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/BEAUFY_logo.png" alt="BEAUFY" class="footer-logo-img">
+      <p>Česko-slovenský distributor zdravotnických prostředků EU původu. Zásobujeme lékárny, nemocnice a soukromé lékaře s osobním přístupem.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkty</h5>
+      <ul>
+        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
+        <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
+        <li><a href="/#produkty">formoline L112 EXTRA</a></li>
+        <li><a href="/dispogel/">DISPO GEL</a></li>
+        <li><a href="/#produkty">DISPO ICE spray</a></li>
+        <li><a href="/#produkty">ŽENŠEN Ginseng Royal Jelly</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Společnost</h5>
+      <ul>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/#kontakt">Kontakty</a></li>
+        <li><a href="/#kontakt">Pro lékárny</a></li>
+        <li><a href="/zasady-ochrany-osobnich-udaju.html">Ochrana os. údajů</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <ul>
+        <li><a href="tel:+420799022658">+420 799 022 658</a></li>
+        <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
+        <li><a href="#">U Trati 886/52, Praha 10</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 BEAUFY s.r.o. · IČ:&nbsp;<span style="-webkit-text-stroke:0;color:inherit !important;font-size:inherit;text-decoration:none !important;pointer-events:none;">06867031</span> · DIČ:&nbsp;<span style="-webkit-text-stroke:0;color:inherit !important;font-size:inherit;text-decoration:none !important;pointer-events:none;">CZ06867031</span></p>
+    <div class="footer-legal">
+      <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="mailto:info@beaufy.eu">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    document.querySelector('.nav-inner').classList.toggle('menu-open');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Info tabs
+  const tabBtns = document.querySelectorAll('.info-tab-btn');
+  const tabPanels = document.querySelectorAll('.info-tab-panel');
+  const tabPanelsWrap = document.querySelector('.info-tab-panels');
+
+  function setTabPanelHeight() {
+    let maxH = 0;
+    tabPanels.forEach(p => {
+      const wasActive = p.classList.contains('active');
+      p.style.visibility = 'hidden';
+      p.style.position = 'relative';
+      p.style.pointerEvents = 'none';
+      const h = p.offsetHeight;
+      if (h > maxH) maxH = h;
+      if (!wasActive) {
+        p.style.visibility = '';
+        p.style.position = 'absolute';
+        p.style.pointerEvents = '';
+      } else {
+        p.style.visibility = '';
+        p.style.position = 'relative';
+        p.style.pointerEvents = '';
+      }
+    });
+    if (tabPanelsWrap) tabPanelsWrap.style.minHeight = maxH + 'px';
+  }
+  setTabPanelHeight();
+  window.addEventListener('resize', setTabPanelHeight);
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const body = btn.nextElementSibling;
+      btn.setAttribute('aria-expanded', !expanded);
+      body.setAttribute('aria-hidden', expanded);
+      body.style.display = expanded ? 'none' : 'block';
+    });
+  });
+
+  // Reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

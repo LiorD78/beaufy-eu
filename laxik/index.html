@@ -164,8 +164,9 @@
     }
     .info-tab-btn:hover { border-color: var(--blue-mid,#134a8e); color: var(--blue-mid,#134a8e); }
     .info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
-    .info-tab-panel { display: none; }
-    .info-tab-panel.active { display: block; }
+    .info-tab-panels { position: relative; }
+    .info-tab-panel { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
+    .info-tab-panel.active { visibility: visible; position: relative; pointer-events: auto; }
     /* karty */
     .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
     .info-card {
@@ -479,6 +480,7 @@
         <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-zacpa"    id="tbtn-zacpa">Zácpa u dětí</button>
       </div>
 
+      <div class="info-tab-panels">
       <!-- Panel 1: O produktu -->
       <div class="info-tab-panel active" id="tab-produkt" role="tabpanel" aria-labelledby="tbtn-produkt">
         <div class="info-cards">
@@ -612,6 +614,7 @@
         </div>
       </div>
 
+      </div><!-- end info-tab-panels -->
     </div><!-- end info-tabs-wrap -->
   </div>
 </section>

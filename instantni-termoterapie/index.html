@@ -132,7 +132,10 @@
     .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
     .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
     .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
-    .buy-wholesale { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .buy-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 36px; }
+    .buy-tab { padding: 9px 24px; border-radius: 99px; font-size: .88rem; font-weight: 600; cursor: pointer; border: 1.5px solid rgba(11,44,74,.18); background: transparent; color: var(--muted); font-family: inherit; transition: var(--transition); }
+    .buy-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .buy-tab:hover:not(.active) { border-color: var(--blue-lt); color: var(--blue-lt); }
     .buy-wholesale-title { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; text-align: center; }
     .buy-wholesale-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 48px; }
     .buy-wholesale-logos img { height: 44px; width: auto; max-width: 160px; display: block; }
@@ -328,15 +331,31 @@
 <section class="buy" id="kde-koupit">
   <div class="buy-inner">
     <p class="buy-title reveal">Dostupné v těchto lékárnách</p>
-    <div class="buy-logos">
-      <a class="partner-logo-link reveal" href="https://www.drmax.cz" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a>
-      <a class="partner-logo-link reveal" href="https://www.benu.cz" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU"></a>
-      <a class="partner-logo-link reveal" href="https://www.mojelekarna.cz" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna"></a>
-      <a class="partner-logo-link reveal" href="https://www.gigalekarna.cz" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna"></a>
-      <a class="partner-logo-link reveal" href="https://www.magistra.cz" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra"></a>
-      <a class="partner-logo-link reveal" href="https://www.lekarnaave.cz" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
-      <a class="partner-logo-link reveal" href="https://www.lekarnalemon.cz" target="_blank" rel="noopener"><img src="/logos/logo-lemon.png" alt="Lemon Lékárna"></a>
+
+    <div class="buy-tabs reveal">
+      <button class="buy-tab active" id="tab-btn-ice" onclick="switchBuyTab('ice')">EASY ICE</button>
+      <button class="buy-tab" id="tab-btn-hot" onclick="switchBuyTab('hot')">DISPO HOT</button>
     </div>
+
+    <div class="buy-logos" id="logos-ice">
+      <a class="partner-logo-link" href="https://www.drmax.cz/easy-ice-jednorazovy-chladici-sacek-14-x-18-cm" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a>
+      <a class="partner-logo-link" href="https://www.benu.cz/easy-ice-jednorazovy-chladici-sacek-14x18cm" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU"></a>
+      <a class="partner-logo-link" href="https://www.mojelekarna.cz/easy-ice-jednorazovy-chladici-sacek-14x18cm-5481743" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna"></a>
+      <a class="partner-logo-link" href="https://www.gigalekarna.cz/produkt/easy-ice-jednorazovy-chladici-sacek-14x18cm/" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna"></a>
+      <a class="partner-logo-link" href="https://www.magistra.cz/cs/produkt/easy-ice-jednorazovy-chladici-sacek-14x18-cm-1-ks?sid=14053" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra"></a>
+      <a class="partner-logo-link" href="https://www.lekarnaave.cz/easy-ice-jednorazovy-chladici-sacek-14x18cm" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
+      <a class="partner-logo-link" href="https://www.lekarnalemon.cz/zdravotnicke-potreby/ortopedicke-a-proteticke-pomucky/polstare-a-polstarky/easy-ice-jednorazovy-chladici-sacek-14x18cm-8033196350132" target="_blank" rel="noopener"><img src="/logos/logo-lemon.png" alt="Lemon Lékárna"></a>
+    </div>
+
+    <div class="buy-logos" id="logos-hot" style="display:none;">
+      <a class="partner-logo-link" href="https://www.drmax.cz/dispo-hot-jednorazovy-hrejici-sacek-14-x-18-cm-1-ks" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a>
+      <a class="partner-logo-link" href="https://www.benu.cz/dispo-hot-jednorazovy-hrejici-sacek-14x18cm" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU"></a>
+      <a class="partner-logo-link" href="https://www.mojelekarna.cz/dispo-hot-jednorazovy-hrejici-sacek-14x18cm-5481750" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna"></a>
+      <a class="partner-logo-link" href="https://www.magistra.cz/cs/produkt/dispo-hot-jednorazovy-hrejici-sacek-14x18-cm-1-ks?sid=14051" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra"></a>
+      <a class="partner-logo-link" href="https://www.lekarnaave.cz/dispo-hot-jednorazovy-hrejici-sacek-14x18cm" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
+      <a class="partner-logo-link" href="https://www.lekarnalemon.cz/zdravotnicke-potreby/prostredky-obvazove-kryci-a-fixacni/kryti-s-lecebnym-ucinkem/hrejive-a-chladive-naplasti/dispo-hot-jednorazovy-hrejici-sacek-14x18cm-8033196357308" target="_blank" rel="noopener"><img src="/logos/logo-lemon.png" alt="Lemon Lékárna"></a>
+    </div>
+
     <div class="buy-wholesale reveal">
       <p class="buy-wholesale-title">Dodáváme přes tyto velkoobchody</p>
       <div class="buy-wholesale-logos">
@@ -431,6 +450,12 @@
     document.querySelector('.nav-inner').classList.toggle('menu-open');
   });
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  function switchBuyTab(tab) {
+    document.getElementById('logos-ice').style.display = tab === 'ice' ? 'flex' : 'none';
+    document.getElementById('logos-hot').style.display = tab === 'hot' ? 'flex' : 'none';
+    document.getElementById('tab-btn-ice').classList.toggle('active', tab === 'ice');
+    document.getElementById('tab-btn-hot').classList.toggle('active', tab === 'hot');
+  }
   const observer = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); observer.unobserve(e.target); }

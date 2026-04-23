@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISPO ICE Spray — ledový sprej | BEAUFY</title>
+  <meta name="description" content="DISPO ICE Spray je ledový sprej pro okamžitou úlevu od bolesti při sportu a úrazech. Nastříkat ze 20 cm — okamžitý chlad. Medical device class IIa. Dispotech, Itálie.">
+  <link rel="icon" href="/beaufy-ico-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0F172A; --blue: #0070F3; --blue-lt: #1f5fa6;
+      --green: #F59E0B; --bg: #F1F5F9; --white: #ffffff;
+      --text: #1a2533; --muted: #5a6a7e; --border: rgba(19,74,142,.12);
+      --radius-card: 20px;
+      --shadow-card: 0 4px 24px rgba(11,44,74,.08), 0 1px 4px rgba(11,44,74,.04);
+      --shadow-hover: 0 12px 40px rgba(11,44,74,.14), 0 2px 8px rgba(11,44,74,.06);
+      --transition: all .3s cubic-bezier(.4,0,.2,1);
+    }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled { padding: 8px 24px; }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 10px 24px; border-radius: 99px; background: rgba(255,255,255,.18); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 8px 32px rgba(11,44,74,.18); transition: all .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled .nav-inner { background: rgba(255,255,255,.72); backdrop-filter: blur(32px) saturate(200%); -webkit-backdrop-filter: blur(32px) saturate(200%); border-color: rgba(255,255,255,.6); box-shadow: 0 4px 20px rgba(11,44,74,.12); }
+    .nav-logo-img { height: 22px; width: auto; display: block; filter: brightness(0) invert(1); opacity: .95; transition: filter .35s ease; }
+    nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { padding: 7px 16px; border-radius: 99px; font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.92); text-decoration: none; transition: background .2s ease, color .2s ease; }
+    .nav-links a:hover { background: rgba(255,255,255,.18); }
+    nav.scrolled .nav-links a { color: var(--navy); }
+    nav.scrolled .nav-links a:hover { background: var(--bg); }
+    .nav-cta { background: rgba(255,255,255,.22) !important; color: #fff !important; padding: 8px 20px !important; border: 1px solid rgba(255,255,255,.4) !important; font-weight: 600 !important; }
+    nav.scrolled .nav-cta { background: var(--green) !important; color: #fff !important; border-color: transparent !important; }
+    .nav-mobile-btn { display: none; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: #fff; margin: 4px 0; border-radius: 2px; transition: var(--transition); }
+    nav.scrolled .nav-mobile-btn span { background: var(--navy); }
+
+    /* HERO */
+    .hero { height: 53.69vw; min-height: 480px; display: flex; align-items: center; padding: 0 !important; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: url('/dispo-ice/img/spray-hero.webp') 70% center / cover no-repeat; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(11,44,74,.97) 0%, rgba(11,44,74,.92) 28%, rgba(11,44,74,.75) 42%, rgba(11,44,74,.25) 62%, rgba(11,44,74,0) 80%); }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px; display: flex; flex-direction: column; align-items: flex-start; position: relative; z-index: 2; width: 100%; }
+    .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
+    .hero-breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
+    .hero-breadcrumb a:hover { color: #fff; }
+    .hero-cat { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); padding: 5px 14px; border-radius: 99px; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-bottom: 20px; }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1.12; font-weight: 400; color: #fff; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: #6ee7f7; }
+    .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.75; margin-bottom: 32px; max-width: 480px; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 6px 14px; border-radius: 99px; font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500; }
+    .chip-check::before { content: '✓'; color: #6ee7f7; font-weight: 700; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.4); }
+    .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: rgba(255,255,255,.1); color: #fff; font-weight: 500; font-size: .95rem; text-decoration: none; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+
+    /* STATS */
+    .stats-strip { background: var(--navy); padding: 48px 40px; }
+    .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+    .stat-val { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3rem); color: #6ee7f7; line-height: 1; margin-bottom: 8px; }
+    .stat-label { font-size: .82rem; color: rgba(255,255,255,.65); font-weight: 500; }
+
+    /* SHARED */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg, #0b2c4a 0%, #134a8e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px; }
+    .section-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
+
+    /* JAK POUŽÍT */
+    .how { background: var(--bg); }
+    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .how-card { background: var(--white); border-radius: var(--radius-card); padding: 32px 28px; box-shadow: var(--shadow-card); }
+    .how-num { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 1rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .how-title { font-weight: 700; font-size: .98rem; color: var(--navy); margin-bottom: 8px; }
+    .how-text { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+    /* VARIANTY */
+    .variants { background: var(--white); }
+    .variants-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 760px; }
+    .variant-card { background: var(--bg); border-radius: var(--radius-card); padding: 32px 28px; box-shadow: var(--shadow-card); transition: var(--transition); border: 2px solid transparent; }
+    .variant-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .variant-img { height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .variant-img img { max-height: 200px; max-width: 100%; object-fit: contain; }
+    .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
+    .variant-sub { font-size: .82rem; color: var(--muted); margin-bottom: 16px; line-height: 1.55; }
+    .variant-sub strong { display: block; color: var(--blue-lt); font-size: .75rem; letter-spacing: .04em; margin-top: 4px; }
+    .variant-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 22px; border-radius: 99px; background: var(--green); color: #fff; font-size: .88rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+    .variant-btn:hover { background: #d97706; transform: translateY(-1px); }
+
+    /* KDE KOUPIT */
+    .buy { background: var(--bg); padding: 64px 40px; }
+    .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
+    .buy-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 36px; }
+    .buy-tab { padding: 9px 24px; border-radius: 99px; font-size: .88rem; font-weight: 600; cursor: pointer; border: 1.5px solid rgba(11,44,74,.18); background: transparent; color: var(--muted); font-family: inherit; transition: var(--transition); }
+    .buy-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .buy-tab:hover:not(.active) { border-color: var(--blue-lt); color: var(--blue-lt); }
+    .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; }
+    .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
+    .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
+    .buy-wholesale { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .buy-wholesale-title { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; text-align: center; }
+    .buy-wholesale-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 48px; }
+    .buy-wholesale-logos img { height: 44px; width: auto; max-width: 160px; display: block; }
+
+    /* CROSSSELL */
+    .crosssell { background: var(--white); padding: 64px 40px; }
+    .crosssell-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .crosssell-text { flex: 1; min-width: 260px; }
+    .crosssell-text h3 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem,2.5vw,1.9rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg,#0b2c4a,#134a8e); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+    .crosssell-text p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+    .crosssell-card { display: flex; align-items: center; gap: 20px; background: var(--bg); border-radius: 20px; padding: 20px 24px; box-shadow: var(--shadow-card); text-decoration: none; transition: var(--transition); border: 2px solid transparent; max-width: 360px; }
+    .crosssell-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .crosssell-card img { height: 80px; width: auto; object-fit: contain; flex-shrink: 0; }
+    .crosssell-card-label { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+    .crosssell-card-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 2px; }
+    .crosssell-card-desc { font-size: .82rem; color: var(--muted); }
+    .crosssell-card-arrow { font-size: 1.4rem; color: var(--navy); margin-left: auto; }
+
+    /* DISCLAIMER + FOOTER */
+    .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
+    .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
+    footer { background: #091d30; padding: 60px 40px 32px; color: rgba(255,255,255,.65); }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 32px; }
+    .footer-logo-img { height: 26px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1); opacity: .9; }
+    .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
+    .footer-col h5 { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.9); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { font-size: .85rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .footer-col ul li a:hover { color: rgba(255,255,255,.9); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: .8rem; }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,.8); }
+
+    /* UTILS */
+    .scroll-top { position: fixed; bottom: 28px; right: 28px; z-index: 99; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,44,74,.3); opacity: 0; transform: translateY(12px); pointer-events: none; transition: var(--transition); }
+    .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      section { padding: 56px 24px; }
+      .hero { height: auto !important; min-height: 100svh; }
+      .hero-bg { background-position: 70% top !important; background-size: cover !important; }
+      .hero-bg::after { background: linear-gradient(to right, rgba(11,44,74,.95) 0%, rgba(11,44,74,.88) 40%, rgba(11,44,74,.4) 65%, rgba(11,44,74,.0) 100%) !important; }
+      .hero-inner { padding: 100px 24px 48px; }
+      .how-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .variants-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .crosssell-inner { flex-direction: column; gap: 24px; }
+      .crosssell-card { max-width: 100%; }
+      .nav-links { display: none; }
+      .nav-top-row { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+      .nav-mobile-btn { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; width: 100%; margin-top: 12px; gap: 4px; }
+      .nav-links.open a { font-size: 1.1rem; font-weight: 500; padding: 14px 4px; color: var(--navy) !important; text-decoration: none; display: block; border-bottom: 1px solid rgba(11,44,74,.06); }
+      .nav-links.open a:last-child { border-bottom: none; }
+      .nav-links.open .nav-cta { background: var(--green) !important; color: #fff !important; border-radius: 99px !important; padding: 13px 20px !important; margin-top: 4px; border-bottom: none !important; font-weight: 600; }
+      .nav-inner.menu-open { display: flex !important; flex-direction: column !important; align-items: stretch !important; padding: 12px 20px 16px !important; border-radius: 28px !important; }
+      .stats-strip { padding: 40px 24px; }
+      .buy { padding: 56px 24px; }
+    }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner" id="navInner">
+    <div class="nav-top-row">
+      <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
+      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/#produkty">Produkty</a>
+      <a href="/#o-nas">O nás</a>
+      <a href="/#kontakt">Kontakty</a>
+      <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / DISPO ICE Spray</div>
+    <div class="hero-cat">Ledový sprej · Sport & medicína</div>
+    <h1>DISPO ICE Spray —<br><em>okamžitý chlad</em> ve spreji</h1>
+    <p class="hero-sub">Nastříkat ze vzdálenosti 20 cm na 3–4 sekundy — okamžitá úleva od bolesti. Žádná příprava, vždy připraven. Ideální přímo na hřišti i v ambulanci.</p>
+    <div class="hero-chips">
+      <span class="chip chip-check">Okamžitý účinek</span>
+      <span class="chip chip-check">Vzdálenost 20 cm · 3–4 sekundy</span>
+      <span class="chip chip-check">Medical device IIa</span>
+      <span class="chip chip-check">Made in Italy</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#kde-koupit" class="btn-primary">Kde koupit</a>
+      <a href="#jak-pouzit" class="btn-outline-white">Jak použít</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="reveal"><div class="stat-val">20 cm</div><div class="stat-label">Vzdálenost aplikace</div></div>
+    <div class="reveal"><div class="stat-val">3–4 s</div><div class="stat-label">Doba nastříkání</div></div>
+    <div class="reveal"><div class="stat-val">IIa</div><div class="stat-label">Medical device class</div></div>
+    <div class="reveal"><div class="stat-val">2</div><div class="stat-label">Velikosti — 200 a 400 ml</div></div>
+  </div>
+</div>
+
+<!-- JAK POUŽÍT -->
+<section class="how" id="jak-pouzit">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Použití</div>
+      <h2>Jak DISPO ICE Spray použít?</h2>
+      <p class="section-desc">Tři jednoduché kroky pro okamžitou úlevu od bolesti při sportovních zraněních a úrazech.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-card reveal">
+        <div class="how-num">1</div>
+        <div class="how-title">Protřepejte nádobku</div>
+        <div class="how-text">Před použitím krátce protřepejte. Odstraňte ochranný kryt ventilu.</div>
+      </div>
+      <div class="how-card reveal">
+        <div class="how-num">2</div>
+        <div class="how-title">Nastříkejte ze 20 cm</div>
+        <div class="how-text">Držte sprej ve vzdálenosti minimálně 20 cm od místa aplikace. Stiskněte ventil a nastříkejte 3–4 sekundy. Nikdy nestříkejte blíže — hrozí omrzliny.</div>
+      </div>
+      <div class="how-card reveal">
+        <div class="how-num">3</div>
+        <div class="how-title">Opakujte dle potřeby</div>
+        <div class="how-text">Aplikaci můžete opakovat. Neaplikujte na otevřené rány, sliznice nebo obličej. Vyhněte se očím a ústa.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VARIANTY -->
+<section class="variants" id="varianty">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Balení</div>
+      <h2>Varianty produktu</h2>
+      <p class="section-desc">Dostupný ve dvou velikostech — menší pro osobní lékárničky a sportovní tašky, větší pro týmové ošetřovny a ambulance.</p>
+    </div>
+    <div class="variants-grid">
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <img src="/dispo-ice/img/spray-200ml.webp" alt="DISPO ICE Spray 200 ml">
+        </div>
+        <div class="variant-name">DISPO ICE Spray 200 ml</div>
+        <div class="variant-sub">Kompaktní velikost pro sport a osobní lékárničku
+          <strong>APA 5401196</strong>
+        </div>
+        <a href="#kde-koupit" class="variant-btn">Kde koupit <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+      <div class="variant-card reveal">
+        <div class="variant-img">
+          <img src="/dispo-ice/img/spray-400ml.webp" alt="DISPO ICE Spray 400 ml">
+        </div>
+        <div class="variant-name">DISPO ICE Spray 400 ml</div>
+        <div class="variant-sub">Větší formát pro týmové ošetřovny a ambulance
+          <strong>APA 5080081</strong>
+        </div>
+        <a href="#kde-koupit" class="variant-btn">Kde koupit <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KDE KOUPIT -->
+<section class="buy" id="kde-koupit">
+  <div class="buy-inner">
+    <p class="buy-title reveal">Dostupné v těchto lékárnách</p>
+    <div class="buy-tabs reveal">
+      <button class="buy-tab active" id="tab-btn-200" onclick="switchTab('200')">200 ml</button>
+      <button class="buy-tab" id="tab-btn-400" onclick="switchTab('400')">400 ml</button>
+    </div>
+
+    <div class="buy-logos" id="logos-200">
+      <a class="partner-logo-link" href="https://www.drmax.cz/dispo-ice-ledovy-sprej-200-ml" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a>
+      <a class="partner-logo-link" href="https://www.benu.cz/dispo-ice-ledovy-spray-200ml" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU"></a>
+      <a class="partner-logo-link" href="https://www.mojelekarna.cz/dispo-ice-ledovy-spray-200ml-5401196" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna"></a>
+      <a class="partner-logo-link" href="https://www.gigalekarna.cz/produkt/dispo-ice-ledovy-spray-200ml/" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna"></a>
+      <a class="partner-logo-link" href="https://www.magistra.cz/cs/produkt/dispo-ice-ledovy-sprej-200-ml" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra"></a>
+      <a class="partner-logo-link" href="https://www.lekarnaave.cz/dispo-ice-ledovy-spray-200ml" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
+      <a class="partner-logo-link" href="https://www.lekarnalemon.cz/dispo-ice-ledovy-spray-200ml-8033196352006" target="_blank" rel="noopener"><img src="/logos/logo-lemon.png" alt="Lemon Lékárna"></a>
+    </div>
+
+    <div class="buy-logos" id="logos-400" style="display:none;">
+      <a class="partner-logo-link" href="https://www.drmax.cz/dispo-ice-ledovy-sprej-400-ml" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max"></a>
+      <a class="partner-logo-link" href="https://www.benu.cz/dispo-ice-ledovy-spray-400ml" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU"></a>
+      <a class="partner-logo-link" href="https://www.mojelekarna.cz/dispo-ice-ledovy-spray-400ml-5080081" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna"></a>
+      <a class="partner-logo-link" href="https://www.gigalekarna.cz/produkt/dispo-ice-ledovy-spray-400ml/" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna"></a>
+      <a class="partner-logo-link" href="https://www.magistra.cz/cs/produkt/dispo-ice-ledovy-spray-400-ml" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra"></a>
+      <a class="partner-logo-link" href="https://www.lekarnaave.cz/dispo-ice-ledovy-spray-400ml" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE"></a>
+      <a class="partner-logo-link" href="https://www.lekarnalemon.cz/dispo-ice-ledovy-spray-400ml-8033196354000" target="_blank" rel="noopener"><img src="/logos/logo-lemon.png" alt="Lemon Lékárna"></a>
+      <a class="partner-logo-link" href="https://www.alza.cz/dispo-ice-ledovy-spray-400-ml-d13191258.htm" target="_blank" rel="noopener"><img src="/logos/logo-alza.png" alt="Alza.cz"></a>
+    </div>
+
+    <div class="buy-wholesale reveal">
+      <p class="buy-wholesale-title">Dodáváme přes tyto lékárenské velkoobchody</p>
+      <div class="buy-wholesale-logos">
+        <img src="/logos/logo-phoenix.svg" alt="Phoenix Pharma">
+        <img src="/logos/logo-pharmos.svg" alt="Pharmos">
+        <img src="/logos/logo-alliance.png" alt="Alliance Healthcare">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSSSELL -->
+<section class="crosssell">
+  <div class="crosssell-inner">
+    <div class="crosssell-text reveal">
+      <div class="section-label">Také od BEAUFY</div>
+      <h3>Hledáte opakovaně použitelný gelový sáček?</h3>
+      <p>DISPO GEL je gelový sáček pro tepelnou i chladovou terapii — použijete ho stokrát. Mrazák pro chlad, mikrovlnka nebo horká voda pro teplo. Dostupný v 8 rozměrech.</p>
+    </div>
+    <a href="/dispogel/" class="crosssell-card reveal">
+      <img src="/dispo-gel.png" alt="DISPO GEL gelový sáček">
+      <div>
+        <div class="crosssell-card-label">Opakovaně použitelný</div>
+        <div class="crosssell-card-name">DISPO GEL</div>
+        <div class="crosssell-card-desc">Horký / studený sáček · 8 variant</div>
+      </div>
+      <span class="crosssell-card-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-bar">
+  <p><strong>Zdravotnický prostředek třídy IIa.</strong> Před použitím si přečtěte návod k použití. Výrobce: Dispotech S.r.l., Itálie. Distributor pro ČR a SR: BEAUFY s.r.o., U Trati 886/52, 100 00 Praha 10, IČ:&nbsp;<span style="color:inherit !important;pointer-events:none;">06867031</span>.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/BEAUFY_logo.png" alt="BEAUFY" class="footer-logo-img">
+      <p>Česko-slovenský distributor zdravotnických prostředků EU původu. Zásobujeme lékárny, nemocnice a soukromé lékaře s osobním přístupem.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkty</h5>
+      <ul>
+        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
+        <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
+        <li><a href="/dispogel/">DISPO GEL</a></li>
+        <li><a href="/instantni-termoterapie/">Instantní termoterapie</a></li>
+        <li><a href="/dispo-ice/">DISPO ICE Spray</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Společnost</h5>
+      <ul>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/#kontakt">Kontakty</a></li>
+        <li><a href="/#kontakt">Pro lékárny</a></li>
+        <li><a href="/zasady-ochrany-osobnich-udaju.html">Ochrana os. údajů</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <ul>
+        <li><a href="tel:+420799022658">+420 799 022 658</a></li>
+        <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
+        <li><a href="#">U Trati 886/52, Praha 10</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 BEAUFY s.r.o. · IČ:&nbsp;<span style="-webkit-text-stroke:0;color:inherit !important;pointer-events:none;">06867031</span></p>
+    <div class="footer-legal">
+      <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="mailto:info@beaufy.eu">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    document.querySelector('.nav-inner').classList.toggle('menu-open');
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  function switchTab(size) {
+    document.getElementById('logos-200').style.display = size === '200' ? 'flex' : 'none';
+    document.getElementById('logos-400').style.display = size === '400' ? 'flex' : 'none';
+    document.getElementById('tab-btn-200').classList.toggle('active', size === '200');
+    document.getElementById('tab-btn-400').classList.toggle('active', size === '400');
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

@@ -217,6 +217,22 @@
     .story-body { display: flex; flex-direction: column; gap: 20px; }
     .story-body p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.82); }
     .story-body p strong { color: #fff; font-weight: 600; }
+    .story-quote-overlay {
+      position: absolute; z-index: 2;
+      bottom: 48px; right: 5%;
+      width: 38%;
+      padding: 0 40px 0 24px;
+    }
+    .story-quote-overlay p {
+      font-size: 1.1rem; line-height: 1.7;
+      color: rgba(255,255,255,.92); font-style: italic;
+      border-left: 3px solid #6ee7f7;
+      padding-left: 20px;
+      text-shadow: 0 1px 8px rgba(0,0,0,.5);
+    }
+    @media (max-width: 900px) {
+      .story-quote-overlay { display: none; }
+    }
     .story-quote { border-left: 3px solid #6ee7f7; padding-left: 20px; margin: 4px 0; }
     .story-quote p { color: rgba(255,255,255,.92); font-style: italic; }
     .story-mobile-photo { display: none; }
@@ -492,6 +508,9 @@
 <!-- STORY -->
 <section class="story">
   <div class="story-bg"></div>
+  <div class="story-quote-overlay reveal">
+    <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
+  </div>
   <div class="story-inner">
     <div class="story-content">
       <div class="story-label reveal">Náš příběh</div>

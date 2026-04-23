@@ -698,11 +698,12 @@
         position: fixed; top: 0; left: 0; right: 0; bottom: 0;
         background: rgba(255,255,255,.97); backdrop-filter: blur(20px);
         padding: 100px 40px 40px;
-        gap: 8px; z-index: 99;
+        gap: 8px; z-index: 101;
         align-items: flex-start;
       }
-      .nav-links.open a { font-size: 1.2rem; padding: 12px 20px; width: 100%; }
-      .nav-mobile-btn { display: block; position: relative; z-index: 100; }
+      .nav-links.open a { font-size: 1.2rem; padding: 12px 20px; width: 100%; color: var(--navy) !important; border-radius: 12px; }
+      .nav-links.open a:hover { background: var(--bg); }
+      .nav-mobile-btn { display: block; position: relative; z-index: 102; }
       .hero-content { grid-template-columns: 1fr; gap: 40px; padding: 100px 24px 60px; }
       .hero-stats { display: none; }
       .products-grid { grid-template-columns: 1fr 1fr; }
@@ -1314,4 +1315,5 @@
 </script>
 </body>
 </html>
+
 

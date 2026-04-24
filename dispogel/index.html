@@ -141,6 +141,7 @@
       background: var(--white); border-radius: var(--radius-card);
       padding: 32px 28px; box-shadow: var(--shadow-card);
       transition: var(--transition); border: 2px solid transparent;
+      display: flex; flex-direction: column;
     }
     .variant-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
     .variant-img { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
@@ -148,7 +149,7 @@
     .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
     .variant-sub { font-size: .8rem; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
     .variant-sub strong { color: var(--blue-lt); font-size: .75rem; letter-spacing: .04em; }
-    .variant-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 99px; background: var(--green); color: #fff; font-size: .85rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+    .variant-btn { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 99px; background: var(--green); color: #fff; font-size: .85rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
     .variant-btn:hover { background: #d97706; transform: translateY(-1px); }
 
     /* ── LIFESTYLE STRIP ── */

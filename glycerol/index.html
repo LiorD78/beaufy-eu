@@ -74,6 +74,7 @@
     .hero { min-height: 100svh; position: relative; overflow: hidden; display: flex; align-items: center; }
     .hero-bg { position: absolute; inset: 0; overflow: hidden; }
     .hero-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+    @media (max-width: 900px) { .hero-bg video { object-position: 75% center; } }
     .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(11,44,74,.92) 0%, rgba(11,44,74,.7) 50%, rgba(11,44,74,.2) 100%); }
     .hero-inner { max-width: 1200px; margin: 0 auto; padding: 120px 40px 80px; position: relative; z-index: 1; width: 100%; }
     .hero-text { max-width: 560px; }

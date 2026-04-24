@@ -76,7 +76,7 @@
     .intro { background: var(--bg); }
     .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     .intro-img { }
-    .intro-img img { width: 100%; height: auto; display: block; }
+    .intro-img img { width: 100%; height: auto; display: block; mix-blend-mode: multiply; }
     .intro-text ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
     .intro-text ul li { display: flex; gap: 12px; align-items: flex-start; font-size: .95rem; color: var(--muted); line-height: 1.6; }
     .intro-text ul li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
@@ -94,7 +94,7 @@
     .aplikace { background: var(--bg); }
     .aplikace-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
     .aplikace-img { }
-    .aplikace-img img { width: 100%; height: auto; display: block; }
+    .aplikace-img img { width: 100%; height: auto; display: block; mix-blend-mode: multiply; }
     .aplikace-steps { display: flex; flex-direction: column; gap: 20px; margin-top: 32px; }
     .aplikace-step { display: flex; gap: 16px; align-items: flex-start; }
     .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff; font-size: .88rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -111,8 +111,8 @@
     .slozeni-table td:first-child { color: var(--muted); }
     .slozeni-table td:last-child { font-weight: 600; color: var(--navy); text-align: right; }
     .slozeni-note { margin-top: 20px; font-size: .82rem; color: var(--muted); line-height: 1.6; padding: 16px; background: var(--bg); border-radius: 12px; border-left: 3px solid var(--blue); }
-    .product-visual { display: flex; align-items: center; justify-content: center; padding: 40px; }
-    .product-visual img { max-height: 320px; width: auto; object-fit: contain; }
+    .product-visual { display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .product-visual img { max-height: 320px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
 
 
     /* KDE KOUPIT */

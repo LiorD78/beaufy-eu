@@ -90,6 +90,11 @@
     .variant-img img { max-width: 100%; object-fit: contain; }
     .variant-img img.spray-200 { max-height: 160px; }
     .variant-img img.spray-400 { max-height: 240px; }
+    @media (max-width: 900px) {
+      .variant-img { height: 320px; }
+      .variant-img img.spray-200 { max-height: 240px; }
+      .variant-img img.spray-400 { max-height: 300px; }
+    }
     .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
     .variant-sub { font-size: .82rem; color: var(--muted); margin-bottom: 16px; line-height: 1.55; }
     .variant-sub strong { display: block; color: var(--blue-lt); font-size: .75rem; letter-spacing: .04em; margin-top: 4px; }

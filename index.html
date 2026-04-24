@@ -511,7 +511,7 @@
     /* ── CONTACT ─────────────────────────────────────────── */
     .contact { background: var(--bg2); }
     .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: stretch;
     }
     .contact-info { }
     .contact-persons { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
@@ -530,7 +530,7 @@
     .contact-person-links { margin-top: 6px; display: flex; flex-direction: column; gap: 2px; }
     .contact-person-links a { font-size: .82rem; color: var(--muted); text-decoration: none; transition: color .2s; }
     .contact-person-links a:hover { color: var(--blue); }
-    .contact-form { background: var(--white); border-radius: 24px; padding: 40px; box-shadow: var(--shadow-card); }
+    .contact-form { background: var(--white); border-radius: 24px; padding: 40px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; }
     .contact-form h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); margin-bottom: 24px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
@@ -1392,5 +1392,6 @@
 </script>
 </body>
 </html>
+
 
 

@@ -511,7 +511,7 @@
     /* ── CONTACT ─────────────────────────────────────────── */
     .contact { background: var(--bg2); }
     .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: stretch;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
     }
     .contact-info { }
     .contact-persons { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
@@ -812,7 +812,7 @@
     </div>
     <div class="hero-stats">
       <a href="#produkty" class="stat-card">
-        <div class="stat-num">6+</div>
+        <div class="stat-num">7+</div>
         <div class="stat-label">Produktů v portfoliu</div>
       </a>
       <a href="#partneri" class="stat-card">
@@ -1212,7 +1212,7 @@
         </div>
       </div>
 
-      <form class="contact-form reveal" name="poptavka" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="contact-form reveal" style="margin-top: 0; align-self: start;" name="poptavka" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="poptavka">
         <input type="hidden" name="bot-field" style="display:none">
         <h3>Napište nám</h3>

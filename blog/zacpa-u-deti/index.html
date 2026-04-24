@@ -31,8 +31,21 @@
     .nav-cta { background: var(--green) !important; color: #fff !important; font-weight: 600 !important; padding: 9px 20px !important; }
     .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 4px 0; border-radius: 2px; }
-    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #1a2f5e 100%); padding: 140px 40px 0; }
-    .article-hero .inner { max-width: 780px; margin: 0 auto; }
+    .article-hero {
+      position: relative; min-height: 100svh; display: flex; align-items: center;
+      overflow: hidden; padding: 120px 40px 80px;
+    }
+    .article-hero-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+    }
+    .article-hero-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, var(--navy) 38%, rgba(15,23,42,.75) 60%, rgba(15,23,42,.0) 100%);
+    }
+    .article-hero .inner {
+      position: relative; z-index: 2; max-width: 780px; width: 100%; margin: 0 auto;
+    }
     .breadcrumb { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 20px; }
     .breadcrumb a { color: rgba(255,255,255,.5); text-decoration: none; }
     .breadcrumb a:hover { color: #fff; }
@@ -116,6 +129,8 @@
 </nav>
 
 <section class="article-hero">
+  <div class="article-hero-bg" style="background-image:url('/blog/img/potty.jpg');background-position:right center;"></div>
+  <div class="article-hero-gradient"></div>
   <div class="inner">
     <div class="breadcrumb"><a href="/">BEAUFY</a> / <a href="/blog/">Blog</a> / Zácpa u dětí</div>
     <div class="article-tag">Zácpa u dětí</div>
@@ -126,9 +141,6 @@
       <span>·</span>
       <span>4 minuty čtení</span>
     </div>
-  </div>
-  <div class="article-hero-img">
-    <img src="/blog/img/potty.jpg" alt="Dítě na nočníku — zácpa u dětí">
   </div>
 </section>
 

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zácpa trápí až 40 % dětí po pátém roce věku | Blog BEAUFY</title>
+  <meta name="description" content="Odborníci upozorňují na nutnost prevence i včasné léčby zácpy u dětí. Jak poznat funkční zácpu a co s ní dělat?">
+  <link rel="icon" href="/beaufy-ico-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; }
+    :root {
+      --navy: #0F172A; --blue: #0070F3; --blue-lt: #1f5fa6; --green: #F59E0B;
+      --bg: #F1F5F9; --white: #fff; --muted: #64748B; --border: rgba(11,44,74,.1);
+      --radius-card: 20px; --shadow-card: 0 2px 16px rgba(11,44,74,.08);
+      --transition: all .22s ease;
+    }
+    body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--bg); }
+
+    /* NAV */
+    nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); width: calc(100% - 32px); max-width: 1160px; z-index: 100; transition: var(--transition); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 10px 24px; border-radius: 99px; background: rgba(255,255,255,.18); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 8px 32px rgba(11,44,74,.18); transition: all .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled .nav-inner { background: rgba(255,255,255,.95); border-color: rgba(11,44,74,.12); }
+    .nav-logo-img { height: 32px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { font-size: .88rem; font-weight: 500; color: var(--navy); text-decoration: none; padding: 7px 14px; border-radius: 99px; transition: var(--transition); }
+    .nav-links a:hover { background: var(--bg); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+    .nav-cta { background: var(--green) !important; color: #fff !important; font-weight: 600 !important; padding: 9px 20px !important; }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 4px 0; border-radius: 2px; }
+
+    /* ARTICLE HERO */
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #1a2f5e 100%); padding: 140px 40px 0; }
+    .article-hero .inner { max-width: 780px; margin: 0 auto; }
+    .breadcrumb { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+    .breadcrumb a { color: rgba(255,255,255,.5); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .article-tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+    .article-hero .lead { font-size: 1.1rem; color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 40px; }
+    .article-meta-bar { display: flex; gap: 24px; align-items: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.12); }
+    .article-meta-bar span { font-size: .82rem; color: rgba(255,255,255,.45); }
+
+    /* HERO IMAGE */
+    .article-hero-img { max-width: 780px; margin: 0 auto; margin-top: 40px; border-radius: 20px 20px 0 0; overflow: hidden; height: 420px; }
+    .article-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ARTICLE BODY */
+    .article-body { background: var(--white); }
+    .article-body .inner { max-width: 780px; margin: 0 auto; padding: 56px 40px 72px; }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 400; color: var(--navy); margin: 40px 0 16px; }
+    .article-body p { font-size: 1rem; color: #334155; line-height: 1.85; margin-bottom: 20px; }
+    .article-body ul { padding-left: 0; list-style: none; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .article-body ul li { font-size: 1rem; color: #334155; line-height: 1.75; padding-left: 20px; position: relative; }
+    .article-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue-lt); font-weight: 700; }
+    .article-body strong { color: var(--navy); font-weight: 600; }
+    .highlight-box { background: #eef4fa; border-left: 4px solid var(--blue-lt); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
+    .highlight-box p { margin: 0; font-size: .95rem; color: var(--navy); line-height: 1.7; }
+
+    /* PRODUCT CTA */
+    .article-cta { background: linear-gradient(135deg, #0F172A 0%, #1a2f5e 100%); border-radius: 20px; padding: 40px; margin: 48px 0; display: flex; align-items: center; gap: 32px; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #fff; font-weight: 400; margin-bottom: 8px; }
+    .article-cta-text p { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.65; }
+    .article-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); white-space: nowrap; }
+    .article-cta-btn:hover { opacity: .9; transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,.7); padding: 56px 40px 32px; }
+    .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand p { font-size: .88rem; line-height: 1.7; margin-top: 16px; color: rgba(255,255,255,.5); }
+    .footer-logo-img { height: 28px; filter: brightness(0) invert(1); opacity: .8; }
+    .footer-col h5 { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: .88rem; color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
+    .footer-col ul a:hover { color: #fff; }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); font-size: .8rem; color: rgba(255,255,255,.35); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,.8); }
+
+    .scroll-top { position: fixed; bottom: 28px; right: 28px; z-index: 99; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,44,74,.3); opacity: 0; transform: translateY(12px); pointer-events: none; transition: var(--transition); }
+    .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+
+    @media (max-width: 900px) {
+      .article-hero { padding: 120px 24px 0; }
+      .article-hero-img { height: 280px; }
+      .article-body .inner { padding: 40px 24px 56px; }
+      .article-cta { flex-direction: column; gap: 20px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; width: 100%; margin-top: 12px; gap: 4px; }
+      .nav-links.open a { font-size: 1.1rem; font-weight: 500; padding: 14px 4px; color: var(--navy) !important; text-decoration: none; display: block; border-bottom: 1px solid rgba(11,44,74,.06); }
+      .nav-links.open a:last-child { border-bottom: none; }
+      .nav-links.open .nav-cta { background: var(--green) !important; color: #fff !important; border-radius: 99px !important; padding: 13px 20px !important; margin-top: 4px; border-bottom: none !important; }
+      .nav-inner.menu-open { display: flex !important; flex-direction: column !important; align-items: stretch !important; padding: 12px 20px 16px !important; border-radius: 28px !important; }
+    }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner" id="navInner">
+    <div class="nav-top-row">
+      <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
+      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/#produkty">Produkty</a>
+      <a href="/#o-nas">O nás</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#kontakt">Kontakty</a>
+      <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
+    </div>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="/">BEAUFY</a> / <a href="/blog/">Blog</a> / Zácpa u dětí</div>
+    <div class="article-tag">Zácpa u dětí</div>
+    <h1>Zácpa trápí až 40 % dětí<br>po pátém roce věku</h1>
+    <p class="lead">Odborníci upozorňují na nutnost prevence i včasné léčby. Jak poznat funkční zácpu, proč vzniká a co s ní dělat dřív, než přejde do chronické fáze?</p>
+    <div class="article-meta-bar">
+      <span>Duben 2026</span>
+      <span>·</span>
+      <span>4 minuty čtení</span>
+    </div>
+  </div>
+  <div class="article-hero-img">
+    <img src="/blog/img/potty.jpg" alt="Dítě na nočníku — zácpa u dětí">
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="inner">
+
+    <p>Zácpa neboli obstipace je u dětí definována odchodem stolice méně než jednou za tři dny. Jde o <strong>velmi častý problém</strong>, který postihuje děti napříč věkovými skupinami a v mnoha případech přetrvává i do školního věku.</p>
+
+    <h2>Funkční zácpa: nejčastější příčina potíží</h2>
+
+    <p>Dětští psychologové a pediatři poukazují na to, že ze všech dětí trpících zácpou má až <strong>95 % z nich problémy s tzv. funkční zácpou</strong> — tedy stavem, který není způsoben primárně jiným onemocněním. Vzniká nejčastěji kvůli nedostatku vlákniny, nízkému příjmu tekutin, stresu nebo změně denního režimu a málo pohybu.</p>
+
+    <p>U kojenců se funkční zácpa obvykle poprvé objeví v době podávání prvních příkrmů a pevné stravy. Klíčové je předejít bolestivé zkušenosti — ta totiž vede k zadržování stolice, které problém dále prohlubuje.</p>
+
+    <div class="highlight-box">
+      <p><strong>Věděli jste?</strong> Až 40 % dětí trpících dlouhodobou zácpou ve věku pěti let má potíže i nadále — a 20–30 % z nich dokonce i po desátém roce života.</p>
+    </div>
+
+    <h2>Jak se zácpa projevuje?</h2>
+
+    <p>Zácpa se u dětí projevuje zejména:</p>
+    <ul>
+      <li>Bolestivým a málo častým vyprazdňováním</li>
+      <li>Tvrdou stolicí, nadýmáním a bolestmi břicha</li>
+      <li>Samovolným únikem stolice (enkopréza)</li>
+      <li>Pocitem neúplného vyprázdnění</li>
+      <li>V krajních případech psychickými potížemi a omezením běžného života</li>
+    </ul>
+
+    <h2>Prevence a léčba</h2>
+
+    <p>Prevenci zácpy napomáhá zdravý životní styl — dostatek pohybu, vyvážená strava s vysokým obsahem vlákniny a pravidelný pitný režim. Rodiče by se měli vyvarovat zbytečného stresu při nácviku na nočník a naopak <strong>podporovat pravidelné návyky bez tlaku</strong>.</p>
+
+    <p>Pokud již k potížím dojde, lze v počáteční fázi pomoci změkčujícími prostředky jako jsou mikroklystýry nebo glycerinové čípky. V některých případech, zejména chronických, jsou pak nasazována projímadla typu makrogol nebo laktulóza, která napomáhají peristaltice střev.</p>
+
+    <div class="article-cta">
+      <div class="article-cta-text">
+        <h3>Laxík — šetrný mikroklystýr pro děti</h3>
+        <p>Funguje do 15–30 minut. Složení s glycerolem, heřmánkem a slézem. Vhodný od narození.</p>
+      </div>
+      <a href="/laxik/" class="article-cta-btn">Zjistit více →</a>
+    </div>
+
+    <p>Důležitou součástí léčby je i psychologická podpora a trpělivý přístup rodičů. <strong>Zácpa není banalita</strong> — pokud přetrvává, měla by být vždy konzultována s pediatrem.</p>
+
+    <p style="margin-top:32px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--border);padding-top:16px;">Zdravotnický prostředek třídy I. Před použitím si přečtěte návod k použití.</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/BEAUFY_logo.png" alt="BEAUFY" class="footer-logo-img">
+      <p>Česko-slovenský distributor zdravotnických prostředků EU původu.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkty</h5>
+      <ul>
+        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
+        <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
+        <li><a href="/dispogel/">DISPO GEL</a></li>
+        <li><a href="/instantni-termoterapie/">Instantní termoterapie</a></li>
+        <li><a href="/dispo-ice/">DISPO ICE Spray</a></li>
+        <li><a href="/zensen/">Ženšen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Společnost</h5>
+      <ul>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/#kontakt">Kontakty</a></li>
+        <li><a href="/zasady-ochrany-osobnich-udaju.html">Ochrana os. údajů</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <ul>
+        <li><a href="tel:+420799022658">+420 799 022 658</a></li>
+        <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
+        <li><a href="#">U Trati 886/52, Praha 10</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 BEAUFY s.r.o. · IČ:&nbsp;<span style="color:inherit !important">06867031</span></p>
+    <div class="footer-legal">
+      <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="mailto:info@beaufy.eu">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    document.querySelector('.nav-inner').classList.toggle('menu-open');
+  });
+</script>
+</body>
+</html>

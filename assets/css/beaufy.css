@@ -17,6 +17,11 @@
   --blue:     #0070F3;
   --blue-lt:  #1f5fa6;
   --blue-mid: #134a8e;
+
+  /* TAGRA-style 3-bodový gradient (decentnější modrý) */
+  --tmx-blue-l: #0b2c4a;       /* tmavě námořní modrá - vlevo */
+  --tmx-blue-m: #134a8e;       /* střední modrá - střed */
+  --tmx-blue-r: #1f5fa6;       /* světlejší modrá - vpravo */
   --teal:     #6ee7f7;
   --amber:    #F59E0B;
   --green:    #F59E0B;        /* alias - historic */
@@ -35,7 +40,7 @@
   --h1-em-color:           var(--teal);
 
   /* H2 na SVĚTLÉM pozadí — gradient text */
-  --h2-gradient:           linear-gradient(90deg, #0F172A 0%, #0070F3 100%);
+  --h2-gradient:           linear-gradient(90deg, var(--tmx-blue-l) 0%, var(--tmx-blue-m) 50%, var(--tmx-blue-r) 100%);
   --h2-em-color:           inherit;
 
   /* H2 na TMAVÉM pozadí */
@@ -46,7 +51,7 @@
   --section-label-color:   var(--amber);
 
   /* Tmavé sekce pozadí (hero, b2b-cta, strip sekce) */
-  --section-dark-bg:       linear-gradient(90deg, #0F172A 0%, #0070F3 100%);
+  --section-dark-bg:       linear-gradient(90deg, var(--tmx-blue-l) 0%, var(--tmx-blue-m) 50%, var(--tmx-blue-r) 100%);
 
   /* Hero overlay - gradient přes pozadí fotku */
   --hero-overlay:          linear-gradient(to right, rgba(11,44,74,.95) 0%, rgba(11,44,74,.6) 50%, rgba(11,44,74,.2) 100%);
@@ -310,3 +315,4 @@ footer { background: #091d30; padding: 60px 40px 32px; color: rgba(255,255,255,.
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: none; }
 }
+

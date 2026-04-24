@@ -184,6 +184,47 @@
       .faq-section { padding: 56px 24px; }
     }
     @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    /* VARIANTS */
+    .variants { background: var(--bg); }
+    .variants-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 24px; max-width: 400px; }
+    .variant-card { background: var(--white); border-radius: var(--radius-card); padding: 28px; box-shadow: var(--shadow-card); transition: var(--transition); border: 2px solid transparent; }
+    .variant-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .variant-img { height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .variant-img img { max-height: 176px; max-width: 100%; object-fit: contain; }
+    .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
+    .variant-apa { font-size: .78rem; color: var(--muted); margin-bottom: 16px; font-weight: 500; letter-spacing: .04em; }
+    .variant-btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 20px; border-radius: 99px; background: var(--green); color: #fff; font-size: .85rem; font-weight: 600; text-decoration: none; transition: var(--transition); }
+    .variant-btn:hover { background: #d97706; transform: translateY(-1px); }
+
+    /* INFO SEKCE */
+    .info-section { background: var(--white); }
+    .info-tabs-wrap { max-width: 860px; }
+    .info-tabs-nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 32px; }
+    .info-tab-btn { padding: 8px 18px; border-radius: 99px; font-size: .85rem; font-weight: 600; cursor: pointer; border: 1.5px solid rgba(11,44,74,.18); background: transparent; color: var(--muted); font-family: inherit; transition: all .18s; white-space: nowrap; }
+    .info-tab-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .info-tab-panels { position: relative; }
+    .info-tab-panel { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
+    .info-tab-panel.active { visibility: visible; position: relative; pointer-events: auto; }
+    .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+    .info-card { background: var(--bg); border: 1px solid rgba(11,44,74,.1); border-radius: 16px; padding: 20px 22px; }
+    .info-card.featured { border-color: var(--blue); border-width: 1.5px; }
+    .info-card-tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); padding: 2px 0; margin-bottom: 10px; }
+    .info-card h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
+    .info-card p, .info-card li { font-size: .88rem; color: var(--muted); line-height: 1.7; margin: 0; }
+    .info-steps { display: flex; flex-direction: column; gap: 14px; max-width: 600px; }
+    .info-step { display: flex; gap: 14px; align-items: flex-start; }
+    .info-step-num { width: 28px; height: 28px; border-radius: 50%; background: #eef4fa; color: var(--blue); font-size: .8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .info-step-text { font-size: .9rem; color: var(--muted); line-height: 1.65; padding-top: 4px; }
+    .info-slozeni-table { width: 100%; border-collapse: collapse; max-width: 540px; }
+    .info-slozeni-table th { font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); padding: 0 0 10px; text-align: left; border-bottom: 1.5px solid rgba(11,44,74,.12); }
+    .info-slozeni-table td { font-size: .88rem; color: var(--muted); padding: 9px 0; border-bottom: 1px solid rgba(11,44,74,.07); vertical-align: top; }
+    .info-slozeni-table td:last-child { text-align: right; color: var(--navy); font-weight: 600; white-space: nowrap; }
+    .info-slozeni-table tr:last-child td { border-bottom: none; }
+    .slozeni-note-new { font-size: .82rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--blue); padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 16px; max-width: 540px; }
+    @media (max-width: 700px) { .info-cards { grid-template-columns: 1fr; } .info-tabs-nav { gap: 5px; } .info-tab-btn { font-size: .78rem; padding: 6px 13px; } }
+
   </style>
 </head>
 <body>
@@ -228,112 +269,134 @@
   </div>
 </section>
 
-<!-- INTRO -->
-<section class="intro">
-  <div class="section-inner">
-    <div class="intro-grid">
-      <div class="intro-img reveal">
-        <img src="/zensen/img/zensen-krabicka.png" alt="Ženšen + mateří kašička krabička">
-      </div>
-      <div class="intro-text reveal">
-        <div class="section-label">O produktu</div>
-        <h2>Silnější alternativa k energetickým nápojům</h2>
-        <p class="section-desc" style="margin-bottom:0;">Celé dny v pohybu, stres a únava. Cukr a kofein jsou jen krátkodobá záplata. Ženšen + mateří kašička působí přirozeně a bez kolotoče vzestup–pád.</p>
-        <ul>
-          <li>Podporuje fyzickou i psychickou odolnost</li>
-          <li>Pomáhá zvládat únavu a stres</li>
-          <li>Zlepšuje koncentraci a paměť</li>
-          <li>Posiluje imunitní systém</li>
-          <li>Tradičně spojován s podporou vitality</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ÚČINKY -->
-<section class="ucinky" id="ucinky">
+<!-- VARIANTY -->
+<section class="variants" id="varianty">
   <div class="section-inner">
     <div class="reveal">
-      <div class="section-label">Tradiční účinky</div>
-      <h2>Proč ženšen + mateří kašička?</h2>
-      <p class="section-desc">Ženšen (Panax ginseng) patří mezi nejznámější byliny tradiční čínské medicíny. Po tisíce let je ceněn jako přírodní životabudič pro tělo i mysl.</p>
+      <div class="section-label">Balení</div>
+      <h2>Varianta produktu</h2>
+      <p class="section-desc">Ženšen + Mateří kašička — 10 pitných ampulek po 10 ml.</p>
     </div>
-    <div class="ucinky-grid">
-      <div class="ucinky-card reveal">
-        <div class="ucinky-title">Energie bez pádu</div>
-        <div class="ucinky-text">Dodává energii a odstraňuje únavu bez efektu cukr–kofein–pád. Přirozeně podporuje výkonnost organismu při fyzické i mentální zátěži.</div>
-      </div>
-      <div class="ucinky-card reveal">
-        <div class="ucinky-title">Imunitní systém</div>
-        <div class="ucinky-text">Dlouhodobě podporuje obranyschopnost organismu. Mateří kašička obsahuje vitaminy skupiny B, aminokyseliny a enzymy pro přirozenou odolnost.</div>
-      </div>
-      <div class="ucinky-card reveal">
-        <div class="ucinky-title">Koncentrace a paměť</div>
-        <div class="ucinky-text">Zlepšuje soustředění, paměť a mentální výkonnost. Ideální pro náročné pracovní dny, dlouhé jízdy a situace vyžadující plné soustředění.</div>
-      </div>
-      <div class="ucinky-card reveal">
-        <div class="ucinky-title">Vitalita a odolnost</div>
-        <div class="ucinky-text">Tradičně spojován s podporou sexuální vitality a plodnosti. Pomáhá udržovat psychickou a fyzickou odolnost při dlouhodobém stresu.</div>
+    <div class="variants-grid reveal">
+      <div class="variant-card">
+        <div class="variant-img">
+          <img src="/zensen/img/zensen-krabicka.png" alt="Ženšen + Mateří kašička 10×10 ml">
+        </div>
+        <div class="variant-name">Ženšen + Mateří kašička 10 × 10 ml</div>
+        <div class="variant-apa">EAN 8588003213013</div>
+        <a href="#kde-koupit" class="variant-btn">Kde koupit <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- APLIKACE -->
-<section class="aplikace">
+<!-- INFORMACE O PRODUKTU -->
+<section class="info-section section-pad" id="informace">
   <div class="section-inner">
-    <div class="aplikace-grid">
-      <div class="aplikace-img reveal">
-        <img src="/zensen/img/ampulky-mobil.png" alt="Ženšen ampulky balení">
+    <div class="reveal">
+      <div class="section-label">Produkt</div>
+      <h2>Informace<br>o produktu</h2>
+    </div>
+    <div class="info-tabs-wrap reveal">
+      <div class="info-tabs-nav" role="tablist">
+        <button class="info-tab-btn active" onclick="switchInfoTab(this,'zs-o-produktu')" role="tab">O produktu</button>
+        <button class="info-tab-btn" onclick="switchInfoTab(this,'zs-ucinky')" role="tab">Účinky</button>
+        <button class="info-tab-btn" onclick="switchInfoTab(this,'zs-jak-uzivat')" role="tab">Jak užívat</button>
+        <button class="info-tab-btn" onclick="switchInfoTab(this,'zs-slozeni')" role="tab">Složení</button>
       </div>
-      <div class="reveal aplikace-text">
-        <div class="section-label">Dávkování</div>
-        <h2>Jak ampulky užívat?</h2>
-        <p class="section-desc">Jednoduché užívání pro každodenní podporu vitality.</p>
-        <div class="aplikace-steps">
-          <div class="aplikace-step">
-            <div class="step-num">1</div>
-            <div class="step-text">Užívejte <strong>1 ampulku denně,</strong> ideálně ráno před jídlem.</div>
-          </div>
-          <div class="aplikace-step">
-            <div class="step-num">2</div>
-            <div class="step-text">Před použitím <strong>ampulku dobře protřepejte.</strong></div>
-          </div>
-          <div class="aplikace-step">
-            <div class="step-num">3</div>
-            <div class="step-text">Po otevření obsah <strong>ihned spotřebujte.</strong></div>
-          </div>
-          <div class="aplikace-step">
-            <div class="step-num">4</div>
-            <div class="step-text">Dbejte na dostatečný <strong>pitný režim</strong> a vyváženou stravu.</div>
+      <div class="info-tab-panels">
+
+        <!-- TAB: O produktu -->
+        <div class="info-tab-panel active" id="zs-o-produktu">
+          <div class="info-cards">
+            <div class="info-card featured">
+              <div class="info-card-tag">Doplněk stravy</div>
+              <h4>Co je Ženšen + Mateří kašička?</h4>
+              <p>Pitné ampulky kombinující 100% výtažek z kořene ženšenu (Panax ginseng) a včelí mateří kašičku. Bez cukru, bez kofeinu. Přirozená podpora energie, imunity a soustředění pro každodenní užívání.</p>
+            </div>
+            <div class="info-card">
+              <h4>Silnější alternativa k energetickým nápojům</h4>
+              <p>Cukr a kofein jsou jen krátkodobá záplata. Ženšen + mateří kašička působí přirozeně — bez kolotoče vzestup–pád. Podporuje fyzickou i psychickou odolnost při každodenním stresu a zátěži.</p>
+            </div>
+            <div class="info-card">
+              <h4>Pro koho je určen?</h4>
+              <p>Pro dospělé, kteří chtějí přirozenou podporu vitality. Vhodný pro vytížené pracovní dny, cestování, sport i rekonvalescenci. Nevhodný pro těhotné, kojící ženy a osoby s alergií na včelí produkty.</p>
+            </div>
+            <div class="info-card">
+              <h4>Balení</h4>
+              <p><strong>10 skleněných ampulek × 10 ml.</strong> Každá ampulka je jednorázová — po otevření ihned spotřebujte. Uchovávejte při pokojové teplotě, mimo dosah dětí a přímého slunce.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- SLOŽENÍ -->
-<section class="slozeni" id="slozeni">
-  <div class="section-inner">
-    <div class="slozeni-grid">
-      <div class="reveal">
-        <div class="section-label">Složení</div>
-        <h2>Co ampulka obsahuje?</h2>
-        <p style="font-size:.9rem;color:var(--muted);margin-bottom:8px;">Na 1 ampulku / 10 ml</p>
-        <table class="slozeni-table">
-          <tr><td>Ženšen (Panax ginseng)</td><td>339 mg</td></tr>
-          <tr><td>Včelí mateří kašička</td><td>339 mg</td></tr>
-          <tr><td>Med</td><td>7 910 mg</td></tr>
-          <tr><td>Sorbit draselný (konzervant)</td><td>16,95 mg</td></tr>
-          <tr><td>Destilovaná voda</td><td>2 695,05 mg</td></tr>
-        </table>
-        <p style="margin-top:16px;font-size:.88rem;color:var(--muted);">Obsah balení: <strong>10 skleněných ampulek po 10 ml.</strong></p>
-        <div class="slozeni-note">Doplněk stravy. Není náhradou pestré stravy a zdravého životního stylu. Nepřekračujte doporučené denní dávkování. Uchovávejte mimo dosah dětí.</div>
-      </div>
-      <div class="product-visual reveal">
-        <img src="/zensen/img/ampulka-mobil.png" alt="Ženšen ampulka detail">
+        <!-- TAB: Účinky -->
+        <div class="info-tab-panel" id="zs-ucinky">
+          <div class="info-cards">
+            <div class="info-card">
+              <h4>Energie bez pádu</h4>
+              <p>Dodává energii a odstraňuje únavu bez efektu cukr–kofein–pád. Přirozeně podporuje výkonnost organismu při fyzické i mentální zátěži.</p>
+            </div>
+            <div class="info-card">
+              <h4>Imunitní systém</h4>
+              <p>Dlouhodobě podporuje obranyschopnost organismu. Mateří kašička obsahuje vitaminy skupiny B, aminokyseliny a enzymy pro přirozenou odolnost.</p>
+            </div>
+            <div class="info-card">
+              <h4>Koncentrace a paměť</h4>
+              <p>Zlepšuje soustředění, paměť a mentální výkonnost. Ideální pro náročné pracovní dny, dlouhé jízdy a situace vyžadující plné soustředění.</p>
+            </div>
+            <div class="info-card">
+              <h4>Vitalita a odolnost</h4>
+              <p>Tradičně spojován s podporou sexuální vitality a plodnosti. Pomáhá udržovat psychickou a fyzickou odolnost při dlouhodobém stresu.</p>
+            </div>
+          </div>
+          <div class="info-card" style="max-width:600px">
+            <h4>O ženšenu</h4>
+            <p>Ženšen (Panax ginseng) patří mezi nejznámější byliny tradiční čínské medicíny. Po tisíce let je ceněn jako přírodní životabudič pro tělo i mysl.</p>
+          </div>
+        </div>
+
+        <!-- TAB: Jak užívat -->
+        <div class="info-tab-panel" id="zs-jak-uzivat">
+          <div class="info-steps">
+            <div class="info-step">
+              <div class="info-step-num">1</div>
+              <div><div class="info-step-text">Užívejte <strong>1 ampulku denně,</strong> ideálně ráno před jídlem.</div></div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">2</div>
+              <div><div class="info-step-text">Před použitím <strong>ampulku dobře protřepejte.</strong></div></div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">3</div>
+              <div><div class="info-step-text">Po otevření obsah <strong>ihned spotřebujte.</strong></div></div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">4</div>
+              <div><div class="info-step-text">Dbejte na dostatečný <strong>pitný režim</strong> a vyváženou stravu.</div></div>
+            </div>
+          </div>
+          <div class="info-card" style="margin-top:24px;max-width:600px">
+            <h4>Délka kúry</h4>
+            <p>Obvyklá kúra trvá několik týdnů až měsíců. Při dlouhodobějším užívání je vhodné jednou za čas zařadit krátkou pauzu nebo se poradit s lékařem, zejména máte-li chronické onemocnění nebo užíváte více léků.</p>
+          </div>
+        </div>
+
+        <!-- TAB: Složení -->
+        <div class="info-tab-panel" id="zs-slozeni">
+          <p style="font-size:.9rem;color:var(--muted);margin-bottom:16px;">Na 1 ampulku / 10 ml</p>
+          <table class="info-slozeni-table">
+            <thead><tr><th>Složka</th><th>Množství</th></tr></thead>
+            <tbody>
+              <tr><td>Ženšen (Panax ginseng)</td><td>339 mg</td></tr>
+              <tr><td>Včelí mateří kašička</td><td>339 mg</td></tr>
+              <tr><td>Med</td><td>7 910 mg</td></tr>
+              <tr><td>Sorbit draselný (konzervant)</td><td>16,95 mg</td></tr>
+              <tr><td>Destilovaná voda</td><td>2 695,05 mg</td></tr>
+            </tbody>
+          </table>
+          <div class="slozeni-note-new">Doplněk stravy. Není náhradou pestré stravy a zdravého životního stylu. Nepřekračujte doporučené denní dávkování. Uchovávejte mimo dosah dětí.</div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -476,6 +539,14 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function switchInfoTab(btn, panelId) {
+    btn.closest('.info-tabs-wrap').querySelectorAll('.info-tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    btn.closest('.info-tabs-wrap').querySelectorAll('.info-tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(panelId).classList.add('active');
+  }
 </script>
 </body>
 </html>
+

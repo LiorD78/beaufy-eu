@@ -38,11 +38,22 @@
     .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 4px 0; border-radius: 2px; transition: var(--transition); }
 
     /* HERO */
-    .blog-hero { background: linear-gradient(135deg, var(--navy) 0%, #1a2f5e 100%); padding: 140px 40px 72px; }
-    .blog-hero .section-inner { max-width: 860px; }
+    .blog-hero {
+      position: relative; min-height: 520px; display: flex; align-items: center;
+      overflow: hidden; padding: 140px 40px 80px;
+    }
+    .blog-hero-img {
+      position: absolute; inset: 0;
+      background: url('/blog/img/potty.jpg') center center / cover no-repeat;
+    }
+    .blog-hero-gradient {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, var(--navy) 40%, rgba(15,23,42,.7) 65%, rgba(15,23,42,.0) 100%);
+    }
+    .blog-hero .section-inner { position: relative; z-index: 2; max-width: 1100px; }
     .blog-hero .section-label { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
-    .blog-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 20px; }
-    .blog-hero p { font-size: 1.1rem; color: rgba(255,255,255,.75); line-height: 1.7; max-width: 560px; }
+    .blog-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 20px; max-width: 560px; }
+    .blog-hero p { font-size: 1.05rem; color: rgba(255,255,255,.75); line-height: 1.7; max-width: 480px; }
 
     /* ARTICLES GRID */
     .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
@@ -114,6 +125,8 @@
 </nav>
 
 <section class="blog-hero">
+  <div class="blog-hero-img"></div>
+  <div class="blog-hero-gradient"></div>
   <div class="section-inner">
     <div class="section-label">Blog</div>
     <h1>Zdraví dětí<br><em style="font-style:italic;color:#6ee7f7">& rodičovské rady</em></h1>

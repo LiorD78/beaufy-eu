@@ -134,7 +134,7 @@
     .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); }
     .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
     .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
-    .buy-tabs { display: flex; gap: 8px; justify-content: flex-start; margin-bottom: 36px; }
+    .buy-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 36px; }
     .buy-tab { padding: 9px 24px; border-radius: 99px; font-size: .88rem; font-weight: 600; cursor: pointer; border: 1.5px solid rgba(11,44,74,.18); background: transparent; color: var(--muted); font-family: inherit; transition: var(--transition); }
     .buy-tab.active { background: var(--navy); color: #fff; border-color: var(--navy); }
     .buy-tab:hover:not(.active) { border-color: var(--blue-lt); color: var(--blue-lt); }
@@ -600,11 +600,18 @@
     document.querySelector('.nav-inner').classList.toggle('menu-open');
   });
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  let _tabSyncing = false;
   function switchBuyTab(tab) {
     document.getElementById('logos-ice').style.display = tab === 'ice' ? 'flex' : 'none';
     document.getElementById('logos-hot').style.display = tab === 'hot' ? 'flex' : 'none';
     document.getElementById('tab-btn-ice').classList.toggle('active', tab === 'ice');
     document.getElementById('tab-btn-hot').classList.toggle('active', tab === 'hot');
+    if (_tabSyncing) return;
+    _tabSyncing = true;
+    const infoTabId = tab === 'ice' ? 'it-easy-ice' : 'it-dispo-hot';
+    const infoBtn = document.querySelector(`[onclick="switchInfoTab(this,'${infoTabId}')"]`);
+    if (infoBtn) switchInfoTab(infoBtn, infoTabId);
+    _tabSyncing = false;
   }
 
   document.querySelectorAll('.faq-btn').forEach(btn => {
@@ -627,6 +634,11 @@
     btn.classList.add('active');
     btn.closest('.info-tabs-wrap').querySelectorAll('.info-tab-panel').forEach(p => p.classList.remove('active'));
     document.getElementById(panelId).classList.add('active');
+    if (_tabSyncing) return;
+    _tabSyncing = true;
+    if (panelId === 'it-easy-ice') switchBuyTab('ice');
+    else if (panelId === 'it-dispo-hot') switchBuyTab('hot');
+    _tabSyncing = false;
   }
 </script>
 </body>

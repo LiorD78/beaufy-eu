@@ -54,10 +54,13 @@
     .highlight-box { background: #eef4fa; border-left: 4px solid var(--blue-lt); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
     .highlight-box p { margin: 0; font-size: .95rem; color: var(--navy); line-height: 1.7; }
     .ingredient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
-    .ingredient-card { background: var(--bg); border-radius: 14px; padding: 20px; text-align: center; }
-    .ingredient-icon { font-size: 1.8rem; margin-bottom: 8px; }
-    .ingredient-name { font-weight: 700; font-size: .9rem; color: var(--navy); margin-bottom: 4px; }
-    .ingredient-desc { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+    .ingredient-card { border-radius: 16px; overflow: hidden; position: relative; height: 220px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .ingredient-card-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .4s ease; }
+    .ingredient-card:hover .ingredient-card-bg { transform: scale(1.05); }
+    .ingredient-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,44,74,.85) 0%, rgba(11,44,74,.2) 60%, transparent 100%); }
+    .ingredient-card-body { position: relative; z-index: 2; padding: 20px; }
+    .ingredient-name { font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 4px; }
+    .ingredient-desc { font-size: .82rem; color: rgba(255,255,255,.8); line-height: 1.5; }
     .article-cta { background: linear-gradient(135deg, #0F172A 0%, #1a2f5e 100%); border-radius: 20px; padding: 40px; margin: 48px 0; display: flex; align-items: center; gap: 32px; }
     .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #fff; font-weight: 400; margin-bottom: 8px; }
     .article-cta-text p { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.65; }
@@ -152,25 +155,34 @@
 
     <p>Laxík obsahuje tři složky, které spolupracují tak, aby byl celý proces co nejšetrnější:</p>
 
-    <div class="ingredient-grid">
-      <div class="ingredient-card">
-        <div class="ingredient-icon">💧</div>
-        <div class="ingredient-name">Glycerol</div>
-        <div class="ingredient-desc">Jemně natáhne vodu, zatvrdlou stolici přirozeně změkčí a pomůže střívkům dát se znovu do pohybu</div>
-      </div>
-      <div class="ingredient-card">
-        <div class="ingredient-icon">🌼</div>
-        <div class="ingredient-name">Heřmánek</div>
-        <div class="ingredient-desc">Zklidňující účinky zajišťují, že je celá procedura pro citlivý dětský zadeček maximálně jemná</div>
-      </div>
-      <div class="ingredient-card">
-        <div class="ingredient-icon">🌿</div>
-        <div class="ingredient-name">Sléz</div>
-        <div class="ingredient-desc">Spolu s heřmánkem chrání a zklidňuje citlivou sliznici</div>
-      </div>
-    </div>
+              <div class="ingredient-grid">
+            <div class="ingredient-card">
+              <div class="ingredient-card-bg" style="background-image:url('/blog/img/glycerol.jpg')"></div>
+              <div class="ingredient-card-overlay"></div>
+              <div class="ingredient-card-body">
+                <div class="ingredient-name">Glycerol</div>
+                <div class="ingredient-desc">Vtahuje vodu do stolice, změkčuje ji a spouští peristaltiku</div>
+              </div>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-card-bg" style="background-image:url('/blog/img/hermanak.jpg')"></div>
+              <div class="ingredient-card-overlay"></div>
+              <div class="ingredient-card-body">
+                <div class="ingredient-name">Heřmánek</div>
+                <div class="ingredient-desc">Zklidňuje a chrání sliznici, zajišťuje maximální jemnost</div>
+              </div>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-card-bg" style="background-image:url('/blog/img/slez.jpg')"></div>
+              <div class="ingredient-card-overlay"></div>
+              <div class="ingredient-card-body">
+                <div class="ingredient-name">Sléz</div>
+                <div class="ingredient-desc">Zvlhčuje a lubrikuje pro ještě jemnější průchod</div>
+              </div>
+            </div>
+          </div>
 
-    <p>Aplikátor je navržen s ohledem na tu nejjemnější anatomii, takže jeho použití je bezpečné a komfortní i pro miminka bezprostředně po narození. <strong>Největší odměnou vám bude fakt, že účinek přichází velmi rychle.</strong> Během chvilky vystřídá pláč spokojené oddechování a uvolněný úsměv.</p>
+          <p>Aplikátor je navržen s ohledem na tu nejjemnější anatomii, takže jeho použití je bezpečné a komfortní i pro miminka bezprostředně po narození. <strong>Největší odměnou vám bude fakt, že účinek přichází velmi rychle.</strong> Během chvilky vystřídá pláč spokojené oddechování a uvolněný úsměv.</p>
 
     <h2>Pomocník do domácí lékárničky</h2>
 

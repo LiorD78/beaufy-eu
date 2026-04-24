@@ -225,32 +225,16 @@ nav.scrolled .nav-cta {
 /* ──────────────────────────────────────────────────────────────
    FOOTER
    ────────────────────────────────────────────────────────────── */
-.footer-grid {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
-      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08);
-      margin-bottom: 32px;
-    }
+footer { background: #091d30; padding: 60px 40px 32px; color: rgba(255,255,255,.65); }
+.footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 32px; }
+.footer-logo-img { height: 26px; width: auto; display: block; margin-bottom: 16px; filter: brightness(0) invert(1); opacity: .9; }
+.footer-brand .footer-logo-img { height: 26px; margin-bottom: 16px; }
 .footer-brand p { font-size: .85rem; line-height: 1.65; max-width: 260px; }
-.footer-logo-img {
-      height: 26px; width: auto; display: block;
-      margin-bottom: 16px;
-      filter: brightness(0) invert(1);
-      opacity: .9;
-    }
-.footer-col h5 {
-      font-size: .78rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: rgba(255,255,255,.9);
-      margin-bottom: 16px;
-    }
+.footer-col h5 { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.9); margin-bottom: 16px; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .footer-col ul li a { font-size: .85rem; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
 .footer-col ul li a:hover { color: rgba(255,255,255,.9); }
-.footer-bottom {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 12px;
-    }
+.footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 .footer-bottom p { font-size: .8rem; }
 .footer-legal { display: flex; gap: 24px; }
 .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
@@ -305,20 +289,20 @@ nav.scrolled .nav-cta {
     }
 .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
 .scroll-top:hover { background: var(--blue); transform: translateY(-2px); }
-.cookie-banner {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-      background: var(--navy); padding: 18px 32px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 24px; flex-wrap: wrap;
-      box-shadow: 0 -4px 24px rgba(0,0,0,.18);
-      transform: translateY(100%);
-      transition: transform .4s cubic-bezier(.4,0,.2,1);
-    }
-.cookie-banner p {
-      color: rgba(255,255,255,.82); font-size: .85rem; line-height: 1.55;
-      flex: 1; min-width: 220px; margin: 0;
-    }
 
+
+/* --- doplněné chybějící selektory --- */
+
+
+.cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--navy); padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; box-shadow: 0 -4px 24px rgba(0,0,0,.18); transform: translateY(100%); transition: transform .4s cubic-bezier(.4,0,.2,1); }
+.cookie-banner.visible { transform: translateY(0); }
+.cookie-banner p { color: rgba(255,255,255,.82); font-size: .85rem; line-height: 1.55; flex: 1; min-width: 220px; margin: 0; }
+.cookie-banner p a { color: #a8d87a; text-decoration: underline; }
+.cookie-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-accept { padding: 9px 22px; border-radius: 99px; background: var(--green); color: #fff; font-size: .85rem; font-weight: 600; border: none; cursor: pointer; transition: background .2s; }
+.cookie-accept:hover { background: var(--green-br); }
+.cookie-reject { padding: 9px 22px; border-radius: 99px; background: transparent; color: rgba(255,255,255,.65); font-size: .85rem; font-weight: 500; border: 1px solid rgba(255,255,255,.25); cursor: pointer; transition: all .2s; }
+.cookie-reject:hover { color: #fff; border-color: rgba(255,255,255,.5); }
 /* ──────────────────────────────────────────────────────────────
    ANIMACE
    ────────────────────────────────────────────────────────────── */

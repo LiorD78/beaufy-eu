@@ -33,7 +33,16 @@
     body { overflow-x: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--navy); background: var(--white); line-height: 1.6; }
     img { display: block; max-width: 100%; }
     h1,h2,h3,h4 { line-height: 1.2; }
-    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+    h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.2; font-weight: 400;
+      background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      display: inline-block; width: fit-content; max-width: 100%;
+      margin-bottom: 16px;
+    }
     h2 em { font-style: italic; }
 
     /* ── NAV ── */
@@ -963,6 +972,7 @@
 </script>
 </body>
 </html>
+
 
 
 

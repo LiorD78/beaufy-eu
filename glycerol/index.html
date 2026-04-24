@@ -33,8 +33,8 @@
     body { overflow-x: hidden; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--navy); background: var(--white); line-height: 1.6; }
     img { display: block; max-width: 100%; }
     h1,h2,h3,h4 { line-height: 1.2; }
-    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; background: linear-gradient(90deg, #0b2c4a, #134a8e, #1f5fa6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
-    h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+    h2 em { font-style: italic; background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
     /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 14px 24px; transition: padding .4s cubic-bezier(.4,0,.2,1); }
@@ -401,7 +401,6 @@
     <div class="nav-links" id="navLinks">
       <a href="/#produkty">Produkty</a>
       <a href="/#o-nas">O nás</a>
-      <a href="/blog/">Blog</a>
       <a href="/#kontakt">Kontakty</a>
       <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
     </div>

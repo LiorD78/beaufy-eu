@@ -5,7 +5,7 @@
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Instantní termoterapie — EASY ICE & DISPO HOT | BEAUFY</title>
-  <meta name="description" content="Jednorázové instantní sáčky EASY ICE (chlad −4 °C) a DISPO HOT (teplo +50 °C). Stačí zmáčknout — bez mrazáku, bez mikrovlnky. Zdravotnický prostředek třídy IIa. Dispotech, Itálie.">
+  <meta name="description" content="Jednorázové instantní sáčky EASY ICE (chlad −4 °C) a DISPO HOT (teplo +50 °C). Stačí zmáčknout — bez mrazáku, bez mikrovlnky. Medical device IIa. Dispotech, Itálie.">
   <link rel="icon" href="/beaufy-ico-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,10 +66,10 @@
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1.12; font-weight: 400; color: #fff; margin-bottom: 20px; }
     .hero h1 em { font-style: italic; color: #6ee7f7; }
     .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 36px; }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-start; margin-bottom: 36px; }
+    .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 36px; }
     .chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 6px 14px; border-radius: 99px; font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500; }
     .chip-check::before { content: '✓'; color: #6ee7f7; font-weight: 700; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-start; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.4); }
     .btn-outline-white { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: rgba(255,255,255,.1); color: #fff; font-weight: 500; font-size: .95rem; text-decoration: none; border: 1px solid rgba(255,255,255,.3); transition: var(--transition); }
@@ -84,17 +84,16 @@
 
     /* ── PRODUKTOVÉ KARTY ── */
     .products { background: var(--bg); }
-    .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; align-items: stretch; }
+    .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; }
     .product-card {
       background: var(--white); border-radius: var(--radius-card);
       overflow: hidden; box-shadow: var(--shadow-card);
       transition: var(--transition); border: 2px solid transparent;
-      display: flex; flex-direction: column;
     }
     .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
     .product-img { height: 260px; display: flex; align-items: center; justify-content: center; background: var(--bg); padding: 32px; }
     .product-img img { max-height: 200px; max-width: 100%; object-fit: contain; }
-    .product-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+    .product-body { padding: 28px; }
     .product-tag { display: inline-flex; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 99px; padding: 3px 12px; margin-bottom: 12px; }
     .product-tag.cold { background: #e0f2fe; color: #0369a1; }
     .product-tag.hot { background: #fef3c7; color: #b45309; }
@@ -102,7 +101,7 @@
     .product-temp { font-size: 2rem; font-weight: 700; margin-bottom: 12px; }
     .product-temp.cold { color: #0369a1; }
     .product-temp.hot { color: #d97706; }
-    .product-desc { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; flex-grow: 1; }
+    .product-desc { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
     .product-specs { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
     .product-spec { display: flex; justify-content: space-between; font-size: .85rem; padding: 8px 0; border-bottom: 1px solid var(--border); }
     .product-spec:last-child { border-bottom: none; }
@@ -219,22 +218,6 @@
     .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
     .faq-body { display: none; padding: 0 0 20px; }
     .faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
-
-    /* EASY ICE DETAIL */
-    .easy-ice-detail { padding: 60px 0 32px; background: var(--white); }
-    .eid-grid { display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: start; margin-top: 40px; }
-    .eid-text p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
-    .eid-text h3 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; font-weight: 400; background: linear-gradient(90deg, #0b2c4a 0%, #134a8e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 32px 0 16px; }
-    .eid-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
-    .eid-list li { font-size: .95rem; color: var(--muted); padding-left: 24px; position: relative; line-height: 1.6; }
-    .eid-list li::before { content: "✓"; position: absolute; left: 0; color: #6ee7f7; font-weight: 700; }
-    .eid-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .eid-spec-card { background: var(--bg); border-radius: 16px; padding: 24px 16px; text-align: center; }
-    .eid-spec-icon { font-size: 1.6rem; margin-bottom: 8px; }
-    .eid-spec-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
-    .eid-spec-val { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
-    @media (max-width: 768px) { .eid-grid { grid-template-columns: 1fr; } }
-
   </style>
 </head>
 <body>
@@ -259,18 +242,18 @@
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-breadcrumb"><a href="/">BEAUFY</a> / <a href="/#produkty">Produkty</a> / Instantní termoterapie</div>
-    <div class="hero-cat">Kryoterapie & termoterapie · Instantní led v sáčku</div>
+    <div class="hero-cat">Kryoterapie & termoterapie</div>
     <h1>Instantní<br><em>termoterapie</em></h1>
     <p class="hero-sub">Jednorázové sáčky pro okamžitou úlevu — bez mrazáku, bez mikrovlnky. Stačí zmáčknout střed a během pár sekund máte chlad nebo teplo přesně tam, kde ho potřebujete.</p>
     <div class="hero-chips">
       <span class="chip chip-check">Aktivace za pár sekund</span>
       <span class="chip chip-check">Jednorázové použití</span>
-      <span class="chip chip-check">Zdravotnický prostředek třídy IIa</span>
-      <span class="chip chip-check">Made in Italy</span>
+      <span class="chip chip-check">Medical device IIa</span>
+      <span class="chip chip-check">Vyrobeno v Itálii</span>
     </div>
     <div class="hero-actions">
-      <a href="#kde-koupit" class="btn-primary">Kde koupit</a>
-      <a href="#produkty" class="btn-outline-white">Zobrazit produkty</a>
+      <a href="#produkty" class="btn-primary">Zobrazit produkty</a>
+      <a href="#kde-koupit" class="btn-outline-white">Kde koupit</a>
     </div>
   </div>
 </section>
@@ -293,13 +276,13 @@
           <div class="product-tag cold">Studená terapie</div>
           <div class="product-name">EASY ICE</div>
           <div class="product-temp cold">−4 °C</div>
-          <p class="product-desc">Jednorázový instantní chladící sáček — bez mrazáku, vždy připraven. Zmáčkněte střed, sáček zmíchá vnitřní složky a za pár sekund dosáhne −4 °C. Pomáhá zmírnit bolest, zpomalit tvorbu otoku a urychlit zklidnění poraněné oblasti. Ideální do lékárničky, sportovní tašky i krizového balíčku.</p>
+          <p class="product-desc">Jednorázový instantní chladící sáček. Zmáčkněte střed — za pár sekund dosáhne −4 °C. Ideální pro akutní úrazy, otoky a sportovní zranění.</p>
           <div class="product-specs">
             <div class="product-spec"><span class="product-spec-label">Teplota</span><span class="product-spec-val">−4 °C</span></div>
             <div class="product-spec"><span class="product-spec-label">Účinnost</span><span class="product-spec-val">20–30 minut</span></div>
             <div class="product-spec"><span class="product-spec-label">Rozměr</span><span class="product-spec-val">14×18 cm</span></div>
             <div class="product-spec"><span class="product-spec-label">APA</span><span class="product-spec-val">5534863</span></div>
-            <div class="product-spec"><span class="product-spec-label">Třída</span><span class="product-spec-val">Zdravotnický prostředek třídy IIa</span></div>
+            <div class="product-spec"><span class="product-spec-label">Třída</span><span class="product-spec-val">Medical device IIa</span></div>
           </div>
           <a href="#kde-koupit" class="product-btn">Kde koupit <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
         </div>
@@ -319,108 +302,12 @@
             <div class="product-spec"><span class="product-spec-label">Účinnost</span><span class="product-spec-val">20–30 minut</span></div>
             <div class="product-spec"><span class="product-spec-label">Rozměr</span><span class="product-spec-val">14×18 cm</span></div>
             <div class="product-spec"><span class="product-spec-label">APA</span><span class="product-spec-val">5481750</span></div>
-            <div class="product-spec"><span class="product-spec-label">Třída</span><span class="product-spec-val">Zdravotnický prostředek třídy IIa</span></div>
+            <div class="product-spec"><span class="product-spec-label">Třída</span><span class="product-spec-val">Medical device IIa</span></div>
           </div>
           <a href="#kde-koupit" class="product-btn">Kde koupit <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-
-<!-- EASY ICE DETAIL -->
-<section class="easy-ice-detail" id="easy-ice">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Instantní led v sáčku</div>
-      <h2>Jak funguje EASY ICE?</h2>
-    </div>
-    <div class="eid-grid reveal">
-      <div class="eid-text">
-        <p>EASY ICE je jednorázový chladící sáček, který nevyžaduje mrazák ani žádnou přípravu. Aktivuje se zmáčknutím ampule uprostřed sáčku — tím dojde ke smíchání vnitřních složek a spuštění endotermické reakce mezi dusičnanem amonným a vodou. Během několika sekund sáček dosáhne teploty −4 °C a je připraven k použití.</p>
-        <p>Chladící účinek trvá 20–30 minut. Sáček přikládejte ideálně přes tenkou textilii nebo obvaz, aby nedošlo k přímému kontaktu s pokožkou. Maximální doporučená doba aplikace je 15 minut, poté udělejte přestávku. EASY ICE je určen výhradně pro vnější použití.</p>
-        <p>Díky kompaktním rozměrům (14×18 cm) a jednorázovému použití je ideální součástí každé lékárničky — domácí, cestovní i sportovní. Hodí se pro akutní ošetření úrazů přímo v terénu, na hřišti nebo v ambulanci, kde není přístup k lednici.</p>
-        <h3>Kdy EASY ICE použít</h3>
-        <ul class="eid-list">
-          <li>Pohmoždění, naraženiny a natažení svalů</li>
-          <li>Vyvrknutí kotníku nebo zápěstí</li>
-          <li>Otoky po úrazech a sportovních zraněních</li>
-          <li>Úžeh, úpal nebo bodnutí hmyzem</li>
-          <li>První pomoc při akutní bolesti kloubu</li>
-        </ul>
-      </div>
-      <div class="eid-specs">
-        <div class="eid-spec-card">
-          <div class="eid-spec-icon">❄️</div>
-          <div class="eid-spec-label">Teplota</div>
-          <div class="eid-spec-val">−4 °C</div>
-        </div>
-        <div class="eid-spec-card">
-          <div class="eid-spec-icon">⏱</div>
-          <div class="eid-spec-label">Účinnost</div>
-          <div class="eid-spec-val">20–30 min</div>
-        </div>
-        <div class="eid-spec-card">
-          <div class="eid-spec-icon">📐</div>
-          <div class="eid-spec-label">Rozměr</div>
-          <div class="eid-spec-val">14 × 18 cm</div>
-        </div>
-        <div class="eid-spec-card">
-          <div class="eid-spec-icon">🔵</div>
-          <div class="eid-spec-label">Použití</div>
-          <div class="eid-spec-val">Jednorázové</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- DISPO HOT DETAIL -->
-<section class="easy-ice-detail" id="dispo-hot" style="background: var(--bg);">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label">Instantní teplo v sáčku</div>
-      <h2>Jak funguje DISPO HOT?</h2>
-    </div>
-    <div class="eid-grid reveal">
-      <div class="eid-text">
-        <p>DISPO HOT je jednorázový hřejivý sáček, který funguje bez mikrovlnky, horké vody ani jakékoliv přípravy. Aktivuje se prudkým stlačením sáčku — tím se smíchají vnitřní složky a spustí se exotermická chemická reakce. Během několika sekund sáček dosáhne teploty +50 °C a je připraven k přiložení.</p>
-        <p>Hřejivý účinek trvá 20–30 minut. Sáček přikládejte ideálně přes tenkou textilii nebo obvaz, aby nedošlo k přímému kontaktu s pokožkou. DISPO HOT je určen výhradně pro vnější použití — nepoužívejte na poraněnou, podrážděnou nebo necitlivou pokožku. Při pochybnostech se poraďte s lékařem, zejména u osob s cukrovkou nebo oběhovými poruchami.</p>
-        <p>Díky kompaktním rozměrům (14×18 cm) a okamžité aktivaci je DISPO HOT ideální součástí každé lékárničky — domácí, cestovní i sportovní. Hodí se všude tam, kde není přístup ke zdroji tepla, ale potřebujete rychlou úlevu od bolesti nebo prochladnutí.</p>
-        <h3>Kdy DISPO HOT použít</h3>
-        <ul class="eid-list">
-          <li>Bolesti kloubů, šlach a svalů</li>
-          <li>Bolesti zad, krku a ramen</li>
-          <li>Prochladnutí při pobytu venku nebo cestování</li>
-          <li>Svalové křeče a ztuhlost</li>
-          <li>Artritida a chronické bolesti pohybového aparátu</li>
-        </ul>
-      </div>
-      <div class="eid-specs">
-        <div class="eid-spec-card">
-          <div class="eid-spec-icon">🔥</div>
-          <div class="eid-spec-label">Teplota</div>
-          <div class="eid-spec-val">+50 °C</div>
-        </div>
-        <div class="eid-spec-card">
-          <div class="eid-spec-icon">⏱</div>
-          <div class="eid-spec-label">Účinnost</div>
-          <div class="eid-spec-val">20–30 min</div>
-        </div>
-        <div class="eid-spec-card">
-          <div class="eid-spec-icon">📐</div>
-          <div class="eid-spec-label">Rozměr</div>
-          <div class="eid-spec-val">14 × 18 cm</div>
-        </div>
-        <div class="eid-spec-card">
-          <div class="eid-spec-icon">🔴</div>
-          <div class="eid-spec-label">Použití</div>
-          <div class="eid-spec-val">Jednorázové</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -644,4 +531,3 @@
 </script>
 </body>
 </html>
-

@@ -55,11 +55,11 @@
     .hero-breadcrumb a:hover { color: #fff; }
     .hero-cat { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); padding: 5px 14px; border-radius: 99px; font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-bottom: 20px; }
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1.12; font-weight: 400; color: #fff; margin-bottom: 20px; }
-    .hero h1 em { font-style: italic; color: #6ee7f7; }
+    .hero h1 em { font-style: italic; color: var(--teal); }
     .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.75; margin-bottom: 32px; max-width: 480px; }
     .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
     .chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 6px 14px; border-radius: 99px; font-size: .8rem; color: rgba(255,255,255,.85); font-weight: 500; }
-    .chip-check::before { content: '✓'; color: #6ee7f7; font-weight: 700; }
+    .chip-check::before { content: '✓'; color: var(--teal); font-weight: 700; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,158,11,.4); }
@@ -74,7 +74,7 @@
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       line-height: 1.2; font-weight: 400;
-      background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%);
+      background: var(--h2-gradient);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
       display: inline-block; width: fit-content; max-width: 100%;
@@ -138,7 +138,7 @@
     .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; }
     /* FAQ */
     .faq-section { background: #eef4fa; padding: 80px 40px; }
-    .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); font-weight: 400; background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 40px; }
+    .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem,3vw,2.4rem); font-weight: 400; background: var(--h2-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 40px; }
     .faq-list { max-width: 800px; }
     .faq-item { border-bottom: 1px solid rgba(11,44,74,.12); }
     .faq-item:first-child { border-top: 1px solid rgba(11,44,74,.12); }
@@ -574,6 +574,7 @@
 </script>
 </body>
 </html>
+
 
 
 

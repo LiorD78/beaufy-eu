@@ -188,6 +188,49 @@
     .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
     .faq-body { display: none; padding: 0 0 20px; }
     .faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
+
+    /* INFO SEKCE */
+    .info-section { background: var(--white); }
+    .info-tabs-wrap { max-width: 860px; }
+    .info-tabs-nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 32px; }
+    .info-tab-btn {
+      padding: 8px 18px; border-radius: 99px; font-size: .85rem; font-weight: 600;
+      cursor: pointer; border: 1.5px solid rgba(11,44,74,.18);
+      background: transparent; color: var(--muted); font-family: inherit;
+      transition: all .18s; white-space: nowrap;
+    }
+    .info-tab-btn:hover { border-color: #134a8e; color: #134a8e; }
+    .info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .info-tab-panels { position: relative; }
+    .info-tab-panel { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
+    .info-tab-panel.active { visibility: visible; position: relative; pointer-events: auto; }
+    .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+    .info-card { background: var(--bg); border: 1px solid rgba(11,44,74,.1); border-radius: 16px; padding: 20px 22px; }
+    .info-card.featured { border-color: #134a8e; border-width: 1.5px; }
+    .info-card-tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #134a8e; padding: 2px 0; margin-bottom: 10px; background: none; }
+    .info-card h4 { font-size: .92rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
+    .info-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; margin: 0; }
+    .info-steps { display: flex; flex-direction: column; gap: 14px; max-width: 600px; }
+    .info-step { display: flex; gap: 14px; align-items: flex-start; }
+    .info-step-num { width: 28px; height: 28px; border-radius: 50%; background: #eef4fa; color: #134a8e; font-size: .8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .info-step-text { font-size: .9rem; color: var(--muted); line-height: 1.65; padding-top: 4px; }
+    .info-step-note { font-size: .82rem; color: var(--muted); background: var(--bg); border-left: 3px solid #134a8e; padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 6px; }
+    .info-safety-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .info-safety-list li { font-size: .88rem; color: var(--muted); line-height: 1.65; padding-left: 16px; position: relative; }
+    .info-safety-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: #134a8e; }
+    .info-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 700px; }
+    .info-compare-col { background: var(--bg); border-radius: 14px; padding: 18px 20px; border: 1px solid rgba(11,44,74,.1); }
+    .info-compare-col.dispo { border-color: #134a8e; border-width: 1.5px; }
+    .info-compare-head { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
+    .info-compare-head.dispo { color: #134a8e; }
+    .info-compare-head.other { color: #888; }
+    .info-compare-item { display: flex; align-items: flex-start; gap: 8px; font-size: .88rem; color: var(--muted); line-height: 1.55; padding: 6px 0; border-bottom: 1px solid rgba(11,44,74,.07); }
+    .info-compare-item:last-child { border-bottom: none; }
+    .info-compare-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .info-compare-dot.green { background: #F59E0B; }
+    .info-compare-dot.gray { background: #ccc; }
+    @media (max-width: 700px) { .info-cards { grid-template-columns: 1fr; } .info-compare { grid-template-columns: 1fr; } .info-tabs-nav { gap: 5px; } .info-tab-btn { font-size: .78rem; padding: 6px 13px; } }
+
   </style>
 </head>
 <body>
@@ -288,6 +331,145 @@
           <strong>APA 5080081</strong>
         </div>
         <a href="#kde-koupit" class="variant-btn">Kde koupit <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- INFORMACE O PRODUKTU -->
+<section class="info-section section-pad" id="informace">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Produkt</div>
+      <h2>Informace<br>o produktu</h2>
+    </div>
+    <div class="info-tabs-wrap reveal">
+      <div class="info-tabs-nav" role="tablist">
+        <button class="info-tab-btn active" onclick="switchTab(this,'tab-o-produktu')" role="tab">O produktu</button>
+        <button class="info-tab-btn" onclick="switchTab(this,'tab-jak-pouzit')" role="tab">Jak použít</button>
+        <button class="info-tab-btn" onclick="switchTab(this,'tab-bezpecnost')" role="tab">Bezpečnost</button>
+        <button class="info-tab-btn" onclick="switchTab(this,'tab-srovnani')" role="tab">Dispo Ice vs. klasický led</button>
+      </div>
+      <div class="info-tab-panels">
+
+        <!-- TAB: O produktu -->
+        <div class="info-tab-panel active" id="tab-o-produktu">
+          <div class="info-cards">
+            <div class="info-card featured">
+              <div class="info-card-tag">Zdravotnický prostředek třídy IIa</div>
+              <h4>Co je DISPO ICE Spray?</h4>
+              <p>Chladící sprej připravený k okamžitému použití. Při nastříkání dochází k rychlému odpařování hnacího plynu, které způsobí okamžité snížení teploty na povrchu kůže. Účinek nastupuje během 3–4 sekund, aplikace ze vzdálenosti min. 20 cm.</p>
+            </div>
+            <div class="info-card">
+              <h4>Jak funguje chlazení?</h4>
+              <p>Principem je endotermické odpařování — hnací plyn se při výstupu z trysky prudce expanduje a ochlazuje povrch tkáně. Chlad blokuje nervová zakončení, snižuje vedení bolestivých signálů a způsobuje lokální vazokonstrikci, čímž omezuje vznik otoku.</p>
+            </div>
+            <div class="info-card">
+              <h4>Pro koho je určen?</h4>
+              <p>Sportovci, fyzioterapeuti, sportovní lékaři, záchranáři a zdravotní sestry. Dostupný i v domácí lékárničce — zejména pro rodiny se sportujícími dětmi nebo aktivní dospělé. Není vhodný pro děti do 3 let.</p>
+            </div>
+            <div class="info-card">
+              <h4>Dostupné velikosti</h4>
+              <p><strong>200 ml</strong> — kompaktní, ideální do sportovní tašky, cestovní lékárničky nebo kapsy rozhodčího.<br><br><strong>400 ml</strong> — větší zásoba pro týmové ošetřovny, ambulance a sportovní kluby.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: Jak použít -->
+        <div class="info-tab-panel" id="tab-jak-pouzit">
+          <div class="info-steps">
+            <div class="info-step">
+              <div class="info-step-num">1</div>
+              <div>
+                <div class="info-step-text"><strong>Odkryjte postižené místo</strong> — nastříkejte přímo na pokožku, ne přes oděv.</div>
+              </div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">2</div>
+              <div>
+                <div class="info-step-text"><strong>Držte sprej ve vzdálenosti min. 20 cm</strong> od pokožky a nastříkejte po dobu 3–4 sekund.</div>
+                <div class="info-step-note">Při kratší vzdálenosti nebo příliš dlouhé aplikaci hrozí omrznutí pokožky. Přestaňte, jakmile se na pokožce objeví bílý povlak.</div>
+              </div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">3</div>
+              <div>
+                <div class="info-step-text"><strong>Opakujte dle potřeby</strong> s přestávkami. Vždy dodržujte doporučenou vzdálenost a dobu aplikace.</div>
+              </div>
+            </div>
+            <div class="info-step">
+              <div class="info-step-num">4</div>
+              <div>
+                <div class="info-step-text"><strong>Po ošetření</strong> místo zkontrolujte. Při přetrvávající bolesti nebo otoku vyhledejte lékaře.</div>
+              </div>
+            </div>
+          </div>
+          <div class="info-card" style="margin-top:24px; max-width: 600px;">
+            <h4>Kdy použít DISPO ICE Spray</h4>
+            <p>Pohmoždění a naraženiny · Výrony a vyvrknutí kotníku · Natažení svalů a šlach · Akutní sportovní zranění · Bodnutí hmyzem · Menší popáleniny a úpal</p>
+          </div>
+        </div>
+
+        <!-- TAB: Bezpečnost -->
+        <div class="info-tab-panel" id="tab-bezpecnost">
+          <div class="info-cards">
+            <div class="info-card">
+              <h4>Upozornění při použití</h4>
+              <ul class="info-safety-list" style="margin-top:8px">
+                <li>Nestříkejte z kratší vzdálenosti než 20 cm</li>
+                <li>Nepřekračujte dobu aplikace 3–4 sekundy na jedno místo</li>
+                <li>Nepoužívejte na obličej, krk a sliznice</li>
+                <li>Neaplikujte na otevřené rány nebo podrážděnou pokožku</li>
+                <li>Nevdechujte výpary — používejte na otevřeném nebo dobře větraném místě</li>
+                <li>Neskladujte v teple nad 50 °C ani v blízkosti otevřeného ohně</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>Kontraindikace</h4>
+              <ul class="info-safety-list" style="margin-top:8px">
+                <li>Poruchy cévního zásobení (Raynaudův syndrom, ICHDK)</li>
+                <li>Přecitlivělost na chlad (kryoglobulinémie)</li>
+                <li>Oblasti s poruchou citlivosti kůže</li>
+                <li>Děti do 3 let bez dohledu lékaře</li>
+                <li>Těhotné ženy — jen po konzultaci s lékařem</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>Skladování</h4>
+              <p>Skladujte na suchém místě při teplotě 5–40 °C. Chraňte před přímým slunečním zářením a zdrojem tepla. Nádobku nepropichujte ani neodhazujte do ohně. Uchovávejte mimo dosah dětí.</p>
+            </div>
+            <div class="info-card">
+              <h4>Výrobce</h4>
+              <p>Dispotech S.r.l., Itálie — výrobce zdravotnických prostředků s více než 30 lety zkušeností. Produkt certifikován dle evropských norem jako zdravotnický prostředek třídy IIa.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: Srovnání -->
+        <div class="info-tab-panel" id="tab-srovnani">
+          <div class="info-compare">
+            <div class="info-compare-col dispo">
+              <div class="info-compare-head dispo">DISPO ICE Spray</div>
+              <div class="info-compare-item"><div class="info-compare-dot green"></div>Okamžitá aplikace — bez přípravy</div>
+              <div class="info-compare-item"><div class="info-compare-dot green"></div>Kompaktní, lehký, vždy po ruce</div>
+              <div class="info-compare-item"><div class="info-compare-dot green"></div>Přesná aplikace díky směrované trysce</div>
+              <div class="info-compare-item"><div class="info-compare-dot green"></div>Účinek nastupuje do 3–4 sekund</div>
+              <div class="info-compare-item"><div class="info-compare-dot green"></div>Ideální přímo na hřišti nebo v terénu</div>
+              <div class="info-compare-item"><div class="info-compare-dot green"></div>Zdravotnický prostředek třídy IIa</div>
+            </div>
+            <div class="info-compare-col">
+              <div class="info-compare-head other">Klasický led / sáček</div>
+              <div class="info-compare-item"><div class="info-compare-dot gray"></div>Vyžaduje mrazák nebo studenu vodu</div>
+              <div class="info-compare-item"><div class="info-compare-dot gray"></div>Objemný, obtížně přenosný</div>
+              <div class="info-compare-item"><div class="info-compare-dot gray"></div>Nerovnoměrné pokrytí ošetřované oblasti</div>
+              <div class="info-compare-item"><div class="info-compare-dot gray"></div>Pomalejší nástup účinku</div>
+              <div class="info-compare-item"><div class="info-compare-dot gray"></div>Nutné zabalit do textilie</div>
+              <div class="info-compare-item"><div class="info-compare-dot gray"></div>Žádná certifikace jako ZP</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -486,5 +668,6 @@
 </script>
 </body>
 </html>
+
 
 

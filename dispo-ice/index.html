@@ -86,7 +86,9 @@
     .variant-card { background: var(--bg); border-radius: var(--radius-card); padding: 32px 28px; box-shadow: var(--shadow-card); transition: var(--transition); border: 2px solid transparent; }
     .variant-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
     .variant-img { height: 220px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-    .variant-img img { max-height: 200px; max-width: 100%; object-fit: contain; }
+    .variant-img img { max-width: 100%; object-fit: contain; }
+    .variant-img img.spray-200 { max-height: 160px; }
+    .variant-img img.spray-400 { max-height: 240px; }
     .variant-name { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 6px; }
     .variant-sub { font-size: .82rem; color: var(--muted); margin-bottom: 16px; line-height: 1.55; }
     .variant-sub strong { display: block; color: var(--blue-lt); font-size: .75rem; letter-spacing: .04em; margin-top: 4px; }
@@ -264,7 +266,7 @@
     <div class="variants-grid">
       <div class="variant-card reveal">
         <div class="variant-img">
-          <img src="/dispo-ice/img/spray-200ml.svg" alt="DISPO ICE Spray 200 ml" style="transform:scale(0.8);transform-origin:center;">
+          <img src="/dispo-ice/img/spray-200ml.svg" alt="DISPO ICE Spray 200 ml" class="spray-200">
         </div>
         <div class="variant-name">DISPO ICE Spray 200 ml</div>
         <div class="variant-sub">Kompaktní velikost pro sport a osobní lékárničku
@@ -274,7 +276,7 @@
       </div>
       <div class="variant-card reveal">
         <div class="variant-img">
-          <img src="/dispo-ice/img/spray-400ml.svg" alt="DISPO ICE Spray 400 ml" style="transform:scale(1.2);transform-origin:center;">
+          <img src="/dispo-ice/img/spray-400ml.svg" alt="DISPO ICE Spray 400 ml" class="spray-400">
         </div>
         <div class="variant-name">DISPO ICE Spray 400 ml</div>
         <div class="variant-sub">Větší formát pro týmové ošetřovny a ambulance

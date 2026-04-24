@@ -188,7 +188,7 @@
       animation: fadeUp .8s .1s ease both;
       color: #ffffff;
     }
-    h1 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
+    h1 em { font-style: italic; color: var(--teal); -webkit-text-fill-color: var(--teal); }
     .hero-sub {
       font-size: 1.05rem; line-height: 1.7;
       color: rgba(255,255,255,.82); max-width: 480px;
@@ -284,7 +284,7 @@
     }
     #bfy-usp .usp-text strong {
       display: block; font-weight: 700; font-size: 1rem;
-      background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%) 100%);
+      background: var(--h2-gradient) 100%);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
       margin-bottom: 3px;
@@ -320,7 +320,7 @@
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.2; font-weight: 400;
-      background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%);
+      background: var(--h2-gradient);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
       display: inline-block; width: fit-content; max-width: 100%;
@@ -391,7 +391,7 @@
     }
     .about-content { }
     .about-content h2 {
-      background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%);
+      background: var(--h2-gradient);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
     }
@@ -472,7 +472,7 @@
 
     /* ── B2B CTA ─────────────────────────────────────────── */
     .b2b-cta {
-      background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%);
+      background: var(--h2-gradient);
       padding: 96px 40px; position: relative; overflow: hidden;
     }
     .b2b-cta::before {
@@ -487,7 +487,7 @@
       align-items: center; position: relative; z-index: 1;
     }
     .b2b-text h2 { color: var(--white); margin-bottom: 16px; background: none; -webkit-text-fill-color: var(--white); }
-    .b2b-text h2 em { color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
+    .b2b-text h2 em { color: var(--teal); -webkit-text-fill-color: var(--teal); }
     .b2b-text p { color: rgba(255,255,255,.75); font-size: 1.05rem; line-height: 1.7; max-width: 520px; }
     .b2b-actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
     .btn-white {
@@ -512,7 +512,7 @@
 
     /* ── CONTACT ─────────────────────────────────────────── */
     .contact { background: var(--bg2); }
-    .contact h2 { background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .contact h2 { background: var(--h2-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
     .contact-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
     }
@@ -561,7 +561,7 @@
 
     /* ── PHARMDATA ───────────────────────────────────────── */
     .pharmdata-strip {
-      background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%); padding: 28px 40px; text-align: center;
+      background: var(--h2-gradient); padding: 28px 40px; text-align: center;
     }
     .pharmdata-inner {
       max-width: 1200px; margin: 0 auto;
@@ -1413,6 +1413,7 @@
 </script>
 </body>
 </html>
+
 
 
 

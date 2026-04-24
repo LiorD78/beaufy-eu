@@ -22,7 +22,7 @@
   --tmx-blue-l: #0b2c4a;       /* tmavě námořní modrá - vlevo */
   --tmx-blue-m: #134a8e;       /* střední modrá - střed */
   --tmx-blue-r: #1f5fa6;       /* světlejší modrá - vpravo */
-  --teal:     #6ee7f7;
+  --teal:     #F59E0B;  /* změněno z tyrkysové na amber */
   --amber:    #F59E0B;
   --green:    #F59E0B;        /* alias - historic */
   --green-br: #F59E0B;        /* alias - historic */
@@ -373,6 +373,7 @@ footer { background: var(--section-dark-bg); padding: 60px 40px 32px; color: rgb
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: none; }
 }
+
 
 
 

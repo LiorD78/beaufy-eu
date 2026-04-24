@@ -44,8 +44,14 @@
       background: linear-gradient(to right, var(--navy) 0%, var(--navy) 38%, rgba(15,23,42,.75) 60%, rgba(15,23,42,.0) 100%);
     }
     .article-hero .inner {
-      position: relative; z-index: 2; max-width: 780px; width: 100%; margin: 0 auto;
+      position: relative; z-index: 2; max-width: 1100px; width: 100%;
+      margin: 0 auto; padding: 0 40px;
     }
+    .article-hero .inner h1,
+    .article-hero .inner .lead,
+    .article-hero .inner .breadcrumb,
+    .article-hero .inner .article-tag,
+    .article-hero .inner .article-meta-bar { max-width: 560px; }
     .breadcrumb { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 20px; }
     .breadcrumb a { color: rgba(255,255,255,.5); text-decoration: none; }
     .breadcrumb a:hover { color: #fff; }

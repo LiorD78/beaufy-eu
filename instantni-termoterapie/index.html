@@ -84,16 +84,17 @@
 
     /* ── PRODUKTOVÉ KARTY ── */
     .products { background: var(--bg); }
-    .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; }
+    .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; align-items: stretch; }
     .product-card {
       background: var(--white); border-radius: var(--radius-card);
       overflow: hidden; box-shadow: var(--shadow-card);
       transition: var(--transition); border: 2px solid transparent;
+      display: flex; flex-direction: column;
     }
     .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
     .product-img { height: 260px; display: flex; align-items: center; justify-content: center; background: var(--bg); padding: 32px; }
     .product-img img { max-height: 200px; max-width: 100%; object-fit: contain; }
-    .product-body { padding: 28px; display: flex; flex-direction: column; }
+    .product-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
     .product-tag { display: inline-flex; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 99px; padding: 3px 12px; margin-bottom: 12px; }
     .product-tag.cold { background: #e0f2fe; color: #0369a1; }
     .product-tag.hot { background: #fef3c7; color: #b45309; }

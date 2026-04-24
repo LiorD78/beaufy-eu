@@ -88,6 +88,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -96,6 +98,8 @@ body {
   background: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
 }
 
 img { max-width: 100%; display: block; }
@@ -373,6 +377,7 @@ footer { background: var(--section-dark-bg); padding: 60px 40px 32px; color: rgb
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: none; }
 }
+
 
 
 

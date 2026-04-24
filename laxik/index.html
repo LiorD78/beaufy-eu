@@ -193,6 +193,18 @@
     .info-step-text { font-size: .9rem; color: var(--muted); line-height: 1.65; padding-top: 4px; }
     .info-step-note { font-size: .82rem; color: var(--muted); background: var(--bg); border-left: 3px solid var(--blue-mid,#134a8e); padding: 10px 14px; border-radius: 0 8px 8px 0; margin-top: 6px; }
     /* složení */
+
+    /* INGREDIENT FOTO KARTY */
+    .ingredient-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px; }
+    .ingredient-photo-card { border-radius: 14px; overflow: hidden; position: relative; height: 180px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .ingredient-photo-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .4s ease; }
+    .ingredient-photo-card:hover .ingredient-photo-bg { transform: scale(1.05); }
+    .ingredient-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,44,74,.85) 0%, rgba(11,44,74,.2) 60%, transparent 100%); }
+    .ingredient-photo-body { position: relative; z-index: 2; padding: 14px 16px; }
+    .ingredient-photo-name { font-weight: 700; font-size: .9rem; color: #fff; margin-bottom: 2px; }
+    .ingredient-photo-desc { font-size: .78rem; color: rgba(255,255,255,.8); line-height: 1.4; }
+    @media (max-width: 600px) { .ingredient-photo-grid { grid-template-columns: 1fr; } }
+
     .info-slozeni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: stretch; }
     .info-slozeni-grid > div { display: flex; }
     .info-slozeni-grid > div > .info-card { flex: 1; }
@@ -487,7 +499,6 @@
     <div class="nav-links" id="navLinks">
       <a href="/#produkty">Produkty</a>
       <a href="/#o-nas">O nás</a>
-      <a href="/blog/">Blog</a>
       <a href="/#kontakt">Kontakty</a>
       <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
     </div>
@@ -636,6 +647,34 @@
               </table>
               <p style="font-size:.8rem;color:var(--muted);margin-top:12px;line-height:1.55;">Bez konzervantů, parfémů ani solí sodíku — vhodný i pro novorozence.</p>
             </div>
+          </div>
+          <div style="grid-column:1/-1">
+        <div class="ingredient-photo-grid">
+          <div class="ingredient-photo-card">
+            <div class="ingredient-photo-bg" style="background-image:url('/blog/img/glycerol.jpg')"></div>
+            <div class="ingredient-photo-overlay"></div>
+            <div class="ingredient-photo-body">
+              <div class="ingredient-photo-name">Glycerol</div>
+              <div class="ingredient-photo-desc">Vtahuje vodu, změkčuje stolici a spouští peristaltiku</div>
+            </div>
+          </div>
+          <div class="ingredient-photo-card">
+            <div class="ingredient-photo-bg" style="background-image:url('/blog/img/hermanak.jpg')"></div>
+            <div class="ingredient-photo-overlay"></div>
+            <div class="ingredient-photo-body">
+              <div class="ingredient-photo-name">Heřmánek</div>
+              <div class="ingredient-photo-desc">Zklidňuje a chrání sliznici konečníku</div>
+            </div>
+          </div>
+          <div class="ingredient-photo-card">
+            <div class="ingredient-photo-bg" style="background-image:url('/blog/img/slez.jpg')"></div>
+            <div class="ingredient-photo-overlay"></div>
+            <div class="ingredient-photo-body">
+              <div class="ingredient-photo-name">Sléz</div>
+              <div class="ingredient-photo-desc">Lubrikuje a zajišťuje maximální šetrnost</div>
+            </div>
+          </div>
+        </div>
           </div>
           <div>
             <div class="info-card" style="padding:20px 22px;">

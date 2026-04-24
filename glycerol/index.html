@@ -38,7 +38,7 @@
       font-family: 'DM Serif Display', Georgia, serif;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       line-height: 1.2; font-weight: 400;
-      background: linear-gradient(90deg, #0F172A 0%, #0070F3 100%);
+      background: var(--h2-gradient);
       -webkit-background-clip: text; background-clip: text;
       -webkit-text-fill-color: transparent; color: transparent;
       display: inline-block; width: fit-content; max-width: 100%;
@@ -90,13 +90,13 @@
     .hero-breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
     .hero-breadcrumb a:hover { color: #fff; }
     .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1.12; font-weight: 400; color: #fff; -webkit-text-fill-color: #fff; margin-bottom: 20px; }
-    .hero h1 em { font-style: italic; color: #6ee7f7; }
-    h1 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; font-family: 'DM Serif Display', serif; }
+    .hero h1 em { font-style: italic; color: var(--teal); }
+    h1 em { font-style: italic; color: var(--teal); -webkit-text-fill-color: var(--teal); font-family: 'DM Serif Display', serif; }
     .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.75; margin-bottom: 32px; max-width: 460px; }
     .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
     .chip { font-size: .78rem; font-weight: 600; padding: 5px 14px; border-radius: 99px; backdrop-filter: blur(8px); }
     .chip-check { background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.3); }
-    .chip-check::before { content: "✓"; color: #6ee7f7; font-weight: 700; margin-right: 4px; }
+    .chip-check::before { content: "✓"; color: var(--teal); font-weight: 700; margin-right: 4px; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
     .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); }
     .btn-primary:hover { background: var(--green-br); transform: translateY(-2px); }
@@ -186,7 +186,7 @@
     .story-content { max-width: 560px; }
     .story-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 16px; }
     .story h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; color: #fff; -webkit-text-fill-color: #fff; margin-bottom: 24px; }
-    .story h2 em { font-style: italic; color: #6ee7f7; -webkit-text-fill-color: #6ee7f7; }
+    .story h2 em { font-style: italic; color: var(--teal); -webkit-text-fill-color: var(--teal); }
     .story-body { display: flex; flex-direction: column; gap: 20px; }
     .story-body p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,.82); }
     .story-body p strong { color: #fff; font-weight: 600; }
@@ -973,6 +973,7 @@
 </script>
 </body>
 </html>
+
 
 
 

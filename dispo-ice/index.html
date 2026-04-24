@@ -346,10 +346,10 @@
     </div>
     <div class="info-tabs-wrap reveal">
       <div class="info-tabs-nav" role="tablist">
-        <button class="info-tab-btn active" onclick="switchTab(this,'tab-o-produktu')" role="tab">O produktu</button>
-        <button class="info-tab-btn" onclick="switchTab(this,'tab-jak-pouzit')" role="tab">Jak použít</button>
-        <button class="info-tab-btn" onclick="switchTab(this,'tab-bezpecnost')" role="tab">Bezpečnost</button>
-        <button class="info-tab-btn" onclick="switchTab(this,'tab-srovnani')" role="tab">Dispo Ice vs. klasický led</button>
+        <button class="info-tab-btn active" onclick="switchInfoTab(this,'tab-o-produktu')" role="tab">O produktu</button>
+        <button class="info-tab-btn" onclick="switchInfoTab(this,'tab-jak-pouzit')" role="tab">Jak použít</button>
+        <button class="info-tab-btn" onclick="switchInfoTab(this,'tab-bezpecnost')" role="tab">Bezpečnost</button>
+        <button class="info-tab-btn" onclick="switchInfoTab(this,'tab-srovnani')" role="tab">Dispo Ice vs. klasický led</button>
       </div>
       <div class="info-tab-panels">
 
@@ -665,6 +665,13 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  function switchInfoTab(btn, panelId) {
+    btn.closest('.info-tabs-wrap').querySelectorAll('.info-tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    btn.closest('.info-tabs-wrap').querySelectorAll('.info-tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(panelId).classList.add('active');
+  }
 </script>
 </body>
 </html>

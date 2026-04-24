@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Těžké ráno a nafouklé břicho: Jak šetrně vyřešit zácpu u dospělých | Blog BEAUFY</title>
+  <meta name="description" content="Zácpa u dospělých je daní za moderní životní styl. Přečtěte si, jak šetrně a rychle ulevit s pomocí glycerolu.">
+  <link rel="icon" href="/beaufy-ico-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; }
+    :root {
+      --navy: #0F172A; --blue: #0070F3; --blue-lt: #1f5fa6; --green: #F59E0B;
+      --bg: #F1F5F9; --white: #fff; --muted: #64748B; --border: rgba(11,44,74,.1);
+      --radius-card: 20px; --shadow-card: 0 2px 16px rgba(11,44,74,.08);
+      --transition: all .22s ease;
+    }
+    body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--bg); }
+    nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); width: calc(100% - 32px); max-width: 1160px; z-index: 100; transition: var(--transition); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 10px 24px; border-radius: 99px; background: rgba(255,255,255,.18); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 8px 32px rgba(11,44,74,.18); transition: all .4s cubic-bezier(.4,0,.2,1); }
+    nav.scrolled .nav-inner { background: rgba(255,255,255,.95); border-color: rgba(11,44,74,.12); }
+    .nav-logo-img { height: 32px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { font-size: .88rem; font-weight: 500; color: var(--navy); text-decoration: none; padding: 7px 14px; border-radius: 99px; transition: var(--transition); }
+    .nav-links a:hover { background: var(--bg); }
+    .nav-links a.active { color: var(--blue); font-weight: 600; }
+    .nav-cta { background: var(--green) !important; color: #fff !important; font-weight: 600 !important; padding: 9px 20px !important; }
+    .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 4px 0; border-radius: 2px; }
+    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #1a2f5e 100%); padding: 140px 40px 0; }
+    .article-hero .inner { max-width: 780px; margin: 0 auto; }
+    .breadcrumb { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+    .breadcrumb a { color: rgba(255,255,255,.5); text-decoration: none; }
+    .breadcrumb a:hover { color: #fff; }
+    .article-tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    .article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+    .article-hero .lead { font-size: 1.1rem; color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 40px; }
+    .article-meta-bar { display: flex; gap: 24px; align-items: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.12); }
+    .article-meta-bar span { font-size: .82rem; color: rgba(255,255,255,.45); }
+    .article-hero-img { max-width: 780px; margin: 40px auto 0; border-radius: 20px 20px 0 0; overflow: hidden; height: 420px; }
+    .article-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .article-body { background: var(--white); }
+    .article-body .inner { max-width: 780px; margin: 0 auto; padding: 56px 40px 72px; }
+    .article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 400; color: var(--navy); margin: 40px 0 16px; }
+    .article-body p { font-size: 1rem; color: #334155; line-height: 1.85; margin-bottom: 20px; }
+    .article-body ul { padding-left: 0; list-style: none; margin-bottom: 20px; display: flex; flex-direction: column; gap: 14px; }
+    .article-body ul li { font-size: 1rem; color: #334155; line-height: 1.75; padding-left: 20px; position: relative; }
+    .article-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue-lt); font-weight: 700; }
+    .article-body strong { color: var(--navy); font-weight: 600; }
+    .highlight-box { background: #eef4fa; border-left: 4px solid var(--blue-lt); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
+    .highlight-box p { margin: 0; font-size: .95rem; color: var(--navy); line-height: 1.7; }
+    .ingredient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+    .ingredient-card { border-radius: 16px; overflow: hidden; position: relative; height: 220px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .ingredient-card-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .4s ease; }
+    .ingredient-card:hover .ingredient-card-bg { transform: scale(1.05); }
+    .ingredient-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,44,74,.85) 0%, rgba(11,44,74,.2) 60%, transparent 100%); }
+    .ingredient-card-body { position: relative; z-index: 2; padding: 20px; }
+    .ingredient-name { font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 4px; }
+    .ingredient-desc { font-size: .82rem; color: rgba(255,255,255,.8); line-height: 1.5; }
+    .article-cta { background: linear-gradient(135deg, #0F172A 0%, #1a2f5e 100%); border-radius: 20px; padding: 40px; margin: 48px 0; display: flex; align-items: center; gap: 32px; }
+    .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #fff; font-weight: 400; margin-bottom: 8px; }
+    .article-cta-text p { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.65; }
+    .article-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); white-space: nowrap; }
+    .article-cta-btn:hover { opacity: .9; transform: translateY(-2px); }
+    footer { background: var(--navy); color: rgba(255,255,255,.7); padding: 56px 40px 32px; }
+    .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand p { font-size: .88rem; line-height: 1.7; margin-top: 16px; color: rgba(255,255,255,.5); }
+    .footer-logo-img { height: 28px; filter: brightness(0) invert(1); opacity: .8; }
+    .footer-col h5 { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: .88rem; color: rgba(255,255,255,.6); text-decoration: none; }
+    .footer-col ul a:hover { color: #fff; }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); font-size: .8rem; color: rgba(255,255,255,.35); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,.8); }
+    .scroll-top { position: fixed; bottom: 28px; right: 28px; z-index: 99; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,44,74,.3); opacity: 0; transform: translateY(12px); pointer-events: none; transition: var(--transition); }
+    .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+    @media (max-width: 900px) {
+      .article-hero { padding: 120px 24px 0; }
+      .article-hero-img { height: 280px; }
+      .article-body .inner { padding: 40px 24px 56px; }
+      .article-cta { flex-direction: column; gap: 20px; }
+      .ingredient-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; width: 100%; margin-top: 12px; gap: 4px; }
+      .nav-links.open a { font-size: 1.1rem; padding: 14px 4px; color: var(--navy) !important; text-decoration: none; display: block; border-bottom: 1px solid rgba(11,44,74,.06); }
+      .nav-links.open a:last-child { border-bottom: none; }
+      .nav-links.open .nav-cta { background: var(--green) !important; color: #fff !important; border-radius: 99px !important; padding: 13px 20px !important; margin-top: 4px; border-bottom: none !important; }
+      .nav-inner.menu-open { display: flex !important; flex-direction: column !important; align-items: stretch !important; padding: 12px 20px 16px !important; border-radius: 28px !important; }
+    }
+    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } .ingredient-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner" id="navInner">
+    <div class="nav-top-row">
+      <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
+      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="/#produkty">Produkty</a>
+      <a href="/#o-nas">O nás</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#kontakt">Kontakty</a>
+      <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
+    </div>
+  </div>
+</nav>
+
+<section class="article-hero">
+  <div class="inner">
+    <div class="breadcrumb"><a href="/">BEAUFY</a> / <a href="/blog/">Blog</a> / Zácpa u dospělých</div>
+    <div class="article-tag">Zácpa u dospělých</div>
+    <h1>Těžké ráno a nafouklé břicho:<br><em style="font-style:italic;color:#6ee7f7">Jak šetrně vyřešit zácpu</em></h1>
+    <p class="lead">Je to téma, o kterém se u kávy s přáteli běžně nebavíme. Přesto zácpa občas potrápí snad každého dospělého. Existují ale cesty, jak tělu šetrně a rychle ulevit.</p>
+    <div class="article-meta-bar">
+      <span>Duben 2026</span>
+      <span>·</span>
+      <span>4 minuty čtení</span>
+    </div>
+  </div>
+  <div class="article-hero-img">
+    <img src="/blog/img/glycerol.jpg" alt="Glycerol — šetrná pomoc při zácpě dospělých">
+  </div>
+</section>
+
+<section class="article-body">
+  <div class="inner">
+
+    <p>Je to téma, o kterém se u kávy s kolegy nebo přáteli běžně nebavíme. Přesto zácpa občas potrápí snad každého dospělého. Těžký pocit v podbřišku, nafouklé břicho, křeče a zkažená nálada dokážou spolehlivě zničit celý den. Dobrou zprávou ale je, že i když tělo zrovna stávkuje, existují cesty, jak mu šetrně a rychle ulevit.</p>
+
+    <h2>Proč se to děje právě vám?</h2>
+
+    <p>Zácpa u dospělých je často daní za náš moderní, uspěchaný životní styl. Zatímco u dětí bývá spouštěčem strach z nočníku, u dospělých hraje hlavní roli stres a nedostatek času. Kdy jste naposledy v klidu posnídali?</p>
+
+    <p>Mezi nejčastější příčiny patří:</p>
+    <ul>
+      <li><strong>Sedavé zaměstnání:</strong> Osm hodin před monitorem naší peristaltice zrovna nesvědčí.</li>
+      <li><strong>Špatný pitný režim a strava:</strong> Káva a rychlý oběd plný sacharidů nestačí. Střeva potřebují vodu a vlákninu.</li>
+      <li><strong>Ignorování signálů těla:</strong> Ranní spěch nebo nechuť použít toaletu v práci nás nutí potřebu zadržovat — to vede k vysoušení a tvrdnutí stolice.</li>
+      <li><strong>Stres a cestování:</strong> Změna prostředí nebo psychické vypětí dokážou zažívání úplně zablokovat.</li>
+    </ul>
+
+    <h2>Dlouhodobé řešení chce čas</h2>
+
+    <p>Pokud se zácpa vrací, je potřeba upravit denní rutinu. Zvýšit příjem vlákniny, hlídat pitný režim a přidat přirozený pohyb — i obyčejná svižná procházka z práce dokáže divy.</p>
+
+    <p>Co ale dělat, když prevence selhala, vy se několik dní cítíte pod psa a <strong>potřebujete úlevu tady a teď?</strong></p>
+
+    <h2>Rychlá a ohleduplná pomoc jménem Glycerol</h2>
+
+    <p>Když problém nastane, mnoho lidí sáhne po agresivních projímadlech v tabletách. Ty sice mohou pomoci, ale často dráždí celý trávicí trakt, vyvolávají křeče a při častém používání na ně vzniká nepříjemný návyk — střeva zkrátka "zleniví".</p>
+
+    <p>Mnohem chytřejší volbou je řešit problém <strong>přesně tam, kde vznikl</strong> — lokálně. Zde přichází na scénu glycerol, dostupný ve formě glycerinových čípků nebo lokálních mikroklystýrů.</p>
+
+    <div class="highlight-box">
+      <p>Glycerol se nevstřebává do krevního oběhu. Funguje čistě mechanicky — pomáhá natáhnout vodu do střeva a přirozeně spustit vyprázdnění.</p>
+    </div>
+
+    <p>Proč je glycerol tak oblíbený? Jeho účinek stojí na třech jednoduchých krocích:</p>
+
+    <div class="ingredient-grid">
+      <div class="ingredient-card">
+        <div class="ingredient-card-bg" style="background-image:url('/blog/img/glycerol.jpg')"></div>
+        <div class="ingredient-card-overlay"></div>
+        <div class="ingredient-card-body">
+          <div class="ingredient-name">Bezbolestné změkčení</div>
+          <div class="ingredient-desc">Glycerol vtáhne vodu — zatvrdlá stolice se rychle změkčí a zvlhčí</div>
+        </div>
+      </div>
+      <div class="ingredient-card">
+        <div class="ingredient-card-bg" style="background-image:url('/blog/img/hermanak.jpg')"></div>
+        <div class="ingredient-card-overlay"></div>
+        <div class="ingredient-card-body">
+          <div class="ingredient-name">Přirozená stimulace</div>
+          <div class="ingredient-desc">Jemně podráždí sliznici a vyvolá přirozený reflex k vyprázdnění</div>
+        </div>
+      </div>
+      <div class="ingredient-card">
+        <div class="ingredient-card-bg" style="background-image:url('/blog/img/slez.jpg')"></div>
+        <div class="ingredient-card-overlay"></div>
+        <div class="ingredient-card-body">
+          <div class="ingredient-name">Rychlý účinek</div>
+          <div class="ingredient-desc">Úleva přichází obvykle do 15–30 minut — bez čekání a nejistoty</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-cta">
+      <div class="article-cta-text">
+        <h3>Glycerol New.Fa.Dem. — mikroklystýr pro dospělé</h3>
+        <p>Šetrný mikroklystýr s glycerolem, heřmánkem a slézem. Lokální účinek bez zatížení trávicí soustavy. Účinek do 15–30 minut.</p>
+      </div>
+      <a href="/glycerol/" class="article-cta-btn">Zjistit více →</a>
+    </div>
+
+    <p>Zácpa je nepříjemná, ale je to běžný fyziologický problém, za který se není třeba stydět. Mít doma přípravek na bázi glycerolu je praktická pojistka pro dny, kdy vás stres nebo cestování vyvedou z rovnováhy. Získáte tak rychlou, spolehlivou a především <strong>k tělu šetrnou cestu</strong>, jak se znovu cítit lehce a ve své kůži.</p>
+
+    <p style="margin-top:32px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--border);padding-top:16px;">Zdravotnický prostředek třídy I. Před použitím si přečtěte návod k použití.</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="/BEAUFY_logo.png" alt="BEAUFY" class="footer-logo-img">
+      <p>Česko-slovenský distributor zdravotnických prostředků EU původu.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Produkty</h5>
+      <ul>
+        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
+        <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
+        <li><a href="/dispogel/">DISPO GEL</a></li>
+        <li><a href="/instantni-termoterapie/">Instantní termoterapie</a></li>
+        <li><a href="/dispo-ice/">DISPO ICE Spray</a></li>
+        <li><a href="/zensen/">Ženšen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Společnost</h5>
+      <ul>
+        <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/#kontakt">Kontakty</a></li>
+        <li><a href="/zasady-ochrany-osobnich-udaju.html">Ochrana os. údajů</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <ul>
+        <li><a href="tel:+420799022658">+420 799 022 658</a></li>
+        <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
+        <li><a href="#">U Trati 886/52, Praha 10</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 BEAUFY s.r.o. · IČ:&nbsp;<span style="color:inherit !important">06867031</span></p>
+    <div class="footer-legal">
+      <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
+      <a href="mailto:info@beaufy.eu">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    document.querySelector('.nav-inner').classList.toggle('menu-open');
+  });
+</script>
+</body>
+</html>

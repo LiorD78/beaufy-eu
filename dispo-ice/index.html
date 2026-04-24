@@ -270,7 +270,7 @@
     </div>
     <div class="hero-actions">
       <a href="#kde-koupit" class="btn-primary">Kde koupit</a>
-      <a href="#informace" class="btn-outline-white" onclick="setTimeout(()=>{const b=document.querySelector('[onclick*=\'tab-jak-pouzit\']');if(b)switchInfoTab(b,'tab-jak-pouzit')},100)">Jak použít</a>
+      <a href="#informace" id="hero-jakpouzit-btn" class="btn-outline-white">Jak použít</a>
     </div>
   </div>
 </section>
@@ -635,6 +635,13 @@
     btn.closest('.info-tabs-wrap').querySelectorAll('.info-tab-panel').forEach(p => p.classList.remove('active'));
     document.getElementById(panelId).classList.add('active');
   }
+
+  document.getElementById('hero-jakpouzit-btn').addEventListener('click', function() {
+    setTimeout(function() {
+      var btn = document.querySelector('[onclick*="tab-jak-pouzit"]');
+      if (btn) switchInfoTab(btn, 'tab-jak-pouzit');
+    }, 100);
+  });
 </script>
 </body>
 </html>

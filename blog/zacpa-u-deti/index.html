@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zácpa trápí až 40 % dětí po pátém roce věku | Blog BEAUFY</title>
-  <meta name="description" content="Odborníci upozorňují na nutnost prevence i včasné léčby zácpy u dětí. Jak poznat funkční zácpu a co s ní dělat?">
+  <title>Když dětské bříško bolí: Jak společně překonat zácpu | Blog BEAUFY</title>
+  <meta name="description" content="Zácpa dokáže potrápit nejen malé bříško, ale i dětskou duši. S trochou trpělivosti a správnou péčí se dětský úsměv brzy vrátí.">
   <link rel="icon" href="/beaufy-ico-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,6 @@
       --transition: all .22s ease;
     }
     body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--bg); }
-
-    /* NAV */
     nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); width: calc(100% - 32px); max-width: 1160px; z-index: 100; transition: var(--transition); }
     .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 10px 24px; border-radius: 99px; background: rgba(255,255,255,.18); backdrop-filter: blur(28px) saturate(180%); -webkit-backdrop-filter: blur(28px) saturate(180%); border: 1px solid rgba(255,255,255,.45); box-shadow: 0 0 0 0.5px rgba(255,255,255,.2) inset, 0 8px 32px rgba(11,44,74,.18); transition: all .4s cubic-bezier(.4,0,.2,1); }
     nav.scrolled .nav-inner { background: rgba(255,255,255,.95); border-color: rgba(11,44,74,.12); }
@@ -33,8 +31,6 @@
     .nav-cta { background: var(--green) !important; color: #fff !important; font-weight: 600 !important; padding: 9px 20px !important; }
     .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav-mobile-btn span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 4px 0; border-radius: 2px; }
-
-    /* ARTICLE HERO */
     .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #1a2f5e 100%); padding: 140px 40px 0; }
     .article-hero .inner { max-width: 780px; margin: 0 auto; }
     .breadcrumb { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 20px; }
@@ -45,31 +41,23 @@
     .article-hero .lead { font-size: 1.1rem; color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 40px; }
     .article-meta-bar { display: flex; gap: 24px; align-items: center; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.12); }
     .article-meta-bar span { font-size: .82rem; color: rgba(255,255,255,.45); }
-
-    /* HERO IMAGE */
-    .article-hero-img { max-width: 780px; margin: 0 auto; margin-top: 40px; border-radius: 20px 20px 0 0; overflow: hidden; height: 420px; }
+    .article-hero-img { max-width: 780px; margin: 40px auto 0; border-radius: 20px 20px 0 0; overflow: hidden; height: 420px; }
     .article-hero-img img { width: 100%; height: 100%; object-fit: cover; }
-
-    /* ARTICLE BODY */
     .article-body { background: var(--white); }
     .article-body .inner { max-width: 780px; margin: 0 auto; padding: 56px 40px 72px; }
     .article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 400; color: var(--navy); margin: 40px 0 16px; }
     .article-body p { font-size: 1rem; color: #334155; line-height: 1.85; margin-bottom: 20px; }
-    .article-body ul { padding-left: 0; list-style: none; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .article-body ul { padding-left: 0; list-style: none; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
     .article-body ul li { font-size: 1rem; color: #334155; line-height: 1.75; padding-left: 20px; position: relative; }
     .article-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue-lt); font-weight: 700; }
     .article-body strong { color: var(--navy); font-weight: 600; }
     .highlight-box { background: #eef4fa; border-left: 4px solid var(--blue-lt); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
     .highlight-box p { margin: 0; font-size: .95rem; color: var(--navy); line-height: 1.7; }
-
-    /* PRODUCT CTA */
     .article-cta { background: linear-gradient(135deg, #0F172A 0%, #1a2f5e 100%); border-radius: 20px; padding: 40px; margin: 48px 0; display: flex; align-items: center; gap: 32px; }
     .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #fff; font-weight: 400; margin-bottom: 8px; }
     .article-cta-text p { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.65; }
     .article-cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 99px; background: var(--green); color: #fff; font-weight: 600; font-size: .95rem; text-decoration: none; transition: var(--transition); white-space: nowrap; }
     .article-cta-btn:hover { opacity: .9; transform: translateY(-2px); }
-
-    /* FOOTER */
     footer { background: var(--navy); color: rgba(255,255,255,.7); padding: 56px 40px 32px; }
     .footer-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
     .footer-brand p { font-size: .88rem; line-height: 1.7; margin-top: 16px; color: rgba(255,255,255,.5); }
@@ -82,10 +70,8 @@
     .footer-legal { display: flex; gap: 20px; }
     .footer-legal a { font-size: .8rem; color: rgba(255,255,255,.45); text-decoration: none; }
     .footer-legal a:hover { color: rgba(255,255,255,.8); }
-
     .scroll-top { position: fixed; bottom: 28px; right: 28px; z-index: 99; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,44,74,.3); opacity: 0; transform: translateY(12px); pointer-events: none; transition: var(--transition); }
     .scroll-top.visible { opacity: 1; transform: none; pointer-events: auto; }
-
     @media (max-width: 900px) {
       .article-hero { padding: 120px 24px 0; }
       .article-hero-img { height: 280px; }
@@ -125,8 +111,8 @@
   <div class="inner">
     <div class="breadcrumb"><a href="/">BEAUFY</a> / <a href="/blog/">Blog</a> / Zácpa u dětí</div>
     <div class="article-tag">Zácpa u dětí</div>
-    <h1>Zácpa trápí až 40 % dětí<br>po pátém roce věku</h1>
-    <p class="lead">Odborníci upozorňují na nutnost prevence i včasné léčby. Jak poznat funkční zácpu, proč vzniká a co s ní dělat dřív, než přejde do chronické fáze?</p>
+    <h1>Když dětské bříško bolí:<br>Jak společně překonat zácpu</h1>
+    <p class="lead">Vidět své dítě trápit se na nočníku je pro každého rodiče těžké. Zácpa dokáže potrápit nejen malé bříško, ale i dětskou duši. Nejste v tom ale sami.</p>
     <div class="article-meta-bar">
       <span>Duben 2026</span>
       <span>·</span>
@@ -141,34 +127,38 @@
 <section class="article-body">
   <div class="inner">
 
-    <p>Zácpa neboli obstipace je u dětí definována odchodem stolice méně než jednou za tři dny. Jde o <strong>velmi častý problém</strong>, který postihuje děti napříč věkovými skupinami a v mnoha případech přetrvává i do školního věku.</p>
+    <p>Vidět své dítě trápit se na nočníku je pro každého rodiče těžké. Zácpa dokáže potrápit nejen malé bříško, ale i dětskou duši. Nejste v tom ale sami — s trochou trpělivosti, správnou péčí a pochopením se dětský úsměv brzy vrátí.</p>
 
-    <h2>Funkční zácpa: nejčastější příčina potíží</h2>
+    <h2>Problém, o kterém se těžko mluví</h2>
 
-    <p>Dětští psychologové a pediatři poukazují na to, že ze všech dětí trpících zácpou má až <strong>95 % z nich problémy s tzv. funkční zácpou</strong> — tedy stavem, který není způsoben primárně jiným onemocněním. Vzniká nejčastěji kvůli nedostatku vlákniny, nízkému příjmu tekutin, stresu nebo změně denního režimu a málo pohybu.</p>
+    <p>Zácpa — definovaná jako vyprázdnění méně než jednou za tři dny — je překvapivě častým dětským trápením. <strong>Až 40 % dětí po pátém roce věku</strong> s ní má své zkušenosti.</p>
 
-    <p>U kojenců se funkční zácpa obvykle poprvé objeví v době podávání prvních příkrmů a pevné stravy. Klíčové je předejít bolestivé zkušenosti — ta totiž vede k zadržování stolice, které problém dále prohlubuje.</p>
+    <p>Ve většině případů (až 95 %) jde o tzv. funkční zácpu. To znamená, že za ní nestojí žádné skryté onemocnění, ale často jen každodenní maličkosti: málo vlákniny a tekutin, nedostatek pohybu, nečekaná změna režimu nebo obyčejný stres. Vše obvykle začíná u miminek s prvními příkrmy, nebo u starších dětí během nácviku na nočník. Dítě zažije bolest, začne se vyprázdnění bát, stolici zadržuje — a vzniká tak nepříjemný začarovaný kruh.</p>
+
+    <h2>Proč je důležité jednat včas</h2>
+
+    <p>Strach z bolesti je u dětí velmi silný. Dítě pak trápí nafouklé bříško, tvrdá stolice, křeče, a dokonce může docházet k samovolnému úniku stolice. To vše s sebou nese obrovskou psychickou zátěž, která může dítě omezovat v běžných dětských radostech.</p>
 
     <div class="highlight-box">
-      <p><strong>Věděli jste?</strong> Až 40 % dětí trpících dlouhodobou zácpou ve věku pěti let má potíže i nadále — a 20–30 % z nich dokonce i po desátém roce života.</p>
+      <p>Odborníci varují, že pokud se tento problém přehlíží, může přetrvávat nečekaně dlouho. Ze všech dětí, které trápí zácpa v pěti letech, má <strong>20–30 % z nich potíže ještě i po svých desátých narozeninách.</strong></p>
     </div>
 
-    <h2>Jak se zácpa projevuje?</h2>
+    <h2>Jak z toho ven? Láskavě a bez tlaku</h2>
 
-    <p>Zácpa se u dětí projevuje zejména:</p>
+    <p>Základem je nevytvářet z návštěvy toalety stresující zážitek. Co dalšího pomáhá předcházet slzičkám?</p>
+
     <ul>
-      <li>Bolestivým a málo častým vyprazdňováním</li>
-      <li>Tvrdou stolicí, nadýmáním a bolestmi břicha</li>
-      <li>Samovolným únikem stolice (enkopréza)</li>
-      <li>Pocitem neúplného vyprázdnění</li>
-      <li>V krajních případech psychickými potížemi a omezením běžného života</li>
+      <li><strong>Pestrá strava:</strong> Dbejte na dostatek vlákniny z ovoce, zeleniny a celozrnných potravin.</li>
+      <li><strong>Pravidelné pití:</strong> Voda je pro měkkou stolici a snadné vyprazdňování nezbytná.</li>
+      <li><strong>Radost z pohybu:</strong> Přirozený pohyb pomáhá rozhýbat i línější střívka.</li>
+      <li><strong>Klidný přístup:</strong> Učte děti na nočník bez nátlaku a s obrovskou dávkou pochopení.</li>
     </ul>
 
-    <h2>Prevence a léčba</h2>
+    <h2>První pomoc, když se střívka zastaví</h2>
 
-    <p>Prevenci zácpy napomáhá zdravý životní styl — dostatek pohybu, vyvážená strava s vysokým obsahem vlákniny a pravidelný pitný režim. Rodiče by se měli vyvarovat zbytečného stresu při nácviku na nočník a naopak <strong>podporovat pravidelné návyky bez tlaku</strong>.</p>
+    <p>Když už k problému dojde a bříško stávkuje, je důležité rychle, ale šetrně ulevit — aby si dítě neodneslo další bolestivou zkušenost.</p>
 
-    <p>Pokud již k potížím dojde, lze v počáteční fázi pomoci změkčujícími prostředky jako jsou mikroklystýry nebo glycerinové čípky. V některých případech, zejména chronických, jsou pak nasazována projímadla typu makrogol nebo laktulóza, která napomáhají peristaltice střev.</p>
+    <p>V počáteční fázi jsou skvělým pomocníkem změkčující prostředky. Rychlou a citlivou úlevu přináší například mikroklystýr Laxík. Aplikuje se přímo do konečníku, kde pomáhá stolici přirozeně zvlhčit a změkčit. Ušetříte tak dítěti bolest a strach z dalšího pokusu. Další variantou pro akutní pomoc jsou i glycerinové čípky. Pokud by zácpa přešla do chronického stádia, lékaři často doporučují šetrná projímadla typu makrogol nebo laktulóza.</p>
 
     <div class="article-cta">
       <div class="article-cta-text">
@@ -178,7 +168,7 @@
       <a href="/laxik/" class="article-cta-btn">Zjistit více →</a>
     </div>
 
-    <p>Důležitou součástí léčby je i psychologická podpora a trpělivý přístup rodičů. <strong>Zácpa není banalita</strong> — pokud přetrvává, měla by být vždy konzultována s pediatrem.</p>
+    <p>Zácpa zkrátka není banalita. Vyžaduje váš klid a obrovskou podporu. Pokud trápení přetrvává, neváhejte se vždy poradit s vaším pediatrem.</p>
 
     <p style="margin-top:32px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--border);padding-top:16px;">Zdravotnický prostředek třídy I. Před použitím si přečtěte návod k použití.</p>
 

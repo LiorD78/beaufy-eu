@@ -53,6 +53,14 @@
     .article-body strong { color: var(--navy); font-weight: 600; }
     .highlight-box { background: #eef4fa; border-left: 4px solid var(--blue-lt); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 32px 0; }
     .highlight-box p { margin: 0; font-size: .95rem; color: var(--navy); line-height: 1.7; }
+    .ingredient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+    .ingredient-card { border-radius: 16px; overflow: hidden; position: relative; height: 220px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .ingredient-card-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .4s ease; }
+    .ingredient-card:hover .ingredient-card-bg { transform: scale(1.05); }
+    .ingredient-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,44,74,.85) 0%, rgba(11,44,74,.2) 60%, transparent 100%); }
+    .ingredient-card-body { position: relative; z-index: 2; padding: 20px; }
+    .ingredient-name { font-weight: 700; font-size: 1rem; color: #fff; margin-bottom: 4px; }
+    .ingredient-desc { font-size: .82rem; color: rgba(255,255,255,.8); line-height: 1.5; }
     .article-cta { background: linear-gradient(135deg, #0F172A 0%, #1a2f5e 100%); border-radius: 20px; padding: 40px; margin: 48px 0; display: flex; align-items: center; gap: 32px; }
     .article-cta-text h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: #fff; font-weight: 400; margin-bottom: 8px; }
     .article-cta-text p { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.65; }
@@ -158,7 +166,36 @@
 
     <p>Když už k problému dojde a bříško stávkuje, je důležité rychle, ale šetrně ulevit — aby si dítě neodneslo další bolestivou zkušenost.</p>
 
-    <p>V počáteční fázi jsou skvělým pomocníkem změkčující prostředky. Rychlou a citlivou úlevu přináší například mikroklystýr Laxík. Aplikuje se přímo do konečníku, kde pomáhá stolici přirozeně zvlhčit a změkčit. Ušetříte tak dítěti bolest a strach z dalšího pokusu. Další variantou pro akutní pomoc jsou i glycerinové čípky. Pokud by zácpa přešla do chronického stádia, lékaři často doporučují šetrná projímadla typu makrogol nebo laktulóza.</p>
+    <p>V počáteční fázi jsou skvělým pomocníkem změkčující prostředky. Rychlou a citlivou úlevu přináší například mikroklystýr Laxík — jeho šetrné složení tvoří tři přírodní složky:</p>
+
+          <div class="ingredient-grid">
+            <div class="ingredient-card">
+              <div class="ingredient-card-bg" style="background-image:url('/blog/img/glycerol.jpg')"></div>
+              <div class="ingredient-card-overlay"></div>
+              <div class="ingredient-card-body">
+                <div class="ingredient-name">Glycerol</div>
+                <div class="ingredient-desc">Zvlhčuje a změkčuje stolici, spouští přirozené vyprázdnění</div>
+              </div>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-card-bg" style="background-image:url('/blog/img/hermanak.jpg')"></div>
+              <div class="ingredient-card-overlay"></div>
+              <div class="ingredient-card-body">
+                <div class="ingredient-name">Heřmánek</div>
+                <div class="ingredient-desc">Zklidňuje a chrání citlivou sliznici</div>
+              </div>
+            </div>
+            <div class="ingredient-card">
+              <div class="ingredient-card-bg" style="background-image:url('/blog/img/slez.jpg')"></div>
+              <div class="ingredient-card-overlay"></div>
+              <div class="ingredient-card-body">
+                <div class="ingredient-name">Sléz</div>
+                <div class="ingredient-desc">Lubrikuje a zajišťuje maximální šetrnost aplikace</div>
+              </div>
+            </div>
+          </div>
+
+    <p>Laxík se aplikuje přímo do konečníku, kde pomáhá stolici přirozeně zvlhčit a změkčit. Ušetříte tak dítěti bolest a strach z dalšího pokusu. Další variantou jsou glycerinové čípky nebo při chronické zácpě projímadla typu makrogol či laktulóza.</p>
 
     <div class="article-cta">
       <div class="article-cta-text">

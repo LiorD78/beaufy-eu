@@ -232,6 +232,33 @@ nav.scrolled .nav-cta {
     }
 
 
+/* ──────────────────────────────────────────────────────────────
+   LEGAL PAGES — nav forced into "scrolled" state (no dark hero)
+   For pages without dark hero (privacy, terms, …) add
+   <body class="legal-page-body"> to keep nav visible from page load.
+   ────────────────────────────────────────────────────────────── */
+body.legal-page-body nav { padding: 8px 24px; }
+body.legal-page-body nav .nav-inner {
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border-color: rgba(255,255,255,.6);
+  box-shadow:
+    0 0 0 0.5px rgba(255,255,255,.4) inset,
+    0 1px 0 rgba(255,255,255,.5) inset,
+    0 4px 20px rgba(11,44,74,.12),
+    0 1px 4px rgba(11,44,74,.06);
+}
+body.legal-page-body nav .nav-links a { color: var(--navy); }
+body.legal-page-body nav .nav-links a:hover { background: var(--bg); }
+body.legal-page-body nav .nav-cta {
+  background: var(--green) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+body.legal-page-body nav .nav-mobile-btn span { background: var(--navy); }
+body.legal-page-body nav .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
+
 
 /* ──────────────────────────────────────────────────────────────
    MOBILE NAV (obnoveno z původní verze)

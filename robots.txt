@@ -1,0 +1,27 @@
+# robots.txt for www.beaufy.eu
+# BEAUFY s.r.o. — zdravotnické prostředky
+
+User-agent: *
+Allow: /
+
+# Disallow internal/development paths
+Disallow: /_originals/
+Disallow: /_partials/
+Disallow: /.github/
+
+# AI training crawlers — Anthropic-friendly default: allow Claude to read public content
+# but block the most aggressive scrapers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.beaufy.eu/sitemap.xml
+
+# Host directive (helps Yandex and some other engines)
+Host: https://www.beaufy.eu

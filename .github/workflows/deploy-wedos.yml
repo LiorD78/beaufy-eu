@@ -71,3 +71,53 @@ jobs:
             }' \
             -w "\nHTTP Status: %{http_code}\n" \
             --fail-with-body || echo "IndexNow ping failed (non-blocking)"
+
+      - name: Refresh Facebook Open Graph cache
+        # Pro každou URL pošle POST do Graph API se scrape=true.
+        # FB znovu stáhne stránku a aktualizuje OG cache (title, description, image).
+        # Bez tohoto kroku FB cache visí ~7 dní. App Access Token = {App ID}|{App Secret}
+        # je v GitHub Secret FB_APP_ACCESS_TOKEN. Token je dlouhodobý, neexpiruje.
+        env:
+          FB_TOKEN: ${{ secrets.FB_APP_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$FB_TOKEN" ]; then
+            echo "⚠️  FB_APP_ACCESS_TOKEN secret not set — skipping FB cache refresh"
+            exit 0
+          fi
+
+          URLS=(
+            "https://www.beaufy.eu/"
+            "https://www.beaufy.eu/laxik/"
+            "https://www.beaufy.eu/glycerol/"
+            "https://www.beaufy.eu/zensen/"
+            "https://www.beaufy.eu/dispogel/"
+            "https://www.beaufy.eu/dispo-ice/"
+            "https://www.beaufy.eu/instantni-termoterapie/"
+            "https://www.beaufy.eu/blog/"
+            "https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/"
+            "https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/"
+            "https://www.beaufy.eu/blog/zacpa-u-deti/"
+            "https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html"
+          )
+
+          SUCCESS=0
+          FAILED=0
+          for URL in "${URLS[@]}"; do
+            STATUS=$(curl -sX POST \
+              "https://graph.facebook.com/?id=${URL}&scrape=true&access_token=${FB_TOKEN}" \
+              -o /tmp/fb_resp.json \
+              -w "%{http_code}")
+            if [ "$STATUS" = "200" ]; then
+              SUCCESS=$((SUCCESS + 1))
+              echo "  ✅ ${URL}"
+            else
+              FAILED=$((FAILED + 1))
+              echo "  ❌ ${URL} (HTTP ${STATUS})"
+              cat /tmp/fb_resp.json 2>/dev/null | head -3
+            fi
+          done
+
+          echo ""
+          echo "FB OG refresh: ${SUCCESS} success, ${FAILED} failed"
+          # Non-blocking — pokud FB API selže, deploy neselže
+          exit 0

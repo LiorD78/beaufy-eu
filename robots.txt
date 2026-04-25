@@ -1,27 +1,67 @@
 # robots.txt for www.beaufy.eu
-# BEAUFY s.r.o. — zdravotnické prostředky
+# BEAUFY s.r.o. — distributor zdravotnických prostředků
+# Contact: info@beaufy.eu
 
+# ──────────────────────────────────────────────────────────
+# Default — all bots welcome on public content
+# ──────────────────────────────────────────────────────────
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
-# Disallow internal/development paths
+# Internal/development paths (build artifacts, partials, GH config)
 Disallow: /_originals/
 Disallow: /_partials/
 Disallow: /.github/
 
-# AI training crawlers — Anthropic-friendly default: allow Claude to read public content
-# but block the most aggressive scrapers
+# ──────────────────────────────────────────────────────────
+# Mainstream search engines — explicit allow
+# ──────────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ──────────────────────────────────────────────────────────
+# AI / LLM training & retrieval crawlers
+# Allowed because BEAUFY content is intentionally public B2B info
+# ──────────────────────────────────────────────────────────
 User-agent: GPTBot
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
-# Sitemap location
-Sitemap: https://www.beaufy.eu/sitemap.xml
+User-agent: PerplexityBot
+Allow: /
 
-# Host directive (helps Yandex and some other engines)
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ──────────────────────────────────────────────────────────
+# Sitemap & host
+# ──────────────────────────────────────────────────────────
+Sitemap: https://www.beaufy.eu/sitemap.xml
 Host: https://www.beaufy.eu

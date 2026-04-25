@@ -129,7 +129,7 @@
     }
     .info-tab-btn:hover { border-color: var(--blue-mid,#134a8e); color: var(--blue-mid,#134a8e); }
     .info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
-    .info-tab-panels { position: relative; }
+    .info-tab-panels { position: relative; transition: min-height .25s ease; }
     .info-tab-panel { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
     .info-tab-panel.active { visibility: visible; position: relative; pointer-events: auto; }
     /* karty */
@@ -382,6 +382,7 @@
     <div class="nav-links" id="navLinks">
       <a href="/#produkty">Produkty</a>
       <a href="/#o-nas">O nás</a>
+      <a href="/blog/">Blog</a>
       <a href="/#kontakt">Kontakty</a>
       <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
     </div>
@@ -857,10 +858,15 @@
         <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
         <li><a href="#">U Trati 886/52, Praha 10</a></li>
       </ul>
+      <div class="footer-legal-info">
+        <p>IČ: <span style="-webkit-text-stroke:0;color:inherit !important;font-size:inherit;text-decoration:none !important;pointer-events:none;">06867031</span></p>
+        <p>DIČ: <span style="-webkit-text-stroke:0;color:inherit !important;font-size:inherit;text-decoration:none !important;pointer-events:none;">CZ06867031</span></p>
+        <p>Zapsáno v OR vedeném Městským<br>soudem v Praze, odd. C, vl. 289395</p>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 BEAUFY s.r.o. · IČ:&nbsp;<span style="-webkit-text-stroke:0;color:inherit !important;font-size:inherit;text-decoration:none !important;pointer-events:none;">06867031</span> · DIČ:&nbsp;<span style="-webkit-text-stroke:0;color:inherit !important;font-size:inherit;text-decoration:none !important;pointer-events:none;">CZ06867031</span></p>
+    <p>© 2026 BEAUFY s.r.o.</p>
     <div class="footer-legal">
       <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
       <a href="mailto:info@beaufy.eu">Kontakt</a>
@@ -891,26 +897,14 @@
   const tabPanelsWrap = document.querySelector('.info-tab-panels');
 
   function setTabPanelHeight() {
-    // Změř výšku každého panelu dočasným zviditelněním
-    let maxH = 0;
-    tabPanels.forEach(p => {
-      const wasActive = p.classList.contains('active');
-      p.style.visibility = 'hidden';
-      p.style.position = 'relative';
-      p.style.pointerEvents = 'none';
-      const h = p.offsetHeight;
-      if (h > maxH) maxH = h;
-      if (!wasActive) {
-        p.style.visibility = '';
-        p.style.position = 'absolute';
-        p.style.pointerEvents = '';
-      } else {
-        p.style.visibility = '';
-        p.style.position = 'relative';
-        p.style.pointerEvents = '';
-      }
-    });
-    if (tabPanelsWrap) tabPanelsWrap.style.minHeight = maxH + 'px';
+    // Wrapper height = ACTIVE panel only (avoids gap on short panels)
+    const activePanel = document.querySelector('.info-tab-panel.active');
+    if (!activePanel || !tabPanelsWrap) return;
+    const wasAbsolute = activePanel.style.position === 'absolute';
+    if (wasAbsolute) activePanel.style.position = 'relative';
+    const h = activePanel.offsetHeight;
+    if (wasAbsolute) activePanel.style.position = '';
+    tabPanelsWrap.style.minHeight = h + 'px';
   }
 
   setTabPanelHeight();
@@ -923,6 +917,7 @@
       btn.classList.add('active');
       btn.setAttribute('aria-selected','true');
       document.getElementById(btn.getAttribute('aria-controls')).classList.add('active');
+      setTabPanelHeight();
     });
   });
 

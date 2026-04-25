@@ -42,3 +42,32 @@ jobs:
           state-name: .ftp-deploy-sync-state.json
           dry-run: false
           log-level: standard
+
+      - name: Notify IndexNow (Bing) about updated URLs
+        # Pingne IndexNow API se seznamem všech veřejných URL po každém deploy.
+        # Bing pak rychle stáhne aktualizovaný obsah. Yandex i Seznam také naslouchají.
+        # API klíč je veřejný — slouží jen jako autentizace, že vlastníme doménu.
+        run: |
+          curl -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "www.beaufy.eu",
+              "key": "d2aef38ffc3aff99319c9ab844ebfba6",
+              "keyLocation": "https://www.beaufy.eu/d2aef38ffc3aff99319c9ab844ebfba6.txt",
+              "urlList": [
+                "https://www.beaufy.eu/",
+                "https://www.beaufy.eu/laxik/",
+                "https://www.beaufy.eu/glycerol/",
+                "https://www.beaufy.eu/zensen/",
+                "https://www.beaufy.eu/dispogel/",
+                "https://www.beaufy.eu/dispo-ice/",
+                "https://www.beaufy.eu/instantni-termoterapie/",
+                "https://www.beaufy.eu/blog/",
+                "https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/",
+                "https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/",
+                "https://www.beaufy.eu/blog/zacpa-u-deti/",
+                "https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html"
+              ]
+            }' \
+            -w "\nHTTP Status: %{http_code}\n" \
+            --fail-with-body || echo "IndexNow ping failed (non-blocking)"

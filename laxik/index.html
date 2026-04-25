@@ -231,6 +231,7 @@
     .story-bg {
       position: absolute; inset: 0; z-index: 0;
       background: url('/story-bg.jpg') center center / cover no-repeat;
+      background: image-set(url('/story-bg.webp') type('image/webp'), url('/story-bg.jpg') type('image/jpeg')) center center / cover no-repeat;
     }
     .story-inner {
       max-width: 1200px; margin: 0 auto;
@@ -637,7 +638,10 @@
           <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
         </div>
         <div class="story-photo-quote-wrap reveal">
-          <img src="/story-mobile-inline.jpg" alt="Zakladatel BEAUFY se synem">
+          <picture>
+            <source srcset="/story-mobile-inline.webp" type="image/webp">
+            <img src="/story-mobile-inline.jpg" alt="Zakladatel BEAUFY se synem">
+          </picture>
           <div class="story-quote-on-photo">
             <p>Jako tatínek jsem se s tím nemohl smířit. Nechtěl jsem jen čekat, až se situace změní, zatímco můj syn trpěl.</p>
           </div>

@@ -38,7 +38,7 @@
 
     /* ── HERO ── */
     .hero { min-height: 100svh; position: relative; overflow: hidden; display: flex; align-items: center; }
-    .hero-bg { position: absolute; inset: 0; background: url('/glycerol-hero.jpg') center center / cover no-repeat; }
+    .hero-bg { position: absolute; inset: 0; background: url('/glycerol-hero.jpg') center center / cover no-repeat; background: image-set(url('/glycerol-hero.webp') type('image/webp'), url('/glycerol-hero.jpg') type('image/jpeg')) center center / cover no-repeat; }
     .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(11,44,74,.92) 0%, rgba(11,44,74,.7) 50%, rgba(11,44,74,.2) 100%); }
     .hero-inner { max-width: 1200px; margin: 0 auto; padding: 120px 40px 80px; position: relative; z-index: 1; width: 100%; }
     .hero-text { max-width: 560px; }
@@ -277,7 +277,10 @@
     <div class="variants-grid" style="max-width:360px; grid-template-columns: 1fr;">
       <div class="variant-card reveal">
         <div class="variant-img">
-          <img src="/glycerol/img/glycerol.png" alt="Glycerol 6 × 9 g" style="transform: scale(1.5); transform-origin: center;">
+          <picture>
+            <source srcset="/glycerol/img/glycerol.webp" type="image/webp">
+            <img src="/glycerol/img/glycerol.png" alt="Glycerol 6 × 9 g" style="transform: scale(1.5); transform-origin: center;">
+          </picture>
         </div>
         <div class="variant-name">Glycerol 6 × 9 g</div>
         <div class="variant-apa">Zdravotnický prostředek třídy I</div>

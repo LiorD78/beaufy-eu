@@ -32,6 +32,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       background: url('/laxik-hero.jpg') left top / 100% auto no-repeat;
+      background: image-set(url('/laxik-hero.webp') type('image/webp'), url('/laxik-hero.jpg') type('image/jpeg')) left top / 100% auto no-repeat;
     }
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
@@ -798,7 +799,10 @@
       <p>Glycerol New.Fa.Dem. je mikroklystýr pro dospělé od stejného italského výrobce. Stejná osvědčená receptura — heřmánek, sléz a glycerol. Účinek do 15–30 minut.</p>
     </div>
     <a href="/glycerol/" class="crosssell-card reveal">
-      <img src="/glycerol-ampulka.png" alt="Glycerol New.Fa.Dem.">
+      <picture>
+            <source srcset="/glycerol-ampulka.webp" type="image/webp">
+            <img src="/glycerol-ampulka.png" alt="Glycerol New.Fa.Dem.">
+          </picture>
       <div class="crosssell-card-info">
         <div class="crosssell-card-label">Pro dospělé</div>
         <div class="crosssell-card-name">Glycerol New.Fa.Dem.</div>

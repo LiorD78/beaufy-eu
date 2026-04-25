@@ -2,84 +2,87 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zásady ochrany osobních údajů — BEAUFY s.r.o.</title>
-  <meta name="description" content="Informace o zpracování osobních údajů společností BEAUFY s.r.o. dle nařízení GDPR.">
-  <link rel="icon" href="beaufy-ico-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <title>Zásady ochrany osobních údajů | BEAUFY</title>
+  <meta name="description" content="Informace o zpracování osobních údajů společností BEAUFY s.r.o. dle nařízení GDPR. Vaše práva, účel zpracování a kontakt na správce.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html">
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="cs-CZ" href="https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html">
+  <link rel="alternate" hreflang="cs" href="https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html">
+  <link rel="alternate" hreflang="sk" href="https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html">
+
+  <!-- Sitemap auto-discovery -->
+  <link rel="sitemap" type="application/xml" href="https://www.beaufy.eu/sitemap.xml">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BEAUFY">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:locale:alternate" content="sk_SK">
+  <meta property="og:url" content="https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html">
+  <meta property="og:title" content="Zásady ochrany osobních údajů | BEAUFY">
+  <meta property="og:description" content="Informace o zpracování osobních údajů společností BEAUFY s.r.o. dle nařízení GDPR.">
+  <meta property="og:image" content="https://www.beaufy.eu/BEAUFY_logo.png">
+  <meta property="og:image:alt" content="BEAUFY logo">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Zásady ochrany osobních údajů | BEAUFY">
+  <meta name="twitter:description" content="Informace o zpracování osobních údajů společností BEAUFY s.r.o. dle nařízení GDPR.">
+  <meta name="twitter:image" content="https://www.beaufy.eu/BEAUFY_logo.png">
+
+  <!-- Geo targeting -->
+  <meta name="geo.region" content="CZ-10">
+  <meta name="geo.placename" content="Praha">
+  <meta name="geo.position" content="50.0755;14.4378">
+  <meta name="ICBM" content="50.0755, 14.4378">
+
+  <!-- Author / Publisher -->
+  <meta name="author" content="BEAUFY s.r.o.">
+  <meta name="publisher" content="BEAUFY s.r.o.">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0F172A">
+
+  <link rel="icon" href="/beaufy-ico-32x32.png">
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="/assets/css/beaufy.css?v=20260425b">
+
+  <!-- Page-specific styles -->
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0b2c4a; --blue: #134a8e; --green: #5C820F;
-      --bg: #eef4fa; --white: #ffffff; --text: #1a2533; --muted: #5a6a7e;
-      --border: rgba(19,74,142,.12);
-    }
-    body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text); background: var(--white); line-height: 1.7;
-    }
-    header {
-      background: var(--white); border-bottom: 1px solid var(--border);
-      padding: 16px 40px;
-    }
-    header a { display: inline-block; }
-    header img { height: 26px; }
-    main {
-      max-width: 760px; margin: 0 auto; padding: 64px 40px 96px;
-    }
-    h1 {
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 400;
-      color: var(--navy); margin-bottom: 8px; line-height: 1.2;
-    }
-    .meta {
-      font-size: .85rem; color: var(--muted); margin-bottom: 48px;
-      padding-bottom: 24px; border-bottom: 1px solid var(--border);
-    }
-    h2 {
-      font-size: 1.1rem; font-weight: 600; color: var(--navy);
-      margin: 36px 0 12px;
-    }
-    p { margin-bottom: 14px; font-size: .95rem; color: var(--text); }
-    ul { margin: 0 0 14px 20px; }
-    ul li { font-size: .95rem; margin-bottom: 6px; }
-    a { color: var(--blue); }
-    table {
-      width: 100%; border-collapse: collapse; margin: 16px 0 24px;
-      font-size: .88rem;
-    }
-    th {
-      background: var(--bg); text-align: left; padding: 10px 14px;
-      font-weight: 600; font-size: .8rem; color: var(--navy);
-      text-transform: uppercase; letter-spacing: .06em;
-    }
-    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
-    .notice {
-      background: var(--bg); border-left: 3px solid var(--blue);
-      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 24px 0;
-      font-size: .88rem;
-    }
-    footer {
-      text-align: center; padding: 32px 40px;
-      border-top: 1px solid var(--border);
-      font-size: .82rem; color: var(--muted);
-    }
-    footer a { color: var(--blue); }
-    @media (max-width: 600px) {
-      main { padding: 40px 20px 64px; }
-      header { padding: 14px 20px; }
-    }
+    .legal-page { padding: 96px 40px 64px; background: var(--white); }
+    .legal-inner { max-width: 760px; margin: 0 auto; }
+    .legal-page h1 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; background: var(--h2-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.2; margin-bottom: 8px; }
+    .legal-page .legal-meta { font-size: .85rem; color: var(--muted); margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+    .legal-page h2 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin: 36px 0 12px; }
+    .legal-page p { margin-bottom: 14px; font-size: .95rem; color: var(--text); line-height: 1.7; }
+    .legal-page ul { margin: 0 0 14px 20px; }
+    .legal-page ul li { font-size: .95rem; margin-bottom: 6px; line-height: 1.7; }
+    .legal-page a { color: var(--blue-lt); }
+    .legal-page table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: .88rem; }
+    .legal-page th { background: var(--bg); text-align: left; padding: 10px 14px; font-weight: 700; font-size: .78rem; color: var(--navy); text-transform: uppercase; letter-spacing: .06em; }
+    .legal-page td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .legal-page .notice { background: var(--bg); border-left: 3px solid var(--blue-lt); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 24px 0; font-size: .9rem; }
+    @media (max-width: 600px) { .legal-page { padding: 80px 20px 48px; } }
   </style>
 
-  <!-- JSON-LD structured data for Google Rich Results -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Zásady ochrany osobních údajů — BEAUFY",
-  "description": "Zásady ochrany osobních údajů společnosti BEAUFY s.r.o.",
+  "name": "Zásady ochrany osobních údajů | BEAUFY",
+  "description": "Informace o zpracování osobních údajů společností BEAUFY s.r.o. dle nařízení GDPR.",
   "url": "https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html",
   "inLanguage": "cs-CZ",
   "publisher": {
@@ -110,91 +113,88 @@
 </head>
 <body>
 
-<header>
-  <a href="index.html"><img src="beaufy-logo-354x47.png" alt="BEAUFY"></a>
-</header>
+<!-- @include _partials/nav.html -->
 
-<main>
-  <h1>Zásady ochrany osobních údajů</h1>
-  <p class="meta">Platné od 1. 5. 2026 &nbsp;·&nbsp; BEAUFY s.r.o.</p>
+<main class="legal-page">
+  <div class="legal-inner">
+    <h1>Zásady ochrany osobních údajů</h1>
+    <p class="legal-meta">Platné od 1. 5. 2026 &nbsp;·&nbsp; BEAUFY s.r.o.</p>
 
-  <h2>1. Správce osobních údajů</h2>
-  <p>Správcem vašich osobních údajů je společnost <strong>BEAUFY s.r.o.</strong>, se sídlem U Trati 886/52, 100 00 Praha 10 – Strašnice, IČO: 06867031, zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka 289395.</p>
-  <p>Kontakt na správce: <a href="mailto:info@beaufy.eu">info@beaufy.eu</a> &nbsp;|&nbsp; tel.: <a href="tel:+420799022658">+420 799 022 658</a></p>
+    <h2>1. Správce osobních údajů</h2>
+    <p>Správcem vašich osobních údajů je společnost <strong>BEAUFY s.r.o.</strong>, se sídlem U Trati 886/52, 100 00 Praha 10 – Strašnice, IČO: <span style="color:inherit">06867031</span>, zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, oddíl C, vložka 289395.</p>
+    <p>Kontakt na správce: <a href="mailto:info@beaufy.eu">info@beaufy.eu</a> &nbsp;|&nbsp; tel.: <a href="tel:+420799022658">+420 799 022 658</a></p>
 
-  <h2>2. Jaké osobní údaje zpracováváme</h2>
-  <p>Zpracováváme pouze údaje, které nám sami poskytnete prostřednictvím kontaktního formuláře na webu beaufy.eu:</p>
-  <ul>
-    <li>Jméno a příjmení</li>
-    <li>Název lékárny nebo instituce</li>
-    <li>E-mailová adresa</li>
-    <li>Telefonní číslo</li>
-    <li>Obsah zprávy (poptávka, dotaz)</li>
-  </ul>
-  <p>Web nepoužívá analytické nástroje (Google Analytics, Facebook Pixel apod.). Google Fonts jsou načítány z externích serverů Google, při nichž může docházet k zaznamenání IP adresy. Pokud cookies odmítnete, mohou být fonty načteny z mezipaměti prohlížeče bez kontaktu se servery Google.</p>
+    <h2>2. Jaké osobní údaje zpracováváme</h2>
+    <p>Zpracováváme pouze údaje, které nám sami poskytnete prostřednictvím kontaktního formuláře na webu beaufy.eu:</p>
+    <ul>
+      <li>Jméno a příjmení</li>
+      <li>Název lékárny nebo instituce</li>
+      <li>E-mailová adresa</li>
+      <li>Telefonní číslo</li>
+      <li>Obsah zprávy (poptávka, dotaz)</li>
+    </ul>
+    <p>Web nepoužívá analytické nástroje (Google Analytics, Facebook Pixel apod.) ani externí marketingové cookies.</p>
 
-  <h2>3. Účel a právní základ zpracování</h2>
-  <table>
-    <tr><th>Účel</th><th>Právní základ</th><th>Doba uchování</th></tr>
-    <tr>
-      <td>Odpověď na poptávku / kontakt</td>
-      <td>Souhlas (čl. 6 odst. 1 písm. a) GDPR)</td>
-      <td>Do vyřízení dotazu, max. 12 měsíců</td>
-    </tr>
-    <tr>
-      <td>Navázání obchodní spolupráce</td>
-      <td>Oprávněný zájem (čl. 6 odst. 1 písm. f) GDPR)</td>
-      <td>Po dobu trvání obchodního vztahu</td>
-    </tr>
-    <tr>
-      <td>Plnění zákonných povinností</td>
-      <td>Právní povinnost (čl. 6 odst. 1 písm. c) GDPR)</td>
-      <td>Dle příslušných lhůt (účetnictví: 10 let)</td>
-    </tr>
-  </table>
+    <h2>3. Účel a právní základ zpracování</h2>
+    <table>
+      <tr><th>Účel</th><th>Právní základ</th><th>Doba uchování</th></tr>
+      <tr>
+        <td>Odpověď na poptávku / kontakt</td>
+        <td>Souhlas (čl. 6 odst. 1 písm. a) GDPR)</td>
+        <td>Do vyřízení dotazu, max. 12 měsíců</td>
+      </tr>
+      <tr>
+        <td>Navázání obchodní spolupráce</td>
+        <td>Oprávněný zájem (čl. 6 odst. 1 písm. f) GDPR)</td>
+        <td>Po dobu trvání obchodního vztahu</td>
+      </tr>
+      <tr>
+        <td>Plnění zákonných povinností</td>
+        <td>Právní povinnost (čl. 6 odst. 1 písm. c) GDPR)</td>
+        <td>Dle příslušných lhůt (účetnictví: 10 let)</td>
+      </tr>
+    </table>
 
-  <h2>4. Příjemci osobních údajů</h2>
-  <p>Vaše osobní údaje nepředáváme třetím stranám za účelem marketingu. Údaje mohou být zpřístupněny:</p>
-  <ul>
-    <li>Zaměstnancům BEAUFY s.r.o. v rozsahu nezbytném pro vyřízení poptávky</li>
-    <li>Poskytovatelům IT infrastruktury (hosting), kteří jsou vázáni mlčenlivostí a zpracovávají údaje pouze na základě smlouvy o zpracování</li>
-  </ul>
-  <p>Údaje nejsou předávány do třetích zemí mimo EU/EHP.</p>
+    <h2>4. Příjemci osobních údajů</h2>
+    <p>Vaše osobní údaje nepředáváme třetím stranám za účelem marketingu. Údaje mohou být zpřístupněny:</p>
+    <ul>
+      <li>Zaměstnancům BEAUFY s.r.o. v rozsahu nezbytném pro vyřízení poptávky</li>
+      <li>Poskytovatelům IT infrastruktury (hosting), kteří jsou vázáni mlčenlivostí a zpracovávají údaje pouze na základě smlouvy o zpracování</li>
+    </ul>
+    <p>Údaje nejsou předávány do třetích zemí mimo EU/EHP.</p>
 
-  <h2>5. Vaše práva</h2>
-  <p>V souladu s GDPR máte tato práva:</p>
-  <ul>
-    <li><strong>Právo na přístup</strong> — kdykoli nás požádat o informaci, jaké údaje o vás zpracováváme</li>
-    <li><strong>Právo na opravu</strong> — požádat o opravu nepřesných nebo neúplných údajů</li>
-    <li><strong>Právo na výmaz</strong> — požádat o smazání údajů, pokud odpadl účel zpracování nebo jste odvolali souhlas</li>
-    <li><strong>Právo na omezení zpracování</strong> — požádat o dočasné omezení zpracování</li>
-    <li><strong>Právo na přenositelnost</strong> — obdržet své údaje ve strojově čitelném formátu</li>
-    <li><strong>Právo vznést námitku</strong> — proti zpracování na základě oprávněného zájmu</li>
-    <li><strong>Právo odvolat souhlas</strong> — kdykoli bez uvedení důvodu; odvolání nemá vliv na zákonnost zpracování před odvoláním</li>
-  </ul>
-  <p>Žádosti uplatňujte e-mailem na <a href="mailto:info@beaufy.eu">info@beaufy.eu</a>. Odpovíme do 30 dnů.</p>
+    <h2>5. Vaše práva</h2>
+    <p>V souladu s GDPR máte tato práva:</p>
+    <ul>
+      <li><strong>Právo na přístup</strong> — kdykoli nás požádat o informaci, jaké údaje o vás zpracováváme</li>
+      <li><strong>Právo na opravu</strong> — požádat o opravu nepřesných nebo neúplných údajů</li>
+      <li><strong>Právo na výmaz</strong> — požádat o smazání údajů, pokud odpadl účel zpracování nebo jste odvolali souhlas</li>
+      <li><strong>Právo na omezení zpracování</strong> — požádat o dočasné omezení zpracování</li>
+      <li><strong>Právo na přenositelnost</strong> — obdržet své údaje ve strojově čitelném formátu</li>
+      <li><strong>Právo vznést námitku</strong> — proti zpracování na základě oprávněného zájmu</li>
+      <li><strong>Právo odvolat souhlas</strong> — kdykoli bez uvedení důvodu; odvolání nemá vliv na zákonnost zpracování před odvoláním</li>
+    </ul>
+    <p>Žádosti uplatňujte e-mailem na <a href="mailto:info@beaufy.eu">info@beaufy.eu</a>. Odpovíme do 30 dnů.</p>
 
-  <div class="notice">
-    Máte rovněž právo podat stížnost u dozorového orgánu — <strong>Úřadu pro ochranu osobních údajů</strong>, Pplk. Sochora 27, 170 00 Praha 7, <a href="https://www.uoou.cz" target="_blank">www.uoou.cz</a>.
+    <div class="notice">
+      Máte rovněž právo podat stížnost u dozorového orgánu — <strong>Úřadu pro ochranu osobních údajů</strong>, Pplk. Sochora 27, 170 00 Praha 7, <a href="https://www.uoou.cz" target="_blank" rel="noopener">www.uoou.cz</a>.
+    </div>
+
+    <h2>6. Zabezpečení</h2>
+    <p>Přijali jsme technická a organizační opatření k ochraně osobních údajů před neoprávněným přístupem, ztrátou nebo zneužitím. Web je provozován přes zabezpečené HTTPS připojení.</p>
+
+    <h2>7. Cookies</h2>
+    <p>Web beaufy.eu používá pouze technicky nezbytné soubory cookies (ukládání volby souhlasu s cookies do localStorage prohlížeče). Nepoužíváme analytické ani marketingové cookies.</p>
+
+    <h2>8. Dozor nad zdravotnickými prostředky</h2>
+    <p>Dozor nad zdravotnickými prostředky v ČR vykonává <strong>Státní ústav pro kontrolu léčiv (SÚKL)</strong>, <a href="https://www.sukl.cz" target="_blank" rel="noopener">www.sukl.cz</a>, Šrobárova 48, 100 41 Praha 10.</p>
+
+    <h2>9. Změny těchto zásad</h2>
+    <p>Tyto zásady můžeme příležitostně aktualizovat. O podstatných změnách budeme informovat na této stránce s uvedením data aktualizace.</p>
   </div>
-
-  <h2>6. Zabezpečení</h2>
-  <p>Přijali jsme technická a organizační opatření k ochraně osobních údajů před neoprávněným přístupem, ztrátou nebo zneužitím. Web je provozován přes zabezpečené HTTPS připojení.</p>
-
-  <h2>7. Cookies</h2>
-  <p>Web beaufy.eu používá pouze technicky nezbytné soubory cookies (ukládání volby souhlasu s cookies do localStorage prohlížeče). Nepoužíváme analytické ani marketingové cookies.</p>
-  <p>Pokud přijmete cookies, mohou být načítána písma z externích serverů Google Fonts, při čemž může být Googlu předána vaše IP adresa. Více informací: <a href="https://policies.google.com/privacy" target="_blank">Zásady ochrany soukromí Google</a>.</p>
-
-  <h2>8. Dozor nad zdravotnickými prostředky</h2>
-  <p>Dozor nad zdravotnickými prostředky v ČR vykonává <strong>Státní ústav pro kontrolu léčiv (SÚKL)</strong>, <a href="https://www.sukl.cz" target="_blank">www.sukl.cz</a>, Šrobárova 48, 100 41 Praha 10.</p>
-
-  <h2>9. Změny těchto zásad</h2>
-  <p>Tyto zásady můžeme příležitostně aktualizovat. O podstatných změnách budeme informovat na této stránce s uvedením data aktualizace.</p>
 </main>
 
-<footer>
-  <p><a href="index.html">Zpět na beaufy.eu</a> &nbsp;·&nbsp; BEAUFY s.r.o. &nbsp;·&nbsp; IČO: 06867031 &nbsp;·&nbsp; <a href="mailto:info@beaufy.eu">info@beaufy.eu</a></p>
-</footer>
+<!-- @include _partials/footer.html -->
 
 </body>
 </html>

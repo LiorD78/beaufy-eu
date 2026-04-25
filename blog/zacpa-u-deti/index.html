@@ -59,6 +59,9 @@
     .ingredient-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
     .ingredient-card { border-radius: 16px; overflow: hidden; position: relative; height: 220px; display: flex; flex-direction: column; justify-content: flex-end; }
     .ingredient-card-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .4s ease; }
+    .ingredient-bg-glycerol { background-image: url('/blog/img/glycerol.jpg'); background-image: image-set(url('/blog/img/glycerol.webp') type('image/webp'), url('/blog/img/glycerol.jpg') type('image/jpeg')); }
+    .ingredient-bg-hermanak { background-image: url('/blog/img/hermanak.jpg'); background-image: image-set(url('/blog/img/hermanak.webp') type('image/webp'), url('/blog/img/hermanak.jpg') type('image/jpeg')); }
+    .ingredient-bg-slez { background-image: url('/blog/img/slez.jpg'); background-image: image-set(url('/blog/img/slez.webp') type('image/webp'), url('/blog/img/slez.jpg') type('image/jpeg')); }
     .ingredient-card:hover .ingredient-card-bg { transform: scale(1.05); }
     .ingredient-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,44,74,.85) 0%, rgba(11,44,74,.2) 60%, transparent 100%); }
     .ingredient-card-body { position: relative; z-index: 2; padding: 20px; }
@@ -153,7 +156,7 @@
 
           <div class="ingredient-grid">
             <div class="ingredient-card">
-              <div class="ingredient-card-bg" style="background-image:url('/blog/img/glycerol.jpg')"></div>
+              <div class="ingredient-card-bg ingredient-bg-glycerol"></div>
               <div class="ingredient-card-overlay"></div>
               <div class="ingredient-card-body">
                 <div class="ingredient-name">Glycerol</div>
@@ -161,7 +164,7 @@
               </div>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-card-bg" style="background-image:url('/blog/img/hermanak.jpg')"></div>
+              <div class="ingredient-card-bg ingredient-bg-hermanak"></div>
               <div class="ingredient-card-overlay"></div>
               <div class="ingredient-card-body">
                 <div class="ingredient-name">Heřmánek</div>
@@ -169,7 +172,7 @@
               </div>
             </div>
             <div class="ingredient-card">
-              <div class="ingredient-card-bg" style="background-image:url('/blog/img/slez.jpg')"></div>
+              <div class="ingredient-card-bg ingredient-bg-slez"></div>
               <div class="ingredient-card-overlay"></div>
               <div class="ingredient-card-body">
                 <div class="ingredient-name">Sléz</div>

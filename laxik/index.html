@@ -399,6 +399,24 @@
     .crosssell-card-name { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 2px; }
     .crosssell-card-desc { font-size: .82rem; color: var(--muted); }
     .crosssell-card-arrow { font-size: 1.4rem; color: var(--navy); margin-left: auto; flex-shrink: 0; }
+      /* Related articles section */
+    .related-articles { background: var(--bg); padding: 64px 40px; border-top: 1px solid var(--border); }
+    .related-articles-inner { max-width: 1200px; margin: 0 auto; }
+    .related-articles-head { text-align: center; margin-bottom: 40px; }
+    .related-articles-head .section-label { color: var(--blue-lt); margin-bottom: 8px; }
+    .related-articles-head h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem,2.5vw,1.9rem); font-weight: 400; background: var(--h2-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .related-articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .article-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-card); transition: var(--transition); border: 2px solid transparent; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+    .article-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
+    .article-card-img { height: 180px; overflow: hidden; background: var(--bg); }
+    .article-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .article-card:hover .article-card-img img { transform: scale(1.04); }
+    .article-card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .article-card .article-tag { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue-lt); margin-bottom: 10px; }
+    .article-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-weight: 400; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+    .article-card p { font-size: .87rem; color: var(--muted); line-height: 1.65; flex: 1; }
+    .article-card .article-read { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-size: .82rem; font-weight: 600; color: var(--blue-lt); }
+    @media (max-width: 600px) { .related-articles { padding: 48px 20px; } }
   </style>
 
   <!-- JSON-LD structured data for Google Rich Results -->
@@ -987,6 +1005,45 @@
 </section>
 
 <!-- DISCLAIMER -->
+<section class="related-articles">
+  <div class="related-articles-inner">
+    <div class="related-articles-head">
+      <div class="section-label">Více informací</div>
+      <h2>Související články</h2>
+    </div>
+    <div class="related-articles-grid">
+      <a href="/blog/mikroklystyr-lecba-zacpy/" class="article-card">
+        <div class="article-card-img">
+          <picture>
+            <source srcset="/blog/img/boy.webp" type="image/webp">
+            <img src="/blog/img/boy.jpg" alt="Mikroklystýr u dětí" width="1920" height="1072" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="article-card-body">
+          <span class="article-tag">Léčba zácpy</span>
+          <h3>Jak léčit zácpu u malých dětí?</h3>
+          <p>Mikroklystýr je méně známá, ale nečekaně šetrná varianta. Co to je a jak funguje?</p>
+          <span class="article-read">Číst článek →</span>
+        </div>
+      </a>
+      <a href="/blog/zacpa-u-deti/" class="article-card">
+        <div class="article-card-img">
+          <picture>
+            <source srcset="/blog/img/potty.webp" type="image/webp">
+            <img src="/blog/img/potty.jpg" alt="Zácpa u dětí" width="1920" height="1072" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="article-card-body">
+          <span class="article-tag">Zácpa u dětí</span>
+          <h3>Zácpa trápí až 40 % dětí po pátém roce věku</h3>
+          <p>Odborníci upozorňují na nutnost prevence i včasné léčby. Jak poznat funkční zácpu a co s ní dělat?</p>
+          <span class="article-read">Číst článek →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <div class="disclaimer-bar">
   <p><strong>Zdravotnický prostředek třídy I.</strong> Před použitím si přečtěte návod k použití. Výrobce: New.Fa.Dem. Srl, Itálie. Distributor pro ČR a SR: BEAUFY s.r.o., U Trati 886/52, 100 00 Praha 10, IČ:&nbsp;<span style="color:inherit !important;text-decoration:none !important;pointer-events:none;">06867031</span>.</p>
 </div>

@@ -31,6 +31,7 @@
     .blog-hero-img {
       position: absolute; inset: 0;
       background: url('/blog/img/blog-hero.jpg') right center / cover no-repeat;
+      background: image-set(url('/blog/img/blog-hero.webp') type('image/webp'), url('/blog/img/blog-hero.jpg') type('image/jpeg')) right center / cover no-repeat;
     }
     .blog-hero-gradient {
       position: absolute; inset: 0;
@@ -106,7 +107,7 @@
 
       <a href="/blog/zacpa-u-deti/" class="article-card">
         <div class="article-card-img">
-          <img src="/blog/img/potty.jpg" alt="Zácpa u dětí">
+          <picture><source srcset="/blog/img/potty.webp" type="image/webp"><img src="/blog/img/potty.jpg" alt="Zácpa u dětí"></picture>
         </div>
         <div class="article-card-body">
           <span class="article-tag">Zácpa u dětí</span>
@@ -121,7 +122,7 @@
 
       <a href="/blog/mikroklystyr-lecba-zacpy/" class="article-card">
         <div class="article-card-img">
-          <img src="/blog/img/boy.jpg" alt="Mikroklystýr pro děti">
+          <picture><source srcset="/blog/img/boy.webp" type="image/webp"><img src="/blog/img/boy.jpg" alt="Mikroklystýr pro děti"></picture>
         </div>
         <div class="article-card-body">
           <span class="article-tag">Léčba zácpy</span>
@@ -136,7 +137,7 @@
 
       <a href="/blog/glycerol-zacpa-u-dospelych/" class="article-card">
         <div class="article-card-img">
-          <img src="/blog/img/glycerol-hero.jpg" alt="Zácpa u dospělých">
+          <picture><source srcset="/blog/img/glycerol-hero.webp" type="image/webp"><img src="/blog/img/glycerol-hero.jpg" alt="Zácpa u dospělých"></picture>
         </div>
         <div class="article-card-body">
           <span class="article-tag">Zácpa u dospělých</span>

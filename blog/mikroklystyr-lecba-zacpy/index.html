@@ -28,6 +28,11 @@
       position: absolute; inset: 0;
       background-size: cover; background-position: center;
     }
+    .article-hero-bg-boy {
+      background-image: url('/blog/img/boy.jpg');
+      background-image: image-set(url('/blog/img/boy.webp') type('image/webp'), url('/blog/img/boy.jpg') type('image/jpeg'));
+      background-position: right center;
+    }
     .article-hero-gradient {
       position: absolute; inset: 0;
       background: linear-gradient(to right, rgba(11,44,74,.95) 0%, rgba(11,44,74,.85) 25%, rgba(19,74,142,.6) 50%, rgba(31,95,166,.2) 75%, rgba(31,95,166,0) 100%);
@@ -106,7 +111,7 @@
 </nav>
 
 <section class="article-hero">
-  <div class="article-hero-bg" style="background-image:url('/blog/img/boy.jpg');background-position:right center;"></div>
+  <div class="article-hero-bg article-hero-bg-boy"></div>
   <div class="article-hero-gradient"></div>
   <div class="inner">
     <div class="breadcrumb"><a href="/">BEAUFY</a> / <a href="/blog/">Blog</a> / Léčba zácpy</div>

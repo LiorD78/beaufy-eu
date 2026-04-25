@@ -93,23 +93,7 @@
 </head>
 <body>
 
-<nav id="nav">
-  <div class="nav-inner" id="navInner">
-    <div class="nav-top-row">
-      <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
-      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav-links" id="navLinks">
-      <a href="/#produkty" data-nav="produkty">Produkty</a>
-      <a href="/#o-nas" data-nav="o-nas">O nás</a>
-      <a href="/blog/" data-nav="blog">Blog</a>
-      <a href="/#kontakt" data-nav="kontakt">Kontakty</a>
-      <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
-    </div>
-  </div>
-</nav>
+<!-- @include _partials/nav.html -->
 
 <section class="article-hero">
   <div class="article-hero-bg article-hero-bg-potty"></div>
@@ -205,57 +189,7 @@
   </div>
 </section>
 
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="/BEAUFY_logo.png" alt="BEAUFY" class="footer-logo-img">
-      <p>Česko-slovenský distributor zdravotnických prostředků EU původu. Zásobujeme lékárny, nemocnice a soukromé lékaře s osobním přístupem.</p>
-    </div>
-    <div class="footer-col">
-      <h5>Produkty</h5>
-      <ul>
-        <li><a href="/laxik/">Laxík mikroklystýr</a></li>
-        <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
-        <li><a href="/dispogel/">DISPO GEL</a></li>
-        <li><a href="/instantni-termoterapie/">Instantní termoterapie</a></li>
-        <li><a href="/dispo-ice/">DISPO ICE Spray</a></li>
-        <li><a href="/zensen/">Ženšen</a></li>
-        <li><a href="https://www.formoline112.cz" target="_blank" rel="noopener">formoline L112 EXTRA ↗</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Společnost</h5>
-      <ul>
-        <li><a href="/#o-nas">O nás</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/#kontakt">Kontakty</a></li>
-        <li><a href="/#kontakt">Pro lékárny</a></li>
-        <li><a href="/#kontakt">Dokumenty</a></li>
-        <li><a href="/zasady-ochrany-osobnich-udaju.html">Ochrana os. údajů</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h5>Kontakt</h5>
-      <ul>
-        <li><a href="tel:+420799022658">+420 799 022 658</a></li>
-        <li><a href="mailto:info@beaufy.eu">info@beaufy.eu</a></li>
-        <li><a href="#">U Trati 886/52, Praha 10</a></li>
-      </ul>
-      <div class="footer-legal-info">
-        <p>IČ: <span style="-webkit-text-stroke:0;color:inherit !important;font-size:inherit;text-decoration:none !important;pointer-events:none;">06867031</span></p>
-        <p>DIČ: <span style="-webkit-text-stroke:0;color:inherit !important;font-size:inherit;text-decoration:none !important;pointer-events:none;">CZ06867031</span></p>
-        <p>Zapsáno v OR vedeném Městským<br>soudem v Praze, odd. C, vl. 289395</p>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 BEAUFY s.r.o.</p>
-    <div class="footer-legal">
-      <a href="/zasady-ochrany-osobnich-udaju.html">Ochrana osobních údajů</a>
-      <a href="mailto:info@beaufy.eu">Kontakt</a>
-    </div>
-  </div>
-</footer>
+<!-- @include _partials/footer.html -->
 
 <button class="scroll-top" id="scrollTop" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>

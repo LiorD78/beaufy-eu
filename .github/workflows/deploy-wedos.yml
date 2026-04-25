@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Inline partials (build-includes)
+        run: python3 build-includes.py
+
       - name: Sync to Wedos via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -28,6 +31,8 @@ jobs:
             **/README.md
             **/docs/**
             **/_originals/**
+            **/_partials/**
+            **/build-includes.py
             **/index_backup_original.html
             **/.DS_Store
             **/.gitignore

@@ -1,0 +1,76 @@
+# v2 — Refactored to use LiorD78/seo-pipeline@v1 reusable action.
+# Purpose: validate seo-pipeline action in production-like conditions
+# without auto-triggering on push.
+#
+# After validation, this file replaces deploy-wedos.yml and gets
+# `on: push: branches: [main]` re-enabled.
+
+name: Deploy to Wedos (v2 - reusable SEO action)
+
+on:
+  workflow_dispatch:
+    inputs:
+      skip_ftp:
+        description: 'Skip FTP sync (only run SEO pipeline)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Inline partials (build-includes)
+        run: python3 build-includes.py
+
+      - name: Sync to Wedos via FTP
+        if: ${{ inputs.skip_ftp != 'true' }}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.WEDOS_FTP_SERVER }}
+          username: ${{ secrets.WEDOS_FTP_USERNAME }}
+          password: ${{ secrets.WEDOS_FTP_PASSWORD }}
+          server-dir: /www/
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
+            **/docs/**
+            **/_originals/**
+            **/_partials/**
+            **/build-includes.py
+            **/index_backup_original.html
+            **/.DS_Store
+            **/.gitignore
+            **/*.zip
+          state-name: .ftp-deploy-sync-state.json
+          dry-run: false
+          log-level: standard
+
+      - name: SEO Pipeline (IndexNow + FB Graph)
+        uses: LiorD78/seo-pipeline@v1
+        with:
+          host: www.beaufy.eu
+          indexnow-key: d2aef38ffc3aff99319c9ab844ebfba6
+          fb-access-token: ${{ secrets.FB_APP_ACCESS_TOKEN }}
+          url-list: |
+            https://www.beaufy.eu/
+            https://www.beaufy.eu/laxik/
+            https://www.beaufy.eu/glycerol/
+            https://www.beaufy.eu/zensen/
+            https://www.beaufy.eu/dispogel/
+            https://www.beaufy.eu/dispo-ice/
+            https://www.beaufy.eu/instantni-termoterapie/
+            https://www.beaufy.eu/blog/
+            https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/
+            https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/
+            https://www.beaufy.eu/blog/zacpa-u-deti/
+            https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html

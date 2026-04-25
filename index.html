@@ -1077,25 +1077,25 @@
         <h3>Napište nám</h3>
         <div class="form-row">
           <div class="form-group">
-            <label>Jméno a příjmení</label>
-            <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+            <label for="form-jmeno">Jméno a příjmení</label>
+            <input id="form-jmeno" type="text" name="jmeno" placeholder="Vaše jméno" required>
           </div>
           <div class="form-group">
-            <label>Název lékárny / instituce</label>
-            <input type="text" name="instituce" placeholder="Název organizace">
+            <label for="form-instituce">Název lékárny / instituce</label>
+            <input id="form-instituce" type="text" name="instituce" placeholder="Název organizace">
           </div>
         </div>
         <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" name="email" placeholder="vas@email.cz" required>
+          <label for="form-email">E-mail</label>
+          <input id="form-email" type="email" name="email" placeholder="vas@email.cz" required>
         </div>
         <div class="form-group">
-          <label>Telefon</label>
-          <input type="tel" name="telefon" placeholder="+420 xxx xxx xxx">
+          <label for="form-telefon">Telefon</label>
+          <input id="form-telefon" type="tel" name="telefon" placeholder="+420 xxx xxx xxx">
         </div>
         <div class="form-group">
-          <label>Zájem o produkt</label>
-          <select name="produkt">
+          <label for="form-produkt">Zájem o produkt</label>
+          <select id="form-produkt" name="produkt">
             <option value="">Vyberte produkt...</option>
             <option>formoline L112 EXTRA</option>
             <option>Laxík – mikroklystýr pro děti</option>
@@ -1103,12 +1103,13 @@
             <option>DISPO GEL</option>
             <option>DISPO ICE spray</option>
             <option>ŽENŠEN Ginseng Royal Jelly</option>
+            <option>Instantní termoterapie (EASY ICE a DISPO HOT)</option>
             <option>Celé portfolio</option>
           </select>
         </div>
         <div class="form-group">
-          <label>Zpráva</label>
-          <textarea name="zprava" placeholder="Jak vám můžeme pomoci? Uveďte např. objednávkové množství nebo dotazy k produktům..."></textarea>
+          <label for="form-zprava">Zpráva</label>
+          <textarea id="form-zprava" name="zprava" placeholder="Jak vám můžeme pomoci? Uveďte např. objednávkové množství nebo dotazy k produktům..."></textarea>
         </div>
         <div class="form-gdpr">
           <input type="checkbox" id="gdpr-consent" required>

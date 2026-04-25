@@ -18,7 +18,6 @@
 
     /* ── NAV ── */
 
-    nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
 
     nav.scrolled .nav-mobile-btn span { background: var(--navy); }
 
@@ -54,7 +53,6 @@
     .hero-text { color: #fff; max-width: 560px; }
     .hero-breadcrumb { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 16px; }
     .hero-breadcrumb a { color: rgba(255,255,255,.6); text-decoration: none; }
-    .hero-breadcrumb a:hover { color: #fff; }
     .hero-cat {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
@@ -67,7 +65,6 @@
       font-size: clamp(2.2rem, 4.5vw, 3.2rem);
       line-height: 1.12; font-weight: 400; color: #fff; margin-bottom: 20px;
     }
-    .hero h1 em { font-style: italic; color: var(--teal); }
     .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.78); line-height: 1.75; margin-bottom: 32px; max-width: 460px; }
     .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
     .chip {
@@ -86,7 +83,6 @@
     .hero-img img { max-width: 100%; max-height: 420px; object-fit: contain; filter: drop-shadow(0 24px 48px rgba(0,0,0,.3)); }
 
     /* ── SHARED ── */
-    section { padding: 80px 40px; }
 
     .section-label { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
     h2 {
@@ -99,7 +95,6 @@
       display: inline-block; width: fit-content; max-width: 100%;
       margin-bottom: 16px;
     }
-    .section-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
 
     /* ── VARIANTY ── */
     .variants { background: var(--bg); }
@@ -119,9 +114,6 @@
     .variant-btn:hover { background: #d97706; transform: translateY(-1px); }
 
     /* ── INFO TABS ── */
-    .info-section { background: var(--white); }
-    .info-tabs-wrap { max-width: 860px; }
-    .info-tabs-nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 32px; }
     .info-tab-btn {
       padding: 8px 18px; border-radius: 99px; font-size: .85rem; font-weight: 600;
       cursor: pointer; border: 1.5px solid rgba(11,44,74,.18);
@@ -129,10 +121,7 @@
       transition: all .18s; white-space: nowrap;
     }
     .info-tab-btn:hover { border-color: var(--blue-mid,#134a8e); color: var(--blue-mid,#134a8e); }
-    .info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
     .info-tab-panels { position: relative; transition: min-height .25s ease; }
-    .info-tab-panel { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
-    .info-tab-panel.active { visibility: visible; position: relative; pointer-events: auto; }
     /* karty */
     .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
     .info-card {
@@ -211,11 +200,8 @@
 
     /* ── KDE KOUPIT ── */
     .buy { background: var(--white); padding: 64px 40px; }
-    .buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
-    .buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
     .buy-logos { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 24px 40px; }
     .partner-logo-link { display: flex; align-items: center; justify-content: center; transition: var(--transition); cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0.1); }
-    .partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
     .partner-logo-link img { height: 60px; width: auto; max-width: 180px; display: block; pointer-events: none; }
     .buy-wholesale { margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--border); }
     .buy-wholesale-title { font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; text-align: center; }
@@ -299,10 +285,8 @@
     }
     .faq-btn:hover { color: var(--blue-mid, #134a8e); }
     .faq-icon { width: 20px; height: 20px; flex-shrink: 0; margin-left: 16px; transition: transform .3s; color: var(--blue-mid, #134a8e); }
-    .faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
     .faq-body { display: none; padding: 0 0 20px 0; }
     .faq-body[aria-hidden="false"] { display: block; }
-    .faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
 
     /* info-blocks removed */
 
@@ -312,8 +296,6 @@
     }
 
     /* ── DISCLAIMER ── */
-    .disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
-    .disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }
 
     /* ── FOOTER ── */
 

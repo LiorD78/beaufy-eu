@@ -400,8 +400,23 @@ footer { background: var(--section-dark-bg); padding: 60px 40px 32px; color: rgb
 }
 
 
+/* ─── Product page shared components (migrated from inline <style> blocks) ─── */
 
-
-
-
-
+nav.scrolled .nav-logo-img { filter: brightness(0) saturate(100%) invert(11%) sepia(52%) saturate(800%) hue-rotate(185deg) brightness(95%) contrast(97%); }
+.hero-breadcrumb a:hover { color: #fff; }
+.hero h1 em { font-style: italic; color: var(--teal); }
+section { padding: 80px 40px; }
+.section-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
+.info-section { background: var(--white); }
+.info-tabs-wrap { max-width: 860px; }
+.info-tabs-nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 32px; }
+.info-tab-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.info-tab-panel { visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; pointer-events: none; }
+.info-tab-panel.active { visibility: visible; position: relative; pointer-events: auto; }
+.buy-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.buy-title { font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 40px; display: block; }
+.partner-logo-link:hover { transform: translateY(-3px); opacity: .75; }
+.faq-btn[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+.faq-body p { font-size: .95rem; line-height: 1.75; color: #4a5568; margin: 0; }
+.disclaimer-bar { background: #eef4fa; padding: 24px 40px; border-top: 1px solid var(--border); }
+.disclaimer-bar p { max-width: 1200px; margin: 0 auto; font-size: .8rem; color: var(--muted); line-height: 1.6; }

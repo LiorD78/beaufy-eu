@@ -219,13 +219,15 @@
   <div class="nav-inner" id="navInner">
     <div class="nav-top-row">
       <a class="nav-logo" href="/"><img src="/BEAUFY_logo.png" alt="BEAUFY" id="navLogo" class="nav-logo-img"></a>
-      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-mobile-btn" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="/#produkty">Produkty</a>
-      <a href="/#o-nas">O nás</a>
-      <a href="/blog/">Blog</a>
-      <a href="/#kontakt">Kontakty</a>
+      <a href="/#produkty" data-nav="produkty">Produkty</a>
+      <a href="/#o-nas" data-nav="o-nas">O nás</a>
+      <a href="/blog/" data-nav="blog">Blog</a>
+      <a href="/#kontakt" data-nav="kontakt">Kontakty</a>
       <a href="/#kontakt" class="nav-cta">Pro lékárny</a>
     </div>
   </div>
@@ -519,14 +521,19 @@
         <li><a href="/glycerol/">Glycerol New.Fa.Dem.</a></li>
         <li><a href="/dispogel/">DISPO GEL</a></li>
         <li><a href="/instantni-termoterapie/">Instantní termoterapie</a></li>
+        <li><a href="/dispo-ice/">DISPO ICE Spray</a></li>
+        <li><a href="/zensen/">Ženšen</a></li>
+        <li><a href="https://www.formoline112.cz" target="_blank" rel="noopener">formoline L112 EXTRA ↗</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Společnost</h5>
       <ul>
         <li><a href="/#o-nas">O nás</a></li>
+        <li><a href="/blog/">Blog</a></li>
         <li><a href="/#kontakt">Kontakty</a></li>
         <li><a href="/#kontakt">Pro lékárny</a></li>
+        <li><a href="/#kontakt">Dokumenty</a></li>
         <li><a href="/zasady-ochrany-osobnich-udaju.html">Ochrana os. údajů</a></li>
       </ul>
     </div>
@@ -608,6 +615,29 @@
     else if (panelId === 'it-dispo-hot') switchBuyTab('hot');
     _tabSyncing = false;
   }
+</script>
+<script>
+  // Mark active nav link based on current URL
+  (function() {
+    const path = window.location.pathname;
+    const navMap = {
+      '/blog/': 'blog',
+      '/laxik/': 'produkty',
+      '/glycerol/': 'produkty',
+      '/dispogel/': 'produkty',
+      '/dispo-ice/': 'produkty',
+      '/instantni-termoterapie/': 'produkty',
+      '/zensen/': 'produkty',
+    };
+    let active = null;
+    for (const [p, k] of Object.entries(navMap)) {
+      if (path === p || path.startsWith(p)) { active = k; break; }
+    }
+    if (active) {
+      const el = document.querySelector(`.nav-links a[data-nav="${active}"]`);
+      if (el) el.classList.add('active');
+    }
+  })();
 </script>
 </body>
 </html>

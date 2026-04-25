@@ -1,0 +1,38 @@
+name: Deploy to Wedos
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:  # umožní spustit ručně z GitHub UI
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Sync to Wedos via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.WEDOS_FTP_SERVER }}
+          username: ${{ secrets.WEDOS_FTP_USERNAME }}
+          password: ${{ secrets.WEDOS_FTP_PASSWORD }}
+          server-dir: /www/
+          local-dir: ./
+          # Soubory které NEMAJÍ jít na produkci
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/README.md
+            **/docs/**
+            **/index_backup_original.html
+            **/.DS_Store
+            **/.gitignore
+            **/*.zip
+          # FTP-Deploy-Action automaticky porovnává soubory přes .ftp-deploy-sync-state.json
+          # a nahrává jen ty změněné. První deploy = nahraje vše.
+          state-name: .ftp-deploy-sync-state.json
+          dry-run: true
+          log-level: standard

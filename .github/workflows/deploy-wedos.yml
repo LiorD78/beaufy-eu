@@ -1,9 +1,12 @@
 name: Deploy to Wedos
 
+# Refactored 2026-04-25 to use LiorD78/seo-pipeline@v1 reusable composite action.
+# Reduced from 123 → ~60 lines by extracting IndexNow + FB Graph logic.
+
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # umožní spustit ručně z GitHub UI
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -23,7 +26,6 @@ jobs:
           password: ${{ secrets.WEDOS_FTP_PASSWORD }}
           server-dir: /www/
           local-dir: ./
-          # Soubory které NEMAJÍ jít na produkci
           exclude: |
             **/.git*
             **/.git*/**
@@ -37,87 +39,26 @@ jobs:
             **/.DS_Store
             **/.gitignore
             **/*.zip
-          # FTP-Deploy-Action automaticky porovnává soubory přes .ftp-deploy-sync-state.json
-          # a nahrává jen ty změněné. První deploy = nahraje vše.
           state-name: .ftp-deploy-sync-state.json
           dry-run: false
           log-level: standard
 
-      - name: Notify IndexNow (Bing) about updated URLs
-        # Pingne IndexNow API se seznamem všech veřejných URL po každém deploy.
-        # Bing pak rychle stáhne aktualizovaný obsah. Yandex i Seznam také naslouchají.
-        # API klíč je veřejný — slouží jen jako autentizace, že vlastníme doménu.
-        run: |
-          curl -X POST "https://api.indexnow.org/indexnow" \
-            -H "Content-Type: application/json; charset=utf-8" \
-            -d '{
-              "host": "www.beaufy.eu",
-              "key": "d2aef38ffc3aff99319c9ab844ebfba6",
-              "keyLocation": "https://www.beaufy.eu/d2aef38ffc3aff99319c9ab844ebfba6.txt",
-              "urlList": [
-                "https://www.beaufy.eu/",
-                "https://www.beaufy.eu/laxik/",
-                "https://www.beaufy.eu/glycerol/",
-                "https://www.beaufy.eu/zensen/",
-                "https://www.beaufy.eu/dispogel/",
-                "https://www.beaufy.eu/dispo-ice/",
-                "https://www.beaufy.eu/instantni-termoterapie/",
-                "https://www.beaufy.eu/blog/",
-                "https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/",
-                "https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/",
-                "https://www.beaufy.eu/blog/zacpa-u-deti/",
-                "https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html"
-              ]
-            }' \
-            -w "\nHTTP Status: %{http_code}\n" \
-            --fail-with-body || echo "IndexNow ping failed (non-blocking)"
-
-      - name: Refresh Facebook Open Graph cache
-        # Pro každou URL pošle POST do Graph API se scrape=true.
-        # FB znovu stáhne stránku a aktualizuje OG cache (title, description, image).
-        # Bez tohoto kroku FB cache visí ~7 dní. App Access Token = {App ID}|{App Secret}
-        # je v GitHub Secret FB_APP_ACCESS_TOKEN. Token je dlouhodobý, neexpiruje.
-        env:
-          FB_TOKEN: ${{ secrets.FB_APP_ACCESS_TOKEN }}
-        run: |
-          if [ -z "$FB_TOKEN" ]; then
-            echo "⚠️  FB_APP_ACCESS_TOKEN secret not set — skipping FB cache refresh"
-            exit 0
-          fi
-
-          URLS=(
-            "https://www.beaufy.eu/"
-            "https://www.beaufy.eu/laxik/"
-            "https://www.beaufy.eu/glycerol/"
-            "https://www.beaufy.eu/zensen/"
-            "https://www.beaufy.eu/dispogel/"
-            "https://www.beaufy.eu/dispo-ice/"
-            "https://www.beaufy.eu/instantni-termoterapie/"
-            "https://www.beaufy.eu/blog/"
-            "https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/"
-            "https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/"
-            "https://www.beaufy.eu/blog/zacpa-u-deti/"
-            "https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html"
-          )
-
-          SUCCESS=0
-          FAILED=0
-          for URL in "${URLS[@]}"; do
-            STATUS=$(curl -sX POST \
-              "https://graph.facebook.com/?id=${URL}&scrape=true&access_token=${FB_TOKEN}" \
-              -o /tmp/fb_resp.json \
-              -w "%{http_code}")
-            if [ "$STATUS" = "200" ]; then
-              SUCCESS=$((SUCCESS + 1))
-              echo "  ✅ ${URL}"
-            else
-              FAILED=$((FAILED + 1))
-              echo "  ❌ ${URL} (HTTP ${STATUS})"
-              cat /tmp/fb_resp.json 2>/dev/null | head -3
-            fi
-          done
-
-          echo ""
-          echo "FB OG refresh: ${SUCCESS} success, ${FAILED} failed"
-          # Non-blocking — pokud FB API selže, deploy neselže
-          exit 0
+      - name: SEO Pipeline (IndexNow + FB Graph)
+        uses: LiorD78/seo-pipeline@v1
+        with:
+          host: www.beaufy.eu
+          indexnow-key: d2aef38ffc3aff99319c9ab844ebfba6
+          fb-access-token: ${{ secrets.FB_APP_ACCESS_TOKEN }}
+          url-list: |
+            https://www.beaufy.eu/
+            https://www.beaufy.eu/laxik/
+            https://www.beaufy.eu/glycerol/
+            https://www.beaufy.eu/zensen/
+            https://www.beaufy.eu/dispogel/
+            https://www.beaufy.eu/dispo-ice/
+            https://www.beaufy.eu/instantni-termoterapie/
+            https://www.beaufy.eu/blog/
+            https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/
+            https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/
+            https://www.beaufy.eu/blog/zacpa-u-deti/
+            https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html

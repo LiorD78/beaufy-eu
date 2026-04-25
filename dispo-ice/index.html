@@ -150,7 +150,11 @@
     .crosssell-text { flex: 1; min-width: 260px; }
     .crosssell-text h3 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem,2.5vw,1.9rem); line-height: 1.2; font-weight: 400; background: var(--h2-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
     .crosssell-text p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+        .crosssell-cards { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-width: 320px; }
+    @media (max-width: 720px) { .crosssell-cards { grid-template-columns: 1fr; } }
     .crosssell-card { display: flex; align-items: center; gap: 20px; background: var(--bg); border-radius: 20px; padding: 20px 24px; box-shadow: var(--shadow-card); text-decoration: none; transition: var(--transition); border: 2px solid transparent; max-width: 360px; }
+    /* 2-card crosssell — override max-width pro grid layout */
+    .crosssell-cards .crosssell-card { max-width: none; }
     .crosssell-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--blue); }
     .crosssell-card img { height: 80px; width: auto; object-fit: contain; flex-shrink: 0; }
     .crosssell-card-label { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
@@ -621,18 +625,29 @@
   <div class="crosssell-inner">
     <div class="crosssell-text reveal">
       <div class="section-label">Také od BEAUFY</div>
-      <h3>Hledáte opakovaně použitelný gelový sáček?</h3>
-      <p>DISPO GEL je gelový sáček pro tepelnou i chladovou terapii — použijete ho stokrát. Mrazák pro chlad, mikrovlnka nebo horká voda pro teplo. Dostupný v 8 rozměrech.</p>
+      <h3>Potřebujete dlouhodobější řešení?</h3>
+      <p>DISPO GEL je opakovaně použitelný gelový sáček a Instantní termoterapie nabízí jednorázové sáčky chlazení i hřátí — vše z rodiny BEAUFY.</p>
     </div>
-    <a href="/dispogel/" class="crosssell-card reveal">
-      <img src="/dispo-gel.png" alt="DISPO GEL gelový sáček" loading="lazy" decoding="async" width="350" height="350">
-      <div>
-        <div class="crosssell-card-label">Opakovaně použitelný</div>
-        <div class="crosssell-card-name">DISPO GEL</div>
-        <div class="crosssell-card-desc">Horký / studený sáček · 8 variant</div>
-      </div>
-      <span class="crosssell-card-arrow">→</span>
-    </a>
+    <div class="crosssell-cards">
+      <a href="/dispogel/" class="crosssell-card reveal">
+        <img src="/dispo-gel.png" alt="DISPO GEL gelový sáček" width="350" height="350" loading="lazy" decoding="async">
+        <div>
+          <div class="crosssell-card-label">Opakovaně použitelný</div>
+          <div class="crosssell-card-name">DISPO GEL</div>
+          <div class="crosssell-card-desc">Horký / studený sáček · 8 variant</div>
+        </div>
+        <span class="crosssell-card-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="/instantni-termoterapie/" class="crosssell-card reveal">
+        <img src="/dispogel/img/easy-ice-sacek.webp" alt="Instantní termoterapie EASY ICE a DISPO HOT" width="441" height="566" loading="lazy" decoding="async">
+        <div>
+          <div class="crosssell-card-label">Jednorázové sáčky</div>
+          <div class="crosssell-card-name">Instantní termoterapie</div>
+          <div class="crosssell-card-desc">EASY ICE &amp; DISPO HOT</div>
+        </div>
+        <span class="crosssell-card-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 </section>
 

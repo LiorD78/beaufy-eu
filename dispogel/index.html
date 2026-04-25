@@ -294,6 +294,8 @@
     .crosssell-text { flex: 1; min-width: 260px; }
     .crosssell-text h3 { font-family: 'DM Serif Display', serif; font-size: clamp(1.4rem,2.5vw,1.9rem); line-height: 1.2; font-weight: 400; background: var(--h2-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
     .crosssell-text p { font-size: .92rem; color: var(--muted); line-height: 1.7; }
+        .crosssell-cards { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; min-width: 320px; }
+    @media (max-width: 720px) { .crosssell-cards { grid-template-columns: 1fr; } }
     .crosssell-card {
       display: flex; align-items: center; gap: 20px;
       background: var(--white); border-radius: 20px; padding: 20px 24px;
@@ -868,18 +870,29 @@
   <div class="crosssell-inner">
     <div class="crosssell-text reveal">
       <div class="section-label">Také od BEAUFY</div>
-      <h3>Potřebujete okamžitou pomoc bez mrazáku?</h3>
-      <p>EASY ICE & DISPO HOT jsou jednorázové instantní sáčky — stačí zmáčknout. EASY ICE chladí na −4 °C, DISPO HOT hřeje na +50 °C. Žádná příprava, vždy připraveny.</p>
+      <h3>Hledáte další možnosti termoterapie?</h3>
+      <p>Doplňte svou domácí lékárničku — DISPO ICE Spray pro okamžité chlazení a Instantní termoterapie pro rychlou pomoc bez mrazáku.</p>
     </div>
-    <a href="/instantni-termoterapie/" class="crosssell-card reveal">
-      <img src="/dispogel/img/easy-ice-sacek.webp" alt="Instantní termoterapie" width="441" height="566" loading="lazy" decoding="async">
-      <div>
-        <div class="crosssell-card-label">Jednorázové sáčky</div>
-        <div class="crosssell-card-name">Instantní termoterapie</div>
-        <div class="crosssell-card-desc">EASY ICE & DISPO HOT</div>
-      </div>
-      <span class="crosssell-card-arrow">→</span>
-    </a>
+    <div class="crosssell-cards">
+      <a href="/dispo-ice/" class="crosssell-card reveal">
+        <img src="/dispo-ice/img/spray-200ml.png" alt="DISPO ICE Spray" width="900" height="582" loading="lazy" decoding="async">
+        <div>
+          <div class="crosssell-card-label">Ledový sprej</div>
+          <div class="crosssell-card-name">DISPO ICE Spray</div>
+          <div class="crosssell-card-desc">200 ml / 400 ml · okamžité chlazení</div>
+        </div>
+        <span class="crosssell-card-arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="/instantni-termoterapie/" class="crosssell-card reveal">
+        <img src="/dispogel/img/easy-ice-sacek.webp" alt="Instantní termoterapie EASY ICE a DISPO HOT" width="441" height="566" loading="lazy" decoding="async">
+        <div>
+          <div class="crosssell-card-label">Jednorázové sáčky</div>
+          <div class="crosssell-card-name">Instantní termoterapie</div>
+          <div class="crosssell-card-desc">EASY ICE &amp; DISPO HOT</div>
+        </div>
+        <span class="crosssell-card-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 </section>
 

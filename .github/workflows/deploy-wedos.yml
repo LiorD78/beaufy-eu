@@ -34,5 +34,5 @@ jobs:
           # FTP-Deploy-Action automaticky porovnává soubory přes .ftp-deploy-sync-state.json
           # a nahrává jen ty změněné. První deploy = nahraje vše.
           state-name: .ftp-deploy-sync-state.json
-          dry-run: true
+          dry-run: false
           log-level: standard

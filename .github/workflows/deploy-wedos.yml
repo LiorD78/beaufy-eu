@@ -27,6 +27,7 @@ jobs:
             **/.github/**
             **/README.md
             **/docs/**
+            **/_originals/**
             **/index_backup_original.html
             **/.DS_Store
             **/.gitignore

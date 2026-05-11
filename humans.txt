@@ -1,0 +1,18 @@
+/* TEAM */
+Vlastník: BEAUFY s.r.o.
+Site: https://www.beaufy.eu/
+IČ: 06867031
+From: Česká republika
+
+/* THANKS */
+New.Fa.Dem. — italský výrobce mikroklystýrů (Laxík, Glycerol)
+Easy Termo — italský výrobce termoterapie
+DISPO — italský výrobce sportovní termoterapie
+Phoenix, Pharmos, Alliance Healthcare — lékárenští velkoobchodníci
+
+/* SITE */
+Last update: 2026-05-11
+Standards: HTML5, CSS3, Schema.org JSON-LD
+Components: Vanilla JS, no frameworks
+Hosting: Wedos
+Trhy: Česká republika, Slovensko

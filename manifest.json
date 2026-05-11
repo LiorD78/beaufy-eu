@@ -1,0 +1,48 @@
+{
+  "name": "BEAUFY — distributor zdravotnických prostředků",
+  "short_name": "BEAUFY",
+  "description": "Česko-slovenský distributor zdravotnických prostředků nejvyšší kvality. Mikroklystýry, instantní termoterapie, ledové spreje a doplňky stravy pro lékárny.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F1F5F9",
+  "theme_color": "#0F172A",
+  "lang": "cs",
+  "dir": "ltr",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["health", "medical", "business"],
+  "icons": [
+    {
+      "src": "/beaufy-ico-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/BEAUFY_logo.png",
+      "sizes": "595x79",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Laxík mikroklystýr pro děti",
+      "short_name": "Laxík",
+      "url": "/laxik/"
+    },
+    {
+      "name": "Glycerol pro dospělé",
+      "short_name": "Glycerol",
+      "url": "/glycerol/"
+    },
+    {
+      "name": "Žensen",
+      "short_name": "Žensen",
+      "url": "/zensen/"
+    },
+    {
+      "name": "DISPO ICE",
+      "short_name": "DISPO ICE",
+      "url": "/dispo-ice/"
+    }
+  ]
+}

@@ -1,87 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Homepage -->
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.beaufy.eu/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-05-11</lastmod>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/BEAUFY_logo.png</image:loc>
+      <image:title>BEAUFY s.r.o. — distributor zdravotnických prostředků</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/woman-joga-1920x1280.webp</image:loc>
+      <image:title>BEAUFY — produkty pro zdraví a vitalitu</image:title>
+    </image:image>
   </url>
-
-  <!-- Product pages — high priority -->
   <url>
     <loc>https://www.beaufy.eu/laxik/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
     <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/laxik-mikroklystyr-deti.webp</image:loc>
+      <image:title>Laxík — mikroklystýr pro děti</image:title>
+      <image:caption>Šetrné řešení akutní zácpy u dětí. Zdravotnický prostředek třídy I.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/laxik-hero.webp</image:loc>
+      <image:title>Laxík mikroklystýr — produktové foto</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/laxik-3x3.webp</image:loc>
+      <image:title>Laxík mikroklystýr — balení 3x3 g</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/glycerol/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
     <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/glycerol-newfadem.webp</image:loc>
+      <image:title>Glycerol New.Fa.Dem. — mikroklystýr pro dospělé</image:title>
+      <image:caption>Glycerolový mikroklystýr pro šetrné řešení akutní zácpy u dospělých.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/glycerol-hero.webp</image:loc>
+      <image:title>Glycerol mikroklystýr — produktové foto</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/glycerol-ampulka.webp</image:loc>
+      <image:title>Glycerol — ampulka s aplikátorem</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/zensen/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/zensen-ginseng.webp</image:loc>
+      <image:title>Žensen Ginseng Royal Jelly Oral Tonic</image:title>
+      <image:caption>Doplněk stravy s ženšenem, mateří kašičkou a vitamíny.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispogel/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/dispo-gel.webp</image:loc>
+      <image:title>DISPO GEL — chladicí gel pro svaly a klouby</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispo-ice/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/dispo-ice-spray.webp</image:loc>
+      <image:title>DISPO ICE — ledový sprej pro sportovní úrazy</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/instantni-termoterapie/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-11</lastmod>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
-
-  <!-- Blog index -->
   <url>
     <loc>https://www.beaufy.eu/blog/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-05-11</lastmod>
     <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
   </url>
-
-  <!-- Blog articles -->
   <url>
     <loc>https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/zacpa-u-deti/</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-11</lastmod>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
-
-  <!-- Legal -->
   <url>
     <loc>https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html</loc>
-    <lastmod>2026-04-25</lastmod>
-    <changefreq>yearly</changefreq>
+    <lastmod>2026-05-11</lastmod>
     <priority>0.3</priority>
+    <changefreq>yearly</changefreq>
   </url>
-
 </urlset>

@@ -23,7 +23,7 @@
   --tmx-blue-m: #134a8e;       /* střední modrá - střed */
   --tmx-blue-r: #1f5fa6;       /* světlejší modrá - vpravo */
   --teal:     #6ee7f7;  /* tyrkysová - accent color, pro tmavé pozadí a dekorativní SVG */
-  --petrol:    #006d77; /* petrolejová pro text na bílém pozadí (WCAG AA 6.08:1) */
+  --petrol:    #017d88; /* petrolejová pro text na bílém pozadí (WCAG AA 4.89:1) */
   --amber:    #F59E0B;
   --green:    #F59E0B;        /* alias - historic */
   --green-br: #F59E0B;        /* alias - historic */

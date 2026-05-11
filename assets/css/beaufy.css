@@ -23,7 +23,7 @@
   --tmx-blue-m: #134a8e;       /* střední modrá - střed */
   --tmx-blue-r: #1f5fa6;       /* světlejší modrá - vpravo */
   --teal:     #6ee7f7;  /* tyrkysová - accent color, pro tmavé pozadí a dekorativní SVG */
-  --teal-deep: #0e7490; /* tyrkysová pro text na bílém pozadí (WCAG AA 5.36:1) */
+  --amber-deep: #B45309; /* tmavá amber pro text na bílém pozadí (WCAG AA 5.02:1) */
   --amber:    #F59E0B;
   --green:    #F59E0B;        /* alias - historic */
   --green-br: #F59E0B;        /* alias - historic */
@@ -49,7 +49,7 @@
   --h2-on-dark-em-color:   var(--teal);
 
   /* Section labels (malé VERZÁLKY nad nadpisem) */
-  --section-label-color:   var(--teal-deep);
+  --section-label-color:   var(--amber-deep);
 
   /* Tmavé sekce pozadí (hero, b2b-cta, strip sekce) */
   --section-dark-bg:       linear-gradient(90deg, var(--tmx-blue-l) 0%, var(--tmx-blue-m) 50%, var(--tmx-blue-r) 100%);

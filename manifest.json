@@ -10,17 +10,41 @@
   "dir": "ltr",
   "scope": "/",
   "orientation": "portrait-primary",
-  "categories": ["health", "medical", "business"],
+  "categories": [
+    "health",
+    "medical",
+    "business"
+  ],
   "icons": [
     {
-      "src": "/beaufy-ico-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     },
     {
-      "src": "/BEAUFY_logo.png",
-      "sizes": "595x79",
-      "type": "image/png"
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "shortcuts": [

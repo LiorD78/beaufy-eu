@@ -51,6 +51,7 @@ jobs:
           fb-access-token: ${{ secrets.FB_APP_ACCESS_TOKEN }}
           url-list: |
             https://www.beaufy.eu/
+            https://www.beaufy.eu/ke-stazeni/
             https://www.beaufy.eu/laxik/
             https://www.beaufy.eu/glycerol/
             https://www.beaufy.eu/zensen/

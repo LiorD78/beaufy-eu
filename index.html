@@ -718,6 +718,22 @@
   ]
 }
 </script>
+  <style id="po-style">
+.pro-odbornici{padding:64px 0;background:#f8fafc;border-top:1px solid #eef2f7;}
+.pro-odbornici .po-gate{margin-top:20px;}
+.po-gate-q{color:#475569;font-size:.98rem;margin:0 0 14px;max-width:640px;}
+.po-gate-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:99px;border:1px solid var(--blue,#0070F3);background:var(--blue,#0070F3);color:#fff;font-weight:600;font-size:.95rem;cursor:pointer;transition:opacity .2s;}
+.po-gate-btn:hover{opacity:.9;}
+.po-content{margin-top:8px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:26px 28px;max-width:760px;box-shadow:0 4px 16px rgba(11,44,74,.05);}
+.po-badge{margin-bottom:16px;}
+.po-badge img{height:32px;width:auto;display:block;}
+.po-content-label{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:0 0 12px;}
+.po-content h3{margin:0 0 14px;color:var(--navy,#0F172A);font-size:1.15rem;}
+.po-links{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:10px;}
+.po-links a{color:var(--blue,#0070F3);text-decoration:none;font-weight:500;border-bottom:1px solid transparent;transition:border-color .2s;}
+.po-links a:hover{border-bottom-color:var(--blue,#0070F3);}
+.po-disclaimer{font-size:.82rem;color:#64748b;margin:0;border-top:1px solid #e8edf3;padding-top:14px;}
+  </style>
 </head>
 <body>
 
@@ -1068,6 +1084,38 @@
 </section>
 
 <!-- ── CONTACT ───────────────────────────────────────────── -->
+<!-- PRO ODBORNIKY -->
+<section class="pro-odbornici" id="pro-odborniky">
+  <div class="section-inner">
+    <div class="section-label reveal">Pro odborníky</div>
+    <h2 class="reveal">Informace pro odborníky<br>ve zdravotnictví</h2>
+    <p class="section-desc reveal">Tato sekce je určena především zdravotníkům. Produkty z portfolia BEAUFY jsou zdravotnické prostředky. Níže zpřístupňujeme odborná sdělení publikovaná na recenzovaném portálu prolékaře.cz.</p>
+    <div class="po-gate reveal" id="poGate">
+      <p class="po-gate-q">Pokud jste odborník ve zdravotnictví, potvrďte prosím a vstupte do odborné sekce.</p>
+      <button type="button" class="po-gate-btn" id="poGateBtn" aria-expanded="false" aria-controls="poContent">Ano, jsem odborník ve zdravotnictví</button>
+    </div>
+    <div class="po-content" id="poContent" role="region" aria-label="Obsah pro odborníky" hidden>
+      <div class="po-badge"><img src="/logos/logo-prolekare.svg" alt="prolékaře.cz" width="174" height="28" loading="lazy" decoding="async"></div>
+      <p class="po-content-label">Obsah určený výhradně odborníkům ve zdravotnictví</p>
+      <h3>Odborná sdělení na prolékaře.cz</h3>
+      <ul class="po-links">
+        <li><a href="https://www.prolekare.cz/z-mediciny/polyglukosamin-v-dlouhodobe-lecbe-nadvahy-a-obezity-143645" target="_blank" rel="noopener">Polyglukosamin v dlouhodobé léčbě nadváhy a obezity</a></li>
+        <li><a href="https://www.prolekare.cz/z-mediciny/formoline-l112-extra-podpora-redukce-hmotnosti-i-lipidoveho-metabolismu-143646" target="_blank" rel="noopener">Formoline L112 EXTRA – podpora redukce hmotnosti i lipidového metabolismu</a></li>
+      </ul>
+      <p class="po-disclaimer">Zdravotnický prostředek. Čtěte pečlivě návod k použití.</p>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var b=document.getElementById('poGateBtn'),c=document.getElementById('poContent'),g=document.getElementById('poGate');
+  if(b&&c){b.addEventListener('click',function(){
+    c.hidden=false;b.setAttribute('aria-expanded','true');if(g){g.style.display='none';}
+    var f=c.querySelector('a');if(f){f.focus();}
+  });}
+})();
+</script>
+
 <section class="contact" id="kontakt">
   <div class="section-inner">
     <div class="section-label reveal">Kontakty</div>

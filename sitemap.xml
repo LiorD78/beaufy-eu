@@ -126,4 +126,16 @@
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.beaufy.eu/easy-ice/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.beaufy.eu/dispo-hot/</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 </urlset>

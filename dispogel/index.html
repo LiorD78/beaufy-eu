@@ -455,7 +455,13 @@
         "@type": "Answer",
         "text": "DISPO GEL je dostupný v lékárnách Dr.Max, BENU, MojeLékárna, Magistra a dalších. Pro velkoobchodní objednávky kontaktujte BEAUFY s.r.o. — dodáváme přes sítě Phoenix Pharma, Pharmos a Alliance Healthcare."
       }
-    }
+    },
+    {"@type": "Question", "name": "Jak udělat teplý obklad bez mikrovlnky?", "acceptedAnswer": {"@type": "Answer", "text": "Vložte gelový polštářek na 5–10 minut do horké (ne vroucí) vody. Před přiložením vždy zkontrolujte teplotu rukou a zabalte polštářek do textilie. Ohřev ve vodě je rovnoměrnější než v mikrovlnce."}},
+    {"@type": "Question", "name": "Pomůže gelový polštářek na migrénu a bolest hlavy?", "acceptedAnswer": {"@type": "Answer", "text": "Mnoha lidem uleví vychlazený gelový polštářek přiložený přes textilii na čelo, spánky nebo zátylek. Chlad pomáhá zmírnit pulzující bolest. Přikládejte 10–15 minut. Při přetrvávajících potížích konzultujte s lékařem."}},
+    {"@type": "Question", "name": "Lze DISPO GEL použít jako chladicí polštářek na oči?", "acceptedAnswer": {"@type": "Answer", "text": "Ano, menší velikost vychlazeného (nezmrazeného) polštářku lze přiložit přes zavřené oči k úlevě od otoků a pocitu napětí. Vždy použijte tenkou textilní vrstvu a aplikujte jen krátce."}},
+    {"@type": "Question", "name": "Funguje gelový polštářek na menstruační bolesti?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Nahřátý gelový polštářek přiložený na podbřišek pomáhá uvolnit svalové napětí a ulevit od menstruačních křečí. Aplikujte přes textilii 15–20 minut, příjemně teplé, ne horké."}},
+    {"@type": "Question", "name": "Teplo, nebo chlad při zánětu v koleni?", "acceptedAnswer": {"@type": "Answer", "text": "Při aktivním zánětu a otoku volte chlad. Teplo použijte až po odeznění otoku — při ztuhlosti a chronických potížích bez známek zánětu. Při nejistotě konzultujte s lékařem."}},
+    {"@type": "Question", "name": "Čím se DISPO GEL liší od jednorázového hřejivého sáčku?", "acceptedAnswer": {"@type": "Answer", "text": "DISPO GEL je opakovaně použitelný (stovky aplikací), zvládá teplo i chlad a teplotu si řídíte sami. Jednorázové sáčky jsou na jedno použití a nabízejí jen jednu funkci. Pro okamžitou pomoc bez mrazáku se hodí instantní sáček, pro opakovanou domácí terapii je úspornější gelový polštářek."}}
   ]
 }
   </script>
@@ -596,6 +602,104 @@
 </div>
 
 <!-- INFORMACE -->
+<style id="dg-phase2">
+.dg-decision,.dg-usecase,.dg-compare{padding:64px 0;}
+.dg-usecase{background:var(--bg2,#F1F5F9);}
+.dg-decision .section-label,.dg-usecase .section-label,.dg-compare .section-label{}
+.dg-tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px;}
+.dg-tt-col{border-radius:20px;padding:26px 24px;background:#fff;border:1px solid #e2e8f0;}
+.dg-tt-col.dg-cold{background:linear-gradient(180deg,#eff6ff,#fff);border-color:#bfdbfe;}
+.dg-tt-col.dg-hot{background:linear-gradient(180deg,#fff7ed,#fff);border-color:#fed7aa;}
+.dg-tt-head{font-weight:700;font-size:1.25rem;color:var(--navy,#0F172A);margin-bottom:2px;}
+.dg-tt-when{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:#64748b;margin:0 0 14px;}
+.dg-tt-col ul{margin:0 0 14px;padding-left:20px;}
+.dg-tt-col li{margin:6px 0;color:#334155;}
+.dg-tt-how{font-size:.9rem;color:#475569;border-top:1px solid #e2e8f0;padding-top:12px;margin:0;}
+.dg-uc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px;}
+.dg-uc-grid .info-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:22px;}
+.dg-uc-grid .info-card h3{margin:0 0 8px;color:var(--navy,#0F172A);font-size:1.1rem;}
+.dg-uc-grid .info-card p{margin:0;color:#334155;font-size:.95rem;line-height:1.55;}
+.dg-cmp-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:8px;}
+.dg-cmp{width:100%;border-collapse:collapse;min-width:680px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #e2e8f0;}
+.dg-cmp th,.dg-cmp td{padding:13px 16px;text-align:left;border-bottom:1px solid #eef2f7;font-size:.92rem;}
+.dg-cmp thead th{background:var(--navy,#0F172A);color:#fff;font-weight:600;}
+.dg-cmp th.dg-cmp-us{background:var(--blue,#0070F3);color:#fff;}
+.dg-cmp td.dg-cmp-us{background:#eff6ff;color:var(--blue,#0070F3);font-weight:600;}
+.dg-cmp td:first-child{font-weight:600;color:var(--navy,#0F172A);}
+@media(max-width:760px){.dg-tt-grid{grid-template-columns:1fr;}.dg-uc-grid{grid-template-columns:1fr;}}
+</style>
+<section class="dg-decision" id="kdy-teplo-vs-chlad">
+  <div class="section-inner">
+    <div class="section-label">Rychlý průvodce</div>
+    <h2>Kdy teplo<br>a kdy chlad?</h2>
+    <p style="max-width:760px;margin:0 0 24px;color:#475569;font-size:1.05rem;line-height:1.6;">Jednoduché pravidlo: <strong>akutní úraz a otok</strong> (prvních 48–72 hodin) chlaďte, <strong>chronickou bolest a ztuhlost</strong> bez otoku prohřívejte. Stejný gelový polštářek DISPO GEL zvládne obojí.</p>
+    <div class="dg-tt-grid">
+      <div class="dg-tt-col dg-cold">
+        <div class="dg-tt-head">❄️ Chladivý obklad</div>
+        <p class="dg-tt-when">Akutní potíže — do 48–72 h</p>
+        <ul>
+          <li>Výrony, podvrtnutí, natažené svaly</li>
+          <li>Modřiny a otoky</li>
+          <li>Záněty šlach, stavy po sportu</li>
+          <li>Migréna, bolest zubů, otok po zákroku</li>
+          <li>Po bodnutí hmyzem, oteklé oči</li>
+        </ul>
+        <p class="dg-tt-how">Zúží cévy, zpomalí prokrvení, tlumí otok a znecitliví bolestivé místo.</p>
+      </div>
+      <div class="dg-tt-col dg-hot">
+        <div class="dg-tt-head">🔥 Hřejivý obklad</div>
+        <p class="dg-tt-when">Chronické potíže — bez otoku</p>
+        <ul>
+          <li>Bolesti zad a beder</li>
+          <li>Ztuhlá krční páteř a ramena</li>
+          <li>Menstruační bolesti</li>
+          <li>Svalová ztuhlost a křeče</li>
+          <li>Prohřátí svalů před aktivitou</li>
+        </ul>
+        <p class="dg-tt-how">Rozšíří cévy, zvýší prokrvení a uvolní svalové napětí.</p>
+      </div>
+    </div>
+    <p style="margin-top:18px;font-size:.88rem;color:#64748b;">Zdravotnický prostředek třídy I. Nepřikládejte na poraněnou kůži, vždy použijte textilní vrstvu. Při přetrvávajících potížích konzultujte s lékařem.</p>
+  </div>
+</section>
+
+<section class="dg-usecase" id="pouziti-podle-tela">
+  <div class="section-inner">
+    <div class="section-label">Použití</div>
+    <h2>Gelový polštářek<br>podle místa bolesti</h2>
+    <div class="dg-uc-grid">
+      <div class="info-card"><h3>Koleno a klouby</h3><p><strong>Chlad:</strong> po úrazu, při otoku a zánětu šlach, po námaze. <strong>Teplo:</strong> u chronické bolesti a ztuhlosti kloubů.</p></div>
+      <div class="info-card"><h3>Záda a bedra</h3><p><strong>Chlad:</strong> akutní „houser" a skřípnutý nerv (prvních 48 h). <strong>Teplo:</strong> ztuhlé svaly, chronická bolest beder.</p></div>
+      <div class="info-card"><h3>Krční páteř a ramena</h3><p><strong>Chlad:</strong> natažení svalu, akutní blokáda. <strong>Teplo:</strong> ztuhlost od sezení u počítače, chronické napětí.</p></div>
+      <div class="info-card"><h3>Hlava, migréna a oči</h3><p><strong>Chlad:</strong> migréna a tenzní bolest hlavy (čelo či zátylek), oteklé oči, bolest zubů. Menší velikost slouží jako chladicí polštářek na oči.</p></div>
+      <div class="info-card"><h3>Břicho a menstruace</h3><p><strong>Teplo:</strong> menstruační bolesti, křeče, nadýmání a uvolnění podbřišku. <strong>Chlad:</strong> dle potřeby při akutní bolesti.</p></div>
+      <div class="info-card"><h3>Svaly po sportu</h3><p><strong>Chlad:</strong> ihned po výkonu a při otoku. <strong>Teplo:</strong> prohřátí a uvolnění před aktivitou nebo při ztuhlosti.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dg-compare" id="srovnani">
+  <div class="section-inner">
+    <div class="section-label">Srovnání</div>
+    <h2>Proč gelový polštářek<br>místo jednorázových řešení?</h2>
+    <div class="dg-cmp-wrap">
+      <table class="dg-cmp">
+        <thead><tr><th>Vlastnost</th><th class="dg-cmp-us">DISPO GEL polštářek</th><th>Jednorázový sáček</th><th>Ledový sprej</th><th>Led z mrazáku</th></tr></thead>
+        <tbody>
+          <tr><td>Teplo i chlad</td><td class="dg-cmp-us">Ano — obojí</td><td>Jen jedno</td><td>Jen chlad</td><td>Jen chlad</td></tr>
+          <tr><td>Opakované použití</td><td class="dg-cmp-us">Stovky použití</td><td>1× použití</td><td>Desítky aplikací</td><td>1× použití</td></tr>
+          <tr><td>Cena za použití</td><td class="dg-cmp-us">Velmi nízká</td><td>Vysoká</td><td>Střední</td><td>Nízká</td></tr>
+          <tr><td>Přizpůsobí se tělu</td><td class="dg-cmp-us">Ano, zůstává poddajný</td><td>Omezeně</td><td>Nelze cílit</td><td>Tvrdý, nepoddajný</td></tr>
+          <tr><td>Doba účinku</td><td class="dg-cmp-us">15–30 min</td><td>10–15 min</td><td>Krátká</td><td>10–15 min</td></tr>
+          <tr><td>Příprava</td><td class="dg-cmp-us">Mrazák nebo mikrovlnka</td><td>Zmáčknutí</td><td>Nástřik</td><td>Mrazák</td></tr>
+          <tr><td>Odpad a ekologie</td><td class="dg-cmp-us">Minimální</td><td>Odpad po každém</td><td>Tlaková nádoba</td><td>Plastový odpad</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:14px;font-size:.9rem;color:#64748b;">Pro okamžitou pomoc v terénu bez mrazáku se hodí instantní sáček nebo sprej; pro opakovanou domácí terapii teplem i chladem je nejúspornější opakovaně použitelný gelový polštářek.</p>
+  </div>
+</section>
+
 <section class="info-section" id="informace">
   <div class="section-inner">
     <div class="section-label reveal">Produkt</div>
@@ -834,6 +938,66 @@
         </button>
         <div class="faq-body" aria-hidden="true">
           <p>DISPO GEL je dostupný v lékárnách Dr.Max, BENU, MojeLékárna, Magistra a dalších. Pro velkoobchodní objednávky kontaktujte BEAUFY s.r.o. — dodáváme přes sítě Phoenix Pharma, Pharmos a Alliance Healthcare.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Jak udělat teplý obklad bez mikrovlnky?</span>
+          <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" aria-hidden="true">
+          <p>Vložte gelový polštářek na 5–10 minut do horké (ne vroucí) vody. Před přiložením vždy zkontrolujte teplotu rukou a zabalte polštářek do textilie. Ohřev ve vodě je rovnoměrnější než v mikrovlnce.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Pomůže gelový polštářek na migrénu a bolest hlavy?</span>
+          <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" aria-hidden="true">
+          <p>Mnoha lidem uleví vychlazený gelový polštářek přiložený přes textilii na čelo, spánky nebo zátylek. Chlad pomáhá zmírnit pulzující bolest. Přikládejte 10–15 minut. Při přetrvávajících potížích konzultujte s lékařem.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Lze DISPO GEL použít jako chladicí polštářek na oči?</span>
+          <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" aria-hidden="true">
+          <p>Ano, menší velikost vychlazeného (nezmrazeného) polštářku lze přiložit přes zavřené oči k úlevě od otoků a pocitu napětí. Vždy použijte tenkou textilní vrstvu a aplikujte jen krátce.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Funguje gelový polštářek na menstruační bolesti?</span>
+          <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" aria-hidden="true">
+          <p>Ano. Nahřátý gelový polštářek přiložený na podbřišek pomáhá uvolnit svalové napětí a ulevit od menstruačních křečí. Aplikujte přes textilii 15–20 minut, příjemně teplé, ne horké.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Teplo, nebo chlad při zánětu v koleni?</span>
+          <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" aria-hidden="true">
+          <p>Při aktivním zánětu a otoku volte chlad. Teplo použijte až po odeznění otoku — při ztuhlosti a chronických potížích bez známek zánětu. Při nejistotě konzultujte s lékařem.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-btn" aria-expanded="false">
+          <span>Čím se DISPO GEL liší od jednorázového hřejivého sáčku?</span>
+          <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body" aria-hidden="true">
+          <p>DISPO GEL je opakovaně použitelný (stovky aplikací), zvládá teplo i chlad a teplotu si řídíte sami. Jednorázové sáčky jsou na jedno použití a nabízejí jen jednu funkci. Pro okamžitou pomoc bez mrazáku se hodí instantní sáček, pro opakovanou domácí terapii je úspornější gelový polštářek.</p>
         </div>
       </div>
 

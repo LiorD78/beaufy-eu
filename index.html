@@ -725,8 +725,9 @@
 .po-gate-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:99px;border:1px solid var(--blue,#0070F3);background:var(--blue,#0070F3);color:#fff;font-weight:600;font-size:.95rem;cursor:pointer;transition:opacity .2s;}
 .po-gate-btn:hover{opacity:.9;}
 .po-content{margin-top:8px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:26px 28px;max-width:760px;box-shadow:0 4px 16px rgba(11,44,74,.05);}
-.po-badge{margin-bottom:16px;}
-.po-badge img{height:32px;width:auto;display:block;}
+.po-badge{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:12px 20px;margin:18px 0 6px;box-shadow:0 4px 14px rgba(11,44,74,.05);}
+.po-badge-pre{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8;}
+.po-badge img{height:28px;width:auto;display:block;}
 .po-content-label{font-size:.76rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin:0 0 12px;}
 .po-content h3{margin:0 0 14px;color:var(--navy,#0F172A);font-size:1.15rem;}
 .po-links{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:10px;}
@@ -1090,12 +1091,15 @@
     <div class="section-label reveal">Pro odborníky</div>
     <h2 class="reveal">Informace pro odborníky<br>ve zdravotnictví</h2>
     <p class="section-desc reveal">Tato sekce je určena především zdravotníkům. Produkty z portfolia BEAUFY jsou zdravotnické prostředky. Níže zpřístupňujeme odborná sdělení publikovaná na recenzovaném portálu prolékaře.cz.</p>
+    <div class="po-badge reveal">
+      <span class="po-badge-pre">Publikováno na</span>
+      <img src="/logos/logo-prolekare.svg" alt="prolékaře.cz" width="174" height="28" loading="lazy" decoding="async">
+    </div>
     <div class="po-gate reveal" id="poGate">
       <p class="po-gate-q">Pokud jste odborník ve zdravotnictví, potvrďte prosím a vstupte do odborné sekce.</p>
       <button type="button" class="po-gate-btn" id="poGateBtn" aria-expanded="false" aria-controls="poContent">Ano, jsem odborník ve zdravotnictví</button>
     </div>
     <div class="po-content" id="poContent" role="region" aria-label="Obsah pro odborníky" hidden>
-      <div class="po-badge"><img src="/logos/logo-prolekare.svg" alt="prolékaře.cz" width="174" height="28" loading="lazy" decoding="async"></div>
       <p class="po-content-label">Obsah určený výhradně odborníkům ve zdravotnictví</p>
       <h3>Odborná sdělení na prolékaře.cz</h3>
       <ul class="po-links">

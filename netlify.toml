@@ -1,0 +1,5 @@
+# Netlify build — spustí stejné slepení partials jako Wedos deploy (build-includes.py),
+# aby deploy preview i produkční Netlify render měly správně inlinutý nav a footer.
+[build]
+  command = "python3 build-includes.py"
+  publish = "."

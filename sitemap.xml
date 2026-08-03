@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -113,6 +113,16 @@
     <lastmod>2026-05-11</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.beaufy.eu/blog/co-je-zensen/</loc>
+    <lastmod>2026-06-27</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/zensen/img/zensen-krabicka.png</image:loc>
+      <image:title>Ženšen — Panax ginseng s mateří kašičkou</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html</loc>

@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.beaufy.eu/</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
     <image:image>
@@ -17,26 +17,26 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/laxik/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
     <image:image>
       <image:loc>https://www.beaufy.eu/laxik-mikroklystyr-deti.webp</image:loc>
-      <image:title>Laxík — mikroklystýr pro děti</image:title>
+      <image:title>CAREFY Laxík — mikroklyzma pro děti</image:title>
       <image:caption>Šetrné řešení akutní zácpy u dětí. Zdravotnický prostředek třídy I.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.beaufy.eu/laxik-hero.webp</image:loc>
-      <image:title>Laxík mikroklystýr — produktové foto</image:title>
+      <image:title>CAREFY Laxík mikroklyzma — produktové foto</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.beaufy.eu/laxik-3x3.webp</image:loc>
-      <image:title>Laxík mikroklystýr — balení 3x3 g</image:title>
+      <image:title>CAREFY Laxík mikroklyzma — balení 3x3 g</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/glycerol/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
     <image:image>
@@ -55,7 +55,7 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/zensen/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
     <image:image>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispogel/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
     <image:image>
@@ -76,7 +76,7 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispo-ice/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
     <image:image>
@@ -86,55 +86,55 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/instantni-termoterapie/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/zacpa-u-deti/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/ke-stazeni/</loc>
-    <lastmod>2026-06-06</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/easy-ice/</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispo-hot/</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>

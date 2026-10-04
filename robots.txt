@@ -7,12 +7,12 @@
 # ──────────────────────────────────────────────────────────
 User-agent: *
 Allow: /
-Crawl-delay: 1
 
 # Internal/development paths (build artifacts, partials, GH config)
 Disallow: /_originals/
 Disallow: /_partials/
 Disallow: /.github/
+Disallow: /poptavka.php
 
 # ──────────────────────────────────────────────────────────
 # Mainstream search engines — explicit allow

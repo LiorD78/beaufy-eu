@@ -18,6 +18,15 @@ jobs:
       - name: Inline partials (build-includes)
         run: python3 build-includes.py
 
+      - name: Write server secrets (Resend API key for contact form)
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          mkdir -p _secrets
+          if [ -n "$RESEND_API_KEY" ]; then
+            printf "<?php return '%s';\n" "$RESEND_API_KEY" > _secrets/resend.php
+          fi
+
       - name: Sync to Wedos via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -58,6 +67,8 @@ jobs:
             https://www.beaufy.eu/dispogel/
             https://www.beaufy.eu/dispo-ice/
             https://www.beaufy.eu/instantni-termoterapie/
+            https://www.beaufy.eu/easy-ice/
+            https://www.beaufy.eu/dispo-hot/
             https://www.beaufy.eu/blog/
             https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/
             https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/

@@ -1,0 +1,105 @@
+# =====================================================================
+#  beaufy.eu — .htaccess (spravováno v repu LiorD78/beaufy-eu)
+#  Část A = výchozí pravidla WEDOS pro aliasy a subdomény (nesahat).
+#  Část B = kanonická doména, bezpečnost, hlavičky, cache.
+# =====================================================================
+
+AddDefaultCharset UTF-8
+Options -Indexes
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+
+# ---------------------------------------------------------------------
+# B1) Kanonická adresa: https://www.beaufy.eu (jen pro doménu beaufy.eu,
+#     aliasy a subdomény na hostingu tím nejsou dotčeny).
+#     Origin za WEDOS CDN vidí HTTPS správně (ověřeno 4. 10. 2026).
+# ---------------------------------------------------------------------
+RewriteCond %{HTTP_HOST} ^(www\.)?beaufy\.eu$ [NC]
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.beaufy\.eu$
+RewriteRule ^(.*)$ https://www.beaufy.eu/$1 [R=301,L]
+
+# /index.html → / (a /slozka/index.html → /slozka/)
+RewriteCond %{THE_REQUEST} \s/+((?:[^\s?]*/)?)index\.html[\s?]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# ---------------------------------------------------------------------
+# B2) Citlivé a pracovní soubory nesmí být veřejně dostupné → 404
+# ---------------------------------------------------------------------
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule (^|/)\. - [R=404,L]
+RewriteRule (^|/)_secrets(/|$) - [R=404,L]
+RewriteRule (^|/)_probe - [R=404,L]
+RewriteRule ^info\.php$ - [R=404,L]
+RewriteRule \.(zip|md|toml|py|bak|sql|log|sh|yml|yaml)$ - [R=404,L]
+
+# ---------------------------------------------------------------------
+# A) WEDOS — výchozí pravidla pro subdomény a samostatné weby aliasů
+#    https://kb.wedos.com/cs/webhosting/htaccess/htaccess-na-webhostingu
+# ---------------------------------------------------------------------
+# cele domeny (aliasy)
+RewriteCond %{REQUEST_URI} !^domains/
+RewriteCond %{REQUEST_URI} !^/domains/
+RewriteCond %{HTTP_HOST} ^(www\.)?(.*)$
+RewriteCond %{DOCUMENT_ROOT}/domains/%2 -d
+RewriteRule (.*) domains/%2/$1 [DPI]
+
+# subdomeny (s nebo bez www na zacatku)
+RewriteCond %{REQUEST_URI} !^subdom/
+RewriteCond %{REQUEST_URI} !^/subdom/
+RewriteCond %{HTTP_HOST} ^(www\.)?(.*)\.([^\.]*)\.([^\.]*)$
+RewriteCond %{DOCUMENT_ROOT}/subdom/%2 -d
+RewriteRule (.*) subdom/%2/$1 [DPI]
+
+# aliasy - spravne presmerovani pri chybejicim /
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^domains/[^/]+/(.+[^/])$ /$1/ [R]
+
+# subdomeny - spravne presmerovani pri chybejicim /
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^subdom/[^/]+/(.+[^/])$ /$1/ [R]
+
+# ---------------------------------------------------------------------
+# B3) Bezpečnostní hlavičky
+# ---------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always unset X-Powered-By
+
+  # Staré podklady z roku 2024 a pracovní soubory nemají být ve vyhledávání
+  <If "%{REQUEST_URI} =~ m#^/downloads/#">
+    Header set X-Robots-Tag "noindex"
+  </If>
+  <FilesMatch "^(404\.html|poptavka\.php)$">
+    Header set X-Robots-Tag "noindex"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------------
+# B4) Typy a cache statických souborů
+# ---------------------------------------------------------------------
+AddType image/webp .webp
+AddType image/svg+xml .svg
+AddType application/manifest+json .webmanifest
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType application/pdf "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/javascript application/json image/svg+xml
+</IfModule>

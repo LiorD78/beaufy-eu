@@ -1,0 +1,67 @@
+<!-- ── COOKIE CONSENT + MĚŘENÍ (sdílený partial, vkládá build-includes.py) ──
+     GA4 G-KCZB40W1F3 a Microsoft Clarity wt15zbt8i0 se načtou AŽ po souhlasu.
+     Consent Mode v2: výchozí stav denied, po souhlasu update granted.
+     Volba se ukládá do localStorage pod klíčem beaufyConsent (v2). -->
+<style>
+  .bf-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:640px;margin:0 auto;background:#0F172A;color:#fff;border-radius:16px;padding:20px 22px;box-shadow:0 18px 50px rgba(15,23,42,.35);font:400 .9rem/1.55 'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;display:none}
+  .bf-consent.is-visible{display:block}
+  .bf-consent p{margin:0 0 14px;color:rgba(255,255,255,.85)}
+  .bf-consent a{color:#6ee7f7;text-decoration:underline}
+  .bf-consent-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .bf-consent button{font:600 .9rem 'DM Sans',sans-serif;border-radius:999px;padding:10px 20px;cursor:pointer;border:1px solid transparent}
+  .bf-consent .bf-accept{background:#F59E0B;color:#0F172A}
+  .bf-consent .bf-reject{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .bf-consent button:focus-visible{outline:2px solid #6ee7f7;outline-offset:2px}
+</style>
+<div class="bf-consent" id="bfConsent" role="dialog" aria-live="polite" aria-label="Souhlas s cookies">
+  <p>Se souhlasem používáme analytické cookies (Google Analytics, Microsoft Clarity), abychom věděli, jak web používáte, a mohli ho zlepšovat. Bez souhlasu se nic neměří. Více v <a href="/zasady-ochrany-osobnich-udaju.html#cookies">zásadách ochrany osobních údajů</a>.</p>
+  <div class="bf-consent-actions">
+    <button type="button" class="bf-accept" id="bfConsentAccept">Přijmout</button>
+    <button type="button" class="bf-reject" id="bfConsentReject">Odmítnout</button>
+  </div>
+</div>
+<script>
+(function () {
+  var GA_ID = 'G-KCZB40W1F3', CLARITY_ID = 'wt15zbt8i0', KEY = 'beaufyConsent';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+
+  var loaded = false;
+  function loadAnalytics() {
+    if (loaded) return; loaded = true;
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    var s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,'clarity','script',CLARITY_ID);
+    window.clarity('consent');
+  }
+  function read() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
+  function save(v) { try { localStorage.setItem(KEY, JSON.stringify({ analytics: v, ts: new Date().toISOString(), v: 2 })); localStorage.removeItem('cookieChoice'); } catch (e) {} }
+
+  var box = document.getElementById('bfConsent');
+  function show() { box.classList.add('is-visible'); }
+  function hide() { box.classList.remove('is-visible'); }
+
+  document.getElementById('bfConsentAccept').addEventListener('click', function () { save(true); hide(); loadAnalytics(); });
+  document.getElementById('bfConsentReject').addEventListener('click', function () {
+    var had = read(); save(false); hide();
+    if (had && had.analytics) { location.reload(); }
+  });
+  window.beaufyCookieSettings = function () { show(); };
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-cookie-settings]');
+    if (t) { e.preventDefault(); show(); }
+  });
+
+  var c = read();
+  if (c && c.analytics === true) loadAnalytics();
+  else if (!c) setTimeout(show, 600);
+})();
+</script>

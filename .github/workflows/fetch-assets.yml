@@ -1,0 +1,40 @@
+name: fetch-assets
+
+# Jednorázové stažení obrázků (ikony + fotka O nás) do repozitáře.
+on:
+  push:
+    paths:
+      - '.github/workflows/fetch-assets.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stáhnout obrázky
+        run: |
+          set -e
+          mkdir -p ikony
+          curl -fsSL -o ikony/bfy-ico-lekarny.webp      https://h.uguu.se/HEqfwbkd.webp
+          curl -fsSL -o ikony/bfy-ico-velkoobchody.webp https://n.uguu.se/FWcvURTE.webp
+          curl -fsSL -o ikony/bfy-ico-pharmdata.webp    https://n.uguu.se/XZQxaUYr.webp
+          curl -fsSL -o ikony/bfy-ico-manazerka.webp    https://d.uguu.se/aFwijkHe.webp
+          curl -fsSL -o ikony/bfy-ico-pin.webp          https://h.uguu.se/OEhwXMkM.webp
+          curl -fsSL -o ikony/bfy-ico-eu.webp           https://h.uguu.se/qLMGlYzT.webp
+          curl -fsSL -o ikony/bfy-ico-nemocnice.webp    https://n.uguu.se/wFojvbWh.webp
+          curl -fsSL -o ikony/bfy-ico-cz-sk.webp        https://n.uguu.se/VCOjYhXn.webp
+          curl -fsSL -o o-nas-sklad-v2.webp             https://n.uguu.se/dxwsBycS.webp
+          file ikony/*.webp o-nas-sklad-v2.webp
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ikony o-nas-sklad-v2.webp
+          git diff --cached --quiet || git commit -m "Nové ikony BEAUFY a fotka skladníka do sekce O nás"
+          git push

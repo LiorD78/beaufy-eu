@@ -582,6 +582,14 @@
     .stat-label, a.stat-card .stat-label { color: rgba(255,255,255,.85); }
     @media (max-width: 900px) { .hero-text { padding: 28px 22px; border-radius: 20px; } }
     @media (min-width: 901px) { .hero-content { width: 100%; max-width: 1200px; padding-left: 0; padding-right: 0; gap: 48px; } }
+    /* USP karty v4: 4 karty v řadě pod textem, fotka zůstává vidět */
+    .stat-card:last-child { grid-column: auto; }
+    .stat-card { padding: 18px 20px; }
+    .stat-ico { display: block; color: #6ee7f7; margin-bottom: 10px; }
+    .stat-num { font-size: 1.9rem; }
+    .stat-label { line-height: 1.35; }
+    nav .nav-cta { background: #F59E0B !important; border-color: #F59E0B !important; color: #fff !important; }
+    @media (min-width: 901px) { .hero-content { padding-top: 110px; padding-bottom: 48px; row-gap: 28px; } .hero-stats { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); } }
 </style>
 
   <!-- JSON-LD structured data for Google Rich Results -->
@@ -759,25 +767,25 @@
       </div>
     </div>
     <div class="hero-stats">
-      <a href="#produkty" class="stat-card">
-        <div class="stat-num">7+</div>
-        <div class="stat-label">Produktů v portfoliu</div>
-      </a>
       <a href="#partneri" class="stat-card">
+        <svg class="stat-ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M12 10.5v6M9 13.5h6"/></svg>
         <div class="stat-num">9+</div>
-        <div class="stat-label">Lékárenských řetězců</div>
-      </a>
-      <a href="#o-nas" class="stat-card">
-        <div class="stat-num">EU</div>
-        <div class="stat-label">Certifikované produkty</div>
-      </a>
-      <a href="#kontakt" class="stat-card">
-        <div class="stat-num">2</div>
-        <div class="stat-label">Země distribuce</div>
+        <div class="stat-label">lékárenských řetězců</div>
       </a>
       <a href="#velkoobchody" class="stat-card">
+        <svg class="stat-ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
         <div class="stat-num">3</div>
-        <div class="stat-label">Lékárenské velkoobchody</div>
+        <div class="stat-label">velkoobchody, objednáte u svého</div>
+      </a>
+      <a href="#o-nas" class="stat-card">
+        <svg class="stat-ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5v14M6.5 5v14M10 5v14M13 5v14M17 5v14M21 5v14"/></svg>
+        <div class="stat-num">Pharmdata</div>
+        <div class="stat-label">kódy přímo ve vašem systému</div>
+      </a>
+      <a href="#kontakt" class="stat-card">
+        <svg class="stat-ico" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <div class="stat-num">Osobně</div>
+        <div class="stat-label">vlastní obchodní manažerka</div>
       </a>
     </div>
   </div>

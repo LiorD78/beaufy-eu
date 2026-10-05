@@ -590,6 +590,23 @@
     .stat-label { line-height: 1.35; }
     nav .nav-cta { background: #F59E0B !important; border-color: #F59E0B !important; color: #fff !important; }
     @media (min-width: 901px) { .hero-content { padding-top: 110px; padding-bottom: 48px; row-gap: 28px; } .hero-stats { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); } }
+    /* mobil v2: fotka nahoře celá vidět, text v pevném rámečku pod ní, USP karty 2×2 */
+    @media (max-width: 900px) {
+      .hero { min-height: 0; display: block; background: #0b2c4a; padding: 0; }
+      .hero-bg { position: relative; inset: auto; height: 58vh; min-height: 340px; max-height: 520px; background-position: 72% 30%; }
+      .hero-bg::after { background: linear-gradient(180deg, rgba(11,44,74,.35) 0%, rgba(11,44,74,0) 28%, rgba(11,44,74,0) 62%, #0b2c4a 100%); }
+      .hero-content { padding: 0 16px 36px; margin-top: -84px; gap: 16px; }
+      .hero-text { background: linear-gradient(160deg, rgba(19,74,142,.92) 0%, rgba(11,44,74,.96) 100%); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); padding: 26px 22px 24px; border-radius: 22px; }
+      h1 { font-size: 2.15rem; line-height: 1.12; margin-bottom: 14px; }
+      .hero-sub { font-size: 1rem; line-height: 1.6; margin-bottom: 22px; }
+      .hero-actions { flex-direction: column; gap: 10px; }
+      .hero-actions .btn-primary, .hero-actions .btn-outline { justify-content: center; width: 100%; padding: 14px 20px; }
+      .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .stat-card { padding: 14px 14px; border-radius: 16px; }
+      .stat-ico { width: 22px; height: 22px; margin-bottom: 6px; }
+      .stat-num { font-size: 1.25rem; }
+      .stat-label { font-size: .8rem; }
+    }
 </style>
 
   <!-- JSON-LD structured data for Google Rich Results -->

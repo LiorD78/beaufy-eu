@@ -765,6 +765,18 @@
 .po-links a{color:var(--blue,#0070F3);text-decoration:none;font-weight:500;border-bottom:1px solid transparent;transition:border-color .2s;}
 .po-links a:hover{border-bottom-color:var(--blue,#0070F3);}
 .po-disclaimer{font-size:.82rem;color:#64748b;margin:0;border-top:1px solid #e8edf3;padding-top:14px;}
+.po-form{margin-top:22px;max-width:760px;background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:24px 26px;box-shadow:0 4px 16px rgba(11,44,74,.05);}
+.po-form fieldset{border:0;margin:0 0 16px;padding:0;min-width:0;}
+.po-form legend{font-size:.9rem;font-weight:700;color:var(--navy,#0F172A);margin:0 0 8px;padding:0;}
+.po-select{display:block;width:100%;max-width:480px;min-height:48px;padding:10px 40px 10px 14px;border:1px solid #cbd5e1;border-radius:12px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%230F172A' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 14px center/14px 9px;-webkit-appearance:none;appearance:none;font:inherit;font-size:.95rem;color:var(--navy,#0F172A);cursor:pointer;}
+.po-check{display:flex;gap:12px;align-items:flex-start;margin:0 0 10px;padding:12px 14px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;font-size:.92rem;line-height:1.5;color:#334155;cursor:pointer;}
+.po-check input{width:20px;height:20px;margin:1px 0 0;flex:0 0 20px;accent-color:#0F172A;cursor:pointer;}
+.po-gate-btn[disabled]{opacity:.45;cursor:not-allowed;}
+.po-actions{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin:6px 0 12px;}
+.po-actions a{color:var(--blue,#0070F3);font-size:.92rem;}
+.po-note{font-size:.8rem;color:#64748b;margin:0;}
+.po-content .po-cta{display:inline-flex;align-items:center;padding:12px 22px;border-radius:99px;background:var(--green,#F59E0B);color:#0F172A;font-weight:700;text-decoration:none;margin:0 0 18px;}
+.po-content .po-small{font-size:.86rem;color:#64748b;margin:0 0 10px;}
   </style>
 </head>
 <body>
@@ -1085,33 +1097,58 @@
   <div class="section-inner">
     <div class="section-label reveal">Pro odborníky</div>
     <h2 class="reveal">Informace pro odborníky<br>ve zdravotnictví</h2>
-    <p class="section-desc reveal">Tato sekce je určena především zdravotníkům. Produkty z portfolia BEAUFY jsou zdravotnické prostředky. Níže zpřístupňujeme odborná sdělení publikovaná na recenzovaném portálu prolékaře.cz.</p>
-    <div class="po-badge reveal">
-      <span class="po-badge-pre">Publikováno na</span>
-      <img src="/logos/logo-prolekare.svg" alt="prolékaře.cz" width="174" height="28" loading="lazy" decoding="async">
-    </div>
-    <div class="po-gate reveal" id="poGate">
-      <p class="po-gate-q">Pokud jste odborník ve zdravotnictví, potvrďte prosím a vstupte do odborné sekce.</p>
-      <button type="button" class="po-gate-btn" id="poGateBtn" aria-expanded="false" aria-controls="poContent">Ano, jsem odborník ve zdravotnictví</button>
-    </div>
-    <div class="po-content" id="poContent" role="region" aria-label="Obsah pro odborníky" hidden>
-      <p class="po-content-label">Obsah určený výhradně odborníkům ve zdravotnictví</p>
-      <h3>Odborná sdělení na prolékaře.cz</h3>
-      <ul class="po-links">
-        <li><a href="https://www.prolekare.cz/z-mediciny/polyglukosamin-v-dlouhodobe-lecbe-nadvahy-a-obezity-143645" target="_blank" rel="noopener">Polyglukosamin v dlouhodobé léčbě nadváhy a obezity</a></li>
-        <li><a href="https://www.prolekare.cz/z-mediciny/formoline-l112-extra-podpora-redukce-hmotnosti-i-lipidoveho-metabolismu-143646" target="_blank" rel="noopener">Formoline L112 EXTRA – podpora redukce hmotnosti i lipidového metabolismu</a></li>
-      </ul>
-      <p class="po-disclaimer">Zdravotnický prostředek. Čtěte pečlivě návod k použití.</p>
-    </div>
+    <p class="section-desc reveal">Produkty z portfolia BEAUFY jsou zdravotnické prostředky. Odborné informace jsou určeny výhradně osobám oprávněným předepisovat nebo vydávat zdravotnické prostředky (odborníkům ve smyslu zákona č. 40/1995 Sb., o regulaci reklamy) a zobrazí se po potvrzení. Lékárny a distributory rádi informujeme o dostupnosti a spolupráci na <a href="mailto:info@beaufy.eu">info@beaufy.eu</a>.</p>
+    <form class="po-form reveal" id="poGate" action="#pro-odborniky" onsubmit="return false" data-nosnippet>
+      <fieldset>
+        <legend>Vaše profese</legend>
+        <select class="po-select" id="poProf" required>
+          <option value="">Vyberte profesi</option>
+          <option value="lekar">Lékař / lékařka</option>
+          <option value="zubni-lekar">Zubní lékař / zubní lékařka</option>
+          <option value="farmaceut">Farmaceut / farmaceutka</option>
+          <option value="farm-asistent">Farmaceutický asistent / asistentka</option>
+          <option value="jina-opravnena">Jiná osoba oprávněná předepisovat nebo vydávat zdravotnické prostředky</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Potvrzení</legend>
+        <label class="po-check"><input type="checkbox" id="poC1"> <span>Prohlašuji, že jsem osobou oprávněnou předepisovat nebo vydávat zdravotnické prostředky, tedy odborníkem ve smyslu zákona č. 40/1995 Sb., o regulaci reklamy.</span></label>
+        <label class="po-check"><input type="checkbox" id="poC2"> <span>Beru na vědomí, že odborníkem se zde rozumí výhradně osoba oprávněná předepisovat nebo vydávat zdravotnické prostředky a že obsah odborné sekce je určen pouze jí.</span></label>
+        <label class="po-check"><input type="checkbox" id="poC3"> <span>Beru na vědomí, že odborné informace může laik nesprávně pochopit, a proto nejsou určeny široké veřejnosti.</span></label>
+      </fieldset>
+      <div class="po-actions"><button type="button" class="po-gate-btn" id="poGateBtn" aria-controls="poContent" disabled>Potvrdit a zobrazit odbornou sekci</button> <a href="#produkty">Nejsem odborník</a></div>
+      <p class="po-note">Potvrzení platí jen pro aktuální relaci tohoto prohlížeče. Pro technické vyhodnocení přístupu se zaznamená událost vstupu a zvolená profese, bez jména a kontaktních údajů.</p>
+    </form>
+    <div class="po-content" id="poContent" role="region" aria-label="Obsah pro odborníky" hidden data-nosnippet></div>
   </div>
 </section>
 <script>
 (function(){
-  var b=document.getElementById('poGateBtn'),c=document.getElementById('poContent'),g=document.getElementById('poGate');
-  if(b&&c){b.addEventListener('click',function(){
-    c.hidden=false;b.setAttribute('aria-expanded','true');if(g){g.style.display='none';}
-    var f=c.querySelector('a');if(f){f.focus();}
-  });}
+  var P='<p class="po-content-label">Obsah určený výhradně odborníkům</p>'
+   +'<h3>formoline L112 EXTRA: odborné informace</h3>'
+   +'<p class="po-small">Určený účel, složení, dávkování, kontraindikace, interakce, souhrn publikovaných studií s polyglukosaminem L112 a kontrolní body pro poradenství v lékárně najdete v odborné sekci na webu formoline112.cz.</p>'
+   +'<a class="po-cta" href="https://www.formoline112.cz/pro-odborniky/#odborna-sekce" target="_blank" rel="noopener">Otevřít odbornou sekci formoline L112 EXTRA</a>'
+   +'<h3>Komerční sdělení</h3>'
+   +'<p class="po-small">Placená komerční sdělení zadavatele BEAUFY s.r.o., publikovaná na portálu proLékaře.cz 21. 5. 2026:</p>'
+   +'<ul class="po-links">'
+   +'<li><a href="https://www.prolekare.cz/z-mediciny/polyglukosamin-v-dlouhodobe-lecbe-nadvahy-a-obezity-143645" target="_blank" rel="noopener sponsored">Polyglukosamin v dlouhodobé léčbě nadváhy a obezity</a></li>'
+   +'<li><a href="https://www.prolekare.cz/z-mediciny/formoline-l112-extra-podpora-redukce-hmotnosti-i-lipidoveho-metabolismu-143646" target="_blank" rel="noopener sponsored">formoline L112 EXTRA – podpora redukce hmotnosti i lipidového metabolismu</a></li>'
+   +'</ul>'
+   +'<p class="po-small">Odborné a distribuční dotazy: BEAUFY s.r.o., <a href="mailto:info@beaufy.eu">info@beaufy.eu</a>, +420 799 022 658.</p>'
+   +'<p class="po-disclaimer">Zdravotnické prostředky. Čtěte pečlivě návod k použití a informace o bezpečném používání.</p>';
+  var K='beaufy-hcp-ok',b=document.getElementById('poGateBtn'),c=document.getElementById('poContent'),g=document.getElementById('poGate'),p=document.getElementById('poProf');
+  if(!b||!c||!g||!p)return;
+  var cs=['poC1','poC2','poC3'].map(function(i){return document.getElementById(i)});
+  function ok(){return p.value&&cs.every(function(x){return x&&x.checked})}
+  function upd(){b.disabled=!ok()}
+  [p].concat(cs).forEach(function(e){if(e)e.addEventListener('change',upd)});upd();
+  function open(focus){c.innerHTML=P;c.hidden=false;g.style.display='none';if(focus){var f=c.querySelector('a');if(f)f.focus()}}
+  b.addEventListener('click',function(){if(!ok())return;
+    try{sessionStorage.setItem(K,p.value)}catch(e){}
+    try{(window.dataLayer=window.dataLayer||[]).push({event:'hcp_gate_confirm',hcp_profession:p.value})}catch(e){}
+    try{if(window.clarity){window.clarity('event','hcp_gate_confirm')}}catch(e){}
+    open(true)});
+  try{if(sessionStorage.getItem(K))open(false)}catch(e){}
 })();
 </script>
 

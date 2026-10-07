@@ -3,7 +3,8 @@
      Analytické: GA4 G-KCZB40W1F3, Microsoft Clarity wt15zbt8i0.
      Marketingové: Google Ads AW-17771919700, Meta Pixel 1174578051554403, Seznam Sklik retargeting 1664861.
      Nic se nenačte bez souhlasu. Consent Mode v2: výchozí stav denied, po souhlasu update granted.
-     Volba se ukládá do localStorage pod klíčem beaufyConsent (v3). -->
+     Volba se ukládá do localStorage pod klíčem beaufyConsent (v3).
+     Konverze: generate_lead (poptávkový formulář), click_pharmacy (proklik do e-shopu lékárny). -->
 <style>
   .bf-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:640px;margin:0 auto;background:#0F172A;color:#fff;border-radius:16px;padding:20px 22px;box-shadow:0 18px 50px rgba(15,23,42,.35);font:400 .9rem/1.55 'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;display:none}
   .bf-consent.is-visible{display:block}
@@ -101,6 +102,18 @@
   document.getElementById('bfConsentAccept').addEventListener('click', function () { choose(true, true); });
   document.getElementById('bfConsentAnalytics').addEventListener('click', function () { choose(true, false); });
   document.getElementById('bfConsentReject').addEventListener('click', function () { choose(false, false); });
+  /* Proklik do lékárny = hlavní konverze distributora (GA4 klíčová událost click_pharmacy → import do Google Ads; Meta vlastní událost) */
+  var PHARM = /(^|\.)(drmax\.cz|benu\.cz|lekarna\.cz|lekarnaave\.cz|lekarnalemon\.cz|magistra\.cz|mojelekarna\.cz|alza\.cz|pilulka\.cz|rohlik\.cz|dr-max\.sk|benulekaren\.sk)$/i;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="http"]');
+    if (!a) return;
+    var h; try { h = new URL(a.href).hostname.replace(/^www\./, ''); } catch (err) { return; }
+    if (!PHARM.test(h)) return;
+    var prod = (location.pathname.split('/')[1] || 'homepage');
+    gtag('event', 'click_pharmacy', { pharmacy: h, product: prod, link_url: a.href, transport_type: 'beacon' });
+    if (typeof window.fbq === 'function') window.fbq('trackCustom', 'ClickPharmacy', { pharmacy: h, product: prod });
+    if (typeof window.clarity === 'function') window.clarity('event', 'click_pharmacy');
+  }, true);
   window.beaufyCookieSettings = function () { show(); };
   document.addEventListener('click', function (e) {
     var t = e.target.closest && e.target.closest('[data-cookie-settings]');

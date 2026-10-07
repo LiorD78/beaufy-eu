@@ -1,0 +1,35 @@
+name: laxik.eu redirect (FTP)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths: [ '_laxik-redirect/**', '.github/workflows/laxik-redirect.yml' ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+      - name: Find laxik.eu docroot, back up and upload .htaccess
+        env:
+          H: ${{ secrets.WEDOS_FTP_SERVER }}
+          U: ${{ secrets.WEDOS_FTP_USERNAME }}
+          P: ${{ secrets.WEDOS_FTP_PASSWORD }}
+        run: |
+          set -e
+          L="set ftp:ssl-allow yes; set ssl:verify-certificate no; open -u $U,$P $H"
+          echo "== /"; lftp -c "$L; cls -1 /" || true
+          echo "== /www"; lftp -c "$L; cls -1 /www/" || true
+          echo "== /www/domains"; lftp -c "$L; cls -1 /www/domains/" || true
+          D=""
+          for c in /www/domains/laxik.eu /www/domains/www.laxik.eu /domains/laxik.eu; do
+            if lftp -c "$L; cls -1 $c/" >/dev/null 2>&1; then D=$c; break; fi
+          done
+          if [ -z "$D" ]; then echo "laxik.eu docroot NOT found on this FTP account"; exit 0; fi
+          echo "laxik.eu docroot: $D"; lftp -c "$L; cls -la $D/"
+          lftp -c "$L; cd $D; mv .htaccess .htaccess.bak-20261007" 2>/dev/null || echo "no previous .htaccess"
+          lftp -c "$L; cd $D; put _laxik-redirect/.htaccess -o .htaccess; put _laxik-redirect/google2ef762f640b93281.html -o google2ef762f640b93281.html"
+          echo "uploaded"; lftp -c "$L; cls -la $D/"

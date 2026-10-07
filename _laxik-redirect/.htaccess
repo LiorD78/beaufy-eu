@@ -1,0 +1,9 @@
+# laxik.eu — stará microsite trvale přesměrována na beaufy.eu (7. 10. 2026)
+# Spravováno z repa LiorD78/beaufy-eu (_laxik-redirect/). Doménu dál prodlužovat.
+Options -Indexes
+RewriteEngine On
+# Ověřovací soubor Google Search Console nepřesměrovávat
+RewriteRule ^google2ef762f640b93281\.html$ - [L]
+RewriteRule ^glycerol\.html$ https://www.beaufy.eu/glycerol/ [R=301,L]
+RewriteRule ^blog\.html$ https://www.beaufy.eu/blog/ [R=301,L]
+RewriteRule ^ https://www.beaufy.eu/laxik/ [R=301,L]

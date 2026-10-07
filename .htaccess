@@ -12,6 +12,21 @@ ErrorDocument 404 /404.html
 RewriteEngine On
 
 # ---------------------------------------------------------------------
+# B0) laxik.eu (stará microsite, alias na tomto hostingu) → beaufy.eu
+#     Trvalé 301 přesměrování 1:1 (7. 10. 2026). Doménu laxik.eu dál
+#     prodlužovat; soubory v /www/domains/laxik.eu nechány kvůli rollbacku.
+# ---------------------------------------------------------------------
+# Ověřovací soubor GSC (stejný token jako beaufy.eu) se nesmí přesměrovat
+RewriteCond %{HTTP_HOST} ^(www\.)?laxik\.eu$ [NC]
+RewriteRule ^google2ef762f640b93281\.html$ - [END]
+RewriteCond %{HTTP_HOST} ^(www\.)?laxik\.eu$ [NC]
+RewriteRule ^glycerol\.html$ https://www.beaufy.eu/glycerol/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?laxik\.eu$ [NC]
+RewriteRule ^blog\.html$ https://www.beaufy.eu/blog/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?laxik\.eu$ [NC]
+RewriteRule ^ https://www.beaufy.eu/laxik/ [R=301,L]
+
+# ---------------------------------------------------------------------
 # B1) Kanonická adresa: https://www.beaufy.eu (jen pro doménu beaufy.eu,
 #     aliasy a subdomény na hostingu tím nejsou dotčeny).
 #     Origin za WEDOS CDN vidí HTTPS správně (ověřeno 4. 10. 2026).

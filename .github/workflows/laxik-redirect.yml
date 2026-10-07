@@ -1,5 +1,10 @@
 name: laxik.eu redirect (FTP)
 
+# Nahraje do kořene webu laxik.eu .htaccess s trvalým 301 přesměrováním na beaufy.eu.
+# laxik.eu je na SAMOSTATNÉM Wedos webhostingu → potřebuje vlastní FTP secrets:
+#   LAXIK_FTP_SERVER, LAXIK_FTP_USERNAME, LAXIK_FTP_PASSWORD
+# Původní .htaccess se před přepsáním zálohuje jako .htaccess.bak-<datum>.
+
 on:
   workflow_dispatch:
   push:
@@ -13,23 +18,35 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install lftp
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
-      - name: Find laxik.eu docroot, back up and upload .htaccess
+      - name: Clean up helper folder accidentally uploaded to beaufy.eu
         env:
           H: ${{ secrets.WEDOS_FTP_SERVER }}
           U: ${{ secrets.WEDOS_FTP_USERNAME }}
           P: ${{ secrets.WEDOS_FTP_PASSWORD }}
         run: |
+          lftp -c "set ftp:ssl-allow yes; set ssl:verify-certificate no; open -u $U,$P $H; rm -rf /www/_laxik-redirect" || true
+      - name: Upload redirect to laxik.eu
+        env:
+          H: ${{ secrets.LAXIK_FTP_SERVER }}
+          U: ${{ secrets.LAXIK_FTP_USERNAME }}
+          P: ${{ secrets.LAXIK_FTP_PASSWORD }}
+        run: |
           set -e
+          if [ -z "$H" ] || [ -z "$U" ]; then echo "::warning::LAXIK_FTP_* secrets chybí — nic se nenahrálo"; exit 0; fi
           L="set ftp:ssl-allow yes; set ssl:verify-certificate no; open -u $U,$P $H"
-          echo "== /"; lftp -c "$L; cls -1 /" || true
-          echo "== /www"; lftp -c "$L; cls -1 /www/" || true
-          echo "== /www/domains"; lftp -c "$L; cls -1 /www/domains/" || true
           D=""
-          for c in /www/domains/laxik.eu /www/domains/www.laxik.eu /domains/laxik.eu; do
-            if lftp -c "$L; cls -1 $c/" >/dev/null 2>&1; then D=$c; break; fi
+          for c in /www /www/domains/laxik.eu /domains/laxik.eu /; do
+            if lftp -c "$L; cls -1 $c/" 2>/dev/null | grep -qiE 'index\.html|glycerol\.html'; then D=$c; break; fi
           done
-          if [ -z "$D" ]; then echo "laxik.eu docroot NOT found on this FTP account"; exit 0; fi
-          echo "laxik.eu docroot: $D"; lftp -c "$L; cls -la $D/"
-          lftp -c "$L; cd $D; mv .htaccess .htaccess.bak-20261007" 2>/dev/null || echo "no previous .htaccess"
+          if [ -z "$D" ]; then echo "::error::kořen webu laxik.eu (index.html + glycerol.html) nenalezen"; lftp -c "$L; cls -1 /; cls -1 /www/" || true; exit 1; fi
+          echo "laxik.eu docroot: $D"
+          STAMP=$(date +%Y%m%d)
+          lftp -c "$L; cd $D; mv .htaccess .htaccess.bak-$STAMP" 2>/dev/null && echo "backup: .htaccess.bak-$STAMP" || echo "no previous .htaccess"
           lftp -c "$L; cd $D; put _laxik-redirect/.htaccess -o .htaccess; put _laxik-redirect/google2ef762f640b93281.html -o google2ef762f640b93281.html"
-          echo "uploaded"; lftp -c "$L; cls -la $D/"
+          echo "uploaded"
+      - name: Verify redirects
+        run: |
+          sleep 5
+          for u in https://www.laxik.eu/ https://laxik.eu/ https://www.laxik.eu/glycerol.html https://www.laxik.eu/blog.html https://www.laxik.eu/google2ef762f640b93281.html; do
+            echo "$u -> $(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' $u)"
+          done

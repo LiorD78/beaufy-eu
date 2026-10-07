@@ -43,6 +43,7 @@ jobs:
             **/docs/**
             **/_originals/**
             **/_partials/**
+            **/_laxik-redirect/**
             **/build-includes.py
             **/index_backup_original.html
             **/.DS_Store

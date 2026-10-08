@@ -26,6 +26,7 @@ BEAUFY s.r.o. distribuuje pět produktových řad italské výroby (značky New.
 - [DISPO HOT](https://www.beaufy.eu/dispo-hot/): Instantní horký sáček aktivovaný stiskem
 - [Dokumenty ke stažení](https://www.beaufy.eu/ke-stazeni/): Prohlášení o shodě a CE certifikáty ke všem produktům
 - [Blog](https://www.beaufy.eu/blog/): Odborné články o zácpě a jejím šetrném řešení
+  - [Mikroklyzma – co to je a jak ho použít (průvodce)](https://www.beaufy.eu/blog/mikroklyzma/)
   - [Zácpa u dětí](https://www.beaufy.eu/blog/zacpa-u-deti/)
   - [Léčba zácpy mikroklystýrem](https://www.beaufy.eu/blog/mikroklystyr-lecba-zacpy/)
   - [Glycerol a zácpa u dospělých](https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/)

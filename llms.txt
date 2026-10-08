@@ -7,9 +7,9 @@
 BEAUFY s.r.o. distribuuje pět produktových řad italské výroby (značky New.Fa.Dem., Easy Termo, DISPO):
 
 - **Laxík** — Mikroklystýr pro děti s glycerolem, výtažkem z heřmánku a slézu. Zdravotnický prostředek třídy I, určený k šetrné úlevě od zácpy u dětí. Zjemňuje sliznici, uvolňuje a lubrikuje stolici. Balení 3×3 g a 6×3 g.
-- **Glycerol** — Mikroklystýr New.Fa.Dem. pro dospělé. Glycerolová ampulka s aplikátorem pro snadné, šetrné a rychlé řešení akutní zácpy u dospělých. Bez návyku, lze používat dlouhodobě bez ztráty účinnosti.
-- **Ženšen** — Žen šen Ginseng royal, Ginseng Royal Jelly Oral Tonic. Doplněk stravy v pitných ampulkách kombinující ženšen (Panax ginseng), mateří kašičku a vitamíny, 10 × 10 ml. Pro podporu energie, vitality a imunity. Bez cukru a kofeinu.
-- **DISPO ICE** — Ledový sprej pro instantní chlazení při sportovních úrazech (vyvrtnutí, podvrtnutí, otoky). Profesionální vybavení známé z fotbalových hřišť. Okamžitý chladicí efekt bez kontaktu s pokožkou.
+- **Glycerol** — Mikroklystýr New.Fa.Dem. pro dospělé. Glycerolová ampulka s aplikátorem pro snadné a šetrné řešení občasné zácpy u dospělých. Bez konzultace s lékařem používat nejvýše 7 dní.
+- **Ženšen** — Žen šen Ginseng royal, Ginseng Royal Jelly Oral Tonic. Doplněk stravy v pitných ampulkách kombinující ženšen (Panax ginseng), mateří kašičku a med, 10 × 10 ml. Pro podporu vitality a soustředění. Bez kofeinu.
+- **DISPO ICE** — Ledový sprej pro instantní chlazení při sportovních úrazech (vyvrtnutí, podvrtnutí, otoky). Profesionální vybavení známé z fotbalových hřišť. Rychlý chladicí efekt bez přímého kontaktu s pokožkou.
 - **DISPO GEL** — Chladicí gel pro úlevu od bolesti svalů a kloubů. Doplňuje DISPO ICE sprej v profesionálním sportovním lékárničce.
 - **Instantní termoterapie (Easy Termo)** — Jednorázové horké/studené sáčky aktivované stiskem. Profi alternativa klasických termoforů a ledových obkladů — bez potřeby přípravy nebo elektřiny. Řada zahrnuje EASY ICE (studený sáček) a DISPO HOT (horký sáček).
 
@@ -45,13 +45,13 @@ Phoenix lékárenský velkoobchod, Pharmos, Alliance Healthcare
 ## Časté otázky
 
 **Co je mikroklystýr a jak funguje?**
-Mikroklystýr je malé jednorázové balení s aplikátorem (3–5 ml) obsahující glycerolový roztok. Aplikuje se rektálně. Glycerol funguje osmoticky — přitahuje vodu do střev, změkčuje stolici a stimuluje peristaltiku. Účinek nastupuje obvykle do 15–30 minut. Jde o místní šetrné řešení akutní zácpy, bez návyku, bez systémových vedlejších účinků.
+Mikroklystýr je malé jednorázové balení s aplikátorem (3–5 ml) obsahující glycerolový roztok. Aplikuje se rektálně. Glycerol funguje osmoticky — přitahuje vodu do střev, změkčuje stolici a stimuluje peristaltiku. Účinek nastupuje obvykle do 15–30 minut. Jde o místní šetrné řešení občasné zácpy; glycerol působí v konečníku a nevstřebává se do krevního oběhu.
 
-**Jsou Laxík a Glycerol vhodné pro dlouhodobé používání?**
-Ano. Protože glycerol nepřechází do krevního oběhu a funguje pouze místně, mikroklystýry lze používat dlouhodobě bez ztráty účinnosti nebo návyku. To je rozdíl proti perorálním projímadlům, která při dlouhodobém užívání mohou způsobovat tzv. lazy bowel syndrome (líné střevo).
+**Jak dlouho lze Laxík a Glycerol používat?**
+Mikroklystýry jsou určeny ke krátkodobé úlevě od občasné zácpy, obvykle 1 dávka dle potřeby, 1–2× denně. Bez konzultace s lékařem se nemají používat déle než 7 dní; při přetrvávající nebo opakované zácpě je vždy potřeba navštívit lékaře.
 
 **Jaký je rozdíl mezi Laxíkem a Glycerolem?**
-Laxík je určen pro děti (od 0 let v dohledu lékaře, běžně od 1 roku) a má jemnější složení obohacené o výtažek z heřmánku a slézu. Glycerol New.Fa.Dem. je pro dospělé s vyšším objemem aktivní látky.
+Laxík je určen pro děti od narození (u novorozenců a předčasně narozených dětí po poradě s pediatrem) a má jemnější složení obohacené o výtažek z heřmánku a slézu. Glycerol New.Fa.Dem. je pro dospělé s vyšším objemem aktivní látky.
 
 **Jaký je rozdíl mezi EASY ICE a DISPO HOT?**
 Oba jsou jednorázové sáčky z řady instantní termoterapie, které se aktivují stiskem a nepotřebují přípravu ani elektřinu. EASY ICE chladí — je určen pro akutní úrazy, otoky a podvrtnutí. DISPO HOT hřeje — je určen pro uvolnění svalového napětí a prohřátí.

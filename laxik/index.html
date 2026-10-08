@@ -222,6 +222,8 @@
     .info-safety-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--blue-mid,#134a8e); }
     /* srovnání */
     .info-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 700px; }
+    .info-compare-3 { grid-template-columns: repeat(3, 1fr); max-width: 960px; }
+    .info-compare-intro { font-size: .92rem; color: var(--muted); line-height: 1.6; max-width: 760px; margin: 0 0 16px; }
     .info-compare-col { background: var(--bg); border-radius: 14px; padding: 18px 20px; border: 1px solid rgba(11,44,74,.1); }
     .info-compare-col.laxik { border-color: var(--blue-mid,#134a8e); border-width: 1.5px; }
     .info-compare-head { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
@@ -238,7 +240,7 @@
     @media (max-width: 700px) {
       .info-cards { grid-template-columns: 1fr; }
       .info-slozeni-grid { grid-template-columns: 1fr; }
-      .info-compare { grid-template-columns: 1fr; }
+      .info-compare, .info-compare-3 { grid-template-columns: 1fr; }
       .info-edu-cards { grid-template-columns: 1fr; }
       .info-tabs-nav { gap: 5px; }
       .info-tab-btn { font-size: .78rem; padding: 6px 13px; }
@@ -505,7 +507,7 @@
       "name": "Od kolika let (měsíců) lze Laxík použít?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Laxík je vhodný pro všechny děti od narození, včetně novorozenců a předčasně narozených dětí (po konzultaci s lékařem). Věkové omezení použití není stanoveno."
+        "text": "Laxík je určen pro děti od narození, včetně novorozenců – vždy podle návodu k použití. U předčasně narozených dětí a při jakékoli nejistotě se nejprve poraďte s pediatrem."
       }
     },
     {
@@ -542,10 +544,10 @@
     },
     {
       "@type": "Question",
-      "name": "Je Laxík bezpečný pro kojence a novorozence?",
+      "name": "Je Laxík vhodný pro kojence a novorozence?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ano. Laxík je zdravotnický prostředek třídy I certifikovaný pro použití od narození. Složení bez konzervantů, parfémů a solí sodíku minimalizuje riziko podráždění i u nejcitlivějších novorozeneckých sliznic."
+        "text": "Ano, Laxík je zdravotnický prostředek třídy I určený pro děti od narození. Neobsahuje konzervanty, parfémy ani soli sodíku, a je proto šetrný i k citlivé sliznici novorozenců. Vždy postupujte podle návodu k použití."
       }
     },
     {
@@ -722,7 +724,7 @@
         <button class="info-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-produkt"  id="tbtn-produkt">O produktu</button>
         <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-pouziti"  id="tbtn-pouziti">Jak použít</button>
         <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-slozeni"  id="tbtn-slozeni">Složení a dávkování</button>
-        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-srovnani" id="tbtn-srovnani">Laxík vs. čípky</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-srovnani" id="tbtn-srovnani">Mikroklyzma, čípek, nebo sirup?</button>
         <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-zacpa"    id="tbtn-zacpa">Zácpa u dětí</button>
       </div>
 
@@ -733,7 +735,7 @@
           <div class="info-card featured">
             <div class="info-card-tag">Zdravotnický prostředek třídy I</div>
             <h3>Co je Laxík?</h3>
-            <p>Jednorázové mikroklyzma na bázi glycerolu, heřmánku a slézu pro rektální použití. Certifikován dle evropských norem, vyrábí se v Itálii (New.Fa.Dem. Srl). V ČR distribuuje výhradně BEAUFY s.r.o.</p>
+            <p>Jednorázové mikroklyzma na bázi glycerolu, heřmánku a slézu pro rektální použití. Zdravotnický prostředek s označením CE, vyrábí se v Itálii (New.Fa.Dem. Srl). V ČR distribuuje výhradně BEAUFY s.r.o.</p>
           </div>
           <div class="info-card">
             <h3>Jak Laxík funguje?</h3>
@@ -844,24 +846,27 @@
         </div>
       </div>
 
-      <!-- Panel 4: Laxík vs. čípky -->
+      <!-- Panel 4: Mikroklyzma, čípek, sirup — neutrální přehled forem -->
       <div class="info-tab-panel" id="tab-srovnani" role="tabpanel" aria-labelledby="tbtn-srovnani">
-        <div class="info-compare">
-          <div class="info-compare-col laxik">
-            <div class="info-compare-head laxik">Laxík mikroklyzma</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Tekutá forma — účinná látka se dostane přesně na místo okamžitě</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Přesně dávkovaný obsah uzavřené ampulky</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Hygienická, jednoduchá a prakticky bezbolestná aplikace</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Glycerol neprostupuje do krevního oběhu, nevyvolává průjem</div>
-            <div class="info-compare-item"><div class="info-compare-dot green"></div>Rychlejší a spolehlivější nástup účinku</div>
+        <p class="info-compare-intro">Zácpu lze řešit několika lékovými formami. Přehled ukazuje, jak se od sebe liší – vhodnou formu pro konkrétní situaci vám doporučí lékárník nebo lékař.</p>
+        <div class="info-compare info-compare-3">
+          <div class="info-compare-col">
+            <div class="info-compare-head laxik">Mikroklyzma</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Tekutá forma v jednorázové ampulce s aplikátorem</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Předem odměřená dávka, aplikace přímo do konečníku</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Působí místně, roztok se nemusí nejprve rozpouštět</div>
           </div>
           <div class="info-compare-col">
-            <div class="info-compare-head cipek">Glycerinový čípek / sirup</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Čípek se musí nejprve rozpustit — nástup trvá déle</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Hůře se dávkuje, riziko nechtěného vytlačení</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Odlomení části čípku při aplikaci</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Sirupy a čaje zatěžují trávicí soustavu systémově</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Pomalejší a méně předvídatelný efekt</div>
+            <div class="info-compare-head laxik">Glycerinový čípek</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Pevná forma pro zavedení do konečníku</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Po zavedení se postupně rozpouští tělesnou teplotou</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Vyrábí se v různých velikostech podle věku</div>
+          </div>
+          <div class="info-compare-col">
+            <div class="info-compare-head laxik">Projímadla ústy</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Sirupy, roztoky nebo tablety užívané ústy</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Procházejí trávicím traktem</div>
+            <div class="info-compare-item"><div class="info-compare-dot green"></div>Nástup účinku se liší podle účinné látky, často v řádu hodin</div>
           </div>
         </div>
       </div>
@@ -945,7 +950,7 @@
           <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body">
-          <p>Laxík je vhodný pro všechny děti od narození, včetně novorozenců a předčasně narozených dětí (po konzultaci s lékařem). Věkové omezení použití není stanoveno.</p>
+          <p>Laxík je určen pro děti od narození, včetně novorozenců – vždy podle návodu k použití. U předčasně narozených dětí a při jakékoli nejistotě se nejprve poraďte s pediatrem.</p>
         </div>
       </div>
 
@@ -991,11 +996,11 @@
 
       <div class="faq-item">
         <button class="faq-btn" aria-expanded="false">
-          <span>Je Laxík bezpečný pro kojence a novorozence?</span>
+          <span>Je Laxík vhodný pro kojence a novorozence?</span>
           <svg aria-hidden="true" class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-body">
-          <p>Ano. Laxík je zdravotnický prostředek třídy I certifikovaný pro použití od narození. Složení bez konzervantů, parfémů a solí sodíku minimalizuje riziko podráždění i u nejcitlivějších novorozeneckých sliznic.</p>
+          <p>Ano, Laxík je zdravotnický prostředek třídy I určený pro děti od narození. Neobsahuje konzervanty, parfémy ani soli sodíku, a je proto šetrný i k citlivé sliznici novorozenců. Vždy postupujte podle návodu k použití.</p>
         </div>
       </div>
 
@@ -1052,7 +1057,7 @@
       <a class="partner-logo-link reveal" href="https://www.benu.cz/vyhledavani?q=laxik" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU Lékárny" width="400" height="225" loading="lazy" decoding="async"></a>
       <a class="partner-logo-link reveal" href="https://www.alza.cz/carefy-laxik-mikroklystyr-pro-deti-6-3-g-d13191256.htm?o=1" target="_blank" rel="noopener"><img src="/logos/logo-alza.png" alt="Alza.cz" width="400" height="400" loading="lazy" decoding="async"></a>
       <a class="partner-logo-link reveal" href="https://www.mojelekarna.cz/vyhledavani?s=laxik" target="_blank" rel="noopener"><img src="/logos/logo-mojelekarna.png" alt="MojeLékárna.cz" width="400" height="225" loading="lazy" decoding="async"></a>
-      <a class="partner-logo-link reveal" href="https://www.lekarnalemon.cz/produkty/vyhledavani?s=laxik" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna.cz" width="400" height="225" loading="lazy" decoding="async"></a>
+      <a class="partner-logo-link reveal" href="https://www.gigalekarna.cz/vyhledavani/?phrase=laxik" target="_blank" rel="noopener"><img src="/logos/logo-giga.png" alt="GigaLékárna.cz" width="400" height="225" loading="lazy" decoding="async"></a>
       <a class="partner-logo-link reveal" href="https://www.magistra.cz/cs/Search?q=Laxik" target="_blank" rel="noopener"><img src="/logos/logo-magistra.png" alt="Magistra Lékárny" width="400" height="225" loading="lazy" decoding="async"></a>
       <a class="partner-logo-link reveal" href="https://www.lekarnaave.cz/vyhledavani?q=laxik" target="_blank" rel="noopener"><img src="/logos/logo-ave.png" alt="Lékárna AVE" width="400" height="225" loading="lazy" decoding="async"></a>
       <a class="partner-logo-link reveal" href="https://www.lekarna.cz/vyhledavani/?query=lax%C3%ADk&idx=ni" target="_blank" rel="noopener"><img src="/logos/logo-lekarna.svg" alt="Lékárna.cz" style="height:60px;" width="200" height="60" loading="lazy" decoding="async"></a>
@@ -1142,7 +1147,7 @@
     <div class="reveal" style="display:flex;flex-direction:column;gap:10px;max-width:780px;">
         <a class="pdoc" href="/ke-stazeni/dokumenty/laxik-prohlaseni-o-shode.pdf" target="_blank" rel="noopener">
           <span class="pdoc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg></span>
-          <span class="pdoc-info"><span class="pdoc-name">Prohlášení o shodě (CE)</span><span class="pdoc-meta">PDF · směrnice 93/42/EHS · 2026</span></span>
+          <span class="pdoc-info"><span class="pdoc-name">Prohlášení o shodě (CE)</span><span class="pdoc-meta">PDF · 93/42/EHS, legacy dle čl. 120 MDR · 23. 3. 2026</span></span>
           <span class="pdoc-dl">Stáhnout →</span>
         </a>
     </div>

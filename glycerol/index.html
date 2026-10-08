@@ -161,6 +161,8 @@
     .info-safety-list li { font-size: .88rem; color: var(--muted); line-height: 1.65; padding-left: 16px; position: relative; }
     .info-safety-list li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--blue-mid); }
     .info-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 700px; }
+    .info-compare-3 { grid-template-columns: repeat(3, 1fr); max-width: 960px; }
+    .info-compare-intro { font-size: .92rem; color: var(--muted); line-height: 1.6; max-width: 760px; margin: 0 0 16px; }
     .info-compare-col { background: var(--bg); border-radius: 14px; padding: 18px 20px; border: 1px solid rgba(11,44,74,.1); }
     .info-compare-col.laxik { border-color: var(--blue-mid); border-width: 1.5px; }
     .info-compare-head { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; }
@@ -252,7 +254,7 @@
       .story-quote.hide-mobile { display: none; }
       .info-cards { grid-template-columns: 1fr; }
       .info-slozeni-grid { grid-template-columns: 1fr; }
-      .info-compare { grid-template-columns: 1fr; }
+      .info-compare, .info-compare-3 { grid-template-columns: 1fr; }
       .info-edu-cards { grid-template-columns: 1fr; }
       .info-tabs-nav { gap: 5px; }
       .info-tab-btn { font-size: .78rem; padding: 6px 13px; }
@@ -589,7 +591,7 @@
         <button class="info-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-produkt"  id="tbtn-produkt">O produktu</button>
         <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-pouziti"  id="tbtn-pouziti">Jak použít</button>
         <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-slozeni"  id="tbtn-slozeni">Složení a dávkování</button>
-        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-srovnani" id="tbtn-srovnani">Glycerol vs. čípky</button>
+        <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-srovnani" id="tbtn-srovnani">Mikroklyzma, čípek, nebo sirup?</button>
         <button class="info-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-zacpa"    id="tbtn-zacpa">Zácpa u dospělých</button>
       </div>
 
@@ -718,26 +720,27 @@
         </div>
       </div>
 
-      <!-- Panel 4: Glycerol vs. čípky -->
+      <!-- Panel 4: Mikroklyzma, čípek, sirup — neutrální přehled forem -->
       <div class="info-tab-panel" id="tab-srovnani" role="tabpanel" aria-labelledby="tbtn-srovnani">
-        <div class="info-compare">
-          <div class="info-compare-col laxik">
-            <div class="info-compare-head laxik">Glycerol mikroklyzma</div>
-            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Tekutá forma — účinná látka se dostane přesně na místo okamžitě</div>
-            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Přesně dávkovaný obsah uzavřené ampulky 9 g</div>
-            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Hygienická a prakticky bezbolestná aplikace</div>
-            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Glycerol neprostupuje do krevního oběhu — nevyvolává průjem</div>
-            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Rychlejší a spolehlivější nástup účinku</div>
-            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Heřmánek a sléz aktivně chrání a zklidňují sliznici</div>
+        <p class="info-compare-intro">Zácpu lze řešit několika lékovými formami. Přehled ukazuje, jak se od sebe liší – vhodnou formu pro konkrétní situaci vám doporučí lékárník nebo lékař.</p>
+        <div class="info-compare info-compare-3">
+          <div class="info-compare-col">
+            <div class="info-compare-head laxik">Mikroklyzma</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Tekutá forma v jednorázové ampulce s aplikátorem</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Předem odměřená dávka, aplikace přímo do konečníku</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Působí místně, roztok se nemusí nejprve rozpouštět</div>
           </div>
           <div class="info-compare-col">
-            <div class="info-compare-head cipek">Glycerinový čípek / sirup</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Čípek se musí nejprve rozpustit — nástup trvá déle</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Hůře se dávkuje, riziko nechtěného vytlačení</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Odlomení části čípku při aplikaci</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Sirupy a čaje zatěžují trávicí soustavu systémově</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Pomalejší a méně předvídatelný efekt</div>
-            <div class="info-compare-item"><div class="info-compare-dot gray"></div>Žádná ochrana sliznice při aplikaci</div>
+            <div class="info-compare-head laxik">Glycerinový čípek</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Pevná forma pro zavedení do konečníku</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Po zavedení se postupně rozpouští tělesnou teplotou</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Vyrábí se v různých velikostech podle věku</div>
+          </div>
+          <div class="info-compare-col">
+            <div class="info-compare-head laxik">Projímadla ústy</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Sirupy, roztoky nebo tablety užívané ústy</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Procházejí trávicím traktem</div>
+            <div class="info-compare-item"><div class="info-compare-dot amber"></div>Nástup účinku se liší podle účinné látky, často v řádu hodin</div>
           </div>
         </div>
       </div>
@@ -777,7 +780,7 @@
       <div class="story-label reveal">Náš příběh pokračuje</div>
       <h2 class="reveal">Stejná cesta.<br>Stejný výrobce. <em>Další krok.</em></h2>
       <div class="story-body">
-        <p class="reveal">Laxík nám dlouhé roky skvěle pomáhal. Byl s námi v období, kdy jsme jako rodiče hledali bezpečné a účinné řešení pro našeho syna, a fungoval přesně tak, jak jsme potřebovali. Jenže jak syn rostl, začalo být jasné, že to, co dřív stačilo, už najednou nestačí.</p>
+        <p class="reveal">Laxík nám dlouhé roky skvěle pomáhal. Byl s námi v období, kdy jsme jako rodiče hledali šetrné řešení pro našeho syna, a fungoval přesně tak, jak jsme potřebovali. Jenže jak syn rostl, začalo být jasné, že to, co dřív stačilo, už najednou nestačí.</p>
         <p class="reveal">Potíže se znovu ozvaly a my jsme stáli před stejnou otázkou jako kdysi: co teď? Ani tentokrát jsme nechtěli hledat náhodné řešení. Chtěli jsme jít cestou, které jsme už jednou věřili.</p>
         <div class="story-quote reveal hide-mobile">
           <p>Stejný výrobce, se kterým naše cesta začala. Stejná důvěra, kterou jsme si už jednou ověřili.</p>
@@ -946,7 +949,7 @@
     <div class="crosssell-text reveal">
       <div class="section-label">Také od BEAUFY</div>
       <h3>Hledáte řešení pro děti?</h3>
-      <p>Laxík je mikroklystýr pro děti od narození od stejného italského výrobce. Šetrné složení s glycerolem, heřmánkem a slézem. Bezpečný i pro novorozence.</p>
+      <p>Laxík je mikroklystýr pro děti od narození od stejného italského výrobce. Šetrné složení s glycerolem, heřmánkem a slézem. Určený pro děti už od narození.</p>
     </div>
     <a href="/laxik/" class="crosssell-card reveal">
       <picture><source srcset="/laxik-mikroklystyr-deti.webp" type="image/webp"><img src="/laxik-mikroklystyr-deti.jpg" alt="Laxík mikroklystýr pro děti" width="800" height="518" loading="lazy" decoding="async"></picture>

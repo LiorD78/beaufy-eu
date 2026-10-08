@@ -103,7 +103,7 @@
   document.getElementById('bfConsentAnalytics').addEventListener('click', function () { choose(true, false); });
   document.getElementById('bfConsentReject').addEventListener('click', function () { choose(false, false); });
   /* Proklik do lékárny = hlavní konverze distributora (GA4 klíčová událost click_pharmacy → import do Google Ads; Meta vlastní událost) */
-  var PHARM = /(^|\.)(drmax\.cz|benu\.cz|lekarna\.cz|lekarnaave\.cz|lekarnalemon\.cz|magistra\.cz|mojelekarna\.cz|alza\.cz|pilulka\.cz|rohlik\.cz|dr-max\.sk|benulekaren\.sk)$/i;
+  var PHARM = /(^|\.)(drmax\.cz|benu\.cz|lekarna\.cz|lekarnaave\.cz|lekarnalemon\.cz|gigalekarna\.cz|magistra\.cz|mojelekarna\.cz|alza\.cz|pilulka\.cz|rohlik\.cz|dr-max\.sk|benulekaren\.sk)$/i;
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href^="http"]');
     if (!a) return;

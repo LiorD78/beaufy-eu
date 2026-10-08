@@ -89,12 +89,24 @@
     <lastmod>2026-10-07</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/easy-ice.png</image:loc>
+      <image:title>EASY ICE — instantní chladicí sáček</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/dispo-hot.png</image:loc>
+      <image:title>DISPO HOT — instantní hřejivý sáček</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/blog/img/blog-hero.jpg</image:loc>
+      <image:title>Blog BEAUFY — Zdraví a péče</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/blog/glycerol-zacpa-u-dospelych/</loc>
@@ -116,7 +128,7 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/zasady-ochrany-osobnich-udaju.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <priority>0.3</priority>
     <changefreq>yearly</changefreq>
   </url>
@@ -131,11 +143,19 @@
     <lastmod>2026-10-07</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/easy-ice.png</image:loc>
+      <image:title>EASY ICE — instantní chladicí sáček bez mrazáku</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispo-hot/</loc>
     <lastmod>2026-10-07</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/dispo-hot.png</image:loc>
+      <image:title>DISPO HOT — instantní hřejivý sáček bez mikrovlnky</image:title>
+    </image:image>
   </url>
 </urlset>

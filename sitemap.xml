@@ -109,6 +109,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.beaufy.eu/blog/zacpa-u-miminka/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/laxik-hero.jpg</image:loc>
+      <image:title>Zácpa u miminka – co dělat</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.beaufy.eu/blog/gelovy-polstarek/</loc>
     <lastmod>2026-10-12</lastmod>
     <priority>0.7</priority>

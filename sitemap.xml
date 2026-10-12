@@ -109,6 +109,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.beaufy.eu/blog/gelovy-polstarek/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <image:image>
+      <image:loc>https://www.beaufy.eu/dispogel/img/hero.jpg</image:loc>
+      <image:title>Gelový polštářek DISPO GEL – nahřátí a chlazení</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.beaufy.eu/blog/mikroklyzma/</loc>
     <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>

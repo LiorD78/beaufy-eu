@@ -463,6 +463,10 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
     }
     .contact-info { }
+    /* mobil: položky mřížky se nesmí roztáhnout přes šířku displeje */
+    .contact-grid > * { min-width: 0; }
+    .contact-person-info { min-width: 0; }
+    .contact-person-links a { overflow-wrap: anywhere; }
     .contact-persons { display: flex; flex-direction: column; gap: 16px; }
     .contact-person {
       background: var(--white); border-radius: 16px; padding: 20px 24px;
@@ -490,6 +494,7 @@
       font-family: inherit; font-size: .9rem; color: var(--text);
       background: var(--bg2); transition: border-color .2s ease;
       outline: none;
+      width: 100%; min-width: 0; box-sizing: border-box;
     }
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
       border-color: var(--blue);
@@ -567,12 +572,14 @@
       .about-visual { height: 300px; }
       .team-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
       .b2b-inner { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+      .contact-form { padding: 28px 22px; }
+      .contact-person { padding: 18px 18px; }
 
     }
     @media (max-width: 600px) {
       .products-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
 
     }
       /* hero: původní fotka bez mlhy + liquid glass rámečky */

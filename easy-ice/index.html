@@ -21,7 +21,7 @@
   <meta property="og:url" content="https://www.beaufy.eu/easy-ice/">
   <meta property="og:title" content="Instantní chladicí sáček EASY ICE — led bez mrazáku | BEAUFY">
   <meta property="og:description" content="Chladicí sáček EASY ICE: stačí zmáčknout a chladí až na −4 °C, bez mrazáku. Při otoku, výronu či naražení – do lékárničky i na sport. Zdravotnický prostředek.">
-  <meta property="og:image" content="https://www.beaufy.eu/instantni-termoterapie/img/easy-ice.png">
+  <meta property="og:image" content="https://www.beaufy.eu/instantni-termoterapie/img/easy-ice-front.jpg">
   <meta property="og:image:alt" content="EASY ICE instantní chladicí sáček, led bez mrazáku">
   <meta property="og:image:width" content="1020">
   <meta property="og:image:height" content="660">
@@ -30,7 +30,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Instantní chladicí sáček EASY ICE — led bez mrazáku | BEAUFY">
   <meta name="twitter:description" content="Chladicí sáček EASY ICE: stačí zmáčknout a chladí až na −4 °C, bez mrazáku. Při otoku, výronu či naražení – do lékárničky i na sport. Zdravotnický prostředek.">
-  <meta name="twitter:image" content="https://www.beaufy.eu/instantni-termoterapie/img/easy-ice.png">
+  <meta name="twitter:image" content="https://www.beaufy.eu/instantni-termoterapie/img/easy-ice-front.jpg">
   <meta name="twitter:image:alt" content="EASY ICE instantní chladicí sáček, led bez mrazáku">
 
   <!-- Geo targeting (Czech Republic + Slovakia) -->
@@ -57,7 +57,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="format-detection" content="telephone=no">
-  <link rel="preload" as="image" href="/instantni-termoterapie/img/easy-ice.png" type="image/png" fetchpriority="high">
+  <link rel="preload" as="image" href="/instantni-termoterapie/img/easy-ice-front.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../assets/css/beaufy.css?v=20261008-social2">
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link rel="stylesheet" href="https://fonts.bunny.net/css?family=dm-sans:300,400,500,600,300i|dm-serif-display:400,400i&display=swap">
@@ -277,7 +277,7 @@
     "audienceType": "Sportovci, první pomoc, domácnost"
   },
   "@id": "https://www.beaufy.eu/easy-ice/#product",
-  "image": "https://www.beaufy.eu/instantni-termoterapie/img/easy-ice.png",
+  "image": ["https://www.beaufy.eu/instantni-termoterapie/img/easy-ice-front.jpg", "https://www.beaufy.eu/instantni-termoterapie/img/easy-ice-back.jpg"],
   "gtin13": "8033196351764",
   "offers": {
     "@type": "AggregateOffer",
@@ -376,6 +376,13 @@
 .ei-note{font-size:.85rem;color:#64748b;margin-top:14px;border-left:3px solid #cbd5e1;padding-left:12px;}
 .ei-split{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:32px;align-items:center;}
 .ei-hero-img{width:100%;height:auto;border-radius:18px;}
+.ei-gallery{margin:0;}
+.ei-gallery .ei-hero-img{display:block;aspect-ratio:1/1;object-fit:contain;}
+.ei-thumbs{display:flex;gap:10px;justify-content:center;margin-top:10px;}
+.ei-thumb{width:72px;height:72px;padding:4px;background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:border-color .2s;}
+.ei-thumb img{display:block;width:100%;height:100%;object-fit:contain;}
+.ei-thumb:hover,.ei-thumb:focus-visible{border-color:var(--blue-lt,#1f5fa6);}
+.ei-thumb[aria-pressed="true"]{border-color:var(--navy,#0F172A);}
 .ei-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:10px;}
 .ei-grid .info-card{background:#fff;border:1px solid #e2e8f0;border-radius:18px;padding:22px;}
 .ei-grid .info-card h3{margin:0 0 8px;color:var(--navy,#0F172A);font-size:1.1rem;}
@@ -413,7 +420,13 @@
 
 <section class="ei-sec" id="led-bez-mrazaku">
   <div class="section-inner ei-split">
-    <img class="ei-hero-img" src="/instantni-termoterapie/img/easy-ice.png" alt="EASY ICE instantní chladicí sáček, led bez mrazáku" width="510" height="330" loading="eager" fetchpriority="high">
+    <figure class="ei-gallery">
+      <img class="ei-hero-img" src="/instantni-termoterapie/img/easy-ice-front.webp" alt="EASY ICE instantní chladicí sáček, led bez mrazáku" width="800" height="800" loading="eager" fetchpriority="high">
+      <div class="ei-thumbs">
+        <button type="button" class="ei-thumb" aria-pressed="true" aria-label="Zobrazit přední stranu sáčku EASY ICE" data-src="/instantni-termoterapie/img/easy-ice-front.webp" data-alt="EASY ICE instantní chladicí sáček, led bez mrazáku"><img src="/instantni-termoterapie/img/easy-ice-front.webp" alt="" width="800" height="800" decoding="async"></button>
+        <button type="button" class="ei-thumb" aria-pressed="false" aria-label="Zobrazit zadní stranu sáčku EASY ICE" data-src="/instantni-termoterapie/img/easy-ice-back.webp" data-alt="EASY ICE, zadní strana sáčku s návodem a složením"><img src="/instantni-termoterapie/img/easy-ice-back.webp" alt="" width="800" height="800" loading="lazy" decoding="async"></button>
+      </div>
+    </figure>
     <div>
       <div class="section-label">Led bez mrazáku</div>
       <h2>Okamžitý chlad,<br>kdykoliv a kdekoliv</h2>
@@ -461,7 +474,7 @@
 <section class="buy" id="kde-koupit">
   <div class="buy-inner">
     <p class="buy-title reveal">Dostupné v těchto lékárnách</p>
-    <p class="rrp reveal" style="text-align:center;margin:-8px 0 28px;">Doporučená cena 49 Kč · APA 5481743 · EAN 8033196351764<small>cena v lékárnách se může lišit</small></p>
+    <p class="rrp reveal" style="text-align:center;margin:-8px 0 28px;">Doporučená cena 49 Kč · APA 5534863 · EAN 8033196351764<small>cena v lékárnách se může lišit</small></p>
     <div class="buy-logos">
       <a class="partner-logo-link" href="https://www.drmax.cz/easy-ice-jednorazovy-chladici-sacek-14-x-18-cm" target="_blank" rel="noopener"><img src="/logos/logo-drmax.png" alt="Dr.Max" width="400" height="225" loading="lazy" decoding="async"></a>
       <a class="partner-logo-link" href="https://www.benu.cz/easy-ice-jednorazovy-chladici-sacek-14x18cm" target="_blank" rel="noopener"><img src="/logos/logo-benu.png" alt="BENU" width="400" height="225" loading="lazy" decoding="async"></a>
@@ -527,7 +540,7 @@
     </div>
     <div class="crosssell-cards">
       <a href="/dispo-hot/" class="crosssell-card reveal">
-        <img src="/instantni-termoterapie/img/dispo-hot.png" alt="DISPO HOT instantní hřejivý sáček" width="350" height="350" loading="lazy" decoding="async">
+        <img src="/instantni-termoterapie/img/dispo-hot-front.webp" alt="DISPO HOT instantní hřejivý sáček" width="350" height="350" loading="lazy" decoding="async">
         <div>
           <div class="crosssell-card-label">Instantní teplo</div>
           <div class="crosssell-card-name">DISPO HOT</div>
@@ -678,6 +691,15 @@
   })();
 </script>
 <!-- @include _partials/consent.html -->
+<script>
+  document.querySelectorAll('.ei-gallery').forEach(function(g){
+    var main=g.querySelector('.ei-hero-img'),btns=g.querySelectorAll('.ei-thumb');
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      main.src=b.dataset.src;main.alt=b.dataset.alt;
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    });});
+  });
+</script>
 </body>
 </html>
 

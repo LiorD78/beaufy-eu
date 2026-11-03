@@ -1,0 +1,46 @@
+name: Ceny z Atlasu
+
+# Každých 15 minut porovná doporučené ceny na webu s ceníkem v Atlasu.
+# Když se liší, přepíše je, uloží do repozitáře a spustí nasazení webu.
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: ceny-z-atlasu
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Propsat ceny z Atlasu
+        run: python3 update-prices.py
+
+      - name: Uložit a nasadit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet; then
+            echo "Beze změny."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Doporučené ceny podle ceníku v Atlasu"
+          git push
+          gh workflow run deploy-wedos.yml --ref main
+
+      # GitHub vypne plánované úlohy po 60 dnech bez aktivity v repozitáři.
+      - name: Udržet plán zapnutý
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/update-prices.yml/enable"

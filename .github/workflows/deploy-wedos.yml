@@ -44,6 +44,7 @@ jobs:
             **/_originals/**
             **/_partials/**
             **/build-includes.py
+            **/update-prices.py
             **/index_backup_original.html
             **/.DS_Store
             **/.gitignore

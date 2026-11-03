@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.beaufy.eu/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
     <image:image>
@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispogel/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
     <image:image>
@@ -76,7 +76,7 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispo-ice/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
     <image:image>
@@ -86,15 +86,15 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/instantni-termoterapie/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
     <image:image>
-      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/easy-ice.png</image:loc>
+      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/easy-ice-front.jpg</image:loc>
       <image:title>EASY ICE — instantní chladicí sáček</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/dispo-hot.png</image:loc>
+      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/dispo-hot-front.jpg</image:loc>
       <image:title>DISPO HOT — instantní hřejivý sáček</image:title>
     </image:image>
   </url>
@@ -170,21 +170,21 @@
   </url>
   <url>
     <loc>https://www.beaufy.eu/easy-ice/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
     <image:image>
-      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/easy-ice.png</image:loc>
+      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/easy-ice-front.jpg</image:loc>
       <image:title>EASY ICE — instantní chladicí sáček bez mrazáku</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beaufy.eu/dispo-hot/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
     <image:image>
-      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/dispo-hot.png</image:loc>
+      <image:loc>https://www.beaufy.eu/instantni-termoterapie/img/dispo-hot-front.jpg</image:loc>
       <image:title>DISPO HOT — instantní hřejivý sáček bez mikrovlnky</image:title>
     </image:image>
   </url>
